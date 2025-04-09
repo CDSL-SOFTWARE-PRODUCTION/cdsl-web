@@ -1,74 +1,55 @@
-import { Zap, Shield, Heart, Coffee, Smile, Type, TabletSmartphone, CodeXml } from 'lucide-astro';
-
-// Define the LucideIcon type based on the structure of Lucide icons
-type LucideIcon = typeof Zap;
+import { Code, Smartphone, Share2, Workflow, Zap, Presentation } from 'lucide-astro';
+import type { Album } from 'lucide-astro';
 
 export interface Feature {
-    icon: LucideIcon;
+    icon: typeof Album;
     title: string;
     description: string;
 }
 
 export interface FeatureList {
-    id: string;
     features: Feature[];
 }
 
-// Example feature lists
-export const featureLists: Record<string, FeatureList> = {
+export interface FeatureLists {
+    [key: string]: FeatureList;
+}
+
+export const featureLists: FeatureLists = {
     main: {
-        id: 'main',
         features: [
+            {
+                icon: Code,
+                title: 'Web Development',
+                description: 'We build scalable, responsive websites and web applications that engage users and drive growth for your business.'
+            },
+            {
+                icon: Smartphone,
+                title: 'Mobile Development',
+                description: 'Native and cross-platform mobile apps that deliver outstanding user experiences across all devices.'
+            },
+            {
+                icon: Share2,
+                title: 'IoT Integration',
+                description: 'Smart systems enabling real-time monitoring, data collection, and seamless communication between devices.'
+            },
+            {
+                icon: Workflow,
+                title: 'Automation Solutions',
+                description: 'Custom automation sequences that streamline operations, reduce errors, and increase overall efficiency.'
+            },
             {
                 icon: Zap,
-                title: 'Lightning Fast Performance',
-                description: 'Optimized for speed and performance'
+                title: 'AI & Machine Learning',
+                description: 'Intelligent systems that transform data into actionable insights for smarter business decisions.'
             },
             {
-                icon: Shield,
-                title: 'SEO Optimized Structure',
-                description: 'Built with SEO best practices in mind'
-            },
-            {
-                icon: TabletSmartphone,
-                title: 'Responsive by Default',
-                description: 'Mobile-friendly out of the box'
-            },
-            {
-                icon: Smile,
-                title: 'Easy Customization',
-                description: 'Customize the theme to your liking'
-            },
-            {
-                icon: Type,
-                title: 'TypeScript Support',
-                description: 'Built with TypeScript in mind'
-            },
-            {
-                icon: CodeXml,
-                title: 'Minimal Dependencies',
-                description: 'Keep your project lightweight'
+                icon: Presentation,
+                title: 'Consulting & Strategy',
+                description: 'Expert guidance to align technology with your business goals, ensuring a successful digital transformation.'
             }
+            
         ]
     },
-    secondary: {
-        id: 'secondary',
-        features: [
-            {
-                icon: Heart,
-                title: 'Made with Love',
-                description: 'Crafted with attention to detail'
-            },
-            {
-                icon: Coffee,
-                title: 'Always Fresh',
-                description: 'Regular updates and improvements'
-            },
-            {
-                icon: Smile,
-                title: 'User Friendly',
-                description: 'Intuitive and easy to use'
-            }
-        ]
-    }
+    // ...keep other feature lists if needed
 };

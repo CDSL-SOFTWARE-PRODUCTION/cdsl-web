@@ -1,35 +1,35 @@
 ---
-name: "Apollo"
+name: "Alex Chen"
 headshot: "./images/apollo.jpg"
-jobTitle: "God of the Sun"
+jobTitle: "Chief Technology Officer"
 publish: true
 order: 2
-linkedin: "https://www.linkedin.com/in/apollo/"
-linkedinUsername: "apollo"
-email: "apollo@titan-core.com"
-xSocial: "https://x.com/apollo"
-xSocialUsername: "apollo"
-github: "https://github.com/apollo"
-githubUsername: "apollo"
+linkedin: "https://www.linkedin.com/in/alex-chen/"
+linkedinUsername: "alexchen"
+email: "alex@cdsl.tech"
+xSocial: "https://x.com/alexchen"
+xSocialUsername: "alexchen"
+github: "https://github.com/alexchen"
+githubUsername: "alexchen"
 ---
 
-## Keeping the lights on
-Apollo is the god of the sun, music, poetry, and medicine. He is the son of Zeus and Leto. He is the brother of Artemis. He is the husband of Hyacinthus. He is the father of the Furies. He is the grandfather of the Greek gods.
+## Technical Leadership
 
-### Early Life
+Alex leads our technical strategy and development teams, ensuring we deliver cutting-edge solutions that meet our clients' evolving needs. With over 15 years of experience in software architecture and development, he brings deep expertise in web technologies, cloud infrastructure, and AI integration.
 
-Apollo was born on Mount Olympus. He was the son of Zeus and Leto. He was the youngest of his siblings, and the only one who was not swallowed by his father. He was also the only one who was not castrated by his father.
+### Background
+
+Alex's background includes leadership roles at several technology companies where he directed the development of enterprise-scale applications and platforms. He has a Master's degree in Computer Science and is passionate about leveraging emerging technologies to solve complex business challenges.
 
 ### Leadership Style
 
-Apollo is a strong leader who is not afraid to make tough decisions. He is a great communicator and is able to inspire his team to greatness. He is also a great listener and is able to understand the needs of his team.
+Alex fosters a collaborative environment that encourages innovation and continuous learning. He mentors junior developers while setting high standards for code quality and technical excellence across all projects.
 
-### Key Accomplishments    
+### Key Accomplishments
 
-Apollo has overthrown his father, Zeus, and freed his siblings from their imprisonment. He has also sired many children with his many lovers. He is the king of the gods and the ruler of Mount Olympus.
-
-### Fun Facts
-
-Apollo is the king of the gods and the ruler of Mount Olympus. He is the god of the sky, thunder, lightning, and law. He is also the god of the sun, moon, and stars. He is the father of the Greek gods. He is the husband of Hera. He is the brother of Poseidon and Hades.
+- Led the architectural design of a major IoT platform for manufacturing clients
+- Implemented AI-driven analytics systems that increased client operational efficiency by 35%
+- Established the company's technical standards and best practices framework
+- Regularly contributes to open-source projects and technology conferences
 
 

@@ -3,13 +3,29 @@ import Layout from "@layouts/Layout.astro"
 import InnerHero from "@components/sections/InnerHero.astro"
 import ContactInfo from "@components/sections/ContactInfo.astro"
 
+const title = "Contact Us";
+const description = "Get in touch to discuss how we can help transform your business with innovative technology solutions";
+
 const heroContent = {
-    title: "Contact Us",
-    description: "Contact us for more information"
+    title: title,
+    description: description
 }
 ---
 
-<Layout title="Contact Us" description="Contact us for more information">
+<Layout title={title} description={description}>
     <InnerHero content={heroContent} />
+    
+    <section class="py-small bg-background-light">
+        <div class="site-container px-8">
+            <div class="max-w-3xl mx-auto text-center mb-12">
+                <h2 class="text-headline text-large mb-6">Ready to Transform Your Vision into Reality?</h2>
+                <p class="text-body-base">
+                    Whether you're looking to build a new digital product, enhance an existing solution, or discuss 
+                    how our technology expertise can benefit your business, we're here to help.
+                </p>
+            </div>
+        </div>
+    </section>
+    
     <ContactInfo background="base" padding="base" />
 </Layout>

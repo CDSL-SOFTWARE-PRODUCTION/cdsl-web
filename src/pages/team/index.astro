@@ -3,17 +3,29 @@ import Layout from '@layouts/Layout.astro';
 import InnerHero from '@components/sections/InnerHero.astro';
 import TeamGrid from '@components/sections/TeamGrid.astro';
 
-const seoTitle = "Our Team";
-const seoDescription = "Our team is made up of a diverse group of people who are passionate about building amazing websites with ease.";
+const title = "Meet Our Team";
+const description = "Our team is comprised of experienced professionals passionate about technology and driven by results.";
 
+// Hero content
 const heroContent = {
-    title: "Our Team",
-    description: "Meet the people behind the magic",
-}
-
+    title: title,
+    description: description,
+};
 ---
 
-<Layout title={seoTitle} description={seoDescription}>
-    <InnerHero content={heroContent}  />
+<Layout title={title} description={description}>
+    <InnerHero content={heroContent} />
+    
+    <div class="site-container mx-auto px-4 py-12">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+            <h2 class="text-large mb-6">Experienced Technology Professionals</h2>
+            <p class="text-body-base">
+                From seasoned developers to creative problem-solvers, every member of CDSL contributes to an environment 
+                where innovation meets execution. Our team combines technical expertise with deep industry knowledge to deliver 
+                solutions that drive real business results.
+            </p>
+        </div>
+    </div>
+    
     <TeamGrid padding="base" />
 </Layout>

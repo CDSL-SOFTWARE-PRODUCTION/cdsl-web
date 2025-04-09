@@ -15,7 +15,7 @@ const currentPath = Astro.url.pathname;
 // Function to check if a link is the current page or a parent of the current page
 const isCurrentPage = (link: string) => {
     if (link === '/') {
-        return currentPath === '/';
+        return currentPath === '/' || currentPath === '';
     }
     return currentPath.startsWith(link);
 };

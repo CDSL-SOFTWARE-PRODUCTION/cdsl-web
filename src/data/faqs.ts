@@ -1,37 +1,44 @@
-export interface FaqItem {
+export interface FAQ {
     question: string;
     answer: string;
 }
 
-export interface FaqList {
-    id: string;
-    faqs: FaqItem[];
+export interface FAQList {
+    faqs: FAQ[];
 }
 
-export const faqLists: Record<string, FaqList> = {
+export interface FAQLists {
+    [key: string]: FAQList;
+}
+
+export const faqLists: FAQLists = {
     main: {
-        id: 'main',
         faqs: [
             {
-                question: "Is Titan Core completely free to use?",
-                answer: "Yes, Titan Core is 100% free and open-source. You can use it for personal and commercial projects without any licensing fees."
+                question: 'What services does CDSL offer?',
+                answer: 'CDSL offers a comprehensive range of technology services including web and mobile application development, IoT device integration, automation solutions, and AI/machine learning implementations. We create tailored solutions that address the unique challenges of your business.'
             },
             {
-                question: "How do I customize the color schemes?",
-                answer: "Titan Core comes with 10 pre-built color schemes that can be easily switched through the theme configuration file. For custom colors, you can modify the CSS variables in the `src/styles/global.css` file to match your brand identity."
+                question: 'Which industries does CDSL serve?',
+                answer: 'We work across multiple industries including logistics & supply chain, healthcare, real estate, retail & eCommerce, education, manufacturing, finance, and hospitality. Our team has specialized knowledge in these sectors to deliver industry-specific solutions.'
             },
             {
-                question: "Do I need to know Astro JS to use this theme?",
-                answer: "Basic familiarity with Astro JS is helpful, but not required. The component-based architecture makes it easy to understand and modify even if you're new to Astro."
+                question: 'How does CDSL approach new projects?',
+                answer: 'We begin with a thorough consultation to understand your business goals, challenges, and requirements. We then develop a strategic plan that outlines the technical approach, timeline, and budget. Throughout development, we maintain transparent communication and collaborative planning.'
             },
             {
-                question: "Can I use Titan Core as a starting point for client projects?",
-                answer: "Absolutely! Titan Core is designed to be a foundation theme that you can build upon for client projects. Its clean architecture and minimal approach make it perfect as a starting point for customized websites."
+                question: 'What happens after my project is launched?',
+                answer: 'Our commitment extends beyond project delivery. We provide ongoing support, maintenance, and iterative improvements to ensure your solution continues to perform optimally and evolves with your business needs.'
             },
             {
-                question: "How often is Titan Core updated?",
-                answer: "We aim to update Titan Core regularly to keep it compatible with the latest Astro JS releases and web standards. Major updates are released quarterly, with smaller fixes and improvements added more frequently. You can star our GitHub repository to stay informed about updates."
+                question: 'How does CDSL ensure the quality of its solutions?',
+                answer: 'Quality is our top priority. We implement rigorous testing protocols, follow industry best practices, and adhere to stringent coding standards. Our solutions are built for durability, reliability, and exceptional user experiences.'
+            },
+            {
+                question: 'Can CDSL help with existing systems and applications?',
+                answer: 'Absolutely! We can enhance, optimize, or integrate your existing systems and applications. Our team can evaluate your current solution and propose improvements to increase functionality, performance, and user experience.'
             }
         ]
-    }
+    },
+    // ...keep other FAQ lists if needed
 };

@@ -1,34 +1,33 @@
 ---
-name: "Zeus"
+name: "Sarah Johnson"
 headshot: "./images/zeus.jpg"
-jobTitle: "God of Thunder"
+jobTitle: "CEO & Founder"
 publish: true
 order: 1
-linkedin: "https://www.linkedin.com/in/zeus/"
-linkedinUsername: "zeus"
-email: "zeus@titan-core.com"
-xSocial: "https://x.com/zeus"
-xSocialUsername: "zeus"
-github: "https://github.com/zeus"
-githubUsername: "zeus"
+linkedin: "https://www.linkedin.com/in/sarah-johnson/"
+linkedinUsername: "sarahjohnson"
+email: "sarah@cdsl.tech"
+xSocial: "https://x.com/sarahjohnson"
+xSocialUsername: "sarahjohnson"
+github: "https://github.com/sarahjohnson"
+githubUsername: "sarahjohnson"
 ---
 
-## Our Leader
+## Our Visionary Leader
 
-Zeus leads our organization with the same commanding presence he brings to Mount Olympus. With expertise in strategic leadership and divine intervention, he oversees all major decisions and ensures our success with thunderous determination.
+Sarah founded CDSL with a clear vision: to make advanced technology accessible and effective for businesses of all sizes. With a background in both business leadership and software engineering, she bridges the gap between technical innovation and practical business solutions.
 
-### Early Life
+### Background
 
-Zeus was the son of Cronus and Rhea. He was the youngest of his siblings, and the only one who was not swallowed by his father. He was also the only one who was not castrated by his father.
+Before founding CDSL, Sarah held leadership positions at several technology companies and consulting firms. She holds an MBA and a degree in Computer Science, giving her unique insight into both the technical and business aspects of digital transformation.
 
-### Leadership Style
+### Leadership Philosophy
 
-Zeus is a strong leader who is not afraid to make tough decisions. He is a great communicator and is able to inspire his team to greatness. He is also a great listener and is able to understand the needs of his team.
+Sarah believes in leading by example and creating an environment where innovation and quality are paramount. Her client-centric approach ensures that every solution delivers measurable business value and exceeds expectations.
 
-### Key Accomplishments
+### Achievements
 
-Zeus has overthrown his father, Cronus, and freed his siblings from their imprisonment. He has also sired many children with his many lovers. He is the king of the gods and the ruler of Mount Olympus.
-
-### Fun Facts
-
-Zeus is the king of the gods and the ruler of Mount Olympus. He is the god of the sky, thunder, lightning, and law. He is also the god of the sun, moon, and stars. He is the father of the Greek gods. He is the husband of Hera. He is the brother of Poseidon and Hades.
+- Built CDSL from a small team to a respected technology partner
+- Personally led major digital transformation projects for clients in healthcare and finance
+- Regular speaker at technology and business conferences
+- Recognized as a Women in Tech leader by industry publications
