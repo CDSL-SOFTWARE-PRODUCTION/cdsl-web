@@ -1,27 +1,27 @@
 // src/data/menu.ts
 
 export const headerMenu = [
-    { name: 'About', link: '/about' },
-    { name: 'Our Team', link: '/team' },
-    { name: 'Blog', link: '/blog' },
-    { name: 'Industries', link: '/industries', showArrow: false,
+    { name: 'About', link: '/ecliptic-escape/about' },
+    { name: 'Our Team', link: '/ecliptic-escape/team' },
+    { name: 'Blog', link: '/ecliptic-escape/blog' },
+    { name: 'Industries', link: '/ecliptic-escape/industries', showArrow: false,
         // children: [
-        //     { name: 'Typography', link: '/style-guide#typography' },
-        //     { name: 'Colors', link: '/style-guide#colors' },
-        //     { name: 'Links', link: '/style-guide#links' },
-        //     { name: 'Buttons', link: '/style-guide#buttons' },
-        //     { name: 'Forms', link: '/style-guide#forms' },
-        //     { name: 'Lists', link: '/style-guide#lists' },
+        //     { name: 'Typography', link: '/ecliptic-escape/style-guide#typography' },
+        //     { name: 'Colors', link: '/ecliptic-escape/style-guide#colors' },
+        //     { name: 'Links', link: '/ecliptic-escape/style-guide#links' },
+        //     { name: 'Buttons', link: '/ecliptic-escape/style-guide#buttons' },
+        //     { name: 'Forms', link: '/ecliptic-escape/style-guide#forms' },
+        //     { name: 'Lists', link: '/ecliptic-escape/style-guide#lists' },
         // ]
     }
 ];
 
 export const footerMenu = [
-    { name: 'Work in Progress', link: '.404' },
+    { name: 'Work in Progress', link: '/ecliptic-escape/404' },
 ];
 
 export const legalMenu = [
-    { name: 'Privacy Policy', link: '/legal/privacy-policy' },
-    { name: 'Terms of Service', link: '/legal/terms-of-service' }
+    { name: 'Privacy Policy', link: '/ecliptic-escape/legal/privacy-policy' },
+    { name: 'Terms of Service', link: '/ecliptic-escape/legal/terms-of-service' }
 ];
 
