@@ -1,10 +1,10 @@
 // src/data/menu.ts
 
 export const headerMenu = [
-    { name: 'About', link: '/ecliptic-escape/about' },
-    { name: 'Our Team', link: '/ecliptic-escape/team' },
-    { name: 'Blog', link: '/ecliptic-escape/blog' },
-    { name: 'Industries', link: '/ecliptic-escape/industries', showArrow: false,
+    { name: 'About', link: '/about' },
+    { name: 'Our Team', link: '/team' },
+    { name: 'Blog', link: '/blog' },
+    { name: 'Industries', link: '/industries', showArrow: false,
         // children: [
         //     { name: 'Typography', link: '/ecliptic-escape/style-guide#typography' },
         //     { name: 'Colors', link: '/ecliptic-escape/style-guide#colors' },
