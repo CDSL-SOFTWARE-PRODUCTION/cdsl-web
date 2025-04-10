@@ -2,7 +2,7 @@
 name: "Dionysus"
 headshot: "./images/dionysus.jpg"
 jobTitle: "God of Wine"
-publish: true
+publish: false
 order: 7
 linkedin: "https://www.linkedin.com/in/dionysus/"
 linkedinUsername: "dionysus"

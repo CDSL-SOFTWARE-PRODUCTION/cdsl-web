@@ -1,5 +1,5 @@
 ---
-import { Github, Linkedin, Mail } from 'lucide-astro';
+import { Github, Linkedin, Mail, Phone } from 'lucide-astro';
 import X from '@components/icons/X.astro';
 import { Image } from 'astro:assets';
 
@@ -33,6 +33,17 @@ const { entry } = Astro.props;
                     >
                         <Mail size={18} strokeWidth={1.25} />
                         <span class="break-all">{entry.data.email}</span>
+                    </a>
+                )
+            }
+            {
+                entry.data.phone && (
+                    <a
+                        href={`tel:${entry.data.phone}`}
+                        class="flex items-center gap-2 text-body-base hover:text-primary transition-colors text-small"
+                    >
+                        <Phone size={18} strokeWidth={1.25} />
+                        <span class="break-all">{entry.data.phone}</span>
                     </a>
                 )
             }

@@ -2,7 +2,7 @@
 name: "Demeter"
 headshot: "./images/demeter.jpg"
 jobTitle: "Goddess of the Harvest"
-publish: true
+publish: false
 order: 6
 linkedin: "https://www.linkedin.com/in/demeter/"
 linkedinUsername: "demeter"

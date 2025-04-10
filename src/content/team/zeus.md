@@ -2,7 +2,7 @@
 name: "Sarah Johnson"
 headshot: "./images/zeus.jpg"
 jobTitle: "CEO & Founder"
-publish: true
+publish: false
 order: 1
 linkedin: "https://www.linkedin.com/in/sarah-johnson/"
 linkedinUsername: "sarahjohnson"

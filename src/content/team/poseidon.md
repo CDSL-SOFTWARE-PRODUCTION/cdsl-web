@@ -2,7 +2,7 @@
 name: "Poseidon"
 headshot: "./images/poseidon.jpg"
 jobTitle: "God of the Sea"
-publish: true
+publish: false
 order: 10
 linkedin: "https://www.linkedin.com/in/poseidon/"
 linkedinUsername: "poseidon"

@@ -2,7 +2,7 @@
 name: "Hades"
 headshot: "./images/hades.jpg"
 jobTitle: "God of the Underworld"
-publish: true
+publish: false
 order: 8
 linkedin: "https://www.linkedin.com/in/hades/"
 linkedinUsername: "hades"

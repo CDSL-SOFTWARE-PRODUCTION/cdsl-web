@@ -2,7 +2,7 @@
 name: "Hermes"
 headshot: "./images/hermes.jpg"
 jobTitle: "God of the Sun"
-publish: true
+publish: false
 order: 9
 linkedin: "https://www.linkedin.com/in/hermes/"
 linkedinUsername: "hermes"
