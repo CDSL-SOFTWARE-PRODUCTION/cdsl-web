@@ -4,10 +4,10 @@ export const siteConfig = {
     socials: {
         github: 'https://github.com/CDSL-SOFTWARE-PRODUCTION',
         twitter: 'https://github.com/CDSL-SOFTWARE-PRODUCTION',
-        email: 'contact@cdslvn.com',
+        email: 'info@cdslvn.com',
         phone: '+84 333 600 251',
         linkedin: 'https://www.linkedin.com/company/cdslvn',
-        location: 'Hanoi, Vietnam',
+        location: ' 	Số 16 Nguyễn Văn Tuyết, Phường Trung Liệt, Quận Đống Đa, Thành phố Hà Nội, Việt Nam',
     }
 };
 
