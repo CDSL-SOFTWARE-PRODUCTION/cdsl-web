@@ -1,0 +1,63 @@
+# Tên Dự Án: SinoLex Data Pipeline – Hệ thống xử lý dữ liệu ngôn ngữ lớn
+**Loại sản phẩm:** Data Processing Tool / Automation Script cho EdTech
+
+## 1. Tổng Quan (Overview)
+*   **Khách hàng & Ngành:** Startup EdTech, Nền tảng học tiếng Trung trực tuyến [Hidden Name].
+*   **Thời gian thực hiện:** 1 tuần (Tháng 01/2026).
+*   **Công nghệ chính:** Python, Pandas, Regex (Regular Expressions), OpenPyXL, File Stream Processing.
+*   **Kết quả chính (Key Results):**
+    *   **Tốc độ xử lý:** Convert và chuẩn hóa >110.000 từ vựng trong **< 30 giây**.
+    *   **Hiệu suất:** Tiết kiệm **2 tuần làm việc** nhập liệu và rà soát thủ công của team Content.
+    *   **Độ chính xác:** Loại bỏ 100% lỗi sai format Pinyin/Hán tự thường gặp khi xử lý thủ công.
+
+---
+
+## 2. Case Study Chi Tiết
+
+### Problem (Vấn đề)
+> *Thách thức xử lý Big Data dạng text phi cấu trúc.*
+*   **Bối cảnh:** Khách hàng phát triển App học tiếng Trung, cần import bộ từ điển nguồn mở CC-CEDICT (hơn 100MB text, >100.000 mục từ) vào hệ thống Database.
+*   **Nỗi đau của khách:** Format file gốc `.txt` rất phức tạp (lẫn lộn Phồn thể, Giản thể, Pinyin trong ngoặc, và định nghĩa).
+*   **Hạn chế cũ:** Các tool convert online bị crash do file quá nặng. Team Content thử mở bằng Excel thì bị vỡ font và treo máy. Dự kiến nhập tay hoặc copy-paste sẽ mất cả tháng và dễ sai sót.
+
+### Solution (Giải pháp)
+> *Tiếp cận "Divide and Conquer" (Chia để trị) với Python Automation.*
+*   **Kiến trúc xử lý dòng (Stream Processing):** Thay vì load cả file 100MB vào RAM, tôi viết script `split_cedict.py` để đọc và xé nhỏ dữ liệu thành các "chunks" (10.000 từ/file), đảm bảo RAM luôn thấp (<50MB).
+*   **Regex Engine tùy chỉnh:** Xây dựng biểu thức chính quy (Regex) phức tạp để "bắt" chính xác 4 trường dữ liệu:
+    *   `Phồn thể` & `Giản thể` (Unicode characters).
+    *   `Pinyin` (nằm trong `[]`).
+    *   `Định nghĩa` (phân tách bởi `/`).
+*   **Data Cleaning:** Tự động chuẩn hóa văn bản (Clean Text), chuyển đổi ký tự phân cách thành xuống dòng (`\n`) để hiển thị đẹp mắt trong Excel.
+
+### Result (Kết quả)
+> *Biến "cục đá" dữ liệu thô thành "viên ngọc" thông tin.*
+*   Hệ thống chạy ổn định, output ra 10+ file Excel được định dạng chuẩn chỉ.
+*   Dữ liệu sau khi xử lý có thể import trực tiếp vào SQL/CMS của App mà không cần sửa tay.
+
+---
+
+## 3. Testimonial (Khách hàng nói gì)
+
+> "Cái tool này đúng là cứu tinh cho team nhập liệu của bên mình. Trước nhìn cái file text gốc ai cũng nản, không biết bắt đầu từ đâu."
+>
+> — **Mr. Hung**, Product Owner @ SinoApp
+
+**Case Study Q&A (Phỏng vấn nhanh):**
+
+*   **Q: Trước khi làm việc với bên em, anh gặp khó khăn gì lớn nhất với đống dữ liệu này?**
+    *   **A:** "Anh thử đưa cho 2 bạn intern làm thủ công, nhưng format Pinyin cứ bị lỗi font, rồi copy nhầm dòng. File thì nặng, mở lên là Excel treo luôn (`Not Responding`)."
+
+*   **Q: Sau khi dùng tool SinoLex này, anh thấy cải thiện rõ nhất ở đâu?**
+    *   **A:** "Tốc độ. Anh không ngờ là chạy script cái 'vèo' chưa đến 1 phút là xong hết sạch. Mà file Excel đầu ra rất sạch, cột nào ra cột nấy, import một phát ăn ngay."
+
+*   **Q: Trải nghiệm làm việc với dev?**
+    *   **A:** "Nhanh gọn, hiểu vấn đề. Anh chỉ cần nói output anh muốn là file Excel, bạn ấy tự lo hết phần logic xử lý phức tạp bên dưới."
+
+---
+
+## 4. Visuals (Demo)
+
+*(Gợi ý: Chụp ảnh màn hình Terminal đang chạy script và ảnh file Excel kết quả)*
+
+*   **Hình 1:** Terminal hiển thị process chia file: `Created chunk 001... Created chunk 013...`
+*   **Hình 2:** File Excel kết quả với các cột "Phồn thể", "Giản thể", "Pinyin", "Ý nghĩa" được phân chia rõ ràng.

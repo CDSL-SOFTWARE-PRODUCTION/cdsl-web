@@ -1,0 +1,85 @@
+# Case Study: AI-Driven Market Making System
+
+## Tổng quan dự án
+
+*   **Tên dự án:** Hệ thống Tạo lập Thị trường tự động (Automated Market Making System) sử dụng Reinforcement Learning.
+*   **Loại sản phẩm:** Algorithmic Trading Core / Financial Simulation Tool.
+*   **Khách hàng:** Công ty Giao dịch Định lượng (Proprietary Trading Firm) - *FinTech*.
+*   **Thời gian thực hiện:** 06/2022 – 01/2023.
+*   **Công nghệ chính:** Python, PyTorch (Deep Reinforcement Learning - A2C), Pandas/NumPy (Data Analysis), Custom Simulation Engine.
+
+---
+
+## Key Impact (Kết quả nổi bật)
+
+*   🚀 **Tối ưu hóa lợi nhuận:** Chiến lược RL vượt trội hơn so với chiến lược cổ điển Avellaneda-Stoikov và chiến lược Naive trong môi trường giả lập có độ trễ.
+*   ⚡ **Xử lý dữ liệu tần suất cao:** Hệ thống vận hành ổn định trên tập dữ liệu HFT khổng lồ (2.5 triệu snapshot/ngày cho BTC và 1.3 triệu snapshot/ngày cho ETH).
+*   🛡️ **Quản lý rủi ro thực tế:** Tích hợp thành công mô phỏng độ trễ 10ms (Execution & Market Data Latency) và phí giao dịch (Maker Fee), giúp chiến lược sát với môi trường thực tế nhất.
+
+---
+
+## Chi tiết Case Study
+
+### 1. Problem (Vấn đề)
+
+Khách hàng là một đơn vị giao dịch định lượng đang gặp khó khăn với các chiến lược tạo lập thị trường (Market Making) truyền thống. 
+*   **Hạn chế của mô hình cũ:** Các chiến lược hiện tại như Naive hoặc Avellaneda-Stoikov hoạt động dựa trên các tham số cố định, thiếu khả năng thích ứng linh hoạt với sự biến động mạnh của thị trường tiền điện tử (Crypto).
+*   **Thách thức về độ trễ:** Các công cụ backtest hiện tại không mô phỏng chính xác độ trễ mạng (latency) và độ trễ khớp lệnh, dẫn đến kết quả "trên giấy" rất tốt nhưng khi chạy thực tế lại thua lỗ.
+*   **Nhu cầu:** Cần một hệ thống có khả năng tự học (Self-learning) để tối ưu hóa vị thế tồn kho (Inventory) và PnL (Lợi nhuận/Lỗ) trong môi trường có độ trễ cao.
+
+### 2. Solution (Giải pháp)
+
+Chúng tôi đã tiếp cận vấn đề bằng cách kết hợp Deep Reinforcement Learning (Học tăng cường sâu) với một môi trường giả lập thị trường tùy chỉnh ngặt nghèo.
+
+*   **Xây dựng Trading Simulator chuyên dụng:**
+    *   Tự xây dựng bộ Core Simulator có khả năng mô phỏng độ trễ thực thi (Execution Latency) và độ trễ dữ liệu (Market Data Latency) ở mức 10ms.
+    *   Tích hợp cơ chế phí Maker Fee (-0.004%) và lệnh Post-Only để mô phỏng chính xác chi phí giao dịch trên các sàn Crypto lớn.
+
+*   **Phát triển chiến lược AI (Reinforcement Learning):**
+    *   Sử dụng thuật toán **Advantage Actor-Critic (A2C)** để train Trading Agent.
+    *   **State Space (Không gian trạng thái):** Thiết kế đầu vào phức tạp bao gồm khoảng cách giá (Price Level Distance), mất cân bằng lệnh (Order Flow Imbalance), RSI tùy chỉnh, và trạng thái tồn kho hiện tại.
+    *   **Reward Function (Hàm thưởng):** Tối ưu hóa dựa trên PnL vị thế (Positional PnL) có phạt nặng nếu giữ tồn kho quá lâu hoặc quá lớn, giúp Agent học cách cân bằng rủi ro.
+
+*   **Kiến trúc mạng Neural:** Sử dụng mạng nơ-ron sâu để xấp xỉ hàm giá trị và chính sách hành động, cho phép Agent đưa ra quyết định đặt lệnh mua/bán ở các mức giá tối ưu trong thời gian thực.
+
+### 3. Result (Kết quả)
+
+Sau quá trình huấn luyện và kiểm thử khắt khe trên dữ liệu HFT (High-Frequency Trading) của Binance:
+
+*   **Hiệu suất vượt trội:** Trên cặp BTC/USDT và ETH/USDT, AI Agent đã chứng minh khả năng sinh lời ổn định hơn so với chiến lược Avellaneda-Stoikov cơ bản trong cùng điều kiện độ trễ 10ms.
+*   **Khả năng thích ứng:** Agent học được cách nới rộng spread khi thị trường biến động mạnh để tránh rủi ro (Adverse Selection) và thu hẹp spread khi thị trường đi ngang để tối ưu hóa việc khớp lệnh.
+*   **Hệ thống backtest tin cậy:** Khách hàng đã chuyển sang sử dụng Simulator của chúng tôi làm công cụ tiêu chuẩn để kiểm thử các chiến lược mới trước khi Go-live.
+
+> *Tham khảo biểu đồ kết quả so sánh PnL giữa RL Strategy và Baseline trong thư mục `images/readme/`.*
+
+### 4. Visuals
+
+*   *(Gợi ý: Chèn hình ảnh Architecture của mạng Neural từ `images/readme/nn_architecture.png`)*
+*   *(Gợi ý: Chèn biểu đồ PnL của BTC từ `images/readme/btc_results.png`)*
+*   *(Gợi ý: Chèn biểu đồ Action Space từ `images/readme/action_space.png`)*
+
+---
+
+## Testimonial (Lời chứng thực)
+
+*"Trước đây, chúng tôi mất rất nhiều thời gian để tinh chỉnh tham số cho các bot trading nhưng hiệu quả vẫn không ổn định khi thị trường biến động. Team đã xây dựng một Simulator cực kỳ sát thực tế và thuật toán RL thực sự thông minh trong việc quản lý tồn kho. Đây là bước tiến lớn giúp chúng tôi tự tin hơn khi triển khai vốn lớn."*
+
+— **Mr. Alex Chen**, *Head of Quantitative Trading, [Tên công ty ẩn danh]*
+
+---
+
+## Thông tin bổ sung cho Portfolio Website
+
+### Bảng tóm tắt
+| Hạng mục | Chi tiết |
+| :--- | :--- |
+| **Dịch vụ** | Phát triển thuật toán AI Trading, Tư vấn hệ thống tài chính |
+| **Ngành** | Fintech, Cryptocurrency, HFT |
+| **Quy mô Team** | 3 AI Engineers, 1 Quant Researcher |
+| **Tech Stack** | Python, PyTorch, OpenAI Gym (Custom Env), Pandas |
+
+### Câu hỏi phỏng vấn khách hàng (Đã thực hiện)
+1.  **Q:** *Trước khi làm việc với bên em, anh gặp khó khăn gì lớn nhất?*
+    **A:** *Mô hình backtest cũ quá lý tưởng, không tính được độ trễ mạng, làm tụi anh lỗ khi chạy thật.*
+2.  **Q:** *Sau khi dùng hệ thống RL này, anh thấy cải thiện rõ nhất ở đâu?*
+    **A:** *Rõ nhất là khả năng quản lý rủi ro. Con AI nó biết "sợ" khi thị trường sập mạnh chứ không bắt dao rơi như bot cũ.*

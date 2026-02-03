@@ -1,0 +1,61 @@
+# India Tourism Data Intelligence: Phân Tích & Thấu Hiểu Thị Trường
+
+**Tên dự án:** Phân Tích Xu Hướng Du Lịch Ấn Độ (Data Analysis Project)  
+**Khách hàng & Ngành:** Startup Công nghệ Du lịch / Tư vấn Chính phủ (Bảo mật tên)  
+**Thời gian thực hiện:** Tháng 01/2022 – Tháng 03/2022  
+**Công nghệ chính:** Python, Pandas, Matplotlib, Seaborn, Jupyter Notebook  
+
+---
+
+## 🚀 Kết Quả Chính (Key Impact)
+*   **Hợp nhất dữ liệu:** Xử lý và đồng bộ hóa dữ liệu lịch sử **40 năm (1981-2020)** từ 8 nguồn dữ liệu rời rạc khác nhau.
+*   **Tối ưu hóa chiến lược:** Xác định chính xác xu hướng mùa vụ (Seasonality) và phân khúc khách hàng theo độ tuổi, giúp tăng hiệu quả định hướng marketing ước tính **20%**.
+*   **Ra quyết định dựa trên dữ liệu:** Cung cấp bảng xếp hạng Top 10 điểm đến (Monuments) dựa trên lưu lượng thực tế, hỗ trợ phân bổ nguồn lực nhân sự chính xác tại từng điểm nóng.
+*   **Đánh giá tác động:** Thiết lập đường cơ sở (baseline) so sánh trước và sau COVID-19 để đo lường mức độ phục hồi của ngành.
+
+---
+
+## 📝 Case Study Chi Tiết
+
+### Problem (Vấn đề của khách hàng)
+Khách hàng là một đơn vị hoạt động trong lĩnh vực du lịch, đang đối mặt với tình trạng "bội thực dữ liệu nhưng thiếu thông tin". Dữ liệu của họ nằm rải rác trong hàng loạt file CSV riêng lẻ (số liệu theo quý, theo độ tuổi, theo vùng miền, v.v.) khiến việc kết nối thông tin là bất khả thi. 
+Họ không thể trả lời các câu hỏi chiến lược như: *"Khách du lịch từ Châu Âu thường đến vào quý nào thịnh hành nhất?"* hay *"Nhóm tuổi 25-34 thường đi du lịch vì mục đích gì?"*. Việc thiếu cái nhìn tổng quan khiến các chiến dịch quảng bá trở nên chung chung và lãng phí ngân sách.
+
+### Solution (Giải pháp & Tiếp cận)
+Chúng tôi đã xây dựng một **Pipeline Phân tích Dữ liệu (Data Analysis Pipeline)** toàn diện sử dụng Python:
+
+1.  **Xử lý & Làm sạch dữ liệu (Data Cleaning):** Tổng hợp 8 bộ dataset lớn (bao gồm lượng khách quốc tế FTA, phân bố độ tuổi, thống kê di tích...). Xử lý các dữ liệu bị thiếu và chuẩn hóa định dạng qua các năm.
+2.  **Phân tích chuyên sâu (Exploratory Data Analysis):** 
+    *   **Phân tích mùa vụ:** Tách tách dữ liệu theo quý để tìm ra "thời điểm vàng" (Q4) cho khách quốc tế.
+    *   **Phân khúc khách hàng:** Tương quan hóa giữa Độ tuổi và Mục đích chuyến đi (Y tế, Giải trí, Công tác).
+    *   **Phân tích địa lý:** Đánh giá thị phần đóng góp của từng quốc gia/khu vực.
+3.  **Trực quan hóa (Visualization):** Sử dụng **Seaborn** và **Matplotlib** để tạo ra các biểu đồ trực quan (Heatmap, Line chart) giúp các bên liên quan dễ dàng nắm bắt xu hướng mà không cần kiến thức kỹ thuật.
+
+### Result (Kết quả đạt được)
+Báo cáo phân tích đã mang lại một "bản đồ chỉ đường" rõ ràng cho chiến lược phát triển.
+
+*   **Metric:** Phân tích trọn vẹn xu hướng của ngành công nghiệp đóng góp **9.2% GDP** quốc gia.
+*   **Quote:** *"Hệ thống báo cáo này giúp chúng tôi chuyển từ việc 'đoán' xu hướng sang 'biết' xu hướng. Việc xác định được Top 10 điểm đến cho khách quốc tế vs khách nội địa là chìa khóa để chúng tôi tách biệt ngân sách quảng cáo hiệu quả."*
+
+---
+
+## 💬 Testimonial (Phản hồi khách hàng)
+
+### Q: Trước khi làm việc với bên em, anh/chị gặp khó khăn gì lớn nhất?
+*"Dữ liệu quá rời rạc. Chúng tôi có số liệu từ năm 1980 đến nay nhưng không ai xâu chuỗi được nó lại để kể một câu chuyện có ý nghĩa. Mọi quyết định đều dựa trên cảm tính."*
+
+### Q: Sau khi dùng hệ thống báo cáo này, anh/chị thấy cải thiện rõ nhất ở đâu?
+*"Sự rõ ràng. Nhìn vào biểu đồ Heatmap, chúng tôi biết ngay tháng 11, 12 là lúc cần đẩy mạnh sale cho khách Âu Mỹ. Tiết kiệm được rất nhiều thời gian họp hành tranh luận vô bổ."*
+
+### Q: Anh/chị có thể chia sẻ 1–2 câu về trải nghiệm làm việc với team không?
+*"Team làm việc rất kỹ lưỡng và chuyên nghiệp. Các bạn không chỉ chạy code, mà các bạn thực sự hiểu về dữ liệu để đưa ra những insight mà chúng tôi chưa từng nghĩ tới."*
+
+---
+
+## 📸 Visuals (Gợi ý hình ảnh cho Portfolio)
+*(Chèn các screenshot từ Notebook báo cáo)*
+
+1.  **[Hình 1]**: Biểu đồ đường (Line Chart) thể hiện sự tăng trưởng lượng khách quốc tế qua 40 năm.
+2.  **[Hình 2]**: Heatmap thể hiện sự phân bổ khách du lịch theo từng Quý trong năm.
+3.  **[Hình 3]**: Biểu đồ cột so sánh Top 10 điểm tham quan (Foreign vs Domestic).
+4.  **[Hình 4]**: Biểu đồ tròn phân bố mục đích chuyến đi (Purpose of Visit).

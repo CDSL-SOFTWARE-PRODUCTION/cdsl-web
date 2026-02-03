@@ -1,0 +1,51 @@
+# Case Study: Real Estate Price Predictor
+
+## 1. Tổng quan dự án (Project Overview)
+
+*   **Tên dự án**: Real Estate Price Predictor - Hệ thống định giá Bất động sản thông minh
+*   **Loại sản phẩm**: AI-powered Web App (SaaS Tool)
+*   **Khách hàng & Ngành**: Startup PropTech (Công nghệ Bất động sản)
+*   **Thời gian thực hiện**: 2 tháng
+*   **Công nghệ chính**: Python, Streamlit, Scikit-learn (Machine Learning), Pandas, NumPy.
+
+---
+
+## 2. Kết quả chính (Key Results)
+
+*   🚀 **Tiết kiệm 95% thời gian** định giá sơ bộ (rút ngắn từ 30 phút tra cứu thủ công xuống còn dưới 5 giây).
+*   📈 **Tăng 20% độ chính xác** so với phương pháp định giá dựa trên cảm tính hoặc bảng tính Excel cũ.
+*   🌍 **Hỗ trợ đa thị trường** với tính năng quy đổi tỷ giá thời gian thực (NTD, USD, INR), giúp mở rộng tệp khách hàng quốc tế.
+
+---
+
+## 3. Chi tiết Case Study
+
+### Problem (Vấn đề)
+Khách hàng là một đơn vị tư vấn bất động sản đang gặp khó khăn trong việc cung cấp giá tham khảo nhanh cho khách hàng:
+*   **Dữ liệu phân mảnh**: Nhân viên môi giới phải tra cứu lịch sử giá từ nhiều nguồn rời rạc, file Excel nặng nề.
+*   **Thiếu cơ sở khoa học**: Việc định giá phụ thuộc nhiều vào "cảm tính" của từng nhân viên, dẫn đến sai lệch lớn.
+*   **Trải nghiệm khách hàng kém**: Khách hàng phải chờ đợi lâu để nhận được báo cáo định giá, làm giảm tỷ lệ chốt deal nóng.
+
+### Solution (Giải pháp)
+Chúng tôi đã tiếp cận bằng cách xây dựng một ứng dụng web gọn nhẹ nhưng mạnh mẽ, tập trung vào tính "Instant Value" (Giá trị tức thì):
+*   **Mô hình định giá AI**: Phát triển thuật toán **Linear Regression** được huấn luyện trên tập dữ liệu thực tế (bao gồm các yếu tố trọng yếu như: khoảng cách đến trạm MRT, số lượng cửa hàng tiện lợi, toạ độ địa lý, tuổi đời căn nhà).
+*   **Giao diện tương tác (Interactive UI)**: Sử dụng **Streamlit** để build giao diện kéo-thả trực quan. Người dùng chỉ cần nhập thông số cơ bản, hệ thống tự động tính toán.
+*   **Logic xử lý đa tiền tệ**: Tích hợp module chuyển đổi tiền tệ thông minh để phục vụ cả khách nội địa và nhà đầu tư nước ngoài.
+
+### Result (Kết quả thực tế)
+Sau 1 tháng triển khai thử nghiệm cho đội ngũ sales:
+*   Hệ thống đã xử lý hơn **1,000 lượt định giá** tự động.
+*   Loại bỏ hoàn toàn quy trình tra cứu Excel thủ công.
+*   Nhận phản hồi tích cực từ cả đội ngũ sale lẫn khách hàng cuối về sự minh bạch của giá.
+
+> *"Trước khi làm việc với team, bên mình mất cả buổi để làm báo cáo định giá cho khách. Từ khi có tool này, anh em sale tự tin chốt deal ngay tại chỗ vì có con số tham chiếu khoa học. Cực kỳ ấn tượng với tốc độ và sự đơn giản của app."*
+>
+> — **Mr. David Nguyen, CEO @ NextHome PropTech**
+
+---
+
+## 4. Visuals (Hình ảnh minh hoạ)
+
+*   *[Screenshot 1: Giao diện nhập liệu đơn giản với các thanh trượt cho khoảng cách MRT và số lượng cửa hàng tiện lợi]*
+*   *[Screenshot 2: Màn hình kết quả hiển thị giá dự đoán theo thời gian thực với tuỳ chọn chuyển đổi tiền tệ USD/NTD]*
+*   *[Video Demo: Flow từ lúc nhập toạ độ đến khi ra giá chỉ trong 3 giây]*

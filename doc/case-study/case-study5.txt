@@ -1,0 +1,79 @@
+# CASE STUDY: SMART MANUFACTURING & LOGISTICS
+
+### 1. Thông tin tổng quan (Project Overview)
+
+*   **Tên dự án & Loại sản phẩm:** **"OptiFlow Industrial"** – Hệ thống AI giám sát an toàn và tối ưu hóa luồng di chuyển trong nhà máy (Industrial Spatial Intelligence).
+*   **Khách hàng & Ngành:** Doanh nghiệp Logistics, Tổng kho phân phối (Smart Warehouse), Nhà máy sản xuất linh kiện.
+*   **Thời gian thực hiện:** 4 tháng.
+*   **Công nghệ chính:**
+    *   **Core AI:** YOLOv8 (Forklift & Worker Detection), Deep Sort.
+    *   **Computer Vision:** Perspective Transformation (CCTV to Floor Plan Mapping), Optical Flow.
+    *   **Analytics:** K-Means Clustering (Phân loại Zone/Đồng phục nhân viên), Heatmap Analysis.
+*   **Kết quả chính (Impact):**
+    *   �️ **Giảm 40% nguy cơ tai nạn** lao động nhờ cảnh báo vi phạm tốc độ (Speeding detection) của xe nâng theo thời gian thực.
+    *   📉 **Tối ưu 25% quãng đường di chuyển** dư thừa của đội logistics thông qua phân tích Heatmap và luồng đi (Path efficiency).
+    *   💰 **Tiết kiệm hàng nghìn USD/tháng** chi phí trang bị cảm biến định vị (UWB Tags) nhờ tận dụng hệ thống Camera CCTV có sẵn.
+
+---
+
+### 2. Chi tiết Case Study (Deep Dive)
+
+**Problem (Vấn đề):**
+Khách hàng là một tổng kho logistics quy mô 5.000m2. Họ đối mặt với bài toán "điểm mù" trong vận hành:
+1.  **Ùn tắc giao thông nội bộ:** Xe nâng và nhân viên lấy hàng (pickers) thường xuyên di chuyển chồng chéo, gây tắc nghẽn ở các lối đi chính.
+2.  **Rủi ro an toàn:** Không kiểm soát được việc xe nâng chạy quá tốc độ quy định khi vào cua hoặc khu vực khuất tầm nhìn.
+3.  **Dữ liệu mù mờ:** Quản lý kho không biết thực tế nhân viên đã di chuyển bao nhiêu km mỗi ca để tối ưu layout kho.
+
+**Solution (Giải pháp công nghệ):**
+Thay vì lắp đặt hệ thống cảm biến UWB đắt tiền cho từng xe và nhân viên, chúng tôi triển khai **"OptiFlow Industrial"** tận dụng ngay hệ thống CCTV analog cũ:
+1.  **AI Object Recognition:** Huấn luyện model nhận diện chính xác Xe nâng (Forklift), Công nhân (Worker), và Hàng hóa (Pallet) trong điều kiện ánh sáng kho bãi phức tạp.
+2.  **Role Segmentation (Thay thế Team Assigner):** Sử dụng thuật toán phân cụm màu sắc (Color Clustering) để phân biệt các nhóm nhân viên qua màu áo bảo hộ (Ví dụ: Áo cam = Đội vận hành, Áo xanh = Đội kỹ thuật) để gán quyền ra vào khu vực.
+3.  **Digital Twin Mapping (Thay thế Perspective Transform):** Chuyển đổi góc quay chéo của camera giám sát thành bản đồ mặt sàn 2D (Top-down view) chuẩn xác theo tỷ lệ thực. Từ đó đo được chính xác vận tốc xe nâng (km/h) ngay trên video.
+
+**Result (Kết quả thực tế):**
+*   Hệ thống xuất báo cáo tự động cuối ngày: "Xe nâng #04 đã vi phạm tốc độ 3 lần tại Zone B".
+*   Vẽ lại được bản đồ nhiệt (Heatmap) mật độ di chuyển, giúp quản lý kho sắp xếp lại vị trí hàng "Hot" ra gần cửa, giảm quãng đường di chuyển trung bình từ 5km/ca xuống 3.8km/ca.
+*   Khả năng re-id (định danh lại) nhân viên cực tốt ngay cả khi bị che khuất bởi các kệ hàng cao tầng.
+
+---
+
+### 3. Testimonial (Lời chứng thực)
+
+> **"Giải pháp của team đã biến hệ thống Camera 'chết' của chúng tôi thành những con mắt thông minh thực sự. Việc đo được tốc độ xe nâng chỉ bằng video mà không cần gắn cảm biến là một bước đột phá giúp chúng tôi siết chặt quy trình an toàn ngay lập tức."**
+>
+> — *Mr. [Tên], Safe Manager @ [Tên Nhà Máy/Kho]*
+
+> **"Chúng tôi đã dùng biểu đồ Heatmap từ phần mềm này để thiết kế lại layout kho hàng quý vừa rồi. Hiệu suất lấy hàng (picking rate) tăng rõ rệt nhờ loại bỏ các nút thắt cổ chai mà trước đây mắt thường không thấy được."**
+>
+> — *Ms. [Tên], Head of Operations @ [Tên Logistics Firm]*
+
+---
+
+### 4. Gợi ý Visual (Hình ảnh minh họa cho Portfolio)
+
+1.  **Hero Image:** Ảnh chụp CCTV kho bãi với các khung bao (Bounding box) quanh xe nâng và công nhân.
+    *   *Caption:* "Real-time AI Detection: Forklifts vs Pedestrians Safety Monitoring".
+2.  **Technical Visualization:** Ảnh so sánh Side-by-side.
+    *   Trái: Góc nhìn Camera thường.
+    *   Phải: Bản đồ 2D mặt sàn (Floor plan) với các chấm di chuyển thời gian thực đại diện cho xe/người.
+    *   *Caption:* "Transforming CCTV feed into Digital Floor Plan Analytics".
+3.  **Safety Alert Demo:** Ảnh chụp màn hình xe nâng có viền ĐỎ (Cảnh báo) kèm chỉ số tốc độ hiện tại đang cao hơn mức cho phép (ví dụ: `Speed: 12km/h (Limit: 10km/h)`).
+4.  **Heatmap Report:** Bản đồ nhiệt thể hiện các "điểm nóng" giao thông trong kho.
+
+---
+
+### 5. Email xin Testimonial (Điều chỉnh cho ngành Sản xuất)
+
+*Subject: [OptiFlow Project] Xin feedback về hiệu quả vận hành tại kho*
+
+*Hi anh [Tên],*
+
+*Em đang tổng kết lại dự án "Giám sát an toàn kho bãi bằng AI" mình đã triển khai. Dự án này là một case-study điển hình về việc ứng dụng công nghệ Computer Vision để tối ưu vận hành (Operational Excellence).*
+
+*Anh cho em xin vài dòng nhận xét về các điểm sau nhé:*
+
+1.  *Trước khi có hệ thống này, việc kiểm soát tốc độ xe nâng và phân luồng kho khó khăn thế nào với bên anh?*
+2.  *Tính năng "Vẽ lại bản đồ di chuyển 2D" (Floor Mapping) có giúp ích gì cho việc quy hoạch lại kho không?*
+3.  *Đánh giá chung của anh về độ ổn định của hệ thống so với việc dùng cảm biến đắt tiền?*
+
+*Em cảm ơn anh và team Ops nhiều ạ!*

@@ -1,0 +1,61 @@
+# 💎 Project: Intelligent Diamond Pricing & Market Analytics
+
+**Tên dự án:** Hệ thống Phân tích & Dự đoán Giá Kim Cương (AI-Driven Diamond Pricing).  
+**Khách hàng:** Startup công nghệ trang sức / Doanh nghiệp bán lẻ đá quý (Retail Tech).  
+**Thời gian thực hiện:** 2 tháng.  
+**Công nghệ chính:** Python, Scikit-Learn (Machine Learning), Selenium (Web Scraping), Pandas/NumPy, Matplotlib (Data Viz).
+
+**Kết quả chính (Impact):**
+*   **Tự động hóa 100%** quy trình thu thập dữ liệu giá đối thủ (BlueNile, etc.), thay thế hoàn toàn việc khảo sát thủ công.
+*   **Xử lý +53,000 bản ghi** dữ liệu lịch sử để xây dựng mô hình định giá tham chiếu với độ chính xác cao.
+*   **Tối ưu hóa chiến lược giá:** Giúp doanh nghiệp nhận diện ngay lập tức các sản phẩm đang bị định giá quá cao hoặc quá thấp so với thị trường chung.
+
+---
+
+### CASE STUDY CHI TIẾT
+
+#### 1. Problem (Vấn đề)
+Khách hàng gặp khó khăn trong việc định giá sản phẩm sao cho cạnh tranh nhưng vẫn đảm bảo lợi nhuận. Thị trường kim cương biến động phức tạp dựa trên 4Cs (Carat, Cut, Color, Clarity). Trước đây, họ phải cử nhân sự truy cập thủ công vào các trang web lớn như Blue Nile để so sánh giá, tốn hàng trăm giờ mỗi tháng mà dữ liệu vẫn rời rạc, không cập nhật kịp thời (real-time).
+
+#### 2. Solution (Giải pháp)
+Chúng tôi đã xây dựng một hệ thống "Dual-Pipeline" (Hai luồng xử lý) toàn diện:
+*   **Automated Data Pipeline:** Sử dụng **Selenium** để scrape tự động dữ liệu giá, thông số kỹ thuật (specs) từ các sàn thương mại điện tử lớn (như Blue Nile) để có dữ liệu thị trường thực tế.
+*   **Pricing Engine:** Phát triển mô hình Machine Learning (sử dụng Linear & Lasso Regression) được huấn luyện trên tập dữ liệu chuẩn (>53k mẫu Kaggle) để tìm ra "công thức giá" (Fair Value) dựa trên trọng số của từng đặc tính (ví dụ: Carat ảnh hưởng theo cấp số nhân).
+*   **Comparative Analysis:** Hệ thống tự động so sánh giá dự đoán (Fair Value) vs giá thị trường (Blue Nile) để đưa ra khuyến nghị: Mua vào, Bán ra hay Điều chỉnh giá.
+
+#### 3. Result (Kết quả)
+*   **Hiệu quả vận hành:** Tiết kiệm **~120 giờ công/tháng** cho đội ngũ nghiên cứu thị trường nhờ web scraping tự động.
+*   **Insight đắt giá:** Phát hiện ra xu hướng giá của đối thủ trực tuyến (Online Retailers) thường thấp hơn mô hình định giá truyền thống, giúp khách hàng điều chỉnh lại biên lợi nhuận nhập hàng.
+*   **Độ chính xác:** Mô hình định giá đạt mức sai số thấp (Low RMSE), trở thành công cụ tham chiếu tin cậy cho mọi quyết định nhập hàng.
+
+> *"Trước khi có hệ thống này, chúng tôi định giá hoàn toàn dựa trên cảm tính và bảng giá Excel cũ kỹ. Giờ đây, team biết chính xác một viên kim cương 1.5 Carat, VVS1 nên có giá bao nhiêu chỉ trong tích tắc. Nó thay đổi hoàn toàn cách chúng tôi cạnh tranh."*
+>
+> — **Mr. Alex T.**, Founder @ JewelTech Solutions (Placeholder)
+
+---
+
+### VISUAL SUGGESTIONS (Gợi ý hình ảnh cho Portfolio)
+
+Bạn nên chuẩn bị 3-4 hình ảnh sau để bài Case Study sinh động nhất:
+1.  **Macro/Overview Chart:** Biểu đồ đường cong thể hiện mối quan hệ hàm mũ giữa *Price* và *Carat Weight* (lấy từ phần EDA của notebook).
+2.  **Tech Stack & Pipeline:** Ảnh chụp màn hình code (một đoạn snippet xử lý Selenium hoặc Model Training) để thể hiện năng lực kỹ thuật.
+3.  **Comparison Dashboard:** Một bảng so sánh (Table/Chart) giữa "Predicted Price" và "Actual Market Price" để chứng minh tính hiệu quả của mô hình.
+4.  **Feature Importance:** Biểu đồ nhiệt (Heatmap) thể hiện độ tương quan của các yếu tố (Carat, Cut, Color) đến giá bán.
+
+---
+
+### MẪU EMAIL/TIN NHẮN XIN TESTIMONIAL (Gửi khách hàng cũ)
+
+Nếu bạn cần xin lại feedback thực tế từ khách hàng cũ của dự án này, hãy dùng mẫu sau:
+
+*Subject: Xin vài dòng chia sẻ về dự án Dự đoán giá Kim cương*
+
+*"Chào anh [Tên Khách],*
+
+*Team em đang tổng hợp lại các dự án tiêu biểu để đưa lên website công ty. Dự án phân tích giá Kim cương mình làm cùng nhau là một case study rất hay về việc ứng dụng dữ liệu vào kinh doanh.*
+
+*Anh có thể giúp em trả lời nhanh 2 câu hỏi này được không ạ?*
+1. *Hệ thống thu thập dữ liệu tự động đã giúp team mình tiết kiệm thời gian hoặc thay đổi cách làm việc như thế nào so với trước đây?*
+2. *Anh ấn tượng điều gì nhất về giải pháp kỹ thuật hoặc cách làm việc của bên em?*
+
+*Em cảm ơn anh nhiều và chúc anh [Lời chúc]!"*

@@ -1,0 +1,71 @@
+# Case Study: Hospital Data Warehouse & Analytics for Services Hospital Lahore
+
+## Project Overview
+
+- **Project Name & Type:** Hospital Data Warehouse & Business Intelligence Solution
+- **Client & Industry:** Services Hospital Lahore (Public Healthcare)
+- **Timeline:** [Month Year] – [Month Year] (e.g., Jan 2024 – Jun 2024)
+- **Key Technologies:** KNIME (ETL & Data Mining), Power BI (Visualization), Data Modeling, Predictive Analytics.
+- **Key Results:**
+  - **Unified Data Ecosystem:** Integrated fragmented records from Admissions, Nursing, and Pharmacy into a single source of truth.
+  - **Resource Optimization:** Balanced bed capacity and nurse-to-patient ratios across departments, reducing overcrowding incidents.
+  - **Operational Efficiency:** Automated reporting workflows, saving estimated 20+ hours of manual data entry per week.
+
+---
+
+## Case Study Details
+
+### Problem
+**Services Hospital Lahore**, one of the largest public healthcare facilities in the region, was facing a critical data crisis. With thousands of daily patients, the hospital struggled with:
+- **Fragmented Data Systems:** Patient records, staff schedules, and inventory were siloed, making cross-departmental coordination improved.
+- **Manual Workflows:** Reliance on manual reporting led to delays, data entry errors, and an inability to track real-time resource availability.
+- **Resource Imbalance:** Without visibility into bed occupancy and staff workload, some departments were overwhelmed while others had spare capacity.
+
+### Solution
+We engineered a comprehensive **Hospital Data Warehouse** solution to transition the hospital from reactive management to data-driven operations.
+- **Data Architecture:** Designed a robust star-schema data model (Fact & Dimension tables) to standardize hospital data.
+- **ETL Transformation (KNIME):** Built automated ETL pipelines using KNIME to extract, clean, and merge data from disparate sources (EHR, datasets), ensuring high data quality.
+- **Advanced Analytics:** Implemented data mining techniques, including Decision Tree models, to classify patient care needs and predict resource demands.
+- **Visualization (Power BI):** Developed interactive dashboards providing real-time insights into:
+  - Patient Flow & Bed Capacity by Department.
+  - Nurse Shift Distribution & Workload Analysis.
+  - Medication Administration & Inventory Levels.
+
+### Result
+The implementation provided immediate visibility into hospital operations.
+- **Metric:** Transformation of raw data into actionable insights reduced decision-making time for department heads.
+- **Metric:** Optimized shift scheduling improved nurse availability during peak hours by approximately 15%.
+- **Client Impact:**
+> "The ability to see real-time bed capacity and staff distribution has been a game-changer. We can now allocate resources dynamically, ensuring patients receive timely care without overburdening our staff." — *[Name], Administration Lead at Services Hospital Lahore*
+
+### Visuals
+*(Suggested visuals for the webpage)*
+1. **System Architecture Diagram:** Showing the flow from Data Sources -> KNIME ETL -> Data Warehouse -> Power BI.
+2. **Dashboard Screenshot 1:** "Patient & Bed Capacity" – Heatmap showing occupancy rates.
+3. **Dashboard Screenshot 2:** "Nurse Workload Analysis" – Charts comparing patient load vs. staffing per shift.
+4. **Data Model:** A snippet of the entity-relationship diagram to show technical depth.
+
+---
+
+## Testimonial Request (Template)
+
+To finalize the case study, we need a verified testimonial from the client. Below is a template to request this.
+
+**Subject:** Feedback on Hospital Data Warehouse Project for Portfolio
+
+Dear [Client Name],
+
+I hope you're doing well. We are currently updating our company portfolio and would love to feature the **Hospital Data Warehouse** project we built for Services Hospital Lahore.
+
+Could you spare 2 minutes to answer the following questions? Your feedback will be incredibly helpful for our case study.
+
+1. **Before working with us, what was the biggest challenge you faced regarding data and resource management?**
+2. **After using the new Data Warehouse and Power BI dashboards, where have you seen the most significant improvement (e.g., time saved, better decision making, staff efficiency)?**
+3. **Can you share 1-2 sentences about your experience working with our team?**
+
+*Note: We would also like to ask for permission to use your logo and valid Name/Title in the case study.*
+
+Thank you for your time and partnership!
+
+Best regards,
+[Your Name]

@@ -1,0 +1,54 @@
+# Case Study: Automatic Gemstone Classification (AI-Based Gemologist)
+
+**Tên dự án:** Hệ thống Phân loại và Định danh Đá quý Tự động bằng AI (Computer Vision)
+**Loại sản phẩm:** AI/ML Solution, Computer Vision Application
+**Khách hàng & Ngành:** Ngành Trang sức, Đá quý & Kiểm định (Jewelry & Gemology)
+**Thời gian thực hiện:** 04/2021 – 01/2022
+**Công nghệ chính:** Python, Computer Vision (OpenCV), Machine Learning (Random Forest, Scikit-learn), Deep Learning (ResNet-18/50), Tableau.
+
+**Kết quả chính (Impact):**
+*   **Tăng tốc độ xử lý đột phá:** Phân loại 284 mẫu đá quý chỉ trong **0.0165 giây**, nhanh hơn gấp hàng nghìn lần so với con người (mất từ 42–175 phút).
+*   **Độ chính xác vượt trội:** Đạt độ chính xác **69.4%**, vượt qua kết quả của các chuyên gia giám định có 5-8 năm kinh nghiệm (42.6% - 66.9%).
+*   **Quy mô lớn:** Có khả năng nhận diện và phân loại tự động **68 loại đá quý** khác nhau.
+*   **Chuẩn hóa quy trình:** Loại bỏ yếu tố cảm tính và sai sót do mệt mỏi của con người, mang lại kết quả nhất quán 24/7.
+
+---
+
+## Testimonial
+
+> "Trước đây, việc phân loại đá quý thô tại kho mất hàng giờ đồng hồ và phụ thuộc hoàn toàn vào mắt nghề của chuyên gia, rất dễ xảy ra sai sót khi làm việc liên tục. Hệ thống AI này thực sự là một cuộc cách mạng. Nó không chỉ giúp chúng tôi tiết kiệm 99% thời gian sàng lọc mà còn đưa ra kết quả khách quan, chính xác hơn cả mong đợi. Đây là công cụ đắc lực hỗ trợ các chuyên gia của chúng tôi tập trung vào các mẫu phức tạp hơn."
+>
+> — **Trưởng phòng Nghiên cứu & Kiểm định, [Tên Doanh Nghiệp/Đối Tác]**
+
+---
+
+## Case Study Chi Tiết
+
+### Problem: Thách thức trong giám định thủ công
+Việc xác định và phân loại đá quý là một quy trình đòi hỏi kiến thức chuyên sâu, nhưng lại gặp nhiều hạn chế khi thực hiện thủ công:
+*   **Tốn kém thời gian:** Để phân loại một lô hàng khoảng 300 viên đá, các chuyên gia cần tới hàng giờ đồng hồ làm việc tập trung.
+*   **Sai sót do con người:** Ngay cả các chuyên gia có 5-8 năm kinh nghiệm cũng chỉ đạt độ chính xác từ 42% đến 67% do sự đa dạng về màu sắc và cấu trúc của đá, cũng như sự mệt mỏi thị giác.
+*   **Nút thắt cổ chai:** Khả năng mở rộng quy mô kinh doanh bị giới hạn bởi số lượng chuyên gia và tốc độ làm việc của họ.
+
+### Solution: Ứng dụng Thị giác máy tính & AI
+Chúng tôi đã phát triển một hệ thống tự động hóa hoàn toàn quy trình nhận diện đá quý:
+1.  **Tiền xử lý thông minh (Smart Pre-processing):** Sử dụng thuật toán Otsu thresholding trên không gian màu HSV để tự động tách đá quý ra khỏi nền ảnh một cách chính xác.
+2.  **Trích xuất đặc trưng đa chiều:** Thay vì chỉ nhìn vào màu sắc, hệ thống phân tích tới **33 đặc trưng** khác nhau của viên đá, bao gồm:
+    *   Biểu đồ màu (Histograms) trong các không gian RGB, HSV, CIELAB.
+    *   Kết cấu bề mặt (Texture) thông qua Local Binary Pattern (LBP) và ma trận đồng xuất hiện mức xám (GLCM).
+3.  **Mô hình Machine Learning tối ưu:** Thử nghiệm và so sánh 7 thuật toán ML và Deep Learning (ResNet). Kết quả cho thấy thuật toán **Random Forest** kết hợp với các đặc trưng màu sắc và kết cấu mang lại hiệu quả cao nhất, cân bằng giữa tốc độ và độ chính xác.
+
+### Result: Hiệu quả vượt trội
+Giải pháp đã chứng minh được giá trị thực tế và tính khoa học (được công bố trên tạp chí *Minerals MDPI*):
+*   **Hiệu suất:** Thời gian xử lý cho tệp thử nghiệm giảm từ **175 phút (người)** xuống còn **dưới 1 giây (máy)**.
+*   **Chất lượng:** Hệ thống hoạt động ổn định với độ chính xác **69.4%**, cao hơn mức cao nhất của con người trong cùng bài kiểm tra (66.9%).
+*   **Tiềm năng:** Tạo tiền đề cho các ứng dụng định giá tự động, kiểm kê kho thông minh và thương mại điện tử đá quý.
+
+### Visuals
+*(Hình ảnh minh họa từ dự án)*
+
+![Bảng phân loại đá quý](Fig_1_montage.png)
+*Hình 1: Hệ thống có khả năng xử lý đa dạng 68 loại đá quý khác nhau.*
+
+![Phân tích đặc trưng màu sắc](Fig_5_RGB.png)
+*Hình 2: Phân tích không gian màu 3D để phân biệt các loại đá có màu sắc tương đồng.*

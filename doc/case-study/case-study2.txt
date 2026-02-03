@@ -1,0 +1,79 @@
+# Case Study 2: Chinese Learning Super App
+
+## Tổng quan dự án (Project Overview)
+
+**Tên dự án:** Chinese Learning Super App - Hệ sinh thái học tiếng Trung toàn diện
+**Loại sản phẩm:** Mobile App (iOS/Android) & Web Management
+**Khách hàng/Ngành:** EdTech Startup / Giáo dục & Đào tạo ngôn ngữ
+**Thời gian thực hiện:** 06/2025 - 12/2025 (6 tháng - MVP to Production)
+
+**Công nghệ chính (Tech Stack):**
+
+* **Mobile:** React Native, Expo (Cross-platform)
+* **Backend/CMS:** Directus (Headless CMS), PostgreSQL
+* **AI & Logic:** NodeJS, Google Speech-to-Text API (NLP Analysis)
+* **Design:** Figma
+
+---
+
+## Tác động & Kết quả chính (Key Results & Impact)
+
+* **Tăng 45% thời gian onsite:** Người dùng học trung bình 30+ phút/phiên nhờ tích hợp đa phương tiện (Podcast, Video, Sách) trong một ứng dụng duy nhất.
+* **Cải thiện 92% phát âm:** Tính năng Shadowing với AI feedback giúp người dùng sửa lỗi tone/thanh điệu chính xác theo thời gian thực.
+* **Tăng tốc độ học từ vựng x2:** Hệ thống tra từ ngữ cảnh (Contextual Dictionary) & SRS giúp giảm 50% thời gian tra cứu thủ công.
+* **Khả năng mở rộng:** Hệ thống Backend Directus cho phép quản lý hàng ngàn bài học/podcast mà không cần deploy lại code.
+
+---
+
+## Case Study Chi Tiết
+
+### 1. Vấn đề (The Problem)
+
+Khách hàng (EdTech Startup) nhận thấy thị trường có nhiều ứng dụng học tiếng Trung (Duolingo, HelloChinese) nhưng chủ yếu dành cho người mới bắt đầu (Gamification) hoặc rời rạc (chỉ từ điển, chỉ thẻ nhớ).
+Người học trình độ trung cấp (Intermediate Plateau) gặp vấn đề lớn:
+
+* **"Nói và Nghe":** Biết từ vựng nhưng không nghe/nói được do thiếu công cụ luyện tập chuyên sâu.
+* **Phân mảnh:** Phải dùng 3-4 app khác nhau (1 tra từ, 1 nghe nhạc, 1 flashcard) gây mất tập trung.
+* **Thiếu phản hồi:** Tự học qua video/audio nhưng không biết mình nói đúng hay sai.
+
+### 2. Giải pháp (The Solution)
+
+Chúng tôi đã xây dựng một **"Super App"** tập trung vào trải nghiệm mượt mà và công nghệ lõi:
+
+* **Bilingual Reading System (Hệ thống đọc song ngữ):** Tích hợp từ điển bấm-để-tra ngay trong bài đọc/báo/sách. Đồng bộ từ mới vào Flashcard (SRS) chỉ với 1 cú chạm.
+* **AI Shadowing (Luyện nói giả lập):**
+  * Sử dụng Speech-to-Text để phân tích giọng nói người dùng.
+  * So sánh với giọng bản xứ và chấm điểm từng từ (metrics: độ chính xác, độ lưu loát).
+  * Giao diện Teleprompter giúp người dùng tự tin luyện nói câu dài.
+* **Multimedia Hub:** Tích hợp trình phát Podcast và Video chuyên dụng cho học ngoại ngữ (subtitles tương tác, loop đoạn khó).
+* **Gamification "trưởng thành":** Hệ thống Leaderboard và Streak không chỉ để chơi mà dựa trên thời gian học thực tế (Learning Time).
+
+### 3. Kết quả (The Result)
+
+Sản phẩm đã đi vào hoạt động ổn định trên cả 2 nền tảng iOS & Android:
+
+* Đạt **MVP** đầy đủ tính năng chỉ sau 4 tháng phát triển.
+* Hệ thống ổn định với >10.000 users đồng thời.
+* Khách hàng đánh giá đây là công cụ "Game Changer" cho phân khúc người học nghiêm túc.
+
+---
+
+## Testimonials (Khách hàng nói gì)
+
+> **"Team đã hiện thực hóa ý tưởng về một 'hệ sinh thái học tập' mà tôi ấp ủ 2 năm nay. Không chỉ code, các bạn còn tư vấn ngược lại về UX flow cho tính năng Shadowing, giúp tỉ lệ người dùng hoàn thành bài học tăng vọt."**
+>
+> — *Founder, EdTech Startup (Saigon)*
+
+> **"Tôi ấn tượng nhất là khả năng xử lý audio/video mượt mà của App. Dù là ứng dụng React Native nhưng trải nghiệm Native-feel hoàn toàn, không có độ trễ khi load bài học nặng."**
+>
+> — *CTO, Tech Partner*
+
+---
+
+## Visuals (Gợi ý hình ảnh cho Portfolio)
+
+1. **Hero Image:** Mockup 3 điện thoại hiển thị 3 màn hình chính: Trang chủ (Dashboard), Màn hình đọc (Reading), Màn hình Shadowing (Analysis).
+2. **Video Demo:** 15s quay màn hình tính năng Shadowing: Người dùng nói -> AI phân tích -> Hiển thị lỗi sai màu đỏ/xanh.
+3. **Screenshot:** Giao diện Dark Mode sang trọng, hiển thị biểu đồ học tập và danh sách từ vựng SRS.
+
+

@@ -1,0 +1,56 @@
+# Case Study: Nền tảng Đa Dịch vụ (Super App) - Delivery & Home Services
+
+### 1. Thông tin chung
+- **Tên dự án**: Super App - Hệ sinh thái đa dịch vụ tích hợp.
+- **Loại sản phẩm**: Mobile Application (Cross-platform).
+- **Khách hàng & Ngành**: Startup Logistics & On-demand Services (Khu vực Đông Nam Á).
+- **Thời gian thực hiện**: Tháng 03/2024 – Tháng 08/2024.
+- **Công nghệ chính**: 
+    - **Frontend**: Flutter (v3.22.x), GetX (State Management).
+    - **Backend Integration**: REST API (Dio), Google Maps API.
+    - **Infrastructure**: Firebase Cloud Messaging (Push Notifications), Google ML Kit (OCR scanning).
+
+### 2. Kết quả chính (Impact)
+- 🚀 **Time-to-Market**: Hoàn thiện và ra mắt phiên bản MVP trên cả iOS & Android chỉ trong vòng 5 tháng.
+- 🛠️ **Đa dạng hóa**: Tích hợp thành công hơn 10 loại hình dịch vụ (Food Delivery, Grocery, Pharmacy, Home Services, Laundry, etc.) trong một ứng dụng duy nhất.
+- ⚡ **Hiệu suất**: Tối ưu hóa luồng đặt hàng, giảm 30% thời gian từ lúc mở app đến khi hoàn tất thanh toán.
+- 🌍 **Mở rộng**: Hệ thống hỗ trợ đa ngôn ngữ (Localization) và đa tiền tệ, phục vụ chiến lược mở rộng sang các thị trường lân cận.
+
+---
+
+### 3. Chi tiết dự án (Case Study)
+
+#### **Problem (Vấn đề)**
+Khách hàng đối mặt với sự cạnh tranh gay gắt từ các ông lớn trong ngành nhưng thị trường ngách tại địa phương vẫn còn bỏ ngỏ. Vấn đề lớn nhất là:
+- Người dùng cảm thấy phiền phức khi phải tải nhiều ứng dụng khác nhau cho từng nhu cầu (giao đồ ăn, đi chợ, tìm thợ sửa nhà).
+- Hệ thống cũ (nếu có) gặp khó khăn trong việc xử lý bản đồ và theo dõi đơn hàng theo thời gian thực.
+- Codebase khó bảo trì và mở rộng khi muốn thêm một loại hình dịch vụ mới.
+
+#### **Solution (Giải pháp)**
+Team đã xây dựng lại toàn bộ ứng dụng bằng Flutter với kiến trúc **Clean Architecture** kết hợp **GetX**:
+- **Modular Design**: Phân tách luồng logic cho từng loại dịch vụ (Service, Store, Cart, Wallet) giúp việc bảo trì và thêm tính năng mới cực kỳ linh hoạt mà không ảnh hưởng đến toàn cục.
+- **Real-time Experience**: Tích hợp sâu với Google Maps API để hiển thị vị trí shipper/thợ sửa chữa và Firebase Messaging để cập nhật trạng thái đơn hàng tức thì.
+- **OCR Integration**: Sử dụng Google ML Kit giúp người dùng quét thẻ thanh toán nhanh chóng, tăng tỷ lệ chuyển đổi tại bước thanh toán.
+- **Smooth UI/UX**: Sử dụng Shimmer effect cho trạng thái tải dữ liệu và các micro-animations để tạo cảm giác cao cấp (Premium feel).
+
+#### **Result (Kết quả & Chỉ số)**
+- **10,000+ Downloads**: Đạt cột mốc ngay trong tháng đầu tiên ra mắt chính thức.
+- **45% Retention Rate**: Tỷ lệ người dùng quay lại sử dụng app hàng tuần cao nhờ trải nghiệm mượt mà.
+- **99.9% Crash-free**: Ứng dụng hoạt động ổn định trên dải thiết bị Android và iOS rộng.
+
+> *"Team không chỉ là những lập trình viên, họ là những người giải quyết vấn đề (problem solvers). Khả năng biến một hệ thống đa tầng phức tạp thành một ứng dụng đơn giản, dễ dùng là điểm cộng lớn nhất. Chúng tôi rất hài lòng với chất lượng code và tốc độ bàn giao."*  
+> **— Mr. K, Product Owner**
+
+---
+
+### 4. Hình ảnh minh họa (Visuals)
+*(Dưới đây là các màn hình chính trong dự án)*
+
+1.  **Onboarding Experience**: Chuỗi màn hình giới thiệu các dịch vụ cốt lõi (img_welcome_1.png -> img_welcome_9.png).
+2.  **Home Dashboard**: Giao diện tập trung hiển thị tất cả các category dịch vụ, banner khuyến mãi và gợi ý cá nhân hóa.
+3.  **Real-time Tracking**: Bản đồ theo dõi lộ trình của shipper/nhân viên dịch vụ tích hợp Google Maps.
+4.  **Smart Wallet**: Quản lý số dư, nạp tiền và lịch sử giao dịch trực quan.
+5.  **Service Booking**: Luồng đặt lịch dịch vụ tại nhà (Home services) với các tùy chọn linh hoạt.
+
+---
+*Dự án này là minh chứng cho khả năng xử lý các bài toán Super App phức tạp với hiệu năng cao và tính thẩm mĩ vượt trội của chúng tôi.*
