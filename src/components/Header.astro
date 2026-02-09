@@ -21,7 +21,7 @@ const isCurrentPage = (link: string) => {
 };
 ---
 
-<header class="fixed top-0 z-50 w-full left-0 transition-all duration-300" id="main-header">
+<header class="fixed top-0 z-50 w-full left-0 transition-all duration-300 opacity-0" id="main-header">
     <div class="site-container mx-auto px-4 mt-4">
         <div class="flex justify-between items-center bg-premium-navy/80 backdrop-blur-md py-4 rounded-full px-6 border border-white/10 shadow-lg transition-all duration-300" id="header-container">
             <Logo />
@@ -176,6 +176,17 @@ const isCurrentPage = (link: string) => {
     // Header Scroll Effect
     const header = document.getElementById('main-header');
     const headerContainer = document.getElementById('header-container');
+
+    import { animate } from 'motion';
+
+    window.addEventListener('load', () => {
+        // Heder Entrance Animation
+        animate(
+            '#main-header',
+            { y: [-100, 0], opacity: [0, 1] },
+            { duration: 1, easing: [0.16, 1, 0.3, 1] }
+        );
+    });
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {

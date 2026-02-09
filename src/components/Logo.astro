@@ -1,28 +1,18 @@
 ---
-import { Image } from 'astro:assets';
-import logo from '../assets/astro.svg';
 interface Props {
-    variant?: 'header' | 'footer' | 'dark';
+    variant?: 'header' | 'footer' | 'hero';
+    class?: string;
 }
 
-const { variant = 'header' } = Astro.props;
-
-// Determine the appropriate CSS class based on the variant
-const getLogoClass = () => {
-    switch (variant) {
-        case 'header':
-            return 'text-white hover:text-premium-blue';
-        case 'footer':
-            return 'text-white hover:text-premium-blue';
-        case 'dark':
-            return 'text-white hover:text-premium-blue';
-        default:
-            return 'text-white hover:text-premium-blue';
-    }
-};
+const { variant = 'header', class: className } = Astro.props;
 ---
 
-<a href="/" class:list={['logo uppercase font-logo transition-colors duration-200', getLogoClass()]}>
-    <Image src={logo} alt="" class="hidden" />
-    <span class="font-bold">CDSL</span>
-</a>
+{variant === 'hero' ? (
+    <div class:list={['font-logo font-bold select-none', className]}>
+        CDSL
+    </div>
+) : (
+    <a href="/" class:list={['font-logo font-bold text-2xl tracking-widest text-white hover:text-premium-blue transition-colors duration-300 uppercase', className]}>
+        CDSL
+    </a>
+)}
