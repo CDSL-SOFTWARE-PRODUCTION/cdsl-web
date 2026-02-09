@@ -36,7 +36,7 @@ const fullCanonicalUrl = new URL(canonicalPath, siteConfig.siteUrl).toString();
 ---
 
 <!doctype html>
-<html lang="en" data-theme="premium" class="bg-premium-navy text-white overflow-x-hidden">
+<html lang="en" class="dark overflow-x-hidden">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -44,6 +44,15 @@ const fullCanonicalUrl = new URL(canonicalPath, siteConfig.siteUrl).toString();
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<link rel="canonical" href={fullCanonicalUrl} />
 		<meta name="generator" content={Astro.generator} />
+        
+        <script is:inline>
+            // Force dark mode permanently
+            (function() {
+                const html = document.documentElement;
+                html.classList.add('dark');
+                html.setAttribute('data-theme', 'premium');
+            })();
+        </script>
 		<title>{pageTitle}</title>
 		<meta name="description" content={pageDescription} />
 		<meta name="robots" content="index, follow" />
@@ -103,7 +112,7 @@ const fullCanonicalUrl = new URL(canonicalPath, siteConfig.siteUrl).toString();
 	</head>
 	<body class="antialiased min-h-screen relative selection:bg-premium-blue selection:text-premium-navy">
         <!-- Background Mesh Gradient -->
-        <div class="fixed inset-0 z-[-1] pointer-events-none opacity-40">
+        <div class="fixed inset-0 z-[-1] pointer-events-none opacity-40 transition-opacity duration-500">
             <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-premium-blue/10 blur-[120px]"></div>
             <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-purple-500/10 blur-[120px]"></div>
         </div>

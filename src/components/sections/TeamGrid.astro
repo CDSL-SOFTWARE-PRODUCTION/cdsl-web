@@ -34,7 +34,7 @@ const sortedTeamMembers = teamMembers.sort((a, b) => a.data.order - b.data.order
                     >
                         <a href={`/team/${member.id}`} class="flex flex-col group rounded-md">
                             <div class="relative mb-4 overflow-hidden rounded-md">
-                                <span class="absolute inset-0 -mt-12 h-400 w-1/2 translate-x-[250%] rotate-12 bg-white opacity-20  group-hover:transition-all  group-hover:duration-300 ease-out group-hover:translate-x-[-250%] z-10" />
+                                <span class="absolute inset-0 -mt-12 h-400 w-1/2 translate-x-[250%] rotate-12 bg-premium-blue opacity-20  group-hover:transition-all  group-hover:duration-300 ease-out group-hover:translate-x-[-250%] z-10" />
                                 {member.data.headshot ? (
                                     <Image
                                         src={member.data.headshot}
@@ -48,15 +48,15 @@ const sortedTeamMembers = teamMembers.sort((a, b) => a.data.order - b.data.order
                                         decoding="async"
                                     />
                                 ) : (
-                                    <div class="w-full aspect-[3/4] bg-gray-200 rounded-md flex items-center justify-center">
-                                        <span class="text-gray-400">No Image</span>
+                                    <div class="w-full aspect-[3/4] bg-premium-navy-light rounded-md flex items-center justify-center">
+                                        <span class="text-premium-gray">No Image</span>
                                     </div>
                                 )}
                             </div>
                             <h3 class="text-h5 font-medium transition-colors duration-500 group-hover:text-primary">
                                 {member.data.name}
                             </h3>
-                            <p class="text-xsmall text-body-base">{member.data.jobTitle}</p>
+                            <p class="text-xsmall text-premium-gray">{member.data.jobTitle}</p>
                         </a>
                     </div>
                 ))

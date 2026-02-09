@@ -27,9 +27,9 @@ export const getBackgroundColor = (background: ThemeColor = 'base'): string => {
 
 export const getTextColor = (background: ThemeColor = 'base'): string => {
     const textColors = {
-        base: 'text-gray-300',
-        light: 'text-gray-300',
-        dark: 'text-gray-400'
+        base: 'text-premium-gray',
+        light: 'text-premium-gray',
+        dark: 'text-premium-gray'
     };
     return textColors[background];
 };

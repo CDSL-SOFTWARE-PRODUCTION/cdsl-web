@@ -38,7 +38,7 @@ else if (!seoImage && post.data.featuredImage) {
 ---
 
 <Layout title={seoTitle} description={seoDescription} image={seoImage}>
-    <div class="w-full h-120 absolute top-0 left-0 z-0 overflow-hidden border-b border-black">
+    <div class="w-full h-120 absolute top-0 left-0 z-0 overflow-hidden border-b border-white/10">
         {
             post.data.featuredImage && (
                 <>
@@ -59,7 +59,7 @@ else if (!seoImage && post.data.featuredImage) {
     <article class="site-container--small mx-auto px-4 prose relative z-10 pb-base">
         <div class="mt-42 mb-12 text-center">
             <h1>{post.data.title}</h1>
-            <div class="flex items-center justify-center gap-4 text-gray-600">
+            <div class="flex items-center justify-center gap-4 text-premium-gray">
                 <Date date={post.data.publishDate} />
                 {
                     post.data.categories && (
@@ -80,7 +80,7 @@ else if (!seoImage && post.data.featuredImage) {
                     alt=""
                     width={1200}
                     height={675}
-                    class="w-full h-auto rounded-lg border mb-12 border-black"
+                    class="w-full h-auto rounded-lg border mb-12 border-white/10"
                     quality={80}
                     format="webp"
                 />

@@ -24,19 +24,19 @@ const { footerCta } = Astro.props;
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-premium-navy text-white pt-32 pb-12 border-t border-white/5 relative overflow-hidden">
+<footer class="bg-base-100 text-base-content pt-32 pb-12 border-t border-white/5 relative overflow-hidden transition-colors duration-300">
     <!-- Footer CTA -->
     <div class="site-container px-4 mb-32 relative z-10">
-        <h2 class="font-display font-bold text-6xl md:text-8xl lg:text-9xl tracking-tighter mb-12 text-center md:text-left">
+        <h2 class="font-display font-bold text-6xl md:text-8xl lg:text-9xl tracking-tighter mb-12 text-center md:text-left text-white transition-colors">
             Let's build <br/>
             <span class="text-premium-blue">Something Great.</span>
         </h2>
         
-        <div class="flex flex-col md:flex-row items-center justify-between gap-8 border-t border-white/10 pt-12">
-            <p class="text-xl text-premium-gray max-w-xl font-light">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8 border-t border-white/10 pt-12 transition-colors">
+            <p class="text-xl text-premium-gray max-w-xl font-light transition-colors">
                 Ready to transform your operations? We help you scale with purpose-built technology.
             </p>
-            <a href="/contact" class="btn btn-primary btn-lg rounded-full px-12 py-4 text-xl font-bold bg-white text-premium-navy hover:bg-premium-blue border-none">
+            <a href="/contact" class="btn btn-primary btn-lg rounded-full px-12 py-4 text-xl font-bold bg-premium-blue text-premium-navy hover:bg-premium-blue/80 border-none transition-colors">
                 Start a Project
             </a>
         </div>
@@ -44,10 +44,10 @@ const currentYear = new Date().getFullYear();
 
     <!-- Footer Links -->
     <div class="site-container px-4">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 border-t border-white/10 pt-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 border-t border-white/10 pt-12 transition-colors">
             <div class="col-span-1 md:col-span-2">
                 <Logo variant="footer" />
-                <p class="mt-6 text-gray-500 font-mono text-sm max-w-xs">
+                <p class="mt-6 text-premium-gray/70 font-mono text-sm max-w-xs">
                     Advanced technology solutions for the modern enterprise.
                 </p>
             </div>
@@ -56,7 +56,7 @@ const currentYear = new Date().getFullYear();
                 <h3 class="text-white font-bold mb-6">Menu</h3>
                 <ul class="space-y-4">
                      {footerMenu.map(item => (
-                        <li><a href={item.link} class="text-gray-400 hover:text-white transition-colors">{item.name}</a></li>
+                        <li><a href={item.link} class="text-premium-gray hover:text-white transition-colors">{item.name}</a></li>
                     ))}
                 </ul>
             </div>
@@ -65,13 +65,13 @@ const currentYear = new Date().getFullYear();
                 <h3 class="text-white font-bold mb-6">Legal</h3>
                 <ul class="space-y-4">
                      {legalMenu.map(item => (
-                         <li><a href={item.link} class="text-gray-400 hover:text-white transition-colors">{item.name}</a></li>
+                         <li><a href={item.link} class="text-premium-gray hover:text-white transition-colors">{item.name}</a></li>
                     ))}
                 </ul>
             </div>
         </div>
 
-        <div class="mt-20 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 font-mono">
+        <div class="mt-20 flex flex-col md:flex-row justify-between items-center text-xs text-premium-gray/60 font-mono">
             <p>© {currentYear} {siteConfig.companyName}. All rights reserved.</p>
             <p>Designed with purpose.</p>
         </div>

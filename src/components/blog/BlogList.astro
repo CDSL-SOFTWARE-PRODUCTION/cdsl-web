@@ -36,7 +36,7 @@ const activeCategories = categories.filter((category) =>
                     class={`px-4 sm:px-6 py-2 sm:py-3 leading-none rounded-md text-small flex items-center justify-center transition-colors border border-premium-blue duration-200 ${
                         !currentCategory
                             ? 'bg-premium-blue text-premium-navy shadow-md'
-                            : 'bg-transparent text-gray-300 hover:bg-premium-blue/10 hover:text-white hover:border-premium-blue'
+                            : 'bg-transparent text-premium-gray hover:bg-premium-blue/10 hover:text-white hover:border-premium-blue'
                     }`}
                 >
                     Show All
@@ -48,7 +48,7 @@ const activeCategories = categories.filter((category) =>
                             class={`px-4 sm:px-6 py-2 sm:py-3 leading-none rounded-md text-small flex items-center justify-center transition-colors border border-premium-blue duration-200 ${
                                 currentCategory === category.name
                                     ? 'bg-premium-blue text-premium-navy shadow-md'
-                                    : 'bg-transparent text-gray-300 hover:bg-premium-blue/10 hover:text-white hover:border-premium-blue'
+                                    : 'bg-transparent text-premium-gray hover:bg-premium-blue/10 hover:text-white hover:border-premium-blue'
                             }`}
                             title={category.description}
                         >
@@ -58,7 +58,7 @@ const activeCategories = categories.filter((category) =>
                 }
             </div>
         </div>
-        <p class="text-small text-body-base text-left sm:text-right whitespace-nowrap">
+        <p class="text-small text-premium-gray text-left sm:text-right whitespace-nowrap">
             Showing <span class="font-bold text-primary">{posts.length}</span> of <span class="font-bold text-primary"
                 >{allPosts.length}</span
             > posts
@@ -83,5 +83,5 @@ const activeCategories = categories.filter((category) =>
         }
     </div>
 
-    {posts.length === 0 && <p class="text-center text-gray-500 py-8">No posts found in this category.</p>}
+    {posts.length === 0 && <p class="text-center text-premium-gray/70 py-8">No posts found in this category.</p>}
 </section>

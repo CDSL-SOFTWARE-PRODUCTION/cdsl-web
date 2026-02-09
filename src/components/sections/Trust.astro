@@ -25,10 +25,10 @@ const logos = logoLists.main.logos;
 
 <script>
     import { inView, animate, stagger } from 'motion';
-
-    inView('.reveal-trust', (info) => {
+    
+    inView('.reveal-trust', (element) => {
         animate(
-            info.target,
+            element,
             { opacity: [0, 1] },
             { duration: 1, delay: stagger(0.2) }
         );

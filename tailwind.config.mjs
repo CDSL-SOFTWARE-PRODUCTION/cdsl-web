@@ -27,10 +27,21 @@ export default {
             {
                 premium: {
                     primary: '#66fcf1',
-                    secondary: '#ffffff',
+                    secondary: '#1f2833',
                     accent: '#45a29e',
                     neutral: '#1f2833',
                     'base-100': '#0b0c10',
+                    info: '#3abff8',
+                    success: '#36d399',
+                    warning: '#fbbd23',
+                    error: '#f87272',
+                },
+                clarity: {
+                    primary: '#0b0c10', // Dark Navy as primary for high contrast
+                    secondary: '#1f2833',
+                    accent: '#66fcf1', // Electric Cyan as accent
+                    neutral: '#f3f4f6', // Light Gray
+                    'base-100': '#ffffff', // White background
                     info: '#3abff8',
                     success: '#36d399',
                     warning: '#fbbd23',

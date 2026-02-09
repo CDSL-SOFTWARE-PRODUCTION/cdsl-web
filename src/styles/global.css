@@ -2,6 +2,9 @@
 @plugin "daisyui";
 
 @theme {
+    /* Dark Mode Strategy */
+    --variant-dark: .dark &;
+
     /* Colors */
     --color-premium-navy: #0b0c10;
     --color-premium-navy-light: #1f2833;
@@ -49,7 +52,9 @@
     }
 
     body {
-        @apply bg-premium-navy text-white font-sans antialiased;
+        @apply font-sans antialiased transition-colors duration-300;
+        background-color: #0b0c10;
+        color: #ffffff;
     }
 
     h1,

@@ -1,5 +1,5 @@
 ---
-import type { FaqItem } from '@data/faqs';
+import type { FAQ } from '@data/faqs';
 import { getPaddingClass, getBackgroundColor, getHeadlineColor, getTextColor } from '@utils/styleUtils';
 import type { PaddingSize, ThemeColor } from '@utils/styleUtils';
 import Eyebrow from '@components/ui/Eyebrow.astro';
@@ -10,7 +10,7 @@ export interface Props {
         eyebrow?: string;
         title?: string;
         description?: string;
-        faqs: FaqItem[];
+        faqs: FAQ[];
     };
     background?: ThemeColor;
     padding?: PaddingSize;

@@ -28,12 +28,12 @@ const projects = [
 ];
 ---
 
-<section class="py-32 bg-premium-navy relative">
+<section class="py-32 bg-base-100 relative transition-colors duration-300">
     <div class="site-container px-4">
         <div class="flex flex-col md:flex-row justify-between items-end mb-20 scroll-reveal">
             <div>
                 <span class="text-premium-blue font-mono text-sm tracking-widest uppercase mb-4 block">Selected Work</span>
-                <h2 class="font-display font-bold text-4xl md:text-5xl text-white">
+                <h2 class="font-display font-bold text-4xl md:text-5xl text-white transition-colors duration-300">
                     Impact Delivered
                 </h2>
             </div>
@@ -47,7 +47,7 @@ const projects = [
             {projects.map((project, index) => (
                 <div class="project-card group grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     <div class={`lg:col-span-7 relative overflow-hidden rounded-sm ${index % 2 === 1 ? 'lg:order-last' : ''}`}>
-                         <div class="aspect-[16/9] overflow-hidden bg-premium-navy-light relative">
+                         <div class="aspect-[16/9] overflow-hidden bg-premium-navy-light relative transition-colors">
                             <div class="absolute inset-0 bg-premium-blue/20 mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <img 
                                 src={project.image} 
@@ -63,12 +63,12 @@ const projects = [
                         <h3 class="text-3xl md:text-4xl font-display font-bold text-white mb-6 group-hover:text-premium-blue transition-colors">
                             {project.title}
                         </h3>
-                        <p class="text-premium-gray text-lg font-light leading-relaxed mb-8">
+                        <p class="text-premium-gray text-lg font-light leading-relaxed mb-8 transition-colors">
                             {project.description}
                         </p>
                         <div class={`flex flex-wrap gap-3 ${index % 2 === 1 ? 'justify-end' : ''}`}>
                             {project.tags.map(tag => (
-                                <span class="px-3 py-1 border border-white/10 rounded-full text-sm text-gray-400 font-mono">
+                                <span class="px-3 py-1 border border-white/10 rounded-full text-sm text-premium-gray font-mono">
                                     {tag}
                                 </span>
                             ))}
@@ -84,7 +84,7 @@ const projects = [
         </div>
         
         <div class="mt-20 text-center md:hidden">
-            <a href="/work" class="btn btn-outline text-white border-white/20 hover:bg-white hover:text-premium-navy hover:border-white">
+            <a href="/work" class="btn btn-outline text-white border-white/20 hover:bg-premium-blue hover:text-premium-navy">
                 View all case studies
             </a>
         </div>
