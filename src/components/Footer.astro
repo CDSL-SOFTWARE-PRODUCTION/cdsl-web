@@ -1,7 +1,7 @@
 ---
 import { footerMenu, legalMenu } from '@data/menu';
 import Logo from '@components/Logo.astro';
-import Button from '@components/ui/Button.astro';
+
 import { siteConfig } from '@data/config';
 
 interface ButtonProps {
@@ -21,18 +21,6 @@ interface Props {
 
 const { footerCta } = Astro.props;
 
-const defaultCta = {
-  title: "Ready to get started?",
-  description: "Join us today and transform your digital presence with our innovative solutions.",
-  hideCta: false,
-  button: {
-    text: "Contact Us",
-    link: "/contact",
-    target: "_self"
-  }
-};
-
-const cta = footerCta || defaultCta;
 const currentYear = new Date().getFullYear();
 ---
 

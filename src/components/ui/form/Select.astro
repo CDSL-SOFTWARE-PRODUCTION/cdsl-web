@@ -1,5 +1,5 @@
 ---
-import { getTextColor, getHeadlineColor, getBackgroundColor, getInputBackgroundColor, getInputTextColor } from '../../../utils/styleUtils';
+import { getHeadlineColor, getInputBackgroundColor, getInputTextColor } from '../../../utils/styleUtils';
 import type { ThemeColor } from '../../../utils/styleUtils';
 
 interface Option {
@@ -30,8 +30,6 @@ const {
 } = Astro.props;
 
 const labelClass = getHeadlineColor(background);
-const textClass = getTextColor(background);
-const bgClass = getBackgroundColor(background === 'dark' ? 'light' : 'base');
 const inputBgClass = getInputBackgroundColor(background);
 const inputTextClass = getInputTextColor(background);
 ---

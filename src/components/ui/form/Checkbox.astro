@@ -1,5 +1,5 @@
 ---
-import { getTextColor, getHeadlineColor, getBackgroundColor, getInputTextColor } from '../../../utils/styleUtils';
+import { getHeadlineColor, getInputTextColor } from '../../../utils/styleUtils';
 import type { ThemeColor } from '../../../utils/styleUtils';
 
 interface Option {
@@ -28,8 +28,7 @@ const {
 } = Astro.props;
 
 const labelClass = getHeadlineColor(background);
-const textClass = getTextColor(background);
-const bgClass = getBackgroundColor(background === 'dark' ? 'light' : 'base');
+
 const inputTextClass = getInputTextColor(background);
 ---
 <div class="form-group">

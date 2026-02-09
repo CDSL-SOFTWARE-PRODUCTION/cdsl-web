@@ -7,7 +7,7 @@ import Logo from '@components/Logo.astro';
     <!-- Background Textures -->
     <div class="absolute inset-0 z-0 pointer-events-none">
         <!-- Technical Grid Background -->
-        <div class="absolute inset-0 bg-[linear-gradient(rgba(102,252,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(102,252,241,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)] opacity-0 grid-fade-in"></div>
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(102,252,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(102,252,241,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]"></div>
 
         <!-- Subtle noise texture overlay -->
         <div class="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay"></div>
@@ -17,32 +17,62 @@ import Logo from '@components/Logo.astro';
         <div class="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-premium-navy-light/30 blur-[150px] rounded-full"></div>
     </div>
 
-    <div class="site-container relative z-10 px-4 w-full h-full flex flex-col justify-center">
         <!-- Giant Background Logo -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[-1] w-full flex justify-center items-center overflow-hidden pointer-events-none">
-            <Logo variant="hero" class="text-[30vw] leading-none text-white/[0.03] scale-150 logo-breath" />
+        <div class="absolute inset-0 z-[1] flex justify-center items-center overflow-hidden pointer-events-none select-none">
+            <div class="hero-logo-wrapper w-full flex justify-center" style="opacity: 0; transform: scale(2.5);">
+                <!-- 
+                   Responsive font sizes to ensure it fills the width without overflowing too much
+                -->
+                <Logo variant="hero" class="text-[28vw] md:text-[22vw] lg:text-[18vw] leading-none text-white/5 font-black tracking-widest w-full text-center" />
+            </div>
         </div>
 
+<script>
+    import { animate } from "motion";
+    
+    // Ensure accurate timing
+    document.addEventListener('DOMContentLoaded', () => {
+        requestAnimationFrame(() => {
+            const wrapper = document.querySelector('.hero-logo-wrapper');
+            if (wrapper) {
+                // Animating the wrapper for scale/opacity
+                animate(
+                    wrapper,
+                    { 
+                        scale: [2.5, 1], 
+                        opacity: [0, 1],
+                    },
+                    { 
+                        duration: 8, 
+                        easing: [0.22, 1, 0.36, 1] 
+                    }
+                );
+            }
+        });
+    });
+</script>
+
+    <div class="site-container relative z-10 px-4 w-full h-full flex flex-col justify-center">
         <div class="max-w-7xl mx-auto">
             <!-- Kinetic Typography Headline -->
             <h1 class="font-display font-bold text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tighter text-white mb-12">
                 <div class="overflow-hidden">
-                    <span class="word-reveal inline-block translate-y-full">Turn</span>
-                    <span class="word-reveal inline-block translate-y-full text-premium-gray">Ops</span>
-                    <span class="word-reveal inline-block translate-y-full">Chaos</span>
+                    <span class="inline-block">Turn</span>
+                    <span class="inline-block text-premium-gray">Ops</span>
+                    <span class="inline-block">Chaos</span>
                 </div>
                 <div class="overflow-hidden">
-                    <span class="word-reveal inline-block translate-y-full">Into</span>
-                    <span class="word-reveal inline-block translate-y-full text-premium-blue">Profit</span>
+                    <span class="inline-block">Into</span>
+                    <span class="inline-block text-premium-blue">Profit</span>
                 </div>
             </h1>
 
-            <!-- Animated Separator Line -->
-            <div class="w-full h-[1px] bg-premium-white/10 relative overflow-hidden mt-8 mb-8 scale-x-0 origin-left separator-line">
-                <div class="absolute top-0 left-0 w-full h-full bg-premium-blue/50 origin-left scale-x-0 separator-highlight"></div>
+            <!-- Separator Line -->
+            <div class="w-full h-[1px] bg-premium-white/10 relative overflow-hidden mt-8 mb-8">
+                <div class="absolute top-0 left-0 w-full h-full bg-premium-blue/50"></div>
             </div>
 
-            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 opacity-0 reveal-content">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
                 <!-- Subheadline -->
                 <p class="text-lg md:text-xl text-premium-gray max-w-xl font-light leading-relaxed">
                     We engineer autonomous systems for growing consultancy businesses, turning fragmented operations into a unified engine for growth.
@@ -63,61 +93,4 @@ import Logo from '@components/Logo.astro';
     </div>
 </section>
 
-<script>
-    import { animate, stagger, timeline } from 'motion';
 
-    // Wait for load
-    window.addEventListener('load', () => {
-        const sequence = [
-            // 1. Reveal Grid
-            [
-                '.grid-fade-in', 
-                { opacity: [0, 1] }, 
-                { duration: 1.5, easing: 'ease-out' }
-            ],
-            // 2. Staggered Word Reveal
-            [
-                '.word-reveal',
-                { transform: ['translateY(110%)', 'translateY(0%)'] },
-                { 
-                    duration: 1.2,
-                    delay: stagger(0.1),
-                    easing: [0.16, 1, 0.3, 1], // Vucko-style crisp ease
-                    at: '-1.0' // Overlap with grid
-                }
-            ],
-            // 3. Draw Separator Line
-            [
-                '.separator-line',
-                { transform: ['scaleX(0)', 'scaleX(1)'] },
-                { duration: 0.8, easing: [0.16, 1, 0.3, 1], at: '-0.8' }
-            ],
-            // 4. Content Reveal
-            [
-                '.reveal-content',
-                { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0px)'] },
-                { duration: 0.8, at: '-0.6' }
-            ],
-            // 5. Separator Highlight Flash
-            [
-                '.separator-highlight',
-                { transform: ['scaleX(0)', 'scaleX(1)', 'scaleX(0)'], transformOrigin: ['left', 'left', 'right'] },
-                { duration: 1.5, easing: 'ease-in-out', at: '-0.8' }
-            ]
-        ];
-
-        timeline(sequence as any);
-
-        // Continuous Logo Breath
-        animate(
-            '.logo-breath',
-            { scale: [1.5, 1.55], opacity: [0.03, 0.05] },
-            { 
-                duration: 8, 
-                direction: 'alternate', 
-                repeat: Infinity, 
-                easing: 'ease-in-out' 
-            }
-        );
-    });
-</script>

@@ -1,5 +1,5 @@
 ---
-import { getTextColor, getHeadlineColor, getBackgroundColor, getInputTextColor } from '../../../utils/styleUtils';
+import { getHeadlineColor, getInputTextColor } from '../../../utils/styleUtils';
 import type { ThemeColor } from '../../../utils/styleUtils';
 
 interface Option {
@@ -29,8 +29,7 @@ const {
 
 const labelClass = getHeadlineColor(background);
 const inputTextClass = getInputTextColor(background);
-const textClass = getTextColor(background);
-const bgClass = getBackgroundColor(background === 'dark' ? 'light' : 'base');
+
 ---
 <div class="form-group">
     <label class={`block text-sm font-medium mb-2 ${labelClass}`}>

@@ -8,11 +8,94 @@ const { variant = 'header', class: className } = Astro.props;
 ---
 
 {variant === 'hero' ? (
-    <div class:list={['font-logo font-bold select-none', className]}>
+    <div 
+        class:list={['font-logo select-none', className]}
+        data-scramble="true"
+        data-variant="hero"
+    >
         CDSL
     </div>
 ) : (
-    <a href="/" class:list={['font-logo font-bold text-2xl tracking-widest text-white hover:text-premium-blue transition-colors duration-300 uppercase', className]}>
+    <a 
+        href="/" 
+        class:list={['font-logo text-2xl tracking-widest text-white hover:text-premium-blue transition-colors duration-300 uppercase block', className]}
+        data-scramble="true"
+        data-variant="header"
+    >
         CDSL
     </a>
 )}
+
+<script>
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;':,./<>?";
+
+    function runScramble(element: HTMLElement) {
+        if (element.dataset.animating === 'true') return;
+        
+        element.dataset.animating = 'true';
+        const originalText = element.textContent?.trim() || ''; 
+        let iteration = 0;
+        
+        // Calculate speed based on desired duration
+        // For hero: ~8 seconds
+        // For header: much faster (~1s)
+        const duration = element.dataset.variant === 'hero' ? 8000 : 800; // ms
+        const totalFrames = duration / 30; // 30ms interval
+        const speed = originalText.length / totalFrames;
+        
+        // Clear any existing interval
+        const existingInterval = (element as any)._scrambleInterval;
+        if (existingInterval) clearInterval(existingInterval);
+        
+        (element as any)._scrambleInterval = setInterval(() => {
+            element.innerText = originalText
+                .split("")
+                .map((letter, index) => {
+                    if (index < Math.floor(iteration)) {
+                        return originalText[index];
+                    }
+                    return letters[Math.floor(Math.random() * letters.length)];
+                })
+                .join("");
+
+            if (iteration >= originalText.length) { 
+                clearInterval((element as any)._scrambleInterval);
+                element.innerText = originalText;
+                element.dataset.animating = 'false';
+            }
+
+            iteration += speed; 
+        }, 30);
+    }
+
+    function initScramble() {
+        document.querySelectorAll<HTMLElement>('[data-scramble]').forEach(element => {
+            // Remove old listeners to prevent duplicates if init is called multiple times
+            const handler = (element as any)._scrambleHandler;
+            if (handler) {
+                element.removeEventListener('mouseenter', handler);
+            }
+            
+            // Handler wrapper
+            const newHandler = () => runScramble(element);
+            (element as any)._scrambleHandler = newHandler;
+
+            // For Header: Scramble on Hover
+            if (element.dataset.variant === 'header') {
+                element.addEventListener('mouseenter', newHandler);
+            }
+
+            // For Hero: Scramble on View/Entrance (only if not already ran or animated)
+            if (element.dataset.variant === 'hero') {
+                 // Trigger immediately
+                 runScramble(element);
+            }
+        });
+    }
+
+    // Run on initial load
+    initScramble();
+
+    // Support Astro View Transitions
+    document.addEventListener('astro:page-load', initScramble);
+</script>

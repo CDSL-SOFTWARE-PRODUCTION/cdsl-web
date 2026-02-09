@@ -23,6 +23,8 @@ interface Props {
 	canonicalUrl?: string;
 }
 
+import "@fontsource/bruno-ace-sc";
+
 const { title, description, image, footerCta, canonicalUrl } = Astro.props;
 
 const pageTitle = title ? `${title} ${Separator} ${SiteName}` : SiteName;
@@ -47,7 +49,7 @@ const fullCanonicalUrl = new URL(canonicalPath, siteConfig.siteUrl).toString();
 		<meta name="robots" content="index, follow" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 		
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={fullCanonicalUrl} />
@@ -123,15 +125,14 @@ const fullCanonicalUrl = new URL(canonicalPath, siteConfig.siteUrl).toString();
             const lenis = new Lenis({
                 duration: 1.2,
                 easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-                direction: 'vertical',
-                gestureDirection: 'vertical',
-                smooth: true,
-                mouseMultiplier: 1,
-                smoothTouch: false,
+                orientation: 'vertical',
+                gestureOrientation: 'vertical',
+                smoothWheel: true,
+                wheelMultiplier: 1,
                 touchMultiplier: 2,
             });
 
-            function raf(time) {
+            function raf(time: number) {
                 lenis.raf(time);
                 requestAnimationFrame(raf);
             }

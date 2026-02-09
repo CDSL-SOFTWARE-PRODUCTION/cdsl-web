@@ -3,24 +3,25 @@ import Layout from '@layouts/Layout.astro';
 import Hero from '@components/sections/Hero.astro';
 import Services from '@components/sections/Services.astro';
 import Work from '@components/sections/Work.astro';
-import Trust from '@components/sections/Trust.astro';
-import SplitPanel from '@components/sections/SplitPanel.astro';
-import Features from '@components/sections/Features.astro';
-import Stats from '@components/sections/Stats.astro';
-import { featureLists } from '@data/features';
-import { statsLists } from '@data/stats';
-import Logos from '@components/sections/Logos.astro';
-import { logoLists } from '@data/logos';
-import CtaBanner from '@components/sections/CtaBanner.astro';
-import Faqs from '@components/sections/Faqs.astro';
-import { faqLists } from '@data/faqs';
-import RecentPosts from '@components/sections/RecentPosts.astro';
-import heroImage from '../assets/images/home/default-hero-2.jpg';
-import styleGuideImage from '../assets/images/home/developer.jpg';
+// import Trust from '@components/sections/Trust.astro';
+// import SplitPanel from '@components/sections/SplitPanel.astro';
+// import Features from '@components/sections/Features.astro';
+// import Stats from '@components/sections/Stats.astro';
+// import { featureLists } from '@data/features';
+// import { statsLists } from '@data/stats';
+// import Logos from '@components/sections/Logos.astro';
+// import { logoLists } from '@data/logos';
+// import CtaBanner from '@components/sections/CtaBanner.astro';
+// import Faqs from '@components/sections/Faqs.astro';
+// import { faqLists } from '@data/faqs';
+// import RecentPosts from '@components/sections/RecentPosts.astro';
+// import heroImage from '../assets/images/home/default-hero-2.jpg';
+// import styleGuideImage from '../assets/images/home/developer.jpg';
 
 const seoTitle = "CDSL - Advanced Technology Solutions";
 const seoDescription = "CDSL is your forward-thinking technology partner, specializing in software development, digital transformation, IoT integration, and AI solutions.";
 
+/*
 const heroContent = {
     title: 'Innovative Technology Solutions for the Digital Age',
     description: 'CDSL empowers businesses of all sizes with tailored technology solutions that transform ideas into reality. From web and mobile development to IoT integration and AI-driven innovations, we\'re here to guide your business toward a brighter digital future.',
@@ -39,7 +40,9 @@ const heroContent = {
     backgroundImage: heroImage,
     overlayOpacity: 0.2
 }
+*/
 
+/*
 const featuresSection = {
     eyebrow: "WHAT WE DO",
     title: "Comprehensive Digital Solutions",
@@ -132,13 +135,13 @@ const recentPostsSection = {
         variant: "primary" as const
     }
 }
+*/
 ---
 
----
+
 <Layout title={seoTitle} description={seoDescription}>
     {/* Hero now uses its own internal content for the Premium design */}
     <Hero />
-    <Trust />
     <Services />
     <Work />
     <!-- 

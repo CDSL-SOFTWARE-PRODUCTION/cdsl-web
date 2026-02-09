@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+// import { Image } from 'astro:assets';
 // Ideally we import real images, for now using placeholders or just divs if no images found
 // I will rely on CSS backgrounds or placeholder URLs for the "mockup" feel if local images aren't perfect
 
@@ -96,9 +96,9 @@ const projects = [
 
     inView('.project-card', (info) => {
         animate(
-            info.target,
+            (info as any).target,
             { opacity: [0, 1], transform: ['translateY(50px)', 'translateY(0px)'] },
-            { duration: 0.8, easing: [0.17, 0.55, 0.55, 1] }
+            { duration: 0.8, easing: [0.17, 0.55, 0.55, 1] } as any
         );
     });
 </script>
