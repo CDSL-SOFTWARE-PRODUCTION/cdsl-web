@@ -1,3 +1,5 @@
+// Unified styling utilities - using only CSS classes from global.css @theme
+
 export type PaddingSize = 'small' | 'base' | 'large';
 export type ThemeColor = 'base' | 'light' | 'dark';
 
@@ -16,56 +18,30 @@ export const getPaddingClass = ({ padding, paddingTop, paddingBottom }: PaddingO
     return classes.join(' ');
 };
 
-export const getBackgroundColor = (background: ThemeColor = 'base'): string => {
-    const bgColors = {
-        base: 'bg-premium-navy',
-        light: 'bg-premium-navy-light', // "light" is now the lighter navy
-        dark: 'bg-black'
-    };
-    return bgColors[background];
+// All color functions now return dark mode compatible classes only
+// Colors are defined in global.css @theme
+
+export const getBackgroundColor = (_background: ThemeColor = 'base'): string => {
+    // Always return dark mode background - ignoring parameter for simplicity
+    return 'bg-premium-navy';
 };
 
-export const getTextColor = (background: ThemeColor = 'base'): string => {
-    const textColors = {
-        base: 'text-premium-gray',
-        light: 'text-premium-gray',
-        dark: 'text-premium-gray'
-    };
-    return textColors[background];
+export const getTextColor = (_background: ThemeColor = 'base'): string => {
+    return 'text-premium-gray';
 };
 
-export const getHeadlineColor = (background: ThemeColor = 'base'): string => {
-    const headlineColors = {
-        base: 'text-white',
-        light: 'text-white',
-        dark: 'text-white'
-    };
-    return headlineColors[background];
+export const getHeadlineColor = (_background: ThemeColor = 'base'): string => {
+    return 'text-white';
 };
 
-export const getEyebrowColor = (background: ThemeColor = 'base'): string => {
-    const eyebrowColors = {
-        base: 'text-premium-blue',
-        light: 'text-premium-blue',
-        dark: 'text-premium-blue'
-    };
-    return eyebrowColors[background];
+export const getEyebrowColor = (_background: ThemeColor = 'base'): string => {
+    return 'text-premium-blue';
 };
 
-export const getInputBackgroundColor = (background: ThemeColor = 'base'): string => {
-    const inputBgColors = {
-        base: 'bg-premium-navy-light',
-        light: 'bg-premium-navy',
-        dark: 'bg-premium-navy-light'
-    };
-    return inputBgColors[background];
+export const getInputBackgroundColor = (_background: ThemeColor = 'base'): string => {
+    return 'bg-premium-navy-light';
 };
 
-export const getInputTextColor = (background: ThemeColor = 'base'): string => {
-    const inputTextColors = {
-        base: 'text-white',
-        light: 'text-white',
-        dark: 'text-white'
-    };
-    return inputTextColors[background];
-}; 
+export const getInputTextColor = (_background: ThemeColor = 'base'): string => {
+    return 'text-white';
+};
