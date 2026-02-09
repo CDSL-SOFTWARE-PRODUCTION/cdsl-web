@@ -1,6 +1,9 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Hero from '@components/sections/Hero.astro';
+import Services from '@components/sections/Services.astro';
+import Work from '@components/sections/Work.astro';
+import Trust from '@components/sections/Trust.astro';
 import SplitPanel from '@components/sections/SplitPanel.astro';
 import Features from '@components/sections/Features.astro';
 import Stats from '@components/sections/Stats.astro';
@@ -131,9 +134,13 @@ const recentPostsSection = {
 }
 ---
 
-<Layout footerCta={FooterCta} title={seoTitle} description={seoDescription}>
+---
+<Layout title={seoTitle} description={seoDescription}>
     {/* Hero now uses its own internal content for the Premium design */}
     <Hero />
+    <Trust />
+    <Services />
+    <Work />
     <!-- 
     <Features content={featuresSection} padding="base" background="light" />
     <SplitPanel content={clientPartnershipSection} imagePosition="right" background="base" padding="base" />

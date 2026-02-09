@@ -36,67 +36,56 @@ const cta = footerCta || defaultCta;
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class={`bg-premium-navy-light text-white pb-small border-t border-white/5 ${cta.hideCta ? 'pt-large' : ''}`}>
-  <div class="site-container mx-auto px-4">
-    {!cta.hideCta && (
-      <div class="text-center border-b border-white/10 mb-12 py-small">
-        <h2 class="text-3xl font-bold mb-4 font-display" data-aos="fade-up">{cta.title}</h2>
-        <p class="text-gray-300 mb-6 max-w-2xl mx-auto font-light" data-aos="fade-up" data-aos-delay="100">
-          {cta.description}
-        </p>
-        <Button 
-          href={cta.button.link} 
-          variant="primary"
-          size="lg"
-          data-aos="fade-up"
-          data-aos-delay="200"
-          {...(cta.button.target && { target: cta.button.target })}
-          class="bg-premium-blue text-premium-navy hover:bg-white hover:text-premium-navy border-none font-bold rounded-full px-8"
-        >
-          {cta.button.text}
-        </Button>
-      </div>
-    )}
-
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-white/10">
-      <div class="col-span-1">
-        <Logo variant="footer" />
-        <p class="mt-4 text-gray-400 font-light text-sm">
-          Empowering your digital journey with innovative solutions.
-        </p>
-      </div>
-      
-      <div class="col-span-1">
-        <h3 class="text-lg font-semibold mb-4 text-white">Quick Links</h3>
-        <nav>
-          <ul class="space-y-2">
-            {footerMenu.map(item => (
-              <li><a href={item.link} class="text-gray-400 hover:text-premium-blue transition-colors text-sm">{item.name}</a></li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+<footer class="bg-premium-navy text-white pt-32 pb-12 border-t border-white/5 relative overflow-hidden">
+    <!-- Footer CTA -->
+    <div class="site-container px-4 mb-32 relative z-10">
+        <h2 class="font-display font-bold text-6xl md:text-8xl lg:text-9xl tracking-tighter mb-12 text-center md:text-left">
+            Let's build <br/>
+            <span class="text-premium-blue">Something Great.</span>
+        </h2>
+        
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8 border-t border-white/10 pt-12">
+            <p class="text-xl text-premium-gray max-w-xl font-light">
+                Ready to transform your operations? We help you scale with purpose-built technology.
+            </p>
+            <a href="/contact" class="btn btn-primary btn-lg rounded-full px-12 py-4 text-xl font-bold bg-white text-premium-navy hover:bg-premium-blue border-none">
+                Start a Project
+            </a>
+        </div>
     </div>
 
-    <div class="mt-8 flex flex-col md:flex-row justify-between items-center">
-      <div class="text-gray-500 text-xs">
-        © {currentYear} {siteConfig.companyName}. All rights reserved.
-      </div>
-      
-      <nav class="mt-4 md:mt-0">
-        <ul class="flex flex-wrap gap-6">
-          {legalMenu.map(item => (
-            <li>
-              <a 
-                href={item.link} 
-                class="text-xs text-gray-500 hover:text-white transition-colors"
-              >
-                {item.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+    <!-- Footer Links -->
+    <div class="site-container px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 border-t border-white/10 pt-12">
+            <div class="col-span-1 md:col-span-2">
+                <Logo variant="footer" />
+                <p class="mt-6 text-gray-500 font-mono text-sm max-w-xs">
+                    Advanced technology solutions for the modern enterprise.
+                </p>
+            </div>
+            
+            <div class="col-span-1">
+                <h3 class="text-white font-bold mb-6">Menu</h3>
+                <ul class="space-y-4">
+                     {footerMenu.map(item => (
+                        <li><a href={item.link} class="text-gray-400 hover:text-white transition-colors">{item.name}</a></li>
+                    ))}
+                </ul>
+            </div>
+
+            <div class="col-span-1">
+                <h3 class="text-white font-bold mb-6">Legal</h3>
+                <ul class="space-y-4">
+                     {legalMenu.map(item => (
+                         <li><a href={item.link} class="text-gray-400 hover:text-white transition-colors">{item.name}</a></li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-20 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 font-mono">
+            <p>© {currentYear} {siteConfig.companyName}. All rights reserved.</p>
+            <p>Designed with purpose.</p>
+        </div>
     </div>
-  </div>
 </footer>

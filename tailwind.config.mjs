@@ -6,10 +6,12 @@ export default {
         extend: {
             colors: {
                 premium: {
-                    navy: '#0a192f',
-                    'navy-light': '#112240',
-                    blue: '#00f3ff',
+                    navy: '#0b0c10', // Deep rich black-blue
+                    'navy-light': '#1f2833', // Lighter technical gray-blue
+                    blue: '#66fcf1', // Electric Cyan (Vucko/Cyberpunk accent)
                     white: '#ffffff',
+                    gray: '#c5c6c7', // Muted text
+                    black: '#000000',
                 },
             },
             fontFamily: {
@@ -23,11 +25,11 @@ export default {
         themes: [
             {
                 premium: {
-                    primary: '#00f3ff',
+                    primary: '#66fcf1',
                     secondary: '#ffffff',
-                    accent: '#00f3ff',
-                    neutral: '#112240',
-                    'base-100': '#0a192f',
+                    accent: '#45a29e',
+                    neutral: '#1f2833',
+                    'base-100': '#0b0c10',
                     info: '#3abff8',
                     success: '#36d399',
                     warning: '#fbbd23',
