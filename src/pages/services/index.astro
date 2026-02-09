@@ -56,11 +56,11 @@ const ctaContent = {
 <Layout title={title} description={description}>
     <InnerHero content={heroContent} />
     
-    <section class="py-base bg-background-light">
+    <section class="py-base bg-premium-navy">
         <div class="site-container mx-auto px-4">
             <div class="max-w-3xl mx-auto text-center mb-16">
-                <h2 class="text-headline text-large mb-6">Comprehensive Digital Solutions</h2>
-                <p class="text-body-base">
+                <h2 class="text-white text-large mb-6">Comprehensive Digital Solutions</h2>
+                <p class="text-gray-300">
                     At CDSL, we deliver cutting-edge technology solutions tailored to your unique business needs, 
                     ensuring exceptional user experiences and measurable results.
                 </p>
@@ -69,20 +69,20 @@ const ctaContent = {
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 auto-rows-fr">
                 {services.map((service, index) => (
                     <div 
-                        class="p-8 rounded-lg border border-black bg-background flex flex-col"
+                        class="p-8 rounded-lg border border-white/10 bg-premium-navy-light flex flex-col hover:border-premium-blue/50 transition-colors group"
                         data-aos="fade-up"
                         data-aos-delay={index * 100}
                     >
-                        <div class="w-14 h-14 flex items-center justify-center rounded-lg mb-4 bg-primary">
+                        <div class="w-14 h-14 flex items-center justify-center rounded-lg mb-4 bg-premium-blue/10 group-hover:bg-premium-blue/20 transition-colors">
                             <service.icon
                                 size={28}
-                                class="text-white"
+                                class="text-premium-blue"
                             />
                         </div>
-                        <h3 class="text-h4 mb-4 text-headline">
+                        <h3 class="text-h4 mb-4 text-white">
                             {service.title}
                         </h3>
-                        <p class="text-body-base">
+                        <p class="text-gray-400 font-light">
                             {service.description}
                         </p>
                     </div>

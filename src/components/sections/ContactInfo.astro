@@ -33,24 +33,40 @@ const paddingClass = getPaddingClass({ padding, paddingTop, paddingBottom });
 
 ---
 
-<section class:list={[bgColor, paddingClass]}>
-    <div class="site-container px-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-                <h2 class:list={[textColor]}>Contact Information</h2>
-                <p class:list={[textColor]}>
-                    We're here to help you with your questions and concerns.
+<section class:list={[bgColor, paddingClass, "relative overflow-hidden"]}>
+    <div class="site-container px-4 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+            <div data-aos="fade-right">
+                <h2 class:list={[textColor, "text-4xl font-display font-medium mb-6"]}>Get in Touch</h2>
+                <p class:list={[textColor, "opacity-80 text-lg mb-8 leading-relaxed"]}>
+                    We're here to help you transform your business. Reach out to us for a consultation or to discuss your next project.
                 </p>
-                <p class:list={[textColor]}>
-                    You can contact us via email or phone.
-                </p>
-                <div class:list={["flex flex-col gap-2 mt-4", textColor]}>
-                    <div class:list={["flex items-center gap-2"]}><Mail aria-hidden="true" /> <a href={`mailto:${siteConfig.socials.email}`}>{siteConfig.socials.email}</a></div>
-                    <div class:list={["flex items-center gap-2"]}><Phone aria-hidden="true" /> <a href={`tel:${siteConfig.socials.phone}`}>{siteConfig.socials.phone}</a></div>
-                    <div class:list={["flex items-center gap-2"]}><MapPin aria-hidden="true" /> <a href={`https://maps.google.com/?q=${siteConfig.socials.location}`}>{siteConfig.socials.location}</a></div>
+                
+                <div class="space-y-6">
+                    <a href={`mailto:${siteConfig.socials.email}`} class="flex items-center gap-4 group">
+                        <div class="w-12 h-12 rounded-lg bg-premium-blue/10 flex items-center justify-center group-hover:bg-premium-blue/20 transition-colors">
+                            <Mail class="text-premium-blue" />
+                        </div>
+                        <span class:list={[textColor, "group-hover:text-premium-blue transition-colors"]}>{siteConfig.socials.email}</span>
+                    </a>
+                    
+                    <a href={`tel:${siteConfig.socials.phone}`} class="flex items-center gap-4 group">
+                        <div class="w-12 h-12 rounded-lg bg-premium-blue/10 flex items-center justify-center group-hover:bg-premium-blue/20 transition-colors">
+                            <Phone class="text-premium-blue" />
+                        </div>
+                        <span class:list={[textColor, "group-hover:text-premium-blue transition-colors"]}>{siteConfig.socials.phone}</span>
+                    </a>
+                    
+                    <a href={`https://maps.google.com/?q=${siteConfig.socials.location}`} target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 group">
+                        <div class="w-12 h-12 rounded-lg bg-premium-blue/10 flex items-center justify-center group-hover:bg-premium-blue/20 transition-colors">
+                            <MapPin class="text-premium-blue" />
+                        </div>
+                        <span class:list={[textColor, "group-hover:text-premium-blue transition-colors"]}>{siteConfig.socials.location}</span>
+                    </a>
                 </div>
             </div>
-            <div>
+            
+            <div class="bg-premium-navy-light p-8 rounded-2xl border border-white/5" data-aos="fade-left">
                 <Contact />
             </div>
         </div>

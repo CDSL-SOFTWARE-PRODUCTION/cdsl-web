@@ -24,17 +24,17 @@ const baseStyles = 'group relative inline-flex overflow-hidden items-center just
 
 
 const variants = {
-  primary: 'bg-primary text-white hover:bg-primary-light focus-visible:ring-primary hover:ring-2 hover:ring-primary hover:ring-offset-2',
-  secondary: 'bg-secondary text-white hover:bg-secondary-light focus-visible:ring-secondary hover:ring-2 hover:ring-secondary hover:ring-offset-2',
-  accent: 'bg-accent text-white hover:opacity-90 focus-visible:ring-accent hover:ring-2 hover:ring-accent hover:ring-offset-2',
-  ghostLight: 'text-white ring-2 ring-white focus-visible:ring-white hover:ring-2 hover:ring-black hover:ring-offset-2',
-  ghostDark: 'text-body-base ring-2 ring-text focus-visible:ring-text hover:ring-2 hover:ring-black hover:ring-offset-2',
+  primary: 'bg-premium-blue text-premium-navy hover:bg-white hover:text-premium-navy border border-transparent shadow-[0_0_20px_rgba(0,243,255,0.3)] hover:shadow-[0_0_30px_rgba(0,243,255,0.5)]',
+  secondary: 'bg-white text-premium-navy hover:bg-gray-100 border border-transparent',
+  accent: 'bg-premium-blue text-premium-navy hover:bg-white',
+  ghostLight: 'text-white border border-white/30 hover:bg-white/10 hover:border-white',
+  ghostDark: 'text-premium-navy border border-premium-navy/30 hover:bg-premium-navy/10 hover:border-premium-navy',
 };
 
 const sizes = {
-  sm: 'h-9 px-3 text-xsmall',
-  md: 'h-10 px-4 py-2 text-small',
-  lg: 'h-11 px-8 text-base'
+  sm: 'h-9 px-3 text-xs',
+  md: 'h-10 px-6 py-2 text-sm',
+  lg: 'h-12 px-8 text-base'
 };
 
 const classes = [
@@ -56,7 +56,6 @@ const Element = href ? 'a' : 'button';
   aria-disabled={disabled}
   {...(target && { target, rel: target === '_blank' ? 'noopener noreferrer' : undefined })}
 >
-  <span class="absolute left-0 -mt-12 h-32 w-1/2 translate-x-[250%] rotate-12 bg-white opacity-20 transition-all duration-250 ease-out group-hover:translate-x-[2%]"></span>
   <slot />
 </Element>
 

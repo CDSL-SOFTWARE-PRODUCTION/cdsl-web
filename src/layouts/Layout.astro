@@ -2,11 +2,8 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import ThemeSwitcher from "../components/ThemeSwitcher.astro";
 import { SEO, siteConfig } from "../data/config";
 import 'aos/dist/aos.css';
-import { themeSetting } from "../data/config";
-const { theme } = themeSetting;
 
 const { SiteName, Separator, defaultDescription } = SEO;
 
@@ -38,14 +35,11 @@ const fullCanonicalUrl = new URL(canonicalPath, siteConfig.siteUrl).toString();
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="premium" class="bg-premium-navy text-white overflow-x-hidden">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<link rel="canonical" href={fullCanonicalUrl} />
 		<meta name="generator" content={Astro.generator} />
@@ -54,33 +48,102 @@ const fullCanonicalUrl = new URL(canonicalPath, siteConfig.siteUrl).toString();
 		<meta name="robots" content="index, follow" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-		<!-- Open Graph / Facebook -->
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+		
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={fullCanonicalUrl} />
 		<meta property="og:title" content={pageTitle} />
 		<meta property="og:description" content={pageDescription} />
 		{pageImage && <meta property="og:image" content={new URL(pageImage, siteConfig.siteUrl).toString()} />}
 
-		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content={fullCanonicalUrl} />
 		<meta property="twitter:title" content={pageTitle} />
 		<meta property="twitter:description" content={pageDescription} />
 		{pageImage && <meta property="twitter:image" content={new URL(pageImage, siteConfig.siteUrl).toString()} />}
+        
+        <style is:global>
+            /* Custom Scrollbar for Webkit */
+            ::-webkit-scrollbar {
+                width: 8px;
+            }
+            ::-webkit-scrollbar-track {
+                background: #0a192f; 
+            }
+            ::-webkit-scrollbar-thumb {
+                background: #112240; 
+                border-radius: 4px;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: #00f3ff; 
+            }
+
+            /* Lenis Recommended Styles */
+            html.lenis, html.lenis body {
+                height: auto;
+            }
+
+            .lenis.lenis-smooth {
+                scroll-behavior: auto !important;
+            }
+
+            .lenis.lenis-smooth [data-lenis-prevent] {
+                overscroll-behavior: contain;
+            }
+
+            .lenis.lenis-stopped {
+                overflow: hidden;
+            }
+
+            .lenis.lenis-scrolling iframe {
+                pointer-events: none;
+            }
+        </style>
 	</head>
-	<body data-theme={theme}>
+	<body class="antialiased min-h-screen relative selection:bg-premium-blue selection:text-premium-navy">
+        <!-- Background Mesh Gradient -->
+        <div class="fixed inset-0 z-[-1] pointer-events-none opacity-40">
+            <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-premium-blue/10 blur-[120px]"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-purple-500/10 blur-[120px]"></div>
+        </div>
+
 		<Header />
-		<slot />
+		
+        <main class="relative z-10">
+		    <slot />
+        </main>
+        
 		<Footer footerCta={footerCta} />
-		<ThemeSwitcher />
 		
 		<script>
-			import AOS from 'aos';
+            // Initialize Lenis
+            import Lenis from 'lenis'
+            import AOS from 'aos';
+
+            // AOS Init
 			AOS.init({
 				duration: 800,
 				once: true,
 			});
+
+            // Lenis Init
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                direction: 'vertical',
+                gestureDirection: 'vertical',
+                smooth: true,
+                mouseMultiplier: 1,
+                smoothTouch: false,
+                touchMultiplier: 2,
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+
+            requestAnimationFrame(raf);
 		</script>
 	</body>
 </html>

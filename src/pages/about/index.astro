@@ -73,10 +73,10 @@ const ctaContent = {
     
     <Stats content={statsContent} background="base" padding="base" />
     
-    <section class="py-base bg-background-light">
+    <section class="py-base bg-premium-navy">
         <div class="site-container mx-auto px-4">
             <div class="max-w-3xl mx-auto text-center mb-16">
-                <h2 class="text-headline text-large mb-6">Our Values & Vision</h2>
+                <h2 class="text-white text-large mb-6">Our Values & Vision</h2>
                 <p class="text-body-base">
                     These core principles guide our approach to technology development and client relationships.
                 </p>
@@ -85,14 +85,14 @@ const ctaContent = {
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {valuesItems.map((value, index) => (
                     <div 
-                        class="p-6 rounded-lg border border-black bg-background flex flex-col"
+                        class="p-6 rounded-lg border border-white/10 bg-premium-navy-light flex flex-col hover:border-premium-blue/50 transition-colors"
                         data-aos="fade-up"
                         data-aos-delay={index * 100}
                     >
-                        <h3 class="text-h4 mb-3 text-headline">
+                        <h3 class="text-h4 mb-3 text-white">
                             {value.title}
                         </h3>
-                        <p class="text-body-base">
+                        <p class="text-gray-300">
                             {value.description}
                         </p>
                     </div>

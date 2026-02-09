@@ -1,64 +1,128 @@
 ---
 import Button from '@components/ui/Button.astro';
-import { Image } from 'astro:assets';
-
-interface HeroContent {
-    title: string;
-    description: string;
-        buttons?: {
-        text: string;
-        link: string;
-        variant?: 'primary' | 'secondary' | 'ghostLight' | 'ghostDark';
-        target?: string;
-    }[];
-    backgroundImage?: string | any; // Using any for now to handle both string paths and imported images
-    overlayOpacity?: number; // Value between 0 and 1
-}
-
-interface Props {
-    content: HeroContent;
-}
-
-const { content } = Astro.props;
-const opacity = content.overlayOpacity ?? 1; // Default opacity if not specified
 ---
 
-<section class="header-offset relative">
-    {content.backgroundImage && (
-        <div class="absolute inset-0 left-0 top-0 w-full h-full overflow-hidden">
-            <Image
-                src={content.backgroundImage}
-                alt=""
-                width={1920}
-                height={1080}
-                class="w-full h-full object-cover"
-                quality={70}
-                format="webp"
-                loading="eager"
-                decoding="async"
-            />
-            <div
-                class="hero-background absolute inset-0 left-0 top-0 w-full h-full overflow-hidden"
-                style={`opacity: ${opacity};`}
-            ></div>
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <!-- Animated Background Grid -->
+    <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+        <div class="grid-lines absolute inset-0 grid grid-cols-12 gap-4 h-full w-full">
+            {Array.from({ length: 13 }).map((_, i) => (
+                <div class="w-px h-full bg-premium-blue/30 origin-top scale-y-0 grid-line-v"></div>
+            ))}
         </div>
-    )}
+        <div class="grid-lines-h absolute inset-0 flex flex-col justify-between h-full w-full pointer-events-none">
+            {Array.from({ length: 12 }).map((_, i) => (
+                 <div class="h-px w-full bg-premium-blue/30 origin-left scale-x-0 grid-line-h"></div>
+            ))}
+        </div>
+    </div>
 
-    <div class="site-container mx-auto px-4 py-large relative z-10 flex flex-col md:items-center md:justify-center md:text-center">
-        <h1 class="text-white text-balance" data-aos="fade-up">{content.title}</h1>
-        <p class="text-white mt-2 text-balance" data-aos="fade-up" data-aos-delay="100">{content.description}</p>
-        {content.buttons && content.buttons.length > 0 && (
-            <div class="flex flex-wrap gap-4 mt-8" data-aos="fade-up">
-                {content.buttons.map((button) => (
-                    <Button
-                        href={button.link}
-                        target={button.target || '_self'}
-                        variant={button.variant || 'primary'}
-                    >
-                        {button.text}
-                    </Button>
-                ))}
+    <div class="site-container relative z-10 px-4 w-full">
+        <div class="max-w-5xl mx-auto text-center">
+            <!-- Overline -->
+            <div class="hero-overline opacity-0 translate-y-4 mb-4">
+                <span class="px-3 py-1 rounded-full border border-premium-blue/30 text-premium-blue text-sm uppercase tracking-widest font-semibold bg-premium-blue/5 backdrop-blur-sm">
+                    Ops & Scaling Partner
+                </span>
             </div>
-        )}
+
+            <!-- Main Headline -->
+            <h1 class="font-display font-bold text-5xl md:text-7xl lg:text-8xl leading-[1.1] tracking-tight mb-8 text-white">
+                <div class="overflow-hidden">
+                    <span class="hero-text-line block translate-y-full">Turn Ops Chaos</span>
+                </div>
+                <div class="overflow-hidden text-premium-blue">
+                    <span class="hero-text-line block translate-y-full">Into Profit</span>
+                </div>
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="hero-desc opacity-0 translate-y-4 text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                We help growing SME B2Bs turn fragmented operations into a unified engine for growth using AI-Augmented Custom Systems.
+            </p>
+
+            <!-- OTA -->
+            <div class="hero-cta opacity-0 translate-y-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="/contact" class="btn btn-primary btn-lg rounded-full px-8 font-bold text-premium-navy hover:scale-105 transition-transform duration-300 border-none bg-premium-blue hover:bg-white text-white">
+                    Get Your Ops Scorecard
+                </a>
+                <a href="/work" class="btn btn-ghost btn-lg rounded-full px-8 text-white hover:bg-white/10 font-medium group">
+                    View Case Studies
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Floating Elements (Chaos to Order) -->
+    <div class="absolute inset-0 pointer-events-none z-0">
+         <div class="floating-shape w-24 h-24 border border-premium-blue/20 rounded-full absolute top-1/4 left-10 opacity-0"></div>
+         <div class="floating-shape w-32 h-32 border border-white/10 rounded-lg absolute bottom-1/3 right-10 opacity-0 rotate-45"></div>
+         <div class="floating-shape w-16 h-16 bg-premium-blue/10 rounded-full absolute top-1/3 right-1/4 opacity-0 blur-xl"></div>
     </div>
 </section>
+
+<script>
+    import anime from 'animejs';
+    console.log("Animations initialized");
+    
+    // Grid Animation
+    anime.timeline({
+        easing: 'easeOutExpo',
+        duration: 1500,
+    })
+    .add({
+        targets: '.grid-line-v',
+        scaleY: [0, 1],
+        delay: anime.stagger(100),
+        duration: 1200,
+    })
+    .add({
+        targets: '.grid-line-h',
+        scaleX: [0, 1],
+        delay: anime.stagger(100),
+        borderWidth: 1,
+        offset: '-=1000'
+    });
+
+    // Text & Content Animation
+    anime.timeline({
+        easing: 'easeOutExpo',
+        delay: 500
+    })
+    .add({
+        targets: '.hero-overline',
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800
+    })
+    .add({
+        targets: '.hero-text-line',
+        translateY: ['100%', '0%'],
+        duration: 1200,
+        delay: anime.stagger(200),
+        easing: 'easeOutQuart' // Gentler ease for text
+    })
+    .add({
+        targets: ['.hero-desc', '.hero-cta'],
+        opacity: [0, 1],
+        translateY: [20, 0],
+        delay: anime.stagger(100),
+        duration: 800,
+        offset: '-=800'
+    });
+    
+
+    // Floating Shapes (SIMPLIFIED)
+    
+    anime({
+        targets: '.floating-shape',
+        opacity: [0, 0.4],
+        translateY: [50, 0],
+        duration: 2000,
+        delay: anime.stagger(300),
+        easing: 'easeOutQuad',
+    });
+    
+
+</script>

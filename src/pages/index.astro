@@ -132,12 +132,22 @@ const recentPostsSection = {
 ---
 
 <Layout footerCta={FooterCta} title={seoTitle} description={seoDescription}>
-    <Hero content={heroContent} />
+    {/* Hero now uses its own internal content for the Premium design */}
+    <Hero />
+    <!-- 
     <Features content={featuresSection} padding="base" background="light" />
     <SplitPanel content={clientPartnershipSection} imagePosition="right" background="base" padding="base" />
     <CtaBanner content={mainCta} variant="contained" background="light" paddingBottom="base" />
     <Logos content={logosSection} background="base" padding='small'/>
     <Stats content={sideBySideStats} background='dark' padding="base"/>
     <RecentPosts content={recentPostsSection} background="base" padding="base" postsToShow={3} />
-    <Faqs content={faqsSection} background="light" padding="base" />
+    <Faqs content={faqsSection} background="light" padding="base" /> 
+    -->
+    
+    <section class="py-24 bg-premium-navy-light relative overflow-hidden">
+        <div class="site-container px-4 relative z-10 text-center">
+            <h2 class="text-4xl font-display font-bold mb-6 text-white">More Premium Content Coming Soon</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">We are rebuilding our component library to match this new premium aesthetic.</p>
+        </div>
+    </section>
 </Layout>

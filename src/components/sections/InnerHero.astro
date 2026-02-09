@@ -16,29 +16,36 @@ const { content } = Astro.props;
 const opacity = content.overlayOpacity ?? 1;
 ---
 
-<section class="w-full border-b pt-38 pb-18 relative">
-    <div class="absolute inset-0 left-0 top-0 w-full h-full overflow-hidden">
-            {content.backgroundImage && (
-                <Image
-                    src={content.backgroundImage}
-                    alt=""
-                    width={1920}
-                    height={1080}
-                    class="w-full h-full object-cover"
-                    quality={70}
-                    format="webp"
-                />
-            )}
-            <div
-                class="hero-background absolute inset-0 left-0 top-0 w-full h-full overflow-hidden"
-                style={`opacity: ${opacity};`}
-            ></div>
-        </div>
+<section class="relative w-full pt-48 pb-32 overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 z-0 pointer-events-none">
+        <div class="absolute inset-0 bg-premium-navy"></div>
+        <div class="absolute inset-0 opacity-20 bg-[linear-gradient(rgba(0,243,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,243,255,0.05)_1px,transparent_1px)] bg-[size:100px_100px]"></div>
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-premium-navy via-transparent to-premium-navy"></div>
+    </div>
 
-    <div class="site-container mx-auto px-4 relative z-10">
-        <div>
-            <h1 class="text-white" data-aos="fade-up">{content.title}</h1>
-            {content.description && <p class="subtitle text-white" data-aos="fade-up" data-aos-delay="100">{content.description}</p>}
+    {content.backgroundImage && (
+        <div class="absolute inset-0 z-0 opacity-20">
+             <Image
+                src={content.backgroundImage}
+                alt=""
+                width={1920}
+                height={1080}
+                class="w-full h-full object-cover"
+                quality={70}
+                format="webp"
+            />
         </div>
+    )}
+
+    <div class="site-container relative z-10 px-4 text-center">
+        <h1 class="text-4xl md:text-6xl font-display font-bold text-white mb-6" data-aos="fade-up">
+            {content.title}
+        </h1>
+        {content.description && (
+            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                {content.description}
+            </p>
+        )}
     </div>
 </section>
