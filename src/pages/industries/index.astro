@@ -1,7 +1,8 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import InnerHero from '@components/sections/InnerHero.astro';
-import { Truck, Heart, Building2, ShoppingBag, Book, Factory, BarChart, Map } from 'lucide-astro';
+import IndustryList from '@components/react/IndustryList';
+import { Truck, Heart, Building2, ShoppingBag, Book, Factory, BarChart, Map } from 'lucide-react';
 
 const title = "Industries We Serve";
 const description = "Specialized technology solutions across diverse industries";
@@ -14,42 +15,42 @@ const heroContent = {
 
 const industries = [
     {
-        icon: Truck,
+        icon: "Truck",
         title: "Logistics & Supply Chain",
         description: "Real-time tracking and automated workflows with IoT sensors and custom dashboards to optimize operations and increase visibility."
     },
     {
-        icon: Heart,
+        icon: "Heart",
         title: "Healthcare & Clinics",
         description: "Digital appointment systems, AI diagnostics support, and patient management platforms to enhance patient care and streamline processes."
     },
     {
-        icon: Building2,
+        icon: "Building2",
         title: "Real Estate & Property Management",
         description: "Integrated property management systems and online platforms for rental and maintenance tracking to simplify property operations."
     },
     {
-        icon: ShoppingBag,
+        icon: "ShoppingBag",
         title: "Retail & eCommerce",
         description: "Engaging eCommerce websites, mobile apps, and AI-powered customer experience solutions to boost sales and customer satisfaction."
     },
     {
-        icon: Book,
+        icon: "Book",
         title: "Education & eLearning",
         description: "Interactive, gamified learning apps and adaptive testing platforms to enhance educational experiences and outcomes."
     },
     {
-        icon: Factory,
+        icon: "Factory",
         title: "Manufacturing",
         description: "IoT-driven production monitoring, automation dashboards, and predictive maintenance tools to optimize operations and reduce downtime."
     },
     {
-        icon: BarChart,
+        icon: "BarChart",
         title: "Finance & Accounting",
         description: "Robust AI analytics, streamlined compliance automation, and client engagement portals to enhance financial services and security."
     },
     {
-        icon: Map,
+        icon: "Map",
         title: "Hospitality & Tourism",
         description: "Dynamic booking systems, personalized itinerary planners, and automation in loyalty management to elevate guest experiences."
     }
@@ -59,38 +60,8 @@ const industries = [
 <Layout title={title} description={description}>
     <InnerHero content={heroContent} />
     
-    <section class="py-base bg-premium-navy-light">
-        <div class="site-container mx-auto px-4">
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <h2 class="text-white text-large mb-6">Tailored Solutions for Your Industry</h2>
-                <p class="text-premium-gray">
-                    CDSL's versatile expertise benefits a broad range of industries by addressing unique challenges 
-                    with innovative technology solutions.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {industries.map((industry, index) => (
-                    <div 
-                        class="p-6 rounded-lg border border-white/10 bg-premium-navy flex flex-col hover:border-premium-blue/50 transition-colors"
-                        data-aos="fade-up"
-                        data-aos-delay={index * 50}
-                    >
-                        <div class="w-12 h-12 flex items-center justify-center rounded-lg mb-4 bg-primary">
-                            <industry.icon
-                                size={24}
-                                class="text-white"
-                            />
-                        </div>
-                        <h3 class="text-h5 mb-3 text-white font-medium">
-                            {industry.title}
-                        </h3>
-                        <p class="text-premium-gray text-small">
-                            {industry.description}
-                        </p>
-                    </div>
-                ))}
-            </div>
-        </div>
+
+    <section class="bg-premium-navy">
+        <IndustryList client:visible industries={industries} />
     </section>
 </Layout>
