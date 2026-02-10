@@ -1,159 +1,92 @@
-# Titan Core - Modern Astro Theme
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+# CDSL - Forward-Thinking Digital Studio
 
-**Titan Core** is a high-performance, feature-rich theme for Astro JS, designed for modern websites, blogs, and portfolios. With beautiful UI components, multiple theme options, and a focus on performance, Titan Core helps you build stunning websites quickly.
+[![Built with Next.js](https://img.shields.io/badge/Built%20with-Next.js-black?logo=next.js)](https://nextjs.org/)
+[![Styling: Tailwind CSS](https://img.shields.io/badge/Styling-Tailwind%20CSS-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
+[![Animations: Framer Motion](https://img.shields.io/badge/Animations-Framer%20Motion-black?logo=framer)](https://www.framer.com/motion/)
 
-[Live Demo](https://titan-core.netlify.app)
+**CDSL** is a modern, high-performance web application designed for a premium digital studio. Specializing in outsourced software development and digital transformation, it features a sleek, minimalist aesthetic with advanced animations and a focus on exceptional user experience.
 
-## ✨ Features
+[View Live Site](https://www.cdslvn.com)
 
-- 🎨 **Multiple Theme Options** - Choose from various color themes
-- 📱 **Fully Responsive** - Looks great on all devices
-- 🚀 **Performance Focused** - Optimized for speed and SEO
-- 📝 **Blog Ready** - Complete blog functionality with categories and pagination
-- 🔍 **SEO Optimized** - Meta tags, Open Graph, Twitter Cards, and sitemap
-- 🧩 **Component-Based** - Modular architecture for easy customization
-- 🎭 **Animation Ready** - Integrated AOS (Animate On Scroll) for smooth animations
-- 📊 **Stats Section** - Display your metrics with beautiful stat components
-- 🤝 **Team Grid** - Showcase your team members
-- 🔄 **Flexible Layouts** - Hero sections, feature grids, split panels, and more
-- 📋 **FAQ Component** - Easy-to-use FAQ accordion
-- 📞 **Contact Components** - Ready-to-use contact information display
-- 🏢 **Logo Showcase** - Display partner or client logos
-- 🔘 **Modern UI Components** - Buttons, forms, cards, and more
+---
+
+## ✨ Key Features
+
+- 🚀 **Next.js 15+ (App Router)** - Leveraging the latest React features for optimal performance and SEO.
+- 🎭 **Advanced Animations** - Smooth transitions and micro-interactions powered by **Framer Motion** and **AOS**.
+- 🌊 **Smooth Scrolling** - Integrated with **Lenis** for a premium, fluid scrolling experience.
+- � **Hyper-Responsive** - Meticulously crafted layouts that adapt perfectly to any screen size.
+- 🎨 **Premium Aesthetic** - A modern, minimalist design system using Tailwind CSS.
+- 🛠️ **Component-Based Architecture** - Modular and reusable code structure for easy maintenance and scaling.
+- 🔍 **SEO Optimized** - Pre-configured meta tags, semantic HTML, and fast load times.
+
+## �️ Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/) & [AOS](https://michalsnik.github.io/aos/)
+- **Smooth Scroll:** [Lenis](https://lenis.darkroom.engineering/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Fonts:** [@fontsource](https://fontsource.org/) (Bruno Ace SC)
 
 ## 🚀 Quick Start
 
-```bash
-# Create a new project with this theme
-npm create astro@latest -- --template rspisarski/titan-core
+Ensure you have [Node.js](https://nodejs.org/) installed on your machine.
 
-# or clone this repository
-git clone https://github.com/rspisarski/titan-core.git my-website
-cd my-website
+```bash
+# Clone the repository
+git clone https://github.com/CDSL-SOFTWARE-PRODUCTION/cdsl-web.git
+
+# Install dependencies
 npm install
+
+# Start the development server
 npm run dev
 ```
 
+The application will be available at `http://localhost:3000`.
+
 ## 📁 Project Structure
 
-```
+```text
 /
-├── public/             # Static assets
-│   └── favicon.ico
+├── public/             # Static assets (images, icons, etc.)
 ├── src/
-│   ├── assets/         # Images and other assets
-│   ├── components/     # UI components
-│   │   ├── blog/       # Blog-specific components
-│   │   ├── forms/      # Form components
-│   │   ├── icons/      # Icon components
-│   │   ├── sections/   # Page section components
-│   │   ├── team/       # Team components
-│   │   └── ui/         # Basic UI components
-│   ├── content/        # Content collections
-│   ├── data/           # Configuration and data files
-│   ├── layouts/        # Page layouts
-│   ├── pages/          # Page routes
-│   ├── styles/         # Global styles
-│   └── utils/          # Utility functions
-└── package.json
+│   ├── app/            # Next.js App Router (pages & layouts)
+│   ├── components/     # UI Component Library
+│   │   ├── forms/      # Form controllers and inputs
+│   │   ├── sections/   # Major page sections
+│   │   └── ui/         # Base UI primitives
+│   ├── data/           # Config and content data files
+│   ├── styles/         # Global CSS and Tailwind configurations
+│   └── utils/          # Helper functions and hooks
+├── package.json
+└── tailwind.config.ts
 ```
 
 ## ⚙️ Configuration
 
-Customize your site by editing the configuration files in the `src/data/` directory:
+Site-wide settings can be managed in `src/data/config.ts`:
 
-- `config.ts` - Site-wide configuration including company info and SEO settings
-- `menu.ts` - Navigation menu structure
-- `features.ts` - Feature section content
-- `faqs.ts` - FAQ content
-- `logos.ts` - Partner/client logos
-- `stats.ts` - Statistics display data
-- `categories.ts` - Blog categories
+- `siteUrl`: Production URL
+- `companyName`: Brand name
+- `socials`: Links to social media profiles and contact info
+- `SEO`: Meta description and indexing settings
 
-## 🎨 Theming
+## � Commands
 
-Titan Core comes with 10 beautiful pre-configured themes inspired by Greek mythology. Developers can choose a single theme for their site by editing the `themeSetting` object in `src/data/config.ts`:
-
-```typescript
-export const themeSetting = {
-  theme: 'zeus' // Choose one of the 10 available themes
-}
-```
-
-### Available Themes:
-
-1. `zeus` - Sky & Thunder theme
-2. `poseidon` - Ocean & Seas theme
-3. `hades` - Underworld theme
-4. `apollo` - Sun & Light theme
-5. `artemis` - Moon & Hunt theme
-6. `ares` - War & Fire theme
-7. `athena` - Wisdom theme
-8. `hermes` - Speed theme
-9. `dionysus` - Festivity theme
-10. `demeter` - Nature theme
-
-### Removing the Theme Switcher
-
-By default, Titan Core includes a theme switcher component that allows users to change themes. For projects where you want to use a single consistent theme, you can remove the theme switcher by:
-
-1. Open `src/layouts/Layout.astro`
-2. Remove or comment out the ThemeSwitcher import:
-   ```astro
-   // Remove this line
-   import ThemeSwitcher from "../components/ThemeSwitcher.astro";
-   ```
-3. Remove the ThemeSwitcher component from the body:
-   ```astro
-   <body data-theme={theme}>
-     <Header />
-     <slot />
-     <Footer footerCta={footerCta} />
-     <!-- Remove this line -->W
-     <ThemeSwitcher />
-     
-     <script>
-       import AOS from 'aos';
-       AOS.init({
-         duration: 800,
-         once: true,
-       });
-     </script>
-   </body>
-   ```
-
-This will ensure your site uses only the theme specified in your configuration.
-
-## 📝 Content Management
-
-Titan Core uses Astro's content collections for blog posts and other content. Add your content to the `src/content/` directory.
-
-## 🧩 Components
-
-Titan Core includes a wide range of components:
-
-- **Layout Components**: Hero, Features, Split Panel, CTA Banner, etc.
-- **UI Components**: Buttons, Forms, Cards, etc.
-- **Blog Components**: Post cards, category pills, etc.
-- **Team Components**: Team grid, member cards, etc.
-
-## 🛠️ Commands
-
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Install dependencies                            |
-| `npm run dev`          | Start local dev server at `localhost:4321`      |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
+| Command | Action |
+| :--- | :--- |
+| `npm run dev` | Starts local development server |
+| `npm run build` | Builds the application for production |
+| `npm run start` | Starts the production server |
+| `npm run lint` | Runs ESLint to check for code quality |
+| `npm run format` | Formats code with Prettier |
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is privately owned by **CDSL**. All rights reserved.
 
-## 🙏 Credits
+---
 
-- Built with [Astro](https://astro.build)
-- Animations by [AOS](https://michalsnik.github.io/aos/)
-- Icons from [Lucide](https://lucide.dev)
+Built with ❤️ by [CDSL Team](https://www.cdslvn.com)
