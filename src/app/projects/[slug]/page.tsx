@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, use } from 'react';
+import React, { use } from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -39,9 +39,6 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
             }
         }
     };
-
-    // Ref for carousel constraints
-    const carouselRef = useRef<HTMLDivElement>(null);
 
     return (
         <div className="min-h-screen bg-premium-navy text-white">
@@ -187,42 +184,49 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
 
             {/* Other Work Carousel */}
             <section className="pb-32 overflow-hidden">
-                <div className="px-4 md:px-8 mb-12 flex justify-between items-end">
+                <div className="px-4 md:px-8 mb-12">
                     <h3 className="text-2xl md:text-3xl font-display">Have a look at some of our other work.</h3>
-                    <motion.span
-                        animate={{ x: [-5, 5, -5] }}
-                        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                        className="text-white/40 font-mono text-sm hidden md:block"
-                    >
-                        (Drag)
-                    </motion.span>
                 </div>
 
-                <div className="pl-4 md:pl-8 cursor-grab active:cursor-grabbing overflow-hidden" ref={carouselRef}>
+                <div className="relative w-full overflow-hidden">
                     <motion.div
-                        drag="x"
-                        dragConstraints={carouselRef}
-                        whileTap={{ cursor: "grabbing" }}
-                        className="flex gap-8 w-fit pr-8"
-                        style={{ cursor: "grab" }}
+                        className="flex gap-8 w-fit"
+                        animate={{ x: ['-25%', '0%'] }}
+                        transition={{
+                            x: {
+                                repeat: Infinity,
+                                repeatType: "loop",
+                                duration: 30,
+                                ease: "linear",
+                            },
+                        }}
                     >
-                        {otherProjects.map((p, i) => (
-                            <motion.div
-                                key={p.slug}
+                        {/* Duplicate projects multiple times to create seamless loop even on large screens */}
+                        {[...otherProjects, ...otherProjects, ...otherProjects, ...otherProjects].map((p, i) => (
+                            <div
+                                key={`${p.slug}-${i}`}
                                 className="w-[300px] md:w-[400px] flex-none group"
-                                whileHover={{ scale: 0.98 }}
                             >
                                 <Link href={`/projects/${p.slug}`}>
-                                    {/* Placeholder Image as we don't have real ones yet */}
                                     <div className="aspect-[4/5] bg-white/5 mb-6 rounded-lg overflow-hidden group-hover:bg-white/10 transition-colors relative">
-                                        <div className="absolute inset-0 flex items-center justify-center text-white/20 font-display text-4xl">
-                                            {p.name.charAt(0)}
-                                        </div>
+                                        <div className="absolute inset-0 bg-premium-blue/20 mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                        {p.image ? (
+                                            <img
+                                                src={p.image}
+                                                alt={p.name}
+                                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                                loading="lazy"
+                                            />
+                                        ) : (
+                                            <div className="absolute inset-0 flex items-center justify-center text-white/20 font-display text-4xl">
+                                                {p.name.charAt(0)}
+                                            </div>
+                                        )}
                                     </div>
                                     <h4 className="text-2xl font-display mb-1 group-hover:text-premium-blue transition-colors">{p.name}</h4>
                                     <p className="text-white/50 font-mono text-sm">{p.client}</p>
                                 </Link>
-                            </motion.div>
+                            </div>
                         ))}
                     </motion.div>
                 </div>

@@ -10,7 +10,7 @@ const CompanySection: React.FC = () => {
             <div className="site-container px-4">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
                     {/* Left Column: Heading */}
-                    <div className="md:col-span-5 lg:col-span-4">
+                    <div className="md:col-span-6 lg:col-span-5">
                         <ScrollReveal direction="right" distance={40}>
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium leading-[1.1] tracking-tight text-white font-display">
                                 Dedicated and seamlessly integrated, a true extension of brands.
@@ -19,7 +19,7 @@ const CompanySection: React.FC = () => {
                     </div>
 
                     {/* Right Column: Copy */}
-                    <div className="md:col-start-7 md:col-span-6 lg:col-span-5">
+                    <div className="md:col-span-6 lg:col-span-6 lg:col-start-7">
                         <ScrollReveal delay={0.2} direction="up">
                             <span className="block text-sm font-semibold tracking-widest uppercase mb-8 text-premium-blue opacity-60">
                                 About

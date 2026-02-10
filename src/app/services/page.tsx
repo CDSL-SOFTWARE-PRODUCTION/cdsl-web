@@ -6,18 +6,9 @@ import MotionText from '@components/motion/MotionText';
 import ScrollReveal from '@components/motion/ScrollReveal';
 import { ServiceCard } from '@components/shared/ServiceCard';
 import { AccordionSteps } from '@components/sections/services/AccordionSteps';
-import Code2 from 'lucide-react/dist/esm/icons/code-2';
-import LayoutIcon from 'lucide-react/dist/esm/icons/layout';
+import IndustriesSection from '@components/sections/services/IndustriesSection';
+import CoreServices from '@components/sections/services/CoreServices';
 import TrendingUp from 'lucide-react/dist/esm/icons/trending-up';
-import Cloud from 'lucide-react/dist/esm/icons/cloud';
-import Truck from 'lucide-react/dist/esm/icons/truck';
-import Heart from 'lucide-react/dist/esm/icons/heart';
-import Building2 from 'lucide-react/dist/esm/icons/building-2';
-import ShoppingBag from 'lucide-react/dist/esm/icons/shopping-bag';
-import Book from 'lucide-react/dist/esm/icons/book';
-import Factory from 'lucide-react/dist/esm/icons/factory';
-import BarChart from 'lucide-react/dist/esm/icons/bar-chart-2';
-import Map from 'lucide-react/dist/esm/icons/map';
 
 export default function ServicesPage() {
     const { scrollY } = useScroll();
@@ -102,110 +93,14 @@ export default function ServicesPage() {
                 </ScrollReveal>
             </section>
 
-            {/* Grid Services Section */}
-            <section className="py-24 px-4 site-container relative z-10">
-                <div className="grid md:grid-cols-2 gap-8">
-                    <ScrollReveal direction="right" distance={40} delay={0.1}>
-                        <ServiceCard
-                            title="Web & Mobile Development"
-                            description="High-performance, scalable applications built with modern frameworks to deliver exceptional user experiences."
-                            features={[
-                                "Next.js & React Specialists",
-                                "Native iOS & Android Development",
-                                "Scalable Backend Infrastructure",
-                                "Cross-platform Performance Optimization",
-                                "Progressive Web Apps (PWA)"
-                            ]}
-                            icon={Code2}
-                        />
-                    </ScrollReveal>
-                    <ScrollReveal direction="left" distance={40} delay={0.2}>
-                        <ServiceCard
-                            title="UX & UI Design"
-                            description="Design that resonates. We create intuitive interfaces that tell your brand's story and simplify complex user journeys."
-                            features={[
-                                "User Research & Journey Mapping",
-                                "Interactive Prototyping",
-                                "Modern UI Design Systems",
-                                "Accessibility (A11y) Focus",
-                                "Motion & Micro-interactions"
-                            ]}
-                            icon={LayoutIcon}
-                        />
-                    </ScrollReveal>
-                </div>
-            </section>
+            {/* Core Services Section */}
+            <CoreServices />
 
             {/* Industries Section */}
-            <section className="py-32 px-4 site-container relative z-10">
-                <ScrollReveal direction="up" distance={30}>
-                    <div className="mb-20">
-                        <div className="inline-block px-4 py-2 bg-premium-blue/10 rounded-full text-premium-blue text-xs font-mono uppercase tracking-widest mb-4">
-                            Industries We Serve
-                        </div>
-                        <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 tracking-tight">
-                            Specialized solutions across<br />diverse industries.
-                        </h2>
-                    </div>
-                </ScrollReveal>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {[
-                        { title: "Logistics", icon: Truck, desc: "Real-time tracking and automated workflows." },
-                        { title: "Healthcare", icon: Heart, desc: "Digital appointment systems and AI diagnostics." },
-                        { title: "Real Estate", icon: Building2, desc: "Integrated property management systems." },
-                        { title: "Retail", icon: ShoppingBag, desc: "Engaging eCommerce and AI customer solutions." },
-                        { title: "Education", icon: Book, desc: "Interactive eLearning and adaptive platforms." },
-                        { title: "Manufacturing", icon: Factory, desc: "IoT monitoring and predictive maintenance." },
-                        { title: "Finance", icon: BarChart, desc: "AI analytics and compliance automation." },
-                        { title: "Hospitality", icon: Map, desc: "Dynamic booking and itinerary planners." }
-                    ].map((industry, index) => (
-                        <ScrollReveal key={industry.title} direction="up" distance={20} delay={index * 0.05}>
-                            <motion.div
-                                whileHover={{ y: -5 }}
-                                transition={{ duration: 0.3, ease: 'easeOut' }}
-                                className="p-8 rounded-[5px] bg-premium-navy-light border border-white/5 hover:border-premium-blue/50 transition-colors duration-300 group relative overflow-hidden"
-                            >
-                                <div className="absolute inset-0 bg-gradient-to-br from-premium-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-                                <div className="relative z-10">
-                                    <div className="mb-6 text-premium-blue opacity-50 group-hover:opacity-100 transition-opacity duration-300">
-                                        <industry.icon size={32} strokeWidth={1.5} />
-                                    </div>
-                                    <h3 className="text-xl font-display font-bold text-white mb-2 group-hover:text-premium-blue transition-colors duration-300">{industry.title}</h3>
-                                    <p className="text-sm text-premium-gray font-light leading-relaxed group-hover:text-white transition-colors duration-300">{industry.desc}</p>
-                                </div>
-                            </motion.div>
-                        </ScrollReveal>
-                    ))}
-                </div>
-            </section>
-
-            {/* Cloud Computing Section */}
-            <section className="py-24 px-4 site-container relative z-10">
-                <ScrollReveal direction="up" distance={30}>
-                    <ServiceCard
-                        layout="full-width"
-                        title="Cloud & Systems Scaling"
-                        description="Resilient infrastructure designed to handle the most demanding workloads. We make systems that don't just work—they perform."
-                        features={[
-                            "AWS/Azure Infrastructure Orchestration",
-                            "Kubernetes & Containerization",
-                            "Serverless Architecture Design",
-                            "High-Availability & Disaster Recovery",
-                            "Real-time Monitoring & Logging"
-                        ]}
-                        stats={[
-                            { value: "5M+", label: "Users Scaled" },
-                            { value: "1B+", label: "Daily Transactions" }
-                        ]}
-                        icon={Cloud}
-                    />
-                </ScrollReveal>
-            </section>
+            <IndustriesSection />
 
             {/* Recruitment Highlight */}
-            <section className="py-32 bg-premium-navy-light border-y border-white/5 mt-24 relative overflow-hidden">
+            <section id="recruitment" className="py-32 bg-premium-navy-light border-y border-white/5 mt-24 relative overflow-hidden">
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(102,252,241,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(102,252,241,0.02)_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-30 pointer-events-none"></div>
 
                 <div className="site-container px-4 relative z-10">

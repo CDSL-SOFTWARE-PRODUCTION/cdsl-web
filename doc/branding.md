@@ -47,26 +47,3 @@
 
 ---
 
-## 3. Design Phase (The Face)
-
-*Goal: Visualizing Authority.*
-
-- [ ] **Logo Refactoring:**
-  - **Concept:** "Structure & Clarity".
-  - **Direction:** Clean, architectural lines. Suggesting *order from chaos*.
-  - **Colors:** Deep Navy (Trust) + Sharp White (Clarity) + Electric Blue (Technology/Speed).
-- [ ] **Visual Language:**
-  - **Imagery:** "Before vs After" diagrams. Chaotic scribbles turning into straight lines.
-  - **Screenshots:** Real dashboards showing clean metrics. No stock photos of "people shaking hands".
-
----
-
-## 4. Delivery Phase (The Assets)
-
-*Goal: Enable Sales.*
-
-- [ ] **Asset Checklist (Q1-Q2):**
-  - **The "Ops Scorecard":** A 1-page visual audit tool (Red/Yellow/Green).
-  - **LinkedIn Headers:** Clear value proposition ("I turn Ops Chaos into Profit").
-  - **Case Study Template:** "Problem (Chaos) -> Solution (System) -> Result (Time Saved)".
-  - **Proposal/Contract:** Simple 2-page agreement. No legal jargon.

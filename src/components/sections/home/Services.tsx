@@ -5,23 +5,23 @@ import { motion } from 'framer-motion';
 
 const services = [
     {
-        title: "Digital Transformation",
-        description: "We modernize legacy infrastructure and automate complex operational workflows, turning bottlenecks into competitive advantages.",
-        icon: "layers"
+        title: "Product Strategy",
+        description: "We don't just build, we partner. Our strategy-first approach ensures every line of code serves a business objective.",
+        icon: "compass"
     },
     {
-        title: "Custom Engineering",
-        description: "Purpose-built software solutions architected for scale. From high-performance web platforms to complex internal tools.",
+        title: "Web & Mobile Development",
+        description: "High-performance, scalable applications built with modern frameworks to deliver exceptional user experiences.",
         icon: "code"
     },
     {
-        title: "MVP Development",
-        description: "Rapid iteration cycles for startups and new ventures. We move from concept to market-ready product in weeks, not months.",
-        icon: "rocket"
+        title: "UX & UI Design",
+        description: "Design that resonates. We create intuitive interfaces that tell your brand's story and simplify complex user journeys.",
+        icon: "layers"
     },
     {
-        title: "Cloud & DevOps",
-        description: "Resilient infrastructure design. We ensure your systems are secure, scalable, and deployable with zero downtime.",
+        title: "Cloud & Systems Scaling",
+        description: "Resilient infrastructure designed to handle the most demanding workloads. We make systems that don't just work—they perform.",
         icon: "cloud"
     },
     {
@@ -30,9 +30,9 @@ const services = [
         icon: "cpu"
     },
     {
-        title: "Technical Strategy",
-        description: "Fractional CTO and advisory services. We guide your technology roadmap to align with long-term business goals.",
-        icon: "compass"
+        title: "Recruitment",
+        description: "Our specialized hiring team finds the top 1% of talent tailored to your culture and tech stack.",
+        icon: "users"
     }
 ];
 
@@ -59,7 +59,7 @@ export const Services: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
                         <motion.div
-                            key={index}
+                            key={service.title}
                             className="group p-8 border border-white/5 bg-premium-navy-light hover:border-premium-blue/50 transition-all duration-500 rounded-sm"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}

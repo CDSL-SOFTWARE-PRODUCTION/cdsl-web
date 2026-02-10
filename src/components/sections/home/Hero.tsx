@@ -26,20 +26,12 @@ export const Hero: React.FC = () => {
                 {/* Grid pattern behind the logo */}
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(102,252,241,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(102,252,241,0.08)_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-40"></div>
 
-                <motion.div
-                    className="hero-logo-wrapper w-full flex justify-center relative z-[2]"
-                    initial={{ opacity: 0, scale: 2.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{
-                        duration: 8,
-                        ease: [0.22, 1, 0.36, 1]
-                    }}
-                >
+                <div className="hero-logo-wrapper w-full flex justify-center relative z-[2]">
                     <Logo
                         variant="hero"
                         className="text-[28vw] md:text-[22vw] lg:text-[18vw] leading-none text-white/5 font-black tracking-widest w-full text-center"
                     />
-                </motion.div>
+                </div>
             </div>
 
             <div className="site-container relative z-10 px-4 w-full h-full flex flex-col justify-center">

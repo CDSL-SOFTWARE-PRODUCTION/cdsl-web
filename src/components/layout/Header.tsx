@@ -10,6 +10,7 @@ import Moon from 'lucide-react/dist/esm/icons/moon';
 import { motion, AnimatePresence } from 'framer-motion';
 import { headerMenu } from '@data/menu';
 import Logo from '@components/ui/Logo';
+import ScrambleLink from '@components/ui/ScrambleLink';
 
 export const Header: React.FC = () => {
     const pathname = usePathname();
@@ -164,16 +165,16 @@ export const Header: React.FC = () => {
                             <ul className="flex items-center justify-between w-full max-w-3xl">
                                 {headerMenu.map((item) => (
                                     <li key={item.name} className="relative group">
-                                        <Link
+                                        <ScrambleLink
                                             href={item.link}
+                                            text={item.name}
                                             className={`text-[13px] font-medium uppercase tracking-[0.2em] transition-all duration-300 py-1 border-b border-transparent hover:border-premium-blue/30 ${isCurrentPage(item.link)
                                                 ? 'text-premium-blue'
                                                 : 'text-white/80 hover:text-premium-blue'
                                                 }`}
                                         >
-                                            {item.name}
                                             {item.children && <ChevronDown size={14} className="ml-1 inline-block opacity-50" />}
-                                        </Link>
+                                        </ScrambleLink>
                                     </li>
                                 ))}
                             </ul>

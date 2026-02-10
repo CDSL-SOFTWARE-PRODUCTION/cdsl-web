@@ -99,13 +99,27 @@ const FocusSection: React.FC = () => {
                         </ScrollReveal>
                     </div>
 
-                    <div className="md:col-start-7 md:col-span-6 space-y-12">
+                    <motion.div
+                        className="md:col-start-7 md:col-span-6 space-y-12"
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true, margin: "-100px" }}
+                        variants={{
+                            hidden: {},
+                            show: {
+                                transition: {
+                                    staggerChildren: 0.2
+                                }
+                            }
+                        }}
+                    >
                         {cards.map((card, index) => (
-                            <ScrollReveal
+                            <motion.div
                                 key={card.id}
-                                delay={index * 0.15}
-                                direction="up"
-                                distance={30}
+                                variants={{
+                                    hidden: { opacity: 0, y: 30 },
+                                    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+                                }}
                                 className="group border-t border-white/5 pt-8"
                             >
                                 <div className="flex gap-8 md:gap-12">
@@ -121,9 +135,9 @@ const FocusSection: React.FC = () => {
                                         </p>
                                     </div>
                                 </div>
-                            </ScrollReveal>
+                            </motion.div>
                         ))}
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

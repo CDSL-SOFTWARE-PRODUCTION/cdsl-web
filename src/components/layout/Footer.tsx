@@ -41,27 +41,38 @@ export const Footer: React.FC<FooterProps> = ({ footerCta }) => {
                 </div>
             </div>
 
-            {/* Footer Links */}
+            {/* Footer Links (Sitemap) */}
             <div className="site-container px-4">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/10 pt-12 transition-colors">
-                    <div className="col-span-1 md:col-span-2">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 border-t border-white/10 pt-12 transition-colors">
+                    <div className="lg:col-span-4">
                         <Logo variant="footer" />
-                        <p className="mt-6 text-premium-gray/70 font-mono text-sm max-w-xs">
-                            Advanced technology solutions for the modern enterprise.
+                        <p className="mt-6 text-premium-gray/70 font-mono text-sm max-w-xs leading-relaxed">
+                            Advanced technology solutions for the modern enterprise. We bridge the gap between complexity and elegance.
                         </p>
                     </div>
 
-                    <div className="col-span-1">
-                        <h3 className="text-white font-bold mb-6">Menu</h3>
-                        <ul className="space-y-4">
-                            {footerMenu.map(item => (
-                                <li key={item.name}>
-                                    <Link href={item.link} className="text-premium-gray hover:text-white transition-colors">
-                                        {item.name}
-                                    </Link>
-                                </li>
+                    <div className="lg:col-span-8">
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-12">
+                            {footerMenu.map(category => (
+                                <div key={category.title}>
+                                    <h3 className="text-white font-display font-medium mb-6 uppercase tracking-widest text-sm opacity-50">
+                                        {category.title}
+                                    </h3>
+                                    <ul className="space-y-4">
+                                        {category.links.map(link => (
+                                            <li key={link.name}>
+                                                <Link
+                                                    href={link.link}
+                                                    className="text-premium-gray hover:text-white transition-colors duration-300 font-light"
+                                                >
+                                                    {link.name}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
                     </div>
                 </div>
 
