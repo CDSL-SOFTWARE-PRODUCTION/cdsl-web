@@ -136,8 +136,7 @@ export const Header: React.FC = () => {
 
     const extendedMenu = [
         { name: 'Home', link: '/' },
-        ...headerMenu,
-        { name: 'Contact', link: 'mailto:contact@cdsl.tech' }
+        ...headerMenu
     ];
 
     return (
