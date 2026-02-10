@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&amp;display=swap');
+    </style>
+  </defs>
+  <rect width="512" height="512" fill="#000000" rx="64" />
+  <text 
+    x="50%" 
+    y="55%" 
+    font-family="'Bruno Ace SC', sans-serif" 
+    font-size="140" 
+    fill="#ffffff" 
+    text-anchor="middle" 
+    dominant-baseline="middle" 
+    letter-spacing="4px"
+    font-weight="bold"
+  >CDSL</text>
+</svg>

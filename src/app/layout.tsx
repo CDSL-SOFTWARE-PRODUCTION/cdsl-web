@@ -26,7 +26,9 @@ export const metadata: Metadata = {
     },
     description: SEO.defaultDescription,
     icons: {
-        icon: '/favicon.ico',
+        icon: [
+            { url: '/favicon.svg', type: 'image/svg+xml' },
+        ],
     },
     alternates: {
         canonical: './',
