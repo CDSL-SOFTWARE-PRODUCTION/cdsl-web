@@ -1,7 +1,16 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { Truck, Heart, Building2, ShoppingBag, Book, Factory, BarChart, Map, type LucideIcon } from 'lucide-react';
+import { type LucideIcon } from 'lucide-react';
+import Truck from 'lucide-react/dist/esm/icons/truck';
+import Heart from 'lucide-react/dist/esm/icons/heart';
+import Building2 from 'lucide-react/dist/esm/icons/building-2';
+import ShoppingBag from 'lucide-react/dist/esm/icons/shopping-bag';
+import Book from 'lucide-react/dist/esm/icons/book';
+import Factory from 'lucide-react/dist/esm/icons/factory';
+import BarChart from 'lucide-react/dist/esm/icons/bar-chart-3';
+import Map from 'lucide-react/dist/esm/icons/map';
+
 
 // Icon mapping
 const iconMap: Record<string, LucideIcon> = {

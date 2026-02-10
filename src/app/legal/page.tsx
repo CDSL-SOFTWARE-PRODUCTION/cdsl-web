@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Link from 'next/link';
-import { getLegalEntries } from '@/utils/content';
+import { getLegalEntries } from '@/lib/content';
 import InnerHero from '@/components/sections/common/InnerHero';
 
 export const metadata = {

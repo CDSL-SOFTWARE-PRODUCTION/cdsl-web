@@ -40,7 +40,7 @@ export const Services: React.FC = () => {
     useEffect(() => {
         inView('.scroll-reveal', (info) => {
             animate(
-                info.target,
+                info as any,
                 { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0px)'] },
                 { duration: 0.8, easing: [0.17, 0.55, 0.55, 1] }
             );

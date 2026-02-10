@@ -2,23 +2,21 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ServiceCard } from '@components/shared/ServiceCard';
 import { AccordionSteps } from '@components/sections/services/AccordionSteps';
-import {
-    Code2,
-    LayoutIcon,
-    ArrowRight,
-    TrendingUp,
-    Cloud,
-    Plus,
-    Truck,
-    Heart,
-    Building2,
-    ShoppingBag,
-    Book,
-    Factory,
-    BarChart,
-    Map,
-    Handshake
-} from 'lucide-react';
+import Code2 from 'lucide-react/dist/esm/icons/code-2';
+import LayoutIcon from 'lucide-react/dist/esm/icons/layout';
+import ArrowRight from 'lucide-react/dist/esm/icons/arrow-right';
+import TrendingUp from 'lucide-react/dist/esm/icons/trending-up';
+import Cloud from 'lucide-react/dist/esm/icons/cloud';
+import Plus from 'lucide-react/dist/esm/icons/plus';
+import Truck from 'lucide-react/dist/esm/icons/truck';
+import Heart from 'lucide-react/dist/esm/icons/heart';
+import Building2 from 'lucide-react/dist/esm/icons/building-2';
+import ShoppingBag from 'lucide-react/dist/esm/icons/shopping-bag';
+import Book from 'lucide-react/dist/esm/icons/book';
+import Factory from 'lucide-react/dist/esm/icons/factory';
+import BarChart from 'lucide-react/dist/esm/icons/bar-chart-2';
+import Map from 'lucide-react/dist/esm/icons/map';
+import Handshake from 'lucide-react/dist/esm/icons/handshake';
 
 export const metadata: Metadata = {
     title: "Services | CDSL - Innovative Technology Solutions",

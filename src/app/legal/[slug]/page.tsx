@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { getLegalEntryData, getLegalEntries } from '@/utils/content';
+import { getLegalEntryData, getLegalEntries } from '@/lib/content';
 import InnerHero from '@/components/sections/common/InnerHero';
 import { notFound } from 'next/navigation';
 

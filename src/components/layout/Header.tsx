@@ -3,7 +3,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import Menu from 'lucide-react/dist/esm/icons/menu';
+import X from 'lucide-react/dist/esm/icons/x';
+import ChevronDown from 'lucide-react/dist/esm/icons/chevron-down';
 import { animate } from 'motion';
 import { headerMenu } from '@data/menu';
 import Logo from '@components/ui/Logo';
@@ -107,8 +109,8 @@ export const Header: React.FC = () => {
                                     <Link
                                         href={item.link}
                                         className={`text-[13px] font-medium uppercase tracking-[0.2em] transition-all duration-300 py-1 border-b border-transparent hover:border-premium-blue/30 ${isCurrentPage(item.link)
-                                                ? 'text-premium-blue'
-                                                : 'text-white/80 hover:text-premium-blue'
+                                            ? 'text-premium-blue'
+                                            : 'text-white/80 hover:text-premium-blue'
                                             }`}
                                         aria-current={isCurrentPage(item.link) ? 'page' : undefined}
                                     >
@@ -128,8 +130,8 @@ export const Header: React.FC = () => {
                                                     <Link
                                                         href={child.link}
                                                         className={`block px-6 py-4 text-[10px] uppercase tracking-widest transition-colors duration-300 border-b border-white/5 last:border-none ${isCurrentPage(child.link)
-                                                                ? 'bg-premium-blue/10 text-premium-blue'
-                                                                : 'text-premium-gray hover:bg-premium-blue/5 hover:text-white'
+                                                            ? 'bg-premium-blue/10 text-premium-blue'
+                                                            : 'text-premium-gray hover:bg-premium-blue/5 hover:text-white'
                                                             }`}
                                                         aria-current={isCurrentPage(child.link) ? 'page' : undefined}
                                                     >
@@ -178,8 +180,8 @@ export const Header: React.FC = () => {
                                                 <Link
                                                     href={item.link}
                                                     className={`text-2xl font-light uppercase tracking-[0.2em] transition-colors duration-300 ${isCurrentPage(item.link)
-                                                            ? 'text-premium-blue'
-                                                            : 'text-white/60 hover:text-premium-blue'
+                                                        ? 'text-premium-blue'
+                                                        : 'text-white/60 hover:text-premium-blue'
                                                         }`}
                                                     aria-current={isCurrentPage(item.link) ? 'page' : undefined}
                                                     onClick={() => setIsMenuOpen(false)}
@@ -209,8 +211,8 @@ export const Header: React.FC = () => {
                                                             <Link
                                                                 href={child.link}
                                                                 className={`block text-lg uppercase tracking-[0.15em] transition-colors duration-300 ${isCurrentPage(child.link)
-                                                                        ? 'text-premium-blue'
-                                                                        : 'text-white/40 hover:text-white'
+                                                                    ? 'text-premium-blue'
+                                                                    : 'text-white/40 hover:text-white'
                                                                     }`}
                                                                 onClick={() => setIsMenuOpen(false)}
                                                             >

@@ -32,7 +32,7 @@ export const Work: React.FC = () => {
     useEffect(() => {
         inView('.scroll-reveal-work', (info) => {
             animate(
-                info.target,
+                info as any,
                 { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0px)'] },
                 { duration: 0.8, easing: [0.17, 0.55, 0.55, 1] }
             );
@@ -40,7 +40,7 @@ export const Work: React.FC = () => {
 
         inView('.project-card', (info) => {
             animate(
-                info.target,
+                info as any,
                 { opacity: [0, 1], transform: ['translateY(50px)', 'translateY(0px)'] },
                 { duration: 0.8, easing: [0.17, 0.55, 0.55, 1] }
             );
