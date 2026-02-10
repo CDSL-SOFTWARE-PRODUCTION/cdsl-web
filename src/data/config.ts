@@ -1,5 +1,5 @@
 export const siteConfig = {
-  siteUrl: import.meta.env.SITE || 'https://www.cdslvn.com',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.cdslvn.com',
   companyName: 'CDSL',
   socials: {
     github: 'https://github.com/CDSL-SOFTWARE-PRODUCTION',

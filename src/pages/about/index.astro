@@ -1,105 +1,67 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import InnerHero from '@components/sections/InnerHero.astro';
-import SplitPanel from '@components/sections/SplitPanel.astro';
-import Stats from '@components/sections/Stats.astro';
-import { statsLists } from '@data/stats';
-import CtaBanner from '@components/sections/CtaBanner.astro';
-import developerImg from '@assets/images/home/developer.jpg';
+import HeroSection from '@components/sections/about/HeroSection';
+import CompanySection from '@components/sections/about/CompanySection';
+import FocusSection from '@components/sections/about/FocusSection';
+import ClientsSection from '@components/sections/about/ClientsSection';
+import ScrollReveal from '@components/motion/ScrollReveal';
 
 const title = "About CDSL";
-const description = "Your forward-thinking technology partner for digital transformation";
-
-// Hero content
-const heroContent = {
-    title: title,
-    description: description,
-};
-
-const storySection = {
-    eyebrow: "OUR STORY",
-    headline: "Transforming Ideas Into Digital Reality",
-    description: "Founded on the principles of quality, innovation, and long-term partnerships, CDSL was born out of a passion for transforming ideas into reality. Our mission is to make advanced technology accessible and effective for businesses facing the challenges of a digital era. We believe that great technology should be within reach regardless of scale, and we're here to guide your business toward a brighter digital future.",
-    image: {
-        src: developerImg,
-        alt: "CDSL Collaboration"
-    },
-    buttons: []
-};
-
-const statsContent = {
-    eyebrow: "Our Impact",
-    title: "Driving Business Transformation",
-    description: "We combine technical expertise with industry knowledge to create solutions that deliver measurable results for our clients.",
-    variant: 'default' as const,
-    stats: statsLists.withContent.stats
-};
-
-const valuesItems = [
-    {
-        title: "Quality First",
-        description: "Every solution is built to ensure durability, reliability, and a superior user experience. We set premium standards to achieve excellence in every project."
-    },
-    {
-        title: "Innovation & Agility",
-        description: "We thrive on new challenges and continuously evolve our technologies and processes to stay ahead in a rapidly changing digital landscape."
-    },
-    {
-        title: "Client-Centric Partnership",
-        description: "We view each engagement as a long-term relationship. Our commitment extends beyond project delivery with continuous support and iterative improvements."
-    },
-    {
-        title: "Transparency & Collaboration",
-        description: "Open communication and collaborative planning lie at the heart of our approach, ensuring that your vision is realized with precision and care."
-    }
-];
-
-const ctaContent = {
-    eyebrow: "Join Our Journey",
-    title: "Ready to Transform Your Business?",
-    description: "Partner with us to leverage technology that drives growth, efficiency, and innovation.",
-    button: {
-        text: "Contact Us",
-        link: "/contact",
-        variant: "primary" as const
-    }
-};
+const description = "Your boutique motion and technology partner for digital transformation";
 ---
 
 <Layout title={title} description={description}>
-    <InnerHero content={heroContent} />
-    
-    <SplitPanel content={storySection} imagePosition="right" background="light" padding="base" />
-    
-    <Stats content={statsContent} background="base" padding="base" />
-    
-    <section class="py-base bg-premium-navy">
-        <div class="site-container mx-auto px-4">
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <h2 class="text-white text-large mb-6">Our Values & Vision</h2>
-                <p class="text-premium-gray">
-                    These core principles guide our approach to technology development and client relationships.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {valuesItems.map((value, index) => (
-                    <div 
-                        class="p-6 rounded-lg border border-white/10 bg-premium-navy-light flex flex-col hover:border-premium-blue/50 transition-colors"
-                        data-aos="fade-up"
-                        data-aos-delay={index * 100}
-                    >
-                        <h3 class="text-h4 mb-3 text-white">
-                            {value.title}
-                        </h3>
-                        <p class="text-premium-gray">
-                            {value.description}
-                        </p>
+    <main class="bg-premium-navy">
+        {/* All components are client-side React with Motion */}
+        <HeroSection client:load />
+        
+        <CompanySection client:visible />
+        
+        <FocusSection client:visible />
+        
+        <ClientsSection client:visible />
+
+        <section class="py-24 bg-premium-navy border-t border-white/5">
+            <div class="site-container px-4">
+                <ScrollReveal direction="up" client:visible>
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+                        <div>
+                            <h2 class="text-8xl md:text-[12vw] font-bold leading-none tracking-tighter uppercase mb-2 text-white font-logo">
+                                CDSL<span class="text-premium-blue">™</span>
+                            </h2>
+                            <p class="text-sm font-medium tracking-widest uppercase text-premium-blue opacity-40">
+                                Engineering / Future / Brands.
+                            </p>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-16 md:gap-24">
+                            <div>
+                                <span class="block text-xs font-bold tracking-widest uppercase mb-6 text-premium-blue opacity-60">Contact</span>
+                                <ul class="space-y-4">
+                                    <li><a href="mailto:contact@cdsl.tech" class="text-lg font-light text-premium-gray hover:text-premium-blue transition-colors">contact@cdsl.tech</a></li>
+                                    <li><a href="/contact" class="text-lg font-light text-premium-gray hover:text-premium-blue transition-colors">Business Inquiry</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="block text-xs font-bold tracking-widest uppercase mb-6 text-premium-blue opacity-60">Social</span>
+                                <ul class="space-y-4">
+                                    <li><a href="https://linkedin.com/company/cdsl" target="_blank" class="text-lg font-light text-premium-gray hover:text-premium-blue transition-colors">LinkedIn</a></li>
+                                    <li><a href="#" class="text-lg font-light text-premium-gray hover:text-premium-blue transition-colors">X / Twitter</a></li>
+                                    <li><a href="#" class="text-lg font-light text-premium-gray hover:text-premium-blue transition-colors">Github</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                ))}
+                </ScrollReveal>
             </div>
-        </div>
-    </section>
-    
-    <CtaBanner content={ctaContent} background="base" padding="base" />
+        </section>
+    </main>
 </Layout>
+
+<style is:global>
+    /* Ensure the motion system aesthetics are consistent */
+    ::selection {
+        background: rgba(var(--color-premium-blue-rgb), 0.2);
+        color: inherit;
+    }
+</style>
