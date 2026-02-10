@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import Menu from 'lucide-react/dist/esm/icons/menu';
 import X from 'lucide-react/dist/esm/icons/x';
 import ChevronDown from 'lucide-react/dist/esm/icons/chevron-down';
-import { animate } from 'motion';
+import { motion } from 'framer-motion';
 import { headerMenu } from '@data/menu';
 import Logo from '@components/ui/Logo';
 
@@ -15,7 +15,6 @@ export const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
     const [currentTime, setCurrentTime] = useState<string>('--:--');
-    const headerRef = useRef<HTMLElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
 
     const isCurrentPage = (link: string) => {
@@ -26,15 +25,6 @@ export const Header: React.FC = () => {
     };
 
     useEffect(() => {
-        // Entrance Animation
-        if (headerRef.current) {
-            animate(
-                headerRef.current,
-                { y: [-20, 0], opacity: [0, 1] },
-                { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
-            );
-        }
-
         // Time Update
         const updateTime = () => {
             const now = new Date();
@@ -85,10 +75,12 @@ export const Header: React.FC = () => {
     };
 
     return (
-        <header
-            ref={headerRef}
-            className="fixed top-0 z-50 w-full left-0 transition-all duration-300 opacity-0"
+        <motion.header
+            className="fixed top-0 z-50 w-full left-0 transition-all duration-300"
             id="main-header"
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
             <div className="w-full px-4 md:px-8 py-4 md:py-6">
                 <div
@@ -235,7 +227,7 @@ export const Header: React.FC = () => {
                     </div>
                 </div>
             </div>
-        </header>
+        </motion.header>
     );
 };
 

@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import { inView, animate } from 'motion';
+import { motion } from 'framer-motion';
 
 const projects = [
     {
@@ -29,28 +29,16 @@ const projects = [
 ];
 
 export const Work: React.FC = () => {
-    useEffect(() => {
-        inView('.scroll-reveal-work', (info) => {
-            animate(
-                info as any,
-                { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0px)'] },
-                { duration: 0.8, easing: [0.17, 0.55, 0.55, 1] }
-            );
-        });
-
-        inView('.project-card', (info) => {
-            animate(
-                info as any,
-                { opacity: [0, 1], transform: ['translateY(50px)', 'translateY(0px)'] },
-                { duration: 0.8, easing: [0.17, 0.55, 0.55, 1] }
-            );
-        });
-    }, []);
-
     return (
         <section className="py-32 bg-premium-navy relative transition-colors duration-300">
             <div className="site-container px-4">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-20 scroll-reveal-work opacity-0">
+                <motion.div
+                    className="flex flex-col md:flex-row justify-between items-end mb-20"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                >
                     <div>
                         <span className="text-premium-blue font-mono text-sm tracking-widest uppercase mb-4 block">Selected Work</span>
                         <h2 className="font-display font-bold text-4xl md:text-5xl text-white transition-colors duration-300">
@@ -64,13 +52,20 @@ export const Work: React.FC = () => {
                             <path d="m12 5 7 7-7 7" />
                         </svg>
                     </Link>
-                </div>
+                </motion.div>
 
                 <div className="space-y-32">
                     {projects.map((project, index) => (
-                        <div
+                        <motion.div
                             key={index}
-                            className="project-card group grid grid-cols-1 lg:grid-cols-12 gap-8 items-center opacity-0"
+                            className="group grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{
+                                duration: 0.8,
+                                ease: [0.17, 0.55, 0.55, 1]
+                            }}
                         >
                             <div className={`lg:col-span-7 relative overflow-hidden rounded-sm ${index % 2 === 1 ? 'lg:order-last' : ''}`}>
                                 <div className="aspect-[16/9] overflow-hidden bg-premium-navy-light relative transition-colors">
@@ -105,7 +100,7 @@ export const Work: React.FC = () => {
                                     </Link>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
 

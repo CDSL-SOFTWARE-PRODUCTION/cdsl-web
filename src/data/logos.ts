@@ -1,4 +1,4 @@
-import type { ImageMetadata } from 'astro';
+// Logo type definition for Next.js
 
 // Import your logo images
 // Replace these imports with your actual logo files
@@ -9,7 +9,7 @@ import logo4 from '../assets/images/logos/logoipsum-347.svg';
 import logo5 from '../assets/images/logos/logoipsum-352.svg';
 
 export interface Logo {
-    src: ImageMetadata;
+    src: any; // SVG import
     alt: string; // The partner company's name
 }
 

@@ -1,29 +1,11 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import { animate } from 'motion';
+import { motion } from 'framer-motion';
 import Logo from '@components/ui/Logo';
 
 export const Hero: React.FC = () => {
-    const logoWrapperRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        if (logoWrapperRef.current) {
-            animate(
-                logoWrapperRef.current,
-                {
-                    transform: ["scale(2.5)", "scale(1)"],
-                    opacity: [0, 1],
-                },
-                {
-                    duration: 8,
-                    ease: [0.22, 1, 0.36, 1]
-                }
-            );
-        }
-    }, []);
-
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-premium-navy transition-colors duration-300">
             {/* Background Textures */}
@@ -44,16 +26,20 @@ export const Hero: React.FC = () => {
                 {/* Grid pattern behind the logo */}
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(102,252,241,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(102,252,241,0.08)_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-40"></div>
 
-                <div
-                    ref={logoWrapperRef}
+                <motion.div
                     className="hero-logo-wrapper w-full flex justify-center relative z-[2]"
-                    style={{ opacity: 0, transform: 'scale(2.5)' }}
+                    initial={{ opacity: 0, scale: 2.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                        duration: 8,
+                        ease: [0.22, 1, 0.36, 1]
+                    }}
                 >
                     <Logo
                         variant="hero"
                         className="text-[28vw] md:text-[22vw] lg:text-[18vw] leading-none text-white/5 font-black tracking-widest w-full text-center"
                     />
-                </div>
+                </motion.div>
             </div>
 
             <div className="site-container relative z-10 px-4 w-full h-full flex flex-col justify-center">

@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import MotionText from '../../motion/MotionText';
 import ScrollReveal from '../../motion/ScrollReveal';
 

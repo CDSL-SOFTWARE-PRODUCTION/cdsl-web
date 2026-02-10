@@ -1,6 +1,8 @@
 
+'use client';
+
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { type LucideIcon } from 'lucide-react';
 import Truck from 'lucide-react/dist/esm/icons/truck';
 import Heart from 'lucide-react/dist/esm/icons/heart';

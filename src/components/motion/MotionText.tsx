@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { motion, type Variants } from 'motion/react';
+import { motion, type Variants } from 'framer-motion';
 
 interface MotionTextProps {
     text: string;

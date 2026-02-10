@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useEffect } from 'react';
-import { inView, animate } from 'motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const services = [
     {
@@ -37,20 +37,16 @@ const services = [
 ];
 
 export const Services: React.FC = () => {
-    useEffect(() => {
-        inView('.scroll-reveal', (info) => {
-            animate(
-                info as any,
-                { opacity: [0, 1], transform: ['translateY(30px)', 'translateY(0px)'] },
-                { duration: 0.8, easing: [0.17, 0.55, 0.55, 1] }
-            );
-        });
-    }, []);
-
     return (
         <section className="py-32 bg-premium-navy-light relative overflow-hidden transition-colors duration-300">
             <div className="site-container px-4 relative z-10">
-                <div className="max-w-3xl mb-20 scroll-reveal opacity-0">
+                <motion.div
+                    className="max-w-3xl mb-20"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                >
                     <span className="text-premium-blue font-mono text-sm tracking-widest uppercase mb-4 block">Our Expertise</span>
                     <h2 className="font-display font-bold text-4xl md:text-5xl text-white mb-6 transition-colors duration-300">
                         Engineering Business Value
@@ -58,13 +54,17 @@ export const Services: React.FC = () => {
                     <p className="text-xl text-premium-gray font-light leading-relaxed transition-colors duration-300">
                         We don't just write code. We partner with you to solve critical business challenges through technology.
                     </p>
-                </div>
+                </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
-                        <div
+                        <motion.div
                             key={index}
-                            className="group p-8 border border-white/5 bg-premium-navy-light hover:border-premium-blue/50 transition-all duration-500 rounded-sm scroll-reveal opacity-0"
+                            className="group p-8 border border-white/5 bg-premium-navy-light hover:border-premium-blue/50 transition-all duration-500 rounded-sm"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: index * 0.1 }}
                         >
                             <div className="mb-6 text-premium-blue opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
                                 <div className="w-12 h-12 flex items-center justify-center bg-premium-blue/10 rounded-lg">
@@ -79,7 +79,7 @@ export const Services: React.FC = () => {
                             <p className="text-premium-gray leading-relaxed font-light transition-colors">
                                 {service.description}
                             </p>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>

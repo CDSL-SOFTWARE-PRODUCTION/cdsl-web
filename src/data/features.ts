@@ -1,5 +1,4 @@
-import { Code, Smartphone, Share2, Workflow, Zap, Presentation } from 'lucide-astro';
-import type { Album } from 'lucide-astro';
+import { Code, Smartphone, Share2, Workflow, Zap, Presentation, Album } from 'lucide-react';
 
 export interface Feature {
     icon: typeof Album;
@@ -48,7 +47,7 @@ export const featureLists: FeatureLists = {
                 title: 'Consulting & Strategy',
                 description: 'Expert guidance to align technology with your business goals, ensuring a successful digital transformation.'
             }
-            
+
         ]
     },
     // ...keep other feature lists if needed
