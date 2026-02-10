@@ -1,6 +1,12 @@
+import type { Metadata } from 'next';
 import Hero from '@components/sections/home/Hero';
 import Services from '@components/sections/home/Services';
 import Work from '@components/sections/home/Work';
+
+export const metadata: Metadata = {
+    title: "CDSL - Advanced Technology Solutions",
+    description: "CDSL is your forward-thinking technology partner, specializing in software development, digital transformation, IoT integration, and AI solutions.",
+};
 
 export default function Home() {
     return (

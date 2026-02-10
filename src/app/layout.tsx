@@ -28,7 +28,12 @@ export const metadata: Metadata = {
     icons: {
         icon: '/favicon.ico',
     },
-    viewport: 'width=device-width, initial-scale=1',
+    alternates: {
+        canonical: './',
+    },
+    other: {
+        'sitemap': '/sitemap-index.xml',
+    }
 };
 
 export default function RootLayout({
@@ -39,6 +44,7 @@ export default function RootLayout({
     return (
         <html lang="en" className={`${inter.variable} ${outfit.variable} dark overflow-x-hidden`} data-theme="premium">
             <head>
+                <link rel="sitemap" href="/sitemap-index.xml" />
                 <script
                     dangerouslySetInnerHTML={{
                         __html: `
@@ -50,6 +56,45 @@ export default function RootLayout({
                         `,
                     }}
                 />
+                <style dangerouslySetInnerHTML={{
+                    __html: `
+                        /* Custom Scrollbar for Webkit */
+                        ::-webkit-scrollbar {
+                            width: 8px;
+                        }
+                        ::-webkit-scrollbar-track {
+                            background: #0b0c10; 
+                        }
+                        ::-webkit-scrollbar-thumb {
+                            background: #1f2833; 
+                            border-radius: 4px;
+                        }
+                        ::-webkit-scrollbar-thumb:hover {
+                            background: #66fcf1; 
+                        }
+
+                        /* Lenis Recommended Styles */
+                        html.lenis, html.lenis body {
+                            height: auto;
+                        }
+
+                        .lenis.lenis-smooth {
+                            scroll-behavior: auto !important;
+                        }
+
+                        .lenis.lenis-smooth [data-lenis-prevent] {
+                            overscroll-behavior: contain;
+                        }
+
+                        .lenis.lenis-stopped {
+                            overflow: hidden;
+                        }
+
+                        .lenis.lenis-scrolling iframe {
+                            pointer-events: none;
+                        }
+                    `
+                }} />
             </head>
             <body className="antialiased min-h-screen relative selection:bg-premium-blue selection:text-premium-navy font-sans">
                 {/* Background Mesh Gradient */}
