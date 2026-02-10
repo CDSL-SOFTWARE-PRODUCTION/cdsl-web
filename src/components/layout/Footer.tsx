@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { footerMenu, legalMenu } from '@data/menu';
+import { footerMenu } from '@data/menu';
 import Logo from '@components/ui/Logo';
 import { siteConfig } from '@data/config';
 
@@ -43,7 +43,7 @@ export const Footer: React.FC<FooterProps> = ({ footerCta }) => {
 
             {/* Footer Links */}
             <div className="site-container px-4">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 border-t border-white/10 pt-12 transition-colors">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/10 pt-12 transition-colors">
                     <div className="col-span-1 md:col-span-2">
                         <Logo variant="footer" />
                         <p className="mt-6 text-premium-gray/70 font-mono text-sm max-w-xs">
@@ -55,19 +55,6 @@ export const Footer: React.FC<FooterProps> = ({ footerCta }) => {
                         <h3 className="text-white font-bold mb-6">Menu</h3>
                         <ul className="space-y-4">
                             {footerMenu.map(item => (
-                                <li key={item.name}>
-                                    <Link href={item.link} className="text-premium-gray hover:text-white transition-colors">
-                                        {item.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    <div className="col-span-1">
-                        <h3 className="text-white font-bold mb-6">Legal</h3>
-                        <ul className="space-y-4">
-                            {legalMenu.map(item => (
                                 <li key={item.name}>
                                     <Link href={item.link} className="text-premium-gray hover:text-white transition-colors">
                                         {item.name}
