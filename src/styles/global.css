@@ -1,21 +1,6 @@
-@import "tailwindcss";
-
-@theme {
-    /* Colors */
-    --color-premium-navy: #0b0c10;
-    --color-premium-navy-light: #1f2833;
-    --color-premium-blue: #66fcf1;
-    --color-premium-white: #ffffff;
-    --color-premium-gray: #c5c6c7;
-    --color-premium-black: #000000;
-    --color-body-base: #c5c6c7;
-    --color-background-dark: #0b0c10;
-
-    /* Typography */
-    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-    --font-display: 'Outfit', ui-sans-serif, system-ui, sans-serif;
-    --font-logo: 'Bruno Ace SC', sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Base styles */
 @layer base {

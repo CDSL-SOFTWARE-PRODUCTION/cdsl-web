@@ -67,7 +67,7 @@ export const Hero: React.FC = () => {
                         <div className="flex items-center gap-6">
                             <Link href="/work" className="group flex items-center gap-2 text-white font-medium hover:text-premium-blue transition-colors">
                                 <span>Selected Works</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="transform group-hover:translate-x-1 transition-transform">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transform group-hover:translate-x-1 transition-transform">
                                     <path d="M5 12h14" />
                                     <path d="m12 5 7 7-7 7" />
                                 </svg>
