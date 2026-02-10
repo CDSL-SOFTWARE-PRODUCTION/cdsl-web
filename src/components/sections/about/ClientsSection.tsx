@@ -44,11 +44,11 @@ const ClientsSection: React.FC = () => {
                             delay={index * 0.05}
                             direction="none"
                             amount={0.5}
-                            className="aspect-[3/2] flex items-center justify-center bg-premium-navy hover:bg-premium-blue/5 transition-colors group"
+                            className="aspect-[3/2] flex items-center justify-center bg-premium-navy md:hover:bg-premium-blue/10 transition-all duration-500 group border border-white/5 md:hover:border-premium-blue/30"
                         >
-                            <div className="text-xl md:text-2xl font-bold opacity-30 group-hover:opacity-100 transition-opacity flex flex-col items-center">
-                                <span className="text-3xl mb-1 text-white">{logo.icon}</span>
-                                <span className="text-[10px] uppercase tracking-widest font-semibold text-premium-blue">{logo.name}</span>
+                            <div className="text-xl md:text-2xl font-bold transition-all duration-500 flex flex-col items-center group-hover:scale-110">
+                                <span className="text-3xl mb-1 text-white md:group-hover:text-premium-blue transition-colors font-display">{logo.icon}</span>
+                                <span className="text-[10px] uppercase tracking-widest font-medium text-white/60 md:group-hover:text-white md:group-hover:opacity-100 transition-all">{logo.name}</span>
                             </div>
                         </ScrollReveal>
                     ))}

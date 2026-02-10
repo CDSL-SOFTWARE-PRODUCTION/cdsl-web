@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export const CapabilitiesSection: React.FC = () => {
     const [activeId, setActiveId] = React.useState(0);
@@ -55,10 +55,10 @@ export const CapabilitiesSection: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Split Layout: Left Preview, Right List */}
+                {/* Split Layout: Left Preview (Desktop), Right List (Desktop + Mobile Accordion) */}
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-24">
-                    {/* Left Column: Preview (GIF + Desc) */}
-                    <div className="md:col-span-5 order-2 md:order-1">
+                    {/* Left Column: Preview (GIF + Desc) - Hidden on Mobile */}
+                    <div className="hidden md:block md:col-span-5">
                         <div className="md:sticky md:top-32">
                             <motion.div
                                 key={activeId}
@@ -75,7 +75,7 @@ export const CapabilitiesSection: React.FC = () => {
                                             <div className="w-16 h-16 md:w-24 md:h-24 mx-auto mb-4 border-2 border-white/20 rounded-full flex items-center justify-center">
                                                 <div className="w-8 h-8 md:w-12 md:h-12 bg-white/40 rounded-sm"></div>
                                             </div>
-                                            <p className="text-white/30 font-mono text-xs uppercase tracking-widest hidden md:block">
+                                            <p className="text-white/30 font-mono text-xs uppercase tracking-widest">
                                                 [ GIF / ANIMATION PLACEHOLDER ]
                                             </p>
                                         </div>
@@ -110,24 +110,51 @@ export const CapabilitiesSection: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Right Column: List of Keywords */}
-                    <div className="md:col-span-7 order-1 md:order-2">
+                    {/* Right Column: List of Keywords (Mobile Accordion) */}
+                    <div className="md:col-span-7">
                         <div className="flex flex-col">
                             {items.map((item, index) => (
                                 <div
                                     key={item.title}
                                     onMouseEnter={() => setActiveId(index)}
                                     onClick={() => setActiveId(index)}
-                                    className="py-6 md:py-10 border-b border-white/5 cursor-pointer group flex items-start gap-4"
+                                    className="py-6 md:py-10 border-b border-white/5 cursor-pointer group flex flex-col"
                                 >
-                                    <span className={`text-[10px] md:text-sm font-mono mt-4 md:mt-8 transition-colors duration-500 ${activeId === index ? 'text-premium-blue' : 'text-premium-gray opacity-40 group-hover:opacity-100'}`}>
-                                        0{index + 1}
-                                    </span>
-                                    <h3
-                                        className={`text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tighter transition-all duration-700 select-none pb-2 ${activeId === index ? 'text-white translate-x-4' : 'text-white/10 group-hover:text-white group-hover:translate-x-4'}`}
-                                    >
-                                        {item.title}
-                                    </h3>
+                                    <div className="flex items-start gap-4">
+                                        <span className={`text-[10px] md:text-sm font-mono mt-4 md:mt-8 transition-colors duration-500 ${activeId === index ? 'text-premium-blue' : 'text-premium-gray opacity-40 group-hover:opacity-100'}`}>
+                                            0{index + 1}
+                                        </span>
+                                        <h3
+                                            className={`text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tighter transition-all duration-700 select-none pb-2 ${activeId === index ? 'text-white translate-x-4' : 'text-white/10 group-hover:text-white group-hover:translate-x-4'}`}
+                                        >
+                                            {item.title}
+                                        </h3>
+                                    </div>
+
+                                    {/* Mobile Inline Content */}
+                                    <AnimatePresence>
+                                        {activeId === index && (
+                                            <motion.div
+                                                initial={{ height: 0, opacity: 0 }}
+                                                animate={{ height: "auto", opacity: 1 }}
+                                                exit={{ height: 0, opacity: 0 }}
+                                                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                                                className="md:hidden overflow-hidden"
+                                            >
+                                                <div className="pl-14 pr-4 pt-4 pb-8 space-y-6">
+                                                    <p className="text-lg text-premium-gray font-light leading-relaxed">
+                                                        {item.description}
+                                                    </p>
+                                                    <Link href="/services" className="inline-flex items-center gap-3 text-white text-sm font-mono tracking-widest uppercase pb-1 border-b border-white/20">
+                                                        Explore Approach
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                            <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                                                        </svg>
+                                                    </Link>
+                                                </div>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
                                 </div>
                             ))}
                         </div>
