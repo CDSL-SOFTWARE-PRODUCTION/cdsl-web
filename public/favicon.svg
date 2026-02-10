@@ -4,13 +4,12 @@
       @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&amp;display=swap');
     </style>
   </defs>
-  <rect width="512" height="512" fill="#000000" rx="64" />
   <text 
     x="50%" 
     y="55%" 
     font-family="'Bruno Ace SC', sans-serif" 
     font-size="140" 
-    fill="#ffffff" 
+    fill="#0b0c10" 
     text-anchor="middle" 
     dominant-baseline="middle" 
     letter-spacing="4px"
