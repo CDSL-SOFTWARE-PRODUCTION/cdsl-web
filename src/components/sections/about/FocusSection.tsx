@@ -95,7 +95,6 @@ const FocusSection: React.FC = () => {
                                 className="inline-flex items-center gap-4 py-4 px-8 border border-white/10 rounded-full hover:bg-white hover:text-premium-navy transition-colors"
                             >
                                 <span className="text-sm font-semibold tracking-widest uppercase">Let's work together</span>
-                                <span className="text-xl">→</span>
                             </motion.a>
                         </ScrollReveal>
                     </div>

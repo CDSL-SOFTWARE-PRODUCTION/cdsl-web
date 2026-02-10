@@ -36,7 +36,6 @@ export default function AboutPage() {
                                     <span className="block text-xs font-bold tracking-widest uppercase mb-6 text-premium-blue opacity-60">Contact</span>
                                     <ul className="space-y-4">
                                         <li><a href="mailto:contact@cdsl.tech" className="text-lg font-light text-premium-gray hover:text-premium-blue transition-colors">contact@cdsl.tech</a></li>
-                                        <li><a href="/contact" className="text-lg font-light text-premium-gray hover:text-premium-blue transition-colors">Business Inquiry</a></li>
                                     </ul>
                                 </div>
                                 <div>

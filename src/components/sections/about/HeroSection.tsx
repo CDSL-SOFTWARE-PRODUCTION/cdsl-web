@@ -63,8 +63,6 @@ const HeroSection: React.FC = () => {
                                 transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
                                 className="flex items-center gap-2 text-sm font-medium tracking-widest uppercase opacity-40 text-premium-blue"
                             >
-                                <span>(Scroll)</span>
-                                <span className="text-lg">→</span>
                             </motion.div>
                         </div>
                     </div>

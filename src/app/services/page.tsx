@@ -1,10 +1,9 @@
 'use client';
 
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import ScrollReveal from '@components/motion/ScrollReveal';
 import MotionText from '@components/motion/MotionText';
+import ScrollReveal from '@components/motion/ScrollReveal';
 import { ServiceCard } from '@components/shared/ServiceCard';
 import { AccordionSteps } from '@components/sections/services/AccordionSteps';
 import Code2 from 'lucide-react/dist/esm/icons/code-2';
@@ -26,42 +25,55 @@ export default function ServicesPage() {
 
     return (
         <main className="bg-premium-navy transition-colors duration-300">
-            {/* Hero Section - Technical Grid Style */}
-            <section className="relative pt-32 pb-24 px-4 overflow-hidden">
-                {/* Background Textures with Parallax */}
-                <div className="absolute inset-0 z-0 pointer-events-none">
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(102,252,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(102,252,241,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]"></div>
-                    <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay"></div>
-                    <motion.div
-                        style={{ y: yParallax }}
-                        className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-premium-blue/5 blur-[150px] rounded-full"
-                    />
-                    <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-premium-navy-light/30 blur-[150px] rounded-full"></div>
-                </div>
+            {/* Hero Section - Matched to About/Projects Design Language */}
+            <section className="relative min-h-[90vh] flex flex-col justify-center pt-32 pb-16 px-4 overflow-hidden">
+                {/* Parallax Background Element */}
+                <motion.div
+                    style={{ y: yParallax }}
+                    className="absolute inset-0 z-0 pointer-events-none opacity-20"
+                >
+                    <div className="absolute top-[10%] left-[10%] w-[600px] h-[600px] bg-gradient-to-br from-premium-blue/40 to-transparent blur-[120px] rounded-full mix-blend-screen" />
+                    <div className="absolute bottom-[10%] right-[5%] w-[500px] h-[500px] bg-premium-navy-light blur-[100px] rounded-full opacity-50" />
+                </motion.div>
 
-                <div className="site-container relative z-10">
-                    <div className="max-w-4xl">
-                        <ScrollReveal direction="up" distance={20}>
-                            <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-premium-blue/10 border border-premium-blue/20 text-premium-blue text-xs font-mono uppercase tracking-widest mb-8">
-                                <span className="animate-pulse">●</span> Services
+                <div className="site-container relative z-10 w-full px-4">
+                    <div className="max-w-[1400px]">
+                        <h1 className="text-[10vw] md:text-[8vw] lg:text-[7vw] font-bold leading-[0.9] tracking-tighter uppercase mb-12 text-white font-display">
+                            <MotionText
+                                text="CONNECTING"
+                                className="block"
+                                delayOrder={0.1}
+                            />
+                            <div className="flex items-center gap-4 md:gap-8">
+                                <motion.div
+                                    initial={{ width: 0 }}
+                                    whileInView={{ width: '1.5em' }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1], delay: 0.4 }}
+                                    className="h-[0.1em] bg-premium-blue hidden md:block"
+                                />
+                                <MotionText
+                                    text="CUSTOMERS"
+                                    className="block"
+                                    delayOrder={0.3}
+                                />
                             </div>
-                        </ScrollReveal>
-                        <h1 className="font-display font-bold text-6xl md:text-8xl leading-[0.9] tracking-tighter text-white mb-12">
-                            <div className="flex flex-col gap-2">
-                                <MotionText text="We help you" delayOrder={0.1} />
-                                <MotionText text="connect with customers" className="text-premium-gray" delayOrder={0.3} />
-                                <span>
-                                    <MotionText text="by creating" delayOrder={0.5} />
-                                    {' '}
-                                    <MotionText text="products" className="text-premium-blue" delayOrder={0.6} />
-                                </span>
-                            </div>
+                            <MotionText
+                                text="BY PRODUCTS."
+                                className="block text-premium-blue"
+                                delayOrder={0.5}
+                            />
                         </h1>
-                        <ScrollReveal delay={0.8} direction="up" distance={10}>
-                            <p className="text-xl text-premium-gray max-w-2xl font-light leading-relaxed border-l-2 border-premium-blue/30 pl-6">
-                                We bridge the gap between complex business challenges and elegant technical solutions.
-                            </p>
-                        </ScrollReveal>
+
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+                            <div className="md:col-span-6 lg:col-span-5">
+                                <ScrollReveal delay={0.6} direction="up" distance={10}>
+                                    <p className="text-xl md:text-2xl text-premium-gray font-light leading-relaxed">
+                                        We bridge the gap between complex business challenges and elegant technical solutions.
+                                    </p>
+                                </ScrollReveal>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -149,13 +161,21 @@ export default function ServicesPage() {
                         { title: "Hospitality", icon: Map, desc: "Dynamic booking and itinerary planners." }
                     ].map((industry, index) => (
                         <ScrollReveal key={industry.title} direction="up" distance={20} delay={index * 0.05}>
-                            <div className="p-8 rounded-[5px] bg-premium-navy-light border border-white/5 hover:border-premium-blue/50 transition-all duration-300 group">
-                                <div className="mb-6 text-premium-blue opacity-50 group-hover:opacity-100 transition-opacity">
-                                    <industry.icon size={32} strokeWidth={1.5} />
+                            <motion.div
+                                whileHover={{ y: -5 }}
+                                transition={{ duration: 0.3, ease: 'easeOut' }}
+                                className="p-8 rounded-[5px] bg-premium-navy-light border border-white/5 hover:border-premium-blue/50 transition-colors duration-300 group relative overflow-hidden"
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-br from-premium-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                                <div className="relative z-10">
+                                    <div className="mb-6 text-premium-blue opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+                                        <industry.icon size={32} strokeWidth={1.5} />
+                                    </div>
+                                    <h3 className="text-xl font-display font-bold text-white mb-2 group-hover:text-premium-blue transition-colors duration-300">{industry.title}</h3>
+                                    <p className="text-sm text-premium-gray font-light leading-relaxed group-hover:text-white transition-colors duration-300">{industry.desc}</p>
                                 </div>
-                                <h3 className="text-xl font-display font-bold text-white mb-2">{industry.title}</h3>
-                                <p className="text-sm text-premium-gray font-light leading-relaxed">{industry.desc}</p>
-                            </div>
+                            </motion.div>
                         </ScrollReveal>
                     ))}
                 </div>

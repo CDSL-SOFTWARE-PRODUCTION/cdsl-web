@@ -33,7 +33,6 @@ const ClientsSection: React.FC = () => {
                             className="text-sm font-bold tracking-widest uppercase flex items-center gap-2 group text-premium-blue/80 hover:text-premium-blue transition-colors"
                             whileHover={{ x: 4 }}
                         >
-                            Explore our work <span className="group-hover:translate-x-1 transition-transform">→</span>
                         </motion.a>
                     </ScrollReveal>
                 </div>

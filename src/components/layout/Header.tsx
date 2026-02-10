@@ -3,18 +3,19 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import Menu from 'lucide-react/dist/esm/icons/menu';
-import X from 'lucide-react/dist/esm/icons/x';
+import MenuIcon from 'lucide-react/dist/esm/icons/menu';
 import ChevronDown from 'lucide-react/dist/esm/icons/chevron-down';
-import { motion } from 'framer-motion';
+import Sun from 'lucide-react/dist/esm/icons/sun';
+import Moon from 'lucide-react/dist/esm/icons/moon';
+import { motion, AnimatePresence } from 'framer-motion';
 import { headerMenu } from '@data/menu';
 import Logo from '@components/ui/Logo';
 
 export const Header: React.FC = () => {
     const pathname = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
     const [currentTime, setCurrentTime] = useState<string>('--:--');
+    const [isDarkMode, setIsDarkMode] = useState(true);
     const containerRef = useRef<HTMLDivElement>(null);
 
     const isCurrentPage = (link: string) => {
@@ -25,6 +26,12 @@ export const Header: React.FC = () => {
     };
 
     useEffect(() => {
+        // Initialize theme
+        if (typeof window !== 'undefined') {
+            const isDark = document.documentElement.classList.contains('dark');
+            setIsDarkMode(isDark);
+        }
+
         // Time Update
         const updateTime = () => {
             const now = new Date();
@@ -62,172 +69,189 @@ export const Header: React.FC = () => {
     }, []);
 
     const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-        if (!isMenuOpen) {
+        const nextState = !isMenuOpen;
+        setIsMenuOpen(nextState);
+        if (nextState) {
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = '';
         }
     };
 
-    const toggleSubmenu = (name: string) => {
-        setActiveSubmenu(activeSubmenu === name ? null : name);
+    const toggleTheme = () => {
+        const newMode = !isDarkMode;
+        setIsDarkMode(newMode);
+        if (newMode) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.setAttribute('data-theme', 'premium');
+        } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
     };
 
+    // Mobile Menu Animation Variants
+    const menuVariants = {
+        closed: {
+            opacity: 0,
+            y: "-100%",
+            transition: {
+                duration: 0.5,
+                ease: [0.76, 0, 0.24, 1]
+            }
+        },
+        open: {
+            opacity: 1,
+            y: "0%",
+            transition: {
+                duration: 0.5,
+                ease: [0.76, 0, 0.24, 1]
+            }
+        }
+    };
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.2
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { y: 40, opacity: 0 },
+        show: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                duration: 0.4,
+                ease: [0.22, 0.61, 0.36, 1]
+            }
+        }
+    };
+
+    const extendedMenu = [
+        { name: 'Home', link: '/' },
+        ...headerMenu,
+        { name: 'Contact', link: 'mailto:contact@cdsl.tech' }
+    ];
+
     return (
-        <motion.header
-            className="fixed top-0 z-50 w-full left-0 transition-all duration-300"
-            id="main-header"
-            initial={{ y: -20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        >
-            <div className="w-full px-4 md:px-8 py-4 md:py-6">
-                <div
-                    ref={containerRef}
-                    className="flex justify-between items-center transition-all duration-300 bg-premium-navy/10 backdrop-blur-sm rounded-full px-6 py-2 border border-white/5"
-                    id="header-container"
-                >
-                    {/* Left: Logo */}
-                    <div className="flex-none flex items-center">
-                        <Logo />
-                    </div>
-
-                    {/* Center: Navigation */}
-                    <nav className="hidden lg:flex flex-grow justify-center px-10" aria-label="Site Navigation">
-                        <ul className="flex items-center justify-between w-full max-w-3xl">
-                            {headerMenu.map((item) => (
-                                <li key={item.name} className="relative group">
-                                    <Link
-                                        href={item.link}
-                                        className={`text-[13px] font-medium uppercase tracking-[0.2em] transition-all duration-300 py-1 border-b border-transparent hover:border-premium-blue/30 ${isCurrentPage(item.link)
-                                            ? 'text-premium-blue'
-                                            : 'text-white/80 hover:text-premium-blue'
-                                            }`}
-                                        aria-current={isCurrentPage(item.link) ? 'page' : undefined}
-                                    >
-                                        {item.name}
-                                        {item.children && item.showArrow && (
-                                            <ChevronDown
-                                                size={14}
-                                                className="transform transition-transform inline-block ml-1 group-hover:rotate-180"
-                                                aria-hidden="true"
-                                            />
-                                        )}
-                                    </Link>
-                                    {item.children && (
-                                        <ul className="submenu absolute left-1/2 -translate-x-1/2 mt-4 bg-premium-navy/95 backdrop-blur-md border border-white/10 rounded-none w-48 transition-all duration-300 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 overflow-hidden z-50 shadow-2xl p-0">
-                                            {item.children.map((child) => (
-                                                <li key={child.name}>
-                                                    <Link
-                                                        href={child.link}
-                                                        className={`block px-6 py-4 text-[10px] uppercase tracking-widest transition-colors duration-300 border-b border-white/5 last:border-none ${isCurrentPage(child.link)
-                                                            ? 'bg-premium-blue/10 text-premium-blue'
-                                                            : 'text-premium-gray hover:bg-premium-blue/5 hover:text-white'
-                                                            }`}
-                                                        aria-current={isCurrentPage(child.link) ? 'page' : undefined}
-                                                    >
-                                                        {child.name}
-                                                    </Link>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    )}
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
-
-                    {/* Right: Time Display and Mobile Menu */}
-                    <div className="flex-none flex items-center justify-end gap-6 min-w-[120px]">
-                        <div className="hidden lg:flex flex-col items-end text-[10px] font-medium tracking-[0.15em] text-white/40">
-                            <span className="text-white/60 mb-0.5">HANOI, VN</span>
-                            <span className="font-mono text-premium-blue/80">{currentTime}</span>
-                        </div>
-
-                        {/* Mobile Menu Button */}
-                        <div className="lg:hidden">
-                            <button
-                                className="mobile-menu-button relative z-50 p-2 border-none cursor-pointer bg-transparent text-white hover:text-premium-blue transition-colors"
-                                onClick={toggleMenu}
-                                aria-label="Toggle Menu"
-                                aria-expanded={isMenuOpen}
-                            >
-                                {!isMenuOpen ? <Menu size={24} /> : <X size={24} />}
-                            </button>
-                        </div>
-                    </div>
-
-                    {/* Mobile Menu Panel */}
+        <>
+            <motion.header
+                className="fixed top-0 z-50 w-full left-0 transition-all duration-300"
+                id="main-header"
+                initial={{ y: -20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            >
+                <div className="w-full px-4 md:px-8 py-4 md:py-6 relative z-50">
                     <div
-                        className={`mobile-menu fixed inset-0 z-40 px-6 pt-24 bg-premium-navy/95 backdrop-blur-xl lg:hidden transition-all duration-300 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-                            } overflow-y-auto`}
+                        ref={containerRef}
+                        className="flex justify-between items-center transition-all duration-300 bg-premium-navy/10 backdrop-blur-sm rounded-full px-6 py-2 border border-white/5"
+                        id="header-container"
                     >
-                        <div className="flex flex-col h-full justify-between pb-8">
-                            <ul className="flex flex-col gap-6">
+                        {/* Left: Logo */}
+                        <div className="flex-none flex items-center relative z-50">
+                            <Logo />
+                        </div>
+
+                        {/* Center: Navigation (Desktop) */}
+                        <nav className="hidden lg:flex flex-grow justify-center px-10" aria-label="Site Navigation">
+                            <ul className="flex items-center justify-between w-full max-w-3xl">
                                 {headerMenu.map((item) => (
-                                    <li key={item.name}>
-                                        <div className="text-white">
-                                            <div className="flex items-center justify-between border-b border-white/10 pb-2">
-                                                <Link
-                                                    href={item.link}
-                                                    className={`text-2xl font-light uppercase tracking-[0.2em] transition-colors duration-300 ${isCurrentPage(item.link)
-                                                        ? 'text-premium-blue'
-                                                        : 'text-white/60 hover:text-premium-blue'
-                                                        }`}
-                                                    aria-current={isCurrentPage(item.link) ? 'page' : undefined}
-                                                    onClick={() => setIsMenuOpen(false)}
-                                                >
-                                                    {item.name}
-                                                </Link>
-                                                {item.children && (
-                                                    <button
-                                                        className="mobile-submenu-button p-2 -mr-2 text-white/60 hover:text-white transition-colors"
-                                                        onClick={() => toggleSubmenu(item.name)}
-                                                        aria-label={`Toggle ${item.name} submenu`}
-                                                        aria-expanded={activeSubmenu === item.name}
-                                                    >
-                                                        <ChevronDown
-                                                            size={24}
-                                                            className={`transform transition-transform duration-200 ${activeSubmenu === item.name ? 'rotate-180' : ''
-                                                                }`}
-                                                        />
-                                                    </button>
-                                                )}
-                                            </div>
-                                            {item.children && (
-                                                <ul className={`mobile-submenu ml-4 mt-4 space-y-4 border-l border-white/10 pl-4 ${activeSubmenu === item.name ? 'block' : 'hidden'
-                                                    }`}>
-                                                    {item.children.map((child) => (
-                                                        <li key={child.name}>
-                                                            <Link
-                                                                href={child.link}
-                                                                className={`block text-lg uppercase tracking-[0.15em] transition-colors duration-300 ${isCurrentPage(child.link)
-                                                                    ? 'text-premium-blue'
-                                                                    : 'text-white/40 hover:text-white'
-                                                                    }`}
-                                                                onClick={() => setIsMenuOpen(false)}
-                                                            >
-                                                                {child.name}
-                                                            </Link>
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            )}
-                                        </div>
+                                    <li key={item.name} className="relative group">
+                                        <Link
+                                            href={item.link}
+                                            className={`text-[13px] font-medium uppercase tracking-[0.2em] transition-all duration-300 py-1 border-b border-transparent hover:border-premium-blue/30 ${isCurrentPage(item.link)
+                                                ? 'text-premium-blue'
+                                                : 'text-white/80 hover:text-premium-blue'
+                                                }`}
+                                        >
+                                            {item.name}
+                                            {item.children && <ChevronDown size={14} className="ml-1 inline-block opacity-50" />}
+                                        </Link>
                                     </li>
                                 ))}
                             </ul>
+                        </nav>
 
-                            <div className="mt-8 text-center text-white/50 text-sm">
-                                <span className="block">Hanoi, Vietnam</span>
-                                <span>{currentTime}</span>
+                        {/* Right: Tools & Toggle */}
+                        <div className="flex-none flex items-center justify-end gap-6 min-w-[120px] relative z-50">
+                            <button
+                                onClick={toggleTheme}
+                                className="p-2 text-white/60 hover:text-premium-blue transition-colors rounded-full hover:bg-white/5"
+                            >
+                                {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
+                            </button>
+
+                            <div className="hidden lg:flex flex-col items-end text-[10px] font-medium tracking-[0.15em] text-white/40">
+                                <span className="text-white/60 mb-0.5">HANOI, VN</span>
+                                <span className="font-mono text-premium-blue/80">{currentTime}</span>
                             </div>
+
+                            {/* Mobile Toggle Button */}
+                            <button
+                                className="lg:hidden relative z-50 text-white font-medium uppercase tracking-widest text-sm hover:text-premium-blue transition-colors"
+                                onClick={toggleMenu}
+                            >
+                                {isMenuOpen ? 'Close' : <MenuIcon size={24} />}
+                            </button>
                         </div>
                     </div>
                 </div>
-            </div>
-        </motion.header>
+            </motion.header>
+
+            {/* Full Screen Mobile Menu */}
+            <AnimatePresence mode="wait">
+                {isMenuOpen && (
+                    <motion.div
+                        key="mobile-menu"
+                        variants={menuVariants}
+                        initial="closed"
+                        animate="open"
+                        exit="closed"
+                        className="fixed inset-0 z-40 bg-black flex flex-col justify-center items-center lg:hidden"
+                    >
+                        <motion.div
+                            className="flex flex-col items-center gap-6"
+                            variants={containerVariants}
+                            initial="hidden"
+                            animate="show"
+                        >
+                            {extendedMenu.map((item) => (
+                                <motion.div key={item.name} variants={itemVariants} className="overflow-hidden">
+                                    <Link
+                                        href={item.link}
+                                        className={`relative block text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter hover:text-premium-blue transition-colors duration-300 ${isCurrentPage(item.link) ? 'text-white' : 'text-white/60'}`}
+                                        onClick={toggleMenu}
+                                    >
+                                        {item.name}
+                                        {item.name === 'Projects' && (
+                                            <sup className="absolute top-2 -right-6 text-base md:text-xl font-mono text-premium-blue font-normal opacity-80">20</sup>
+                                        )}
+                                    </Link>
+                                </motion.div>
+                            ))}
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.5, duration: 0.5 }}
+                            className="absolute bottom-12 left-0 w-full px-8 flex justify-between text-xs md:text-sm font-mono uppercase tracking-widest text-white/40"
+                        >
+                            <a href="#" className="hover:text-white transition-colors">Instagram</a>
+                            <a href="https://linkedin.com/company/cdsl" target="_blank" className="hover:text-white transition-colors">LinkedIn</a>
+                            <a href="#" className="hover:text-white transition-colors">Behance</a>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </>
     );
 };
 
