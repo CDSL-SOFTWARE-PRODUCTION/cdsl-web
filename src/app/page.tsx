@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import Hero from '@components/sections/home/Hero';
-import Services from '@components/sections/home/Services';
+import ApproachSection from '@components/sections/home/ApproachSection';
+import CapabilitiesSection from '@components/sections/home/CapabilitiesSection';
 import Work from '@components/sections/home/Work';
+import BoutiqueSection from '@components/sections/home/BoutiqueSection';
 
 export const metadata: Metadata = {
     title: "CDSL - Technology Solutions",
@@ -12,15 +14,10 @@ export default function Home() {
     return (
         <>
             <Hero />
-            <Services />
+            <ApproachSection />
             <Work />
-
-            <section className="py-24 bg-premium-navy-light relative overflow-hidden transition-colors duration-300">
-                <div className="site-container px-4 relative z-10 text-center">
-                    <h2 className="text-4xl font-display font-bold mb-6 text-white transition-colors">More Premium Content Coming Soon</h2>
-                    <p className="text-premium-gray max-w-2xl mx-auto transition-colors">We are rebuilding our component library to match this new premium aesthetic.</p>
-                </div>
-            </section>
+            <CapabilitiesSection />
+            <BoutiqueSection />
         </>
     );
 }

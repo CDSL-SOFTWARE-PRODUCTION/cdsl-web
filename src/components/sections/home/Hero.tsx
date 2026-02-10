@@ -29,7 +29,7 @@ export const Hero: React.FC = () => {
                 <div className="hero-logo-wrapper w-full flex justify-center relative z-[2]">
                     <Logo
                         variant="hero"
-                        className="text-[28vw] md:text-[22vw] lg:text-[18vw] leading-none text-white/5 font-black tracking-widest w-full text-center"
+                        className="text-[22vw] md:text-[22vw] lg:text-[18vw] leading-none text-white/5 font-black tracking-widest w-full text-center"
                     />
                 </div>
             </div>
@@ -37,7 +37,7 @@ export const Hero: React.FC = () => {
             <div className="site-container relative z-10 px-4 w-full h-full flex flex-col justify-center">
                 <div className="max-w-7xl mx-auto">
                     {/* Kinetic Typography Headline */}
-                    <h1 className="font-display font-bold text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tighter text-white mb-12 transition-colors duration-300">
+                    <h1 className="font-display font-bold text-5xl sm:text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tighter text-white mb-12 transition-colors duration-300">
                         <div className="overflow-hidden">
                             <span className="inline-block">Turn</span>
                             <span className="inline-block text-premium-gray mx-4">Ops</span>

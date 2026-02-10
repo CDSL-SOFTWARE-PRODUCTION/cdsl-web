@@ -240,33 +240,10 @@ export default function ContactPage() {
                         </motion.div>
                     </motion.div>
 
-                    {/* Work Teaser with Vertical "WORK" */}
-                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-                        {/* Vertical "WORK" */}
-                        <div className="md:col-span-1 hidden md:flex flex-col justify-start items-center space-y-2">
-                            {['W', 'O', 'R', 'K'].map((char, index) => (
-                                <motion.span
-                                    key={index}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1, duration: 0.5 }}
-                                    className="text-sm font-mono text-premium-blue font-bold"
-                                >
-                                    {char}
-                                </motion.span>
-                            ))}
-                            <motion.div
-                                initial={{ height: 0 }}
-                                whileInView={{ height: '100px' }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.5, duration: 0.8 }}
-                                className="w-[1px] bg-premium-blue/30 mt-4"
-                            />
-                        </div>
-
+                    {/* Work Teaser */}
+                    <div className="grid grid-cols-1 gap-8">
                         {/* Project List */}
-                        <div className="md:col-span-11 space-y-6">
+                        <div className="space-y-6">
                             {teaserProjects.map((project, index) => (
                                 <motion.div
                                     key={index}
