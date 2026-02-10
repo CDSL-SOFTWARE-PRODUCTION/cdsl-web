@@ -7,7 +7,6 @@ export interface MenuItem {
 
 export const headerMenu: MenuItem[] = [
     { name: 'About', link: '/about' },
-    { name: 'Our Team', link: '/team' },
     { name: 'Services', link: '/services' }
 ];
 
