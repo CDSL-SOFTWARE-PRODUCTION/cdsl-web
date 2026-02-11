@@ -44,7 +44,7 @@ export const BoutiqueSection: React.FC = () => {
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-[1.15]">
                             <span className="bg-premium-blue text-premium-navy px-3 py-1 inline-block mb-1">Boutique studio.</span>
                             <br />
-                            <span className="bg-premium-blue text-premium-navy px-3 py-1 inline-block">Global brands.</span>
+                            <span className="bg-premium-blue text-premium-navy px-3 py-1 inline-block">Enterprise Infrastructure.</span>
                         </h2>
                     </motion.div>
 
@@ -55,10 +55,10 @@ export const BoutiqueSection: React.FC = () => {
                         className="space-y-8 text-premium-gray text-base md:text-lg leading-relaxed font-light"
                     >
                         <p>
-                            Systems are only as strong as the partnership behind them. We operate as a boutique agency built for direct, collaborative work. We integrate seamlessly with in-house teams, functioning as an extension of the brand itself.
+                            We bring the rigour of enterprise systems to agile teams. Systems are only as strong as the partnership behind them.
                         </p>
                         <p className="text-white font-normal">
-                            In short, we don't just work with brands, we become part of them.
+                            No bloat, just pure efficiency. We integrate seamlessly with in-house teams, functioning as the architectural extension of your business.
                         </p>
                     </motion.div>
 
@@ -70,7 +70,7 @@ export const BoutiqueSection: React.FC = () => {
                     >
                         <Link href="/contact" className="group inline-flex flex-col">
                             <span className="text-white text-sm md:text-base font-medium tracking-wide uppercase hover:text-premium-blue transition-colors">
-                                Learn more
+                                See our engagement model
                             </span>
                             <span className="h-[1.5px] w-12 bg-white/30 mt-1 group-hover:w-full group-hover:bg-premium-blue transition-all duration-300"></span>
                         </Link>

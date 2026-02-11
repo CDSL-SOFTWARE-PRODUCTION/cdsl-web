@@ -14,7 +14,7 @@ export const Hero: React.FC = () => {
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(102,252,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(102,252,241,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]"></div>
 
                 {/* Subtle noise texture overlay */}
-                <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay"></div>
+                <div className="absolute inset-0 bg-noise opacity-[0.03] mix-blend-overlay"></div>
 
                 {/* Premium Gradient Glow */}
                 <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-premium-blue/5 blur-[150px] rounded-full"></div>
@@ -24,7 +24,7 @@ export const Hero: React.FC = () => {
             {/* Giant Background Logo with Grid */}
             <div className="absolute inset-0 z-[1] flex justify-center items-center overflow-hidden pointer-events-none select-none">
                 {/* Grid pattern behind the logo */}
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(102,252,241,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(102,252,241,0.08)_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-40"></div>
+                <div className="absolute inset-0 bg-grid opacity-40"></div>
 
                 <div className="hero-logo-wrapper w-full flex justify-center relative z-[2]">
                     <Logo
@@ -39,20 +39,20 @@ export const Hero: React.FC = () => {
                     {/* Kinetic Typography Headline */}
                     <h1 className="font-display font-bold text-5xl sm:text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tighter text-white mb-12 transition-colors duration-300">
                         <div className="overflow-hidden">
-                            <span className="inline-block">Turn</span>
-                            <span className="inline-block text-premium-gray mx-4">Ops</span>
-                            <span className="inline-block">Chaos</span>
+                            <span className="inline-block">Architecting</span>
                         </div>
                         <div className="overflow-hidden">
-                            <span className="inline-block">Into</span>
-                            <span className="inline-block text-premium-blue mx-4">Profit</span>
+                            <span className="inline-block text-premium-gray">The Systems</span>
+                        </div>
+                        <div className="overflow-hidden">
+                            <span className="inline-block">Of <span className="text-premium-blue">Growth</span></span>
                         </div>
                     </h1>
 
                     <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
                         {/* Subheadline */}
                         <p className="text-lg md:text-xl text-premium-gray max-w-xl font-light leading-relaxed transition-colors duration-300">
-                            We engineer autonomous systems for growing consultancy businesses, turning fragmented operations into a unified engine for growth.
+                            We engineer autonomous operational infrastructures for ambitious brands. Turning fragmented processes into a unified engine for scale.
                         </p>
 
                         {/* Minimal CTA */}
@@ -65,7 +65,7 @@ export const Hero: React.FC = () => {
                                 </svg>
                             </Link>
                             <Link href="/contact" className="px-8 py-4 bg-premium-blue text-premium-navy font-bold rounded-none hover:bg-premium-blue/80 transition-colors">
-                                Start Project
+                                Inquire
                             </Link>
                         </div>
                     </div>

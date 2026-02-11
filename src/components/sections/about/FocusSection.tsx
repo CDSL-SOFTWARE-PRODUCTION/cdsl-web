@@ -40,7 +40,7 @@ const FocusSection: React.FC = () => {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }}
                                 >
-                                    WE GO BEYOND
+                                    WE ARCHITECT
                                 </motion.div>
                             </div>
                             <div className="flex items-center gap-4">
@@ -58,7 +58,7 @@ const FocusSection: React.FC = () => {
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 0.61, 0.36, 1] }}
                                     >
-                                        ENGINEERING.
+                                        SYSTEMS.
                                     </motion.div>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@ const FocusSection: React.FC = () => {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 0.61, 0.36, 1] }}
                                 >
-                                    WE TRANSFORM.
+                                    WE ENGINEER SCALE.
                                 </motion.div>
                             </div>
                         </h2>

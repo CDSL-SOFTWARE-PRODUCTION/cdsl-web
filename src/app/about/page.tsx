@@ -7,7 +7,7 @@ import ScrollReveal from '@components/motion/ScrollReveal';
 
 export const metadata: Metadata = {
     title: "About CDSL",
-    description: "Your boutique motion and technology partner for digital transformation",
+    description: "Your boutique engineering partner for operational architecture and software.",
 };
 
 export default function AboutPage() {

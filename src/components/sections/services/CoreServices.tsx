@@ -26,14 +26,14 @@ const CoreServices: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <ScrollReveal direction="up" distance={30} delay={0.1}>
                     <ServiceCard
-                        title="Web & Mobile Development"
-                        description="High-performance, scalable applications built with modern frameworks to deliver exceptional user experiences."
+                        title="Platform Architecture"
+                        description="SaaS & Product Engineering. We build scalable, production-ready applications designed for high-velocity growth. (MVP to Scale)."
                         features={[
-                            "Next.js & React Specialists",
-                            "Native iOS & Android Development",
-                            "Scalable Backend Infrastructure",
-                            "Cross-platform Performance Optimization",
-                            "Progressive Web Apps (PWA)"
+                            "Next.js & React Engineering",
+                            "Cloud-Native Infrastructure",
+                            "Secure Payment & Auth Systems",
+                            "Real-time Data Processing",
+                            "API-First Architecture"
                         ]}
                         icon={Code2}
                         className="h-full"
@@ -42,14 +42,14 @@ const CoreServices: React.FC = () => {
 
                 <ScrollReveal direction="up" distance={30} delay={0.2}>
                     <ServiceCard
-                        title="UX & UI Design"
-                        description="Design that resonates. We create intuitive interfaces that tell your brand's story and simplify complex user journeys."
+                        title="Operational Automation"
+                        description="RevOps & Workflow Engineering. We eliminate manual friction by architecting autonomous CRM and data pipelines."
                         features={[
-                            "User Research & Journey Mapping",
-                            "Interactive Prototyping",
-                            "Modern UI Design Systems",
-                            "Accessibility (A11y) Focus",
-                            "Motion & Micro-interactions"
+                            "CRM Architecture (HubSpot/Salesforce)",
+                            "Automated Revenue Pipelines",
+                            "Custom Dashboarding & Reporting",
+                            "Cross-Tool Data Synchronization",
+                            "Process Optimization Audits"
                         ]}
                         icon={LayoutIcon}
                         className="h-full"
@@ -58,18 +58,18 @@ const CoreServices: React.FC = () => {
 
                 <ScrollReveal direction="up" distance={30} delay={0.3}>
                     <ServiceCard
-                        title="Cloud & Systems Scaling"
-                        description="Resilient infrastructure designed to handle the most demanding workloads. We make systems that don't just work—they perform."
+                        title="Growth Engineering"
+                        description="Continuous Delivery & System Evolution. We act as your fractional technical partner, shipping features that drive revenue."
                         features={[
-                            "AWS/Azure Infrastructure Orchestration",
-                            "Kubernetes & Containerization",
-                            "Serverless Architecture Design",
-                            "High-Availability & Disaster Recovery",
-                            "Real-time Monitoring & Logging"
+                            "Monthly Feature Sprints",
+                            "Performance Optimization",
+                            "Technical Debt Management",
+                            "Infrastructure Scaling",
+                            "Conversion Rate Engineering"
                         ]}
                         stats={[
-                            { value: "5M+", label: "Users Scaled" },
-                            { value: "1B+", label: "Daily Transactions" }
+                            { value: "40%", label: "Avg. Velocity Increase" },
+                            { value: "99.9%", label: "Uptime Guarantees" }
                         ]}
                         icon={Cloud}
                         className="h-full"

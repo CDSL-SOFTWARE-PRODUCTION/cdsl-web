@@ -14,21 +14,21 @@ export const headerMenu: MenuItem[] = [
 
 export const footerMenu = [
     {
-        title: 'Platform',
+        title: 'Company',
         links: [
             { name: 'Projects', link: '/projects' },
-            { name: 'About', link: '/about' },
             { name: 'Services', link: '/services' },
+            { name: 'About', link: '/about' },
             { name: 'Contact', link: '/contact' },
         ]
     },
     {
         title: 'Services',
         links: [
-            { name: 'Web & Mobile', link: '/services#core' },
-            { name: 'UX & UI Design', link: '/services#core' },
-            { name: 'Cloud & Systems', link: '/services#core' },
-            { name: 'Recruitment', link: '/services#recruitment' },
+            { name: 'Platform Architecture', link: '/services' },
+            { name: 'Operational Automation', link: '/services' },
+            { name: 'Growth Engineering', link: '/services' },
+            { name: 'Dedicated Teams', link: '/services' },
         ]
     },
     {
@@ -36,8 +36,8 @@ export const footerMenu = [
         links: [
             { name: 'Logistics', link: '/projects?industry=logistics' },
             { name: 'Healthcare', link: '/projects?industry=healthcare' },
+            { name: 'Fintech', link: '/projects?industry=finance' },
             { name: 'Retail', link: '/projects?industry=retail' },
-            { name: 'Finance', link: '/projects?industry=finance' },
         ]
     }
 ];

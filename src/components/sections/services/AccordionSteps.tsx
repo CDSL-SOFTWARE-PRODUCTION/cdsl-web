@@ -13,33 +13,23 @@ interface ProcessStep {
 const steps: ProcessStep[] = [
     {
         number: "01",
-        title: "Assessment Call",
-        description: "We begin with a deep dive into your business goals, current tech stack, and the specific problems you're looking to solve."
+        title: "Diagnostic & Blueprint",
+        description: "We start by deconstructing your current operations. We identify data leaks, process friction, and technical bottlenecks, delivering a comprehensive architectural blueprint for your ideal state."
     },
     {
         number: "02",
-        title: "Estimations & Proposal",
-        description: "Detailed breakdown of the project scope, timeline, and resource requirements based on our assessment."
+        title: "The Core Build",
+        description: "A 4-6 week rapid execution phase. We deploy the core operational engine—integrating CRMs, automating workflows, and establishing a 'Single Source of Truth' for your data."
     },
     {
         number: "03",
-        title: "Refinement",
-        description: "Collaborative iteration on the proposal to ensure perfect alignment with your objectives and budget."
+        title: "Validation & Launch",
+        description: "Rigorous testing and user training. We ensure your team is empowered to use the new system, with hand-off documentation and recorded SOPs."
     },
     {
         number: "04",
-        title: "Contracting",
-        description: "Clear and transparent legal agreements that define our partnership and protect your interests."
-    },
-    {
-        number: "05",
-        title: "Development",
-        description: "Agile execution with regular updates and feedback loops to ensure the product meets your expectations."
-    },
-    {
-        number: "06",
-        title: "Delivery & Support",
-        description: "Seamless launch followed by ongoing maintenance and strategic advice to ensure long-term success."
+        title: "Scale & Evolve",
+        description: "Growth isn't static. Through our retainer partnership, we continuously ship new features, optimize performance, and adapt the infrastructure as your business scales."
     }
 ];
 

@@ -54,6 +54,7 @@ const MotionText: React.FC<MotionTextProps> = ({
 
     return (
         <motion.div
+            key={text}
             className={`inline-block ${className}`}
             variants={containerVariants}
             initial="hidden"

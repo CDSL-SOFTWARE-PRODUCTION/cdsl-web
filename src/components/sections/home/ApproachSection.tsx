@@ -17,7 +17,7 @@ export const ApproachSection: React.FC = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        We create motion systems and identities that unify teams across marketing, events, and brand.
+                        Beautiful brands fail without robust operations. We build the invisible engine that makes the front-end possible.
                     </motion.p>
 
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
@@ -30,7 +30,7 @@ export const ApproachSection: React.FC = () => {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8, delay: 0.2 }}
                             >
-                                (Approach)
+                                (Philosophy)
                             </motion.span>
                         </div>
 
@@ -43,7 +43,7 @@ export const ApproachSection: React.FC = () => {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8, delay: 0.1 }}
                             >
-                                Our work is the architecture behind how brands move.
+                                The invisible engine behind the brand.
                             </motion.h2>
 
                             <motion.div
@@ -54,10 +54,10 @@ export const ApproachSection: React.FC = () => {
                                 transition={{ duration: 0.8, delay: 0.3 }}
                             >
                                 <p>
-                                    Motion is more than just movement—it's meaning. We define the logic, principles, and physics that govern how your brand behaves in a digital space.
+                                    Systems are more than just software—they are the physics of your business. We define the logic, architecture, and workflows that govern how value flows through your company.
                                 </p>
                                 <p>
-                                    By building a comprehensive motion language, we ensure consistency across every touchpoint, from micro-interactions to large-scale campaigns. It's about creating a system that scales with you, empowering your teams to create with confidence.
+                                    By building a comprehensive operational language, we ensure consistency across every deal, from lead capture to delivery. It's about creating a system that scales with you, empowering your teams to execute with precision.
                                 </p>
                             </motion.div>
 

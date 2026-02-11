@@ -79,7 +79,7 @@ export default function ContactPage() {
                         }}
                         className="mb-16 md:mb-24"
                     >
-                        {["ONE TEAM.", "WORKING", "TOGETHER."].map((line, index) => (
+                        {["PARTNERING", "FOR", "SCALE."].map((line, index) => (
                             <div key={index} className="overflow-hidden">
                                 <motion.h1
                                     variants={revealMask}
@@ -99,7 +99,7 @@ export default function ContactPage() {
                             transition={{ delay: 1, duration: 0.8 }}
                             className="md:col-span-4 lg:col-span-3 text-lg md:text-xl font-bold text-premium-blue"
                         >
-                            We partner with brands to shape systems and strategies for motion.
+                            We partner with ambitious leaders to engineer their operational future.
                         </motion.div>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -108,7 +108,7 @@ export default function ContactPage() {
                             className="md:col-span-8 lg:col-span-6 text-premium-gray text-base md:text-lg leading-relaxed"
                         >
                             <p>
-                                We define how brands move across every touchpoint—from digital products to marketing campaigns, events, and brand identities. Our approach combines strategic thinking with high-end craftsmanship to create motion systems that are scalable, distinct, and enduring.
+                                We define how businesses operate. From the first line of code to the final deployment, we build the infrastructure that powers revenue. Our approach combines strategic engineering with high-end craftsmanship to create systems that are scalable, distinct, and enduring.
                             </p>
                         </motion.div>
                     </div>
@@ -228,7 +228,7 @@ export default function ContactPage() {
                             variants={fadeInRight}
                             className="text-2xl md:text-4xl font-light text-white max-w-3xl leading-tight"
                         >
-                            From events and campaigns to <span className="text-premium-blue">entire brand ecosystems.</span>
+                            From validated MVPs to <span className="text-premium-blue">enterprise-grade software ecosystems.</span>
                         </motion.h2>
                         <motion.div variants={fadeInUp} className="mt-8">
                             <Link
