@@ -46,7 +46,6 @@ Chúng tôi đã xây dựng một **"Super App"** tập trung vào trải nghi�
   * So sánh với giọng bản xứ và chấm điểm từng từ (metrics: độ chính xác, độ lưu loát).
   * Giao diện Teleprompter giúp người dùng tự tin luyện nói câu dài.
 * **Multimedia Hub:** Tích hợp trình phát Podcast và Video chuyên dụng cho học ngoại ngữ (subtitles tương tác, loop đoạn khó).
-* **Gamification "trưởng thành":** Hệ thống Leaderboard và Streak không chỉ để chơi mà dựa trên thời gian học thực tế (Learning Time).
 
 ### 3. Kết quả (The Result)
 
@@ -62,11 +61,8 @@ Sản phẩm đã đi vào hoạt động ổn định trên cả 2 nền tảng
 
 > **"Team đã hiện thực hóa ý tưởng về một 'hệ sinh thái học tập' mà tôi ấp ủ 2 năm nay. Không chỉ code, các bạn còn tư vấn ngược lại về UX flow cho tính năng Shadowing, giúp tỉ lệ người dùng hoàn thành bài học tăng vọt."**
 >
-> — *Founder, EdTech Startup (Saigon)*
+> — *Founder Thanh Hà, EdTech Startup (Hanoi)*
 
-> **"Tôi ấn tượng nhất là khả năng xử lý audio/video mượt mà của App. Dù là ứng dụng React Native nhưng trải nghiệm Native-feel hoàn toàn, không có độ trễ khi load bài học nặng."**
->
-> — *CTO, Tech Partner*
 
 ---
 

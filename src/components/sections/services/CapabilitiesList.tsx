@@ -9,6 +9,7 @@ const capabilities = [
     {
         id: '01',
         title: 'Platform Architecture',
+        icon: Cpu,
         category: 'Tier 1: The Build',
         description: 'We engineer scalable, cloud-native platforms from day one. No low-code shortcuts. Just robust, production-grade software.',
         features: ['React / Next.js Infrastructure', 'Microservices Design', 'Scalable Database Schema', 'High-Performance API'],
@@ -23,6 +24,7 @@ const infrastructure = await System.build({
     {
         id: '02',
         title: 'Operational Automation',
+        icon: Code,
         category: 'Tier 2: The Optimization',
         description: 'We decompile your manual workflows and reassemble them as automated systems. We kill operational friction with code.',
         features: ['CRM Integration (HubSpot/Salesforce)', 'Data Pipeline Engineering', 'Automated Reporting', 'Internal Tooling'],
@@ -38,6 +40,7 @@ pipeline.on('deal_closed', async (deal) => {
     {
         id: '03',
         title: 'Growth Engineering',
+        icon: ArrowUpRight,
         category: 'Tier 3: The Scale',
         description: 'Marketing is soft. Growth engineering is hard science. We implement A/B testing infrastructure and data loops to scientifically scale revenue.',
         features: ['A/B Testing Frameworks', 'Conversion Rate Optimization', 'User Telemetry & Analytics', 'Performance Monitoring'],
@@ -80,10 +83,15 @@ export const CapabilitiesList: React.FC = () => {
                                 onMouseLeave={() => setActiveId(null)}
                                 className="group cursor-pointer border-b border-white/10 pb-8 transition-all duration-300 hover:border-premium-blue"
                             >
-                                <div className="flex items-baseline justify-between mb-4">
-                                    <h3 className="text-3xl font-display font-medium text-white group-hover:text-premium-blue transition-colors">
-                                        {cap.title}
-                                    </h3>
+                                <div className="flex items-center justify-between mb-4">
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-10 h-10 rounded bg-white/5 flex items-center justify-center group-hover:bg-premium-blue/10 transition-colors">
+                                            <cap.icon className="w-5 h-5 text-premium-gray group-hover:text-premium-blue transition-colors" />
+                                        </div>
+                                        <h3 className="text-3xl font-display font-medium text-white group-hover:text-premium-blue transition-colors">
+                                            {cap.title}
+                                        </h3>
+                                    </div>
                                     <span className="font-mono text-xs text-premium-gray group-hover:text-white transition-colors">
                                         {cap.id}
                                     </span>
