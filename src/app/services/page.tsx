@@ -65,13 +65,13 @@ export default function ServicesPage() {
                     <div className="site-container bg-premium-navy-light rounded-[5px] p-16 md:p-24 border border-white/5 text-center relative overflow-hidden group hover:border-premium-blue/20 transition-all duration-500">
                         <div className="absolute top-10 left-10 text-9xl text-white/5 font-serif font-black select-none pointer-events-none leading-none">“</div>
                         <div className="inline-flex p-1 bg-white/5 rounded-full mb-8 relative z-10">
-                            <img src="https://i.pravatar.cc/150?u=eric" alt="Eric Glyman" className="w-16 h-16 rounded-full border-2 border-premium-navy" />
+                            <img src="/testimonial/sun-chinese/1.png" alt="Thanh Ha" className="w-16 h-16 rounded-full border-2 border-premium-navy object-cover" />
                         </div>
                         <p className="text-2xl md:text-4xl font-display font-light text-white leading-tight mb-12 italic relative z-10 max-w-4xl mx-auto">
-                            "CDSL transformed our infrastructure, allowing us to process billions of transactions without a single hitch. Their technical depth is matched only by their strategic insight."
+                            "The team realized my vision of a learning ecosystem. Not just coding, they consulted on UX flow for the Shadowing feature, skyrocketing lesson completion rates."
                         </p>
-                        <div className="text-xl font-display font-bold text-premium-blue relative z-10">Eric Glyman</div>
-                        <div className="text-sm font-mono uppercase tracking-[0.2em] text-white/40 relative z-10">Co-Founder & CEO @ Paribus</div>
+                        <div className="text-xl font-display font-bold text-premium-blue relative z-10">Thanh Ha</div>
+                        <div className="text-sm font-mono uppercase tracking-[0.2em] text-white/40 relative z-10">Founder @ Sun Chinese</div>
                     </div>
                 </ScrollReveal>
             </section>

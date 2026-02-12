@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { projects } from '@data/projects';
 import ArrowRight from 'lucide-react/dist/esm/icons/arrow-right';
+import BidManagerFlow from '@components/illustrations/BidManagerFlow';
 
 export default function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
     const resolvedParams = use(params);
@@ -67,16 +68,51 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
                     {project.tagline && (
                         <motion.p
                             variants={fadeInUp}
-                            className="text-xl md:text-3xl text-white/70 max-w-3xl ml-auto font-light"
+                            className="text-xl md:text-3xl text-white/70 max-w-3xl font-light mb-6"
                         >
                             {project.tagline}
+                        </motion.p>
+                    )}
+
+                    {project.description && (
+                        <motion.p
+                            variants={fadeInUp}
+                            className="text-lg md:text-xl text-white/50 max-w-2xl font-light"
+                        >
+                            {project.description}
                         </motion.p>
                     )}
                 </motion.div>
             </section>
 
+            {/* Main Project Image */}
+            <section className="px-4 md:px-8 max-w-7xl mx-auto mb-20">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1 }}
+                    className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl md:rounded-[3rem] border border-white/10"
+                >
+                    {slug === 'dvt-bid-manager' ? (
+                        <BidManagerFlow />
+                    ) : (
+                        <>
+                            {project.image && (
+                                <img
+                                    src={project.image}
+                                    alt={project.name}
+                                    className="w-full h-full object-cover"
+                                />
+                            )}
+                            <div className="absolute inset-0 bg-gradient-to-t from-premium-navy/50 to-transparent"></div>
+                        </>
+                    )}
+                </motion.div>
+            </section>
+
             {/* Project Information */}
-            <section className="px-4 md:px-8 max-w-7xl mx-auto mb-32">
+            <section className="px-4 md:px-8 max-w-7xl mx-auto mb-20">
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -110,6 +146,150 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
                 </motion.div>
             </section>
 
+            {/* Overview Section */}
+            {project.overview && (
+                <section className="px-4 md:px-8 max-w-4xl mx-auto mb-32">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <h2 className="text-2xl md:text-3xl font-display mb-6 text-premium-blue">Overview</h2>
+                        <p className="text-xl md:text-2xl leading-relaxed text-white/90 font-light">
+                            {project.overview}
+                        </p>
+                    </motion.div>
+                </section>
+            )}
+
+
+            {/* Case Study Detail: Problem & Solution */}
+            {(project.problem || project.solution) && (
+                <section className="px-4 md:px-8 max-w-7xl mx-auto mb-32">
+                    <div className="grid md:grid-cols-2 gap-16 md:gap-24">
+                        {project.problem && (
+                            <motion.div
+                                initial={{ opacity: 0, x: -30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8 }}
+                            >
+                                <h3 className="text-sm font-mono text-white/40 uppercase tracking-widest mb-6">The Challenge</h3>
+                                <div className="prose prose-invert prose-lg">
+                                    <p className="text-white/80 leading-relaxed">
+                                        {project.problem}
+                                    </p>
+                                </div>
+                            </motion.div>
+                        )}
+
+                        {project.solution && (
+                            <motion.div
+                                initial={{ opacity: 0, x: 30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8, delay: 0.2 }}
+                            >
+                                <h3 className="text-sm font-mono text-white/40 uppercase tracking-widest mb-6">The Solution</h3>
+                                <div className="prose prose-invert prose-lg">
+                                    <p className="text-white/80 leading-relaxed">
+                                        {project.solution}
+                                    </p>
+                                </div>
+                            </motion.div>
+                        )}
+                    </div>
+                </section>
+            )}
+
+            {/* Tech Stack */}
+            {project.techStack && (
+                <section className="px-4 md:px-8 max-w-7xl mx-auto mb-32 bg-white/5 py-20 rounded-2xl">
+                    <div className="max-w-5xl mx-auto">
+                        <motion.h3
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="text-center text-2xl md:text-3xl font-display mb-12"
+                        >
+                            Technology Stack
+                        </motion.h3>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {project.techStack.map((stack, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                    className="text-center"
+                                >
+                                    <h4 className="text-premium-blue font-mono text-sm uppercase tracking-widest mb-6 border-b border-white/10 pb-4 inline-block">{stack.category}</h4>
+                                    <ul className="space-y-3">
+                                        {stack.items.map((item, i) => (
+                                            <li key={i} className="text-lg text-white/80">{item}</li>
+                                        ))}
+                                    </ul>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
+
+            {/* Result Section */}
+            {project.result && (
+                <section className="px-4 md:px-8 max-w-4xl mx-auto mb-32 text-center">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <h3 className="text-sm font-mono text-white/40 uppercase tracking-widest mb-8">Key Impact</h3>
+                        <p className="text-2xl md:text-4xl font-display leading-tight text-white">
+                            {project.result}
+                        </p>
+                    </motion.div>
+                </section>
+            )}
+
+            {/* Gallery */}
+            {project.gallery && (
+                <section className="px-4 md:px-8 max-w-7xl mx-auto mb-32">
+                    <div className={`${project.galleryLayout?.includes('flex') ? project.galleryLayout : `grid ${project.galleryLayout || 'md:grid-cols-2 gap-8'}`}`}>
+                        {project.gallery.map((item, index) => {
+                            // Split classes into container (layout/width) and inner (aspect ratio)
+                            const containerClasses = item.className ? item.className.replace(/aspect-\[.*?\]/g, '').trim() : '';
+                            const aspectClass = item.className?.match(/aspect-\[.*?\]/)?.[0] || 'aspect-[16/10]';
+
+                            return (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 40 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.2, duration: 0.8 }}
+                                    className={`group ${containerClasses}`}
+                                >
+                                    <div className={`relative ${aspectClass} w-full overflow-hidden rounded-2xl md:rounded-[2rem] bg-premium-navy-light border border-white/10 mb-4`}>
+                                        <img
+                                            src={item.src}
+                                            alt={item.caption || 'Project visual'}
+                                            className={`w-full h-full ${item.imageClassName || 'object-cover'} transform group-hover:scale-105 transition-transform duration-700`}
+                                        />
+                                    </div>
+                                    {item.caption && (
+                                        <p className="text-sm font-mono text-white/50 text-center">{item.caption}</p>
+                                    )}
+                                </motion.div>
+                            );
+                        })}
+                    </div>
+                </section>
+            )}
+
             {/* Testimonial */}
             {project.testimonial && (
                 <section className="px-4 md:px-8 max-w-5xl mx-auto mb-40 text-center">
@@ -119,6 +299,15 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
                         viewport={{ once: true }}
                         transition={{ duration: 1, ease: "easeOut" }}
                     >
+                        {project.testimonial.image && (
+                            <div className="inline-flex p-1 bg-white/5 rounded-full mb-8 relative z-10">
+                                <img
+                                    src={project.testimonial.image}
+                                    alt={project.testimonial.author}
+                                    className="w-20 h-20 rounded-full border-2 border-premium-navy object-cover"
+                                />
+                            </div>
+                        )}
                         <blockquote className="text-3xl md:text-5xl font-display font-light leading-snug mb-8">
                             &quot;{project.testimonial.quote}&quot;
                         </blockquote>
@@ -210,7 +399,9 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
                                 <Link href={`/projects/${p.slug}`}>
                                     <div className="aspect-[4/5] bg-white/5 mb-6 rounded-lg overflow-hidden group-hover:bg-white/10 transition-colors relative">
                                         <div className="absolute inset-0 bg-premium-blue/20 mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                        {p.image ? (
+                                        {p.slug === 'dvt-bid-manager' ? (
+                                            <BidManagerFlow />
+                                        ) : p.image ? (
                                             <img
                                                 src={p.image}
                                                 alt={p.name}

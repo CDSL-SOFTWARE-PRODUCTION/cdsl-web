@@ -20,7 +20,7 @@ const steps = [
         id: '02',
         title: 'Build',
         subtitle: 'Compiling the engine',
-        description: 'We execute a 6-week rapid sprint to deploy the core infrastructure. Clean code, scalable architecture, and automated CI/CD pipelines.',
+        description: 'We execute rapid sprints to deploy the core infrastructure. Clean code, scalable architecture, and automated CI/CD pipelines.',
         icon: Layers,
         metrics: [
             { label: 'Velocity', value: 'High' },

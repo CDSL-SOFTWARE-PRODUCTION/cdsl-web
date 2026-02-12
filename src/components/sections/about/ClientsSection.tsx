@@ -6,7 +6,13 @@ import { Code, Network, Server, Database, Cloud, Smartphone } from 'lucide-react
 import ScrollReveal from '../../motion/ScrollReveal';
 
 const ClientsSection: React.FC = () => {
-    const logos = [
+    interface Logo {
+        name: string;
+        icon: string;
+        isImage?: boolean;
+    }
+
+    const logos: Logo[] = [
         { name: 'Meta', icon: 'M' },
         { name: 'Apple', icon: 'A' },
         { name: 'Google', icon: 'G' },
@@ -15,7 +21,7 @@ const ClientsSection: React.FC = () => {
         { name: 'Spotify', icon: 'S' },
         { name: 'Microsoft', icon: 'Ms' },
         { name: 'Adobe', icon: 'Ad' },
-        // More can be added
+        { name: 'Sun Chinese', icon: '/logo/sun-chinse-logo.png', isImage: true },
     ];
 
     return (
@@ -48,7 +54,15 @@ const ClientsSection: React.FC = () => {
                             className="aspect-[3/2] flex items-center justify-center bg-premium-navy md:hover:bg-premium-blue/10 transition-all duration-500 group border border-white/5 md:hover:border-premium-blue/30"
                         >
                             <div className="text-xl md:text-2xl font-bold transition-all duration-500 flex flex-col items-center group-hover:scale-110">
-                                <span className="text-3xl mb-1 text-white md:group-hover:text-premium-blue transition-colors font-display">{logo.icon}</span>
+                                {logo.isImage ? (
+                                    <img
+                                        src={logo.icon}
+                                        alt={logo.name}
+                                        className="h-8 w-auto mb-2 object-contain brightness-0 invert opacity-60 group-hover:filter-none group-hover:opacity-100 transition-all duration-300"
+                                    />
+                                ) : (
+                                    <span className="text-3xl mb-1 text-white md:group-hover:text-premium-blue transition-colors font-display">{logo.icon}</span>
+                                )}
                                 <span className="text-[10px] uppercase tracking-widest font-medium text-white/60 md:group-hover:text-white md:group-hover:opacity-100 transition-all">{logo.name}</span>
                             </div>
                         </ScrollReveal>

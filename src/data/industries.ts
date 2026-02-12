@@ -28,15 +28,6 @@ export const industries: Industry[] = [
         }
     },
     {
-        slug: 'real-estate',
-        title: "Real Estate",
-        description: "Integrated property management systems.",
-        icon: "building-2",
-        metadata: {
-            tags: ["PropTech", "Management", "Listings"]
-        }
-    },
-    {
         slug: 'retail',
         title: "Retail",
         description: "Engaging eCommerce and AI customer solutions.",
@@ -55,30 +46,21 @@ export const industries: Industry[] = [
         }
     },
     {
-        slug: 'manufacturing',
-        title: "Manufacturing",
-        description: "IoT monitoring and predictive maintenance.",
-        icon: "factory",
-        metadata: {
-            tags: ["Industry 4.0", "IoT", "Smart Factory"]
-        }
-    },
-    {
-        slug: 'finance',
-        title: "Finance",
-        description: "AI analytics and compliance automation.",
-        icon: "bar-chart-2",
-        metadata: {
-            tags: ["FinTech", "Process Automation", "Security"]
-        }
-    },
-    {
         slug: 'hospitality',
         title: "Hospitality",
         description: "Dynamic booking and itinerary planners.",
         icon: "map",
         metadata: {
             tags: ["TravelTech", "Booking Engines", "CX"]
+        }
+    },
+    {
+        slug: 'technology',
+        title: "Technology",
+        description: "Advanced software architecture and platform engineering.",
+        icon: "cpu",
+        metadata: {
+            tags: ["SaaS", "Cloud Native", "DevOps"]
         }
     }
 ];

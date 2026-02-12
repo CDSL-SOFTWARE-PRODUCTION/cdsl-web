@@ -3,12 +3,17 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import ScrollReveal from '@components/motion/ScrollReveal';
+import BidManagerFlow from '@components/illustrations/BidManagerFlow';
 
 import { projects } from '@data/projects';
 
 export const Work: React.FC = () => {
-    // Top 3 projects
-    const featuredProjects = projects.slice(0, 3);
+    // Selected projects for Home Page
+    const featuredSlugs = ['dvt-bid-manager', 'Sun-chinese', 'gemstone-classification-ai'];
+    const featuredProjects = featuredSlugs
+        .map(slug => projects.find(p => p.slug === slug))
+        .filter((p): p is typeof projects[0] => p !== undefined);
 
     return (
         <section className="py-32 bg-premium-navy relative transition-colors duration-300">
@@ -51,13 +56,19 @@ export const Work: React.FC = () => {
                             <div className={`lg:col-span-7 relative overflow-hidden rounded-sm ${index % 2 === 1 ? 'lg:order-last' : ''}`}>
                                 <Link href={`/projects/${project.slug}`}>
                                     <div className="aspect-[16/9] overflow-hidden bg-premium-navy-light relative transition-colors">
-                                        <div className="absolute inset-0 bg-premium-blue/20 mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                        <img
-                                            src={project.image || "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80"}
-                                            alt={project.name}
-                                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                                            loading="lazy"
-                                        />
+                                        {project.slug === 'dvt-bid-manager' ? (
+                                            <BidManagerFlow />
+                                        ) : (
+                                            <>
+                                                <div className="absolute inset-0 bg-premium-blue/20 mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                                <img
+                                                    src={project.image || "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80"}
+                                                    alt={project.name}
+                                                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                                    loading="lazy"
+                                                />
+                                            </>
+                                        )}
                                     </div>
                                 </Link>
                             </div>
