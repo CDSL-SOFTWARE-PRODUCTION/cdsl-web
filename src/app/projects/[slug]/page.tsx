@@ -102,7 +102,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
                                 <img
                                     src={project.image}
                                     alt={project.name}
-                                    className="w-full h-full object-cover"
+                                    className={`w-full h-full ${project.slug === 'gemstone-classification-ai' ? 'object-contain' : 'object-cover'}`}
                                 />
                             )}
                             <div className="absolute inset-0 bg-gradient-to-t from-premium-navy/50 to-transparent"></div>
@@ -261,8 +261,9 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
                     <div className={`${project.galleryLayout?.includes('flex') ? project.galleryLayout : `grid ${project.galleryLayout || 'md:grid-cols-2 gap-8'}`}`}>
                         {project.gallery.map((item, index) => {
                             // Split classes into container (layout/width) and inner (aspect ratio)
-                            const containerClasses = item.className ? item.className.replace(/aspect-\[.*?\]/g, '').trim() : '';
-                            const aspectClass = item.className?.match(/aspect-\[.*?\]/)?.[0] || 'aspect-[16/10]';
+                            // Support both aspect-[...] and standard aspect-auto/video/etc
+                            const containerClasses = item.className ? item.className.replace(/aspect-\S+/g, '').trim() : '';
+                            const aspectClass = item.className?.match(/aspect-\S+/)?.[0] || 'aspect-[16/10]';
 
                             return (
                                 <motion.div
@@ -273,7 +274,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
                                     transition={{ delay: index * 0.2, duration: 0.8 }}
                                     className={`group ${containerClasses}`}
                                 >
-                                    <div className={`relative ${aspectClass} w-full overflow-hidden rounded-2xl md:rounded-[2rem] bg-premium-navy-light border border-white/10 mb-4`}>
+                                    <div className={`relative ${aspectClass} w-full overflow-hidden rounded-2xl md:rounded-[2rem] bg-premium-navy-light/50 border border-white/10 mb-4`}>
                                         <img
                                             src={item.src}
                                             alt={item.caption || 'Project visual'}

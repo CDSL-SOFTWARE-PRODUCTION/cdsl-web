@@ -37,17 +37,48 @@ export const Hero: React.FC = () => {
             <div className="site-container relative z-10 px-4 w-full h-full flex flex-col justify-center">
                 <div className="max-w-7xl mx-auto">
                     {/* Kinetic Typography Headline */}
-                    <h1 className="font-display font-bold text-5xl sm:text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tighter text-white mb-12 transition-colors duration-300">
-                        <div className="overflow-hidden">
-                            <span className="inline-block">Architecting</span>
+                    <motion.h1
+                        variants={{
+                            visible: { transition: { staggerChildren: 0.1 } }
+                        }}
+                        initial="hidden"
+                        animate="visible"
+                        className="font-display font-bold text-5xl sm:text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tighter text-white mb-12 transition-colors duration-300"
+                    >
+                        <div className="overflow-hidden py-1">
+                            <motion.span
+                                variants={{
+                                    hidden: { y: "100%" },
+                                    visible: { y: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } }
+                                }}
+                                className="inline-block"
+                            >
+                                Architecting
+                            </motion.span>
                         </div>
-                        <div className="overflow-hidden">
-                            <span className="inline-block text-premium-gray">The Systems</span>
+                        <div className="overflow-hidden py-1">
+                            <motion.span
+                                variants={{
+                                    hidden: { y: "100%" },
+                                    visible: { y: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } }
+                                }}
+                                className="inline-block text-premium-gray"
+                            >
+                                The Systems
+                            </motion.span>
                         </div>
-                        <div className="overflow-hidden">
-                            <span className="inline-block">Of <span className="text-premium-blue">Growth</span></span>
+                        <div className="overflow-hidden py-1">
+                            <motion.span
+                                variants={{
+                                    hidden: { y: "100%" },
+                                    visible: { y: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } }
+                                }}
+                                className="inline-block"
+                            >
+                                Of <span className="text-premium-blue">Growth</span>
+                            </motion.span>
                         </div>
-                    </h1>
+                    </motion.h1>
 
                     <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
                         {/* Subheadline */}

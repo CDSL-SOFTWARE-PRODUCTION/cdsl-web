@@ -199,7 +199,7 @@ export const projects: Project[] = [
         name: 'Gemstone Classification AI',
         client: 'Gemology Institute',
         year: '2022',
-        image: 'https://images.unsplash.com/photo-1589923188900-85dc74c93ada?q=80&w=2940&auto=format&fit=crop',
+        image: '/testimonial/gems/Fig_1_montage.png',
         category: 'AI Application',
         industry: 'retail',
         tagline: 'Automated gemstone identification with computer vision.',
@@ -221,9 +221,44 @@ export const projects: Project[] = [
             author: "Head of Research",
             role: "Gemology Partner"
         },
+        galleryLayout: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12',
         gallery: [
-            { src: 'https://images.unsplash.com/photo-1615655406736-b37c4fabf923?q=80&w=2000&auto=format&fit=crop', caption: 'Gemstone Analysis' },
-            { src: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2000&auto=format&fit=crop', caption: 'Classification Matrix' }
+            {
+                src: '/testimonial/gems/Fig_3_framework.png',
+                caption: 'Methodology Framework',
+                className: 'lg:col-span-2 aspect-[16/6]',
+                imageClassName: 'object-contain'
+            },
+            {
+                src: '/testimonial/gems/Fig_5_RGB.png',
+                caption: 'RGB Color Space Analysis',
+                className: 'aspect-square',
+                imageClassName: 'object-contain'
+            },
+            {
+                src: '/testimonial/gems/Fig_6_HSVplots.png',
+                caption: 'HSV Feature Visualisation',
+                className: 'md:col-span-2 lg:col-span-1 aspect-[4/3]',
+                imageClassName: 'object-contain'
+            },
+            {
+                src: '/testimonial/gems/Fig_8_accuracy.png',
+                caption: 'Classification Accuracy Boxplot',
+                className: 'lg:col-span-2 aspect-[16/8]',
+                imageClassName: 'object-contain'
+            },
+            {
+                src: '/testimonial/gems/Fig_9_bestsystem.png',
+                caption: 'Best System Confusion Matrix',
+                className: 'aspect-square',
+                imageClassName: 'object-contain'
+            },
+            {
+                src: '/testimonial/gems/Fig_10_bestexpert.png',
+                caption: 'Expert Gemmologist Confusion Matrix',
+                className: 'aspect-square',
+                imageClassName: 'object-contain'
+            }
         ]
     },
     {

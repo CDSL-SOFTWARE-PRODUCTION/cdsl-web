@@ -4,6 +4,22 @@ const nextConfig: NextConfig = {
     experimental: {
         optimizePackageImports: ["lucide-react"],
     },
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'public.blob.vercel-storage.com',
+                port: '',
+                pathname: '/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'images.unsplash.com',
+                port: '',
+                pathname: '/**',
+            },
+        ],
+    },
 };
 
 export default nextConfig;
