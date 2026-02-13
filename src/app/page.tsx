@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import Hero from '@components/sections/home/Hero';
-import ApproachSection from '@components/sections/home/ApproachSection';
-import CapabilitiesSection from '@components/sections/home/CapabilitiesSection';
-import Work from '@components/sections/home/Work';
-import BoutiqueSection from '@components/sections/home/BoutiqueSection';
+
+const ApproachSection = dynamic(() => import('@components/sections/home/ApproachSection'));
+const CapabilitiesSection = dynamic(() => import('@components/sections/home/CapabilitiesSection'));
+const Work = dynamic(() => import('@components/sections/home/Work'));
+const BoutiqueSection = dynamic(() => import('@components/sections/home/BoutiqueSection'));
 
 export const metadata: Metadata = {
     title: "CDSL - Technology Solutions",

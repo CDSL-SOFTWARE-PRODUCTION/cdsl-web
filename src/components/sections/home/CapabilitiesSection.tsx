@@ -28,6 +28,13 @@ const steps = [
     }
 ];
 
+// Pre-calculate bar variations for the growth graph to avoid Math.random() in render
+const BAR_COUNT = 20;
+const BAR_HEIGHTS = Array.from({ length: BAR_COUNT }, (_, i) => ({
+    base: 20 + (i * 4),
+    variation: Math.random() * 10
+}));
+
 export const CapabilitiesSection: React.FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
@@ -36,6 +43,17 @@ export const CapabilitiesSection: React.FC = () => {
     });
 
     const smoothProgress = useSpring(scrollYProgress, { damping: 15, stiffness: 100 });
+
+    const strategyOpacity = useTransform(smoothProgress, [0, 0.25], [1, 0]);
+    const strategyScale = useTransform(smoothProgress, [0, 0.25], [1, 0.8]);
+
+    const executionOpacity = useTransform(smoothProgress, [0.25, 0.4, 0.6, 0.7], [0, 1, 1, 0]);
+    const executionY = useTransform(smoothProgress, [0.25, 0.4], [50, 0]);
+
+    const growthOpacity = useTransform(smoothProgress, [0.65, 0.8], [0, 1]);
+    const growthScale = useTransform(smoothProgress, [0.65, 0.8], [0.9, 1]);
+
+    const progressWidth = useTransform(smoothProgress, [0, 1], ['0%', '100%']);
 
     return (
         <section ref={containerRef} className="relative h-[300vh] bg-premium-navy border-t border-white/5">
@@ -50,9 +68,11 @@ export const CapabilitiesSection: React.FC = () => {
 
                         <div className="relative h-[400px]">
                             {steps.map((step, index) => {
-                                // Calculate opacity based on scroll position
+                                // Calculate transform values outside the return to keep it clean
                                 const start = index / steps.length;
                                 const end = (index + 1) / steps.length;
+
+                                // These useTransforms are initialized once and stay stable
                                 const opacity = useTransform(smoothProgress, [start, start + 0.1, end - 0.1, end], [0, 1, 1, 0]);
                                 const y = useTransform(smoothProgress, [start, start + 0.1, end - 0.1, end], [50, 0, 0, -50]);
                                 const pointerEvents = useTransform(smoothProgress, (val: number) => (val >= start && val < end ? 'auto' : 'none'));
@@ -88,10 +108,7 @@ export const CapabilitiesSection: React.FC = () => {
 
                         {/* Phase 1: Strategy (Analysis Node) */}
                         <motion.div
-                            style={{
-                                opacity: useTransform(smoothProgress, [0, 0.25], [1, 0]),
-                                scale: useTransform(smoothProgress, [0, 0.25], [1, 0.8])
-                            }}
+                            style={{ opacity: strategyOpacity, scale: strategyScale }}
                             className="absolute"
                         >
                             <div className="flex gap-4">
@@ -110,17 +127,10 @@ export const CapabilitiesSection: React.FC = () => {
 
                         {/* Phase 2: Execution (Building Blocks) */}
                         <motion.div
-                            style={{
-                                opacity: useTransform(smoothProgress, [0.25, 0.4, 0.6, 0.7], [0, 1, 1, 0]),
-                                y: useTransform(smoothProgress, [0.25, 0.4], [50, 0])
-                            }}
+                            style={{ opacity: executionOpacity, y: executionY }}
                             className="absolute w-64"
                         >
-                            <motion.div
-                                className="space-y-3"
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                            >
+                            <motion.div className="space-y-3">
                                 <div className="p-3 bg-white/5 border border-white/10 rounded flex items-center gap-3">
                                     <Globe className="w-5 h-5 text-blue-400" />
                                     <span className="text-white text-sm font-medium">Web Platform</span>
@@ -141,19 +151,16 @@ export const CapabilitiesSection: React.FC = () => {
 
                         {/* Phase 3: Growth (Scale Graph) */}
                         <motion.div
-                            style={{
-                                opacity: useTransform(smoothProgress, [0.65, 0.8], [0, 1]),
-                                scale: useTransform(smoothProgress, [0.65, 0.8], [0.9, 1])
-                            }}
+                            style={{ opacity: growthOpacity, scale: growthScale }}
                             className="absolute w-full px-12"
                         >
                             <div className="h-48 flex items-end gap-2">
-                                {[...Array(20)].map((_, i) => (
+                                {BAR_HEIGHTS.map((bar, i) => (
                                     <motion.div
                                         key={i}
                                         initial={{ height: '10%' }}
-                                        animate={{ height: `${20 + (i * 4) + (Math.random() * 10)}%` }} // Trend upwards
-                                        transition={{ duration: 1, repeat: Infinity, repeatType: 'reverse', delay: i * 0.05 }}
+                                        animate={{ height: [`${bar.base}%`, `${bar.base + bar.variation}%`, `${bar.base}%`] }}
+                                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: i * 0.1 }}
                                         className="flex-1 bg-gradient-to-t from-premium-blue to-teal-400 rounded-t-sm opacity-80"
                                     />
                                 ))}
@@ -167,7 +174,7 @@ export const CapabilitiesSection: React.FC = () => {
                         {/* Progress Bar */}
                         <div className="absolute bottom-6 left-6 right-6 h-1 bg-white/10 rounded-full overflow-hidden">
                             <motion.div
-                                style={{ width: useTransform(smoothProgress, [0, 1], ['0%', '100%']) }}
+                                style={{ width: progressWidth }}
                                 className="h-full bg-premium-blue"
                             />
                         </div>

@@ -9,7 +9,7 @@ interface LogoProps {
     className?: string;
 }
 
-export const Logo: React.FC<LogoProps> = ({ variant = 'header', className = '' }) => {
+export const Logo: React.FC<LogoProps> = React.memo(({ variant = 'header', className = '' }) => {
     const { displayText, playScramble } = useScramble({
         text: 'CDSL',
         duration: variant === 'hero' ? 8000 : 800,
@@ -57,6 +57,6 @@ export const Logo: React.FC<LogoProps> = ({ variant = 'header', className = '' }
             {displayText}
         </Link>
     );
-};
+});
 
 export default Logo;

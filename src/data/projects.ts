@@ -197,18 +197,18 @@ export const projects: Project[] = [
     {
         slug: 'gemstone-classification-ai',
         name: 'Gemstone Classification AI',
-        client: 'Gemology Institute',
+        client: 'Gems & Minerals Mining Corp',
         year: '2025',
         image: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/Fig_1_montage.png',
         category: 'AI Application',
-        industry: 'retail',
-        tagline: 'Automated gemstone identification with computer vision.',
-        description: 'An AI-powered system utilizing Computer Vision to classify and identify gemstones with speed and precision exceeding human capability.',
-        role: 'AI Researcher',
+        industry: 'mining',
+        tagline: 'Scaling industrial R&D with spatial intelligence.',
+        description: 'A customized AI research pipeline for high-volume gemstone identification, designed to streamline quality control and preliminary sorting for gemstone mining operations.',
+        role: 'AI R&D Partner',
         services: ['Computer Vision', 'Deep Learning', 'R&D'],
-        tags: ['AI', 'Computer Vision', 'Gemology', 'Research'],
-        overview: 'Developed a system to automate 68 distinct gemstone classifications using advanced Computer Vision, addressing the bottlenecks of manual identification.',
-        problem: 'Manual classification is slow (hours for a batch) and prone to error due to fatigue. Even experts vary in accuracy.',
+        tags: ['AI', 'Computer Vision', 'Mining', 'R&D'],
+        overview: 'Developed a systematic AI framework to automate 68 distinct gemstone classifications, enabling the client to scale their sorting operations and maintain consistent quality standards from the mining site.',
+        problem: 'The client\'s sorting department struggled with the slow, manual classification of raw stones. Dependency on human experts limited their ability to process massive extraction volumes and led to quality control bottlenecks.',
         solution: 'Implemented a pipeline with smart pre-processing (Otsu thresholding) and feature extraction (color histograms, texture analysis). Trained a Random Forest model that outperformed deep learning alternatives for this specific use case.',
         result: 'Processing time reduced from 175 minutes (human) to under 1 second (AI). Achieved 69.4% accuracy, surpassing expert benchmarks. Scalable to 68 gemstone types.',
         techStack: [
@@ -217,9 +217,9 @@ export const projects: Project[] = [
             { category: 'ML', items: ['Random Forest', 'Scikit-learn'] }
         ],
         testimonial: {
-            quote: "This system is a revolution. It not only saves 99% of screening time but provides objective results. A powerful tool for our experts.",
-            author: "Head of Research",
-            role: "Gemology Partner"
+            quote: "This system transformed our field operations. It not only saves 99% of screening time for raw stones but also provides the objective classification data we need for industrial scaling.",
+            author: "Director of Operations",
+            role: "Gemstone Mining & Export Group"
         },
         galleryLayout: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12',
         gallery: [
@@ -265,7 +265,7 @@ export const projects: Project[] = [
         slug: 'hospital-data-warehouse',
         name: 'Services Hospital Analytics',
         client: 'Services Hospital Lahore',
-        year: '2024',
+        year: '2025',
         image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2940&auto=format&fit=crop',
         category: 'Business Intelligence',
         industry: 'healthcare',

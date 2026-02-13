@@ -12,12 +12,57 @@ import { headerMenu } from '@data/menu';
 import Logo from '@components/ui/Logo';
 import ScrambleLink from '@components/ui/ScrambleLink';
 
+// Mobile Menu Animation Variants
+const menuVariants = {
+    closed: {
+        opacity: 0,
+        y: "-100%",
+        transition: {
+            duration: 0.5,
+            ease: [0.76, 0, 0.24, 1]
+        }
+    },
+    open: {
+        opacity: 1,
+        y: "0%",
+        transition: {
+            duration: 0.5,
+            ease: [0.76, 0, 0.24, 1]
+        }
+    }
+};
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1,
+            delayChildren: 0.2
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { y: 40, opacity: 0 },
+    show: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.4,
+            ease: [0.22, 0.61, 0.36, 1]
+        }
+    }
+};
+
 export const Header: React.FC = () => {
     const pathname = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [currentTime, setCurrentTime] = useState<string>('--:--');
     const [isDarkMode, setIsDarkMode] = useState(true);
     const containerRef = useRef<HTMLDivElement>(null);
+    const lastScrollY = useRef(0);
+    const isScrolling = useRef(false);
 
     const isCurrentPage = (link: string) => {
         if (link === '/') {
@@ -49,18 +94,28 @@ export const Header: React.FC = () => {
         updateTime();
         const interval = setInterval(updateTime, 1000);
 
-        // Scroll Effect
+        // Throttled Scroll Effect
         const handleScroll = () => {
-            if (window.scrollY > 20) {
-                containerRef.current?.classList.add('bg-premium-navy/80', 'backdrop-blur-md', 'shadow-md', 'py-3');
-                containerRef.current?.classList.remove('bg-premium-navy/10', 'py-2', 'md:py-4', 'border-white/5');
-            } else {
-                containerRef.current?.classList.add('bg-premium-navy/10', 'py-2', 'md:py-4', 'border-white/5');
-                containerRef.current?.classList.remove('bg-premium-navy/80', 'backdrop-blur-md', 'shadow-md', 'py-3');
-            }
+            if (isScrolling.current) return;
+
+            isScrolling.current = true;
+            requestAnimationFrame(() => {
+                const currentY = window.scrollY;
+                if (Math.abs(currentY - lastScrollY.current) > 5) {
+                    if (currentY > 20) {
+                        containerRef.current?.classList.add('bg-premium-navy/80', 'backdrop-blur-md', 'shadow-md', 'py-3');
+                        containerRef.current?.classList.remove('bg-premium-navy/10', 'py-2', 'md:py-4', 'border-white/5');
+                    } else {
+                        containerRef.current?.classList.add('bg-premium-navy/10', 'py-2', 'md:py-4', 'border-white/5');
+                        containerRef.current?.classList.remove('bg-premium-navy/80', 'backdrop-blur-md', 'shadow-md', 'py-3');
+                    }
+                    lastScrollY.current = currentY;
+                }
+                isScrolling.current = false;
+            });
         };
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         handleScroll();
 
         return () => {
@@ -91,53 +146,10 @@ export const Header: React.FC = () => {
         }
     };
 
-    // Mobile Menu Animation Variants
-    const menuVariants = {
-        closed: {
-            opacity: 0,
-            y: "-100%",
-            transition: {
-                duration: 0.5,
-                ease: [0.76, 0, 0.24, 1]
-            }
-        },
-        open: {
-            opacity: 1,
-            y: "0%",
-            transition: {
-                duration: 0.5,
-                ease: [0.76, 0, 0.24, 1]
-            }
-        }
-    };
-
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        show: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1,
-                delayChildren: 0.2
-            }
-        }
-    };
-
-    const itemVariants = {
-        hidden: { y: 40, opacity: 0 },
-        show: {
-            y: 0,
-            opacity: 1,
-            transition: {
-                duration: 0.4,
-                ease: [0.22, 0.61, 0.36, 1]
-            }
-        }
-    };
-
-    const extendedMenu = [
+    const extendedMenu = React.useMemo(() => [
         { name: 'Home', link: '/' },
         ...headerMenu
-    ];
+    ], []);
 
     return (
         <>
