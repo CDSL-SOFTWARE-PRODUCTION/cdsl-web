@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { useScramble } from '@hooks/useScramble';
 
 interface LogoProps {
@@ -31,7 +31,7 @@ export const Logo: React.FC<LogoProps> = React.memo(({ variant = 'header', class
                 className={logoClasses}
                 onMouseEnter={handleMouseEnter}
             >
-                {displayText}
+                <span suppressHydrationWarning>{displayText}</span>
             </div>
         );
     }
@@ -43,7 +43,7 @@ export const Logo: React.FC<LogoProps> = React.memo(({ variant = 'header', class
                 className="font-logo text-4xl md:text-5xl tracking-widest text-white hover:text-premium-blue transition-colors duration-300 uppercase block"
                 onMouseEnter={handleMouseEnter}
             >
-                {displayText}
+                <span suppressHydrationWarning>{displayText}</span>
             </Link>
         )
     }

@@ -2,15 +2,14 @@
 
 import React, { use } from 'react';
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
+import { Link, useRouter, usePathname } from '@/i18n/routing';
 import { motion } from 'framer-motion';
 import { projects } from '@data/projects';
 import ArrowRight from 'lucide-react/dist/esm/icons/arrow-right';
 import BidManagerFlow from '@components/illustrations/BidManagerFlow';
 
-export default function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
-    const resolvedParams = use(params);
-    const { slug } = resolvedParams;
+export default function ProjectDetailPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
+    const { slug } = use(params);
 
     const project = projects.find((p) => p.slug === slug);
 
@@ -272,7 +271,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.2, duration: 0.8 }}
-                                    className={`group ${containerClasses}`}
+                                    className={`group ${containerClasses}`.trim()}
                                 >
                                     <div className={`relative ${aspectClass} w-full overflow-hidden rounded-2xl md:rounded-[2rem] bg-premium-navy-light/50 border border-white/10 mb-4`}>
                                         <img

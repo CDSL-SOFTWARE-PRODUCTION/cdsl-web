@@ -4,6 +4,9 @@ import { routing } from './i18n/routing';
 export const proxy = createMiddleware(routing);
 
 export const config = {
-    // Match only internationalized pathnames
-    matcher: ['/', '/(en|vi)/:path*']
+    // Match all pathnames except for
+    // - API routes
+    // - Static files (_next, images, favicon.svg, etc.)
+    // - Vercel internal routes
+    matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
 };

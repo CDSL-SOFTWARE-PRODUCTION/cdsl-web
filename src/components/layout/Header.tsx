@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { Link, usePathname } from '@/i18n/routing';
 import MenuIcon from 'lucide-react/dist/esm/icons/menu';
 import ChevronDown from 'lucide-react/dist/esm/icons/chevron-down';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -58,7 +57,7 @@ const itemVariants = {
 export const Header: React.FC = () => {
     const pathname = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [currentTime, setCurrentTime] = useState<string>('--:--');
+    const [currentTime, setCurrentTime] = useState<string | null>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const lastScrollY = useRef(0);
     const isScrolling = useRef(false);
@@ -66,7 +65,7 @@ export const Header: React.FC = () => {
 
     const isCurrentPage = (link: string) => {
         if (link === '/') {
-            return pathname === '/' || pathname === '' || pathname === '/en' || pathname === '/vi';
+            return pathname === '/';
         }
         return pathname?.includes(link);
     };
@@ -182,7 +181,7 @@ export const Header: React.FC = () => {
 
                             <div className="hidden lg:flex flex-col items-end text-[10px] font-medium tracking-[0.15em] text-white/40">
                                 <span className="text-white/60 mb-0.5">HANOI, VN</span>
-                                <span className="font-mono text-premium-blue/80">{currentTime}</span>
+                                <span className="font-mono text-premium-blue/80">{currentTime || <span className="opacity-0" suppressHydrationWarning>00:00 AM</span>}</span>
                             </div>
 
                             {/* Mobile Toggle Button */}

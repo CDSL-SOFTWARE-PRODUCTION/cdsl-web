@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { footerMenu } from '@data/menu';
 import Logo from '@components/ui/Logo';
 import { siteConfig } from '@data/config';
@@ -77,7 +77,7 @@ export const Footer: React.FC<FooterProps> = ({ footerCta }) => {
                 </div>
 
                 <div className="mt-20 flex flex-col md:flex-row justify-between items-center text-xs text-premium-gray/60 font-mono">
-                    <p>© {currentYear} {siteConfig.companyName}. All rights reserved.</p>
+                    <p>© <span suppressHydrationWarning>{currentYear}</span> {siteConfig.companyName}. All rights reserved.</p>
                     <p>Designed with purpose.</p>
                 </div>
             </div>

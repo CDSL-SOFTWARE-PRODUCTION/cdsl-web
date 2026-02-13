@@ -64,7 +64,7 @@ export default async function RootLayout({
     const messages = await getMessages();
 
     return (
-        <html lang={locale} className={`${inter.variable} ${outfit.variable} dark overflow-x-hidden`} data-theme="premium">
+        <html lang={locale} className={`${inter.variable} ${outfit.variable} dark overflow-x-hidden`} data-theme="premium" suppressHydrationWarning>
             <head>
                 <link rel="sitemap" href="/sitemap-index.xml" />
                 <script
@@ -118,7 +118,7 @@ export default async function RootLayout({
                     `
                 }} />
             </head>
-            <body className="antialiased min-h-screen relative selection:bg-premium-blue selection:text-premium-navy font-sans">
+            <body className="antialiased min-h-screen relative selection:bg-premium-blue selection:text-premium-navy font-sans" suppressHydrationWarning>
                 <NextIntlClientProvider messages={messages}>
                     {/* Background Mesh Gradient */}
                     <div className="fixed inset-0 z-[-1] pointer-events-none opacity-40 transition-opacity duration-500">
