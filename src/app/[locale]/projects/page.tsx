@@ -8,7 +8,6 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { projects } from '@data/projects';
 import MotionText from '@components/motion/MotionText';
 import ScrollReveal from '@components/motion/ScrollReveal';
-import BidManagerFlow from '@components/illustrations/BidManagerFlow';
 
 function ProjectsContent() {
     const searchParams = useSearchParams();
@@ -82,11 +81,7 @@ function ProjectsContent() {
                                     <Link href={`/projects/${project.slug}`} className="block">
                                         <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 md:gap-8">
                                             <div className="flex-1">
-                                                {project.slug === 'dvt-bid-manager' ? (
-                                                    <div className="w-full aspect-[21/9] mb-8 rounded-2xl overflow-hidden border border-white/10 relative">
-                                                        <BidManagerFlow />
-                                                    </div>
-                                                ) : null}
+
                                                 <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white transition-all duration-500 group-hover:text-premium-blue group-hover:translate-x-4">
                                                     {project.name}
                                                 </h2>

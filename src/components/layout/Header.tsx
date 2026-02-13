@@ -5,12 +5,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import MenuIcon from 'lucide-react/dist/esm/icons/menu';
 import ChevronDown from 'lucide-react/dist/esm/icons/chevron-down';
-import Sun from 'lucide-react/dist/esm/icons/sun';
-import Moon from 'lucide-react/dist/esm/icons/moon';
 import { motion, AnimatePresence } from 'framer-motion';
 import { headerMenu } from '@data/menu';
 import Logo from '@components/ui/Logo';
 import ScrambleLink from '@components/ui/ScrambleLink';
+import { useTranslations } from 'next-intl';
+import LanguageSwitcher from '@components/ui/LanguageSwitcher';
 
 // Mobile Menu Animation Variants
 const menuVariants = {
@@ -59,25 +59,19 @@ export const Header: React.FC = () => {
     const pathname = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [currentTime, setCurrentTime] = useState<string>('--:--');
-    const [isDarkMode, setIsDarkMode] = useState(true);
     const containerRef = useRef<HTMLDivElement>(null);
     const lastScrollY = useRef(0);
     const isScrolling = useRef(false);
+    const t = useTranslations('Navigation');
 
     const isCurrentPage = (link: string) => {
         if (link === '/') {
-            return pathname === '/' || pathname === '';
+            return pathname === '/' || pathname === '' || pathname === '/en' || pathname === '/vi';
         }
-        return pathname?.startsWith(link);
+        return pathname?.includes(link);
     };
 
     useEffect(() => {
-        // Initialize theme
-        if (typeof window !== 'undefined') {
-            const isDark = document.documentElement.classList.contains('dark');
-            setIsDarkMode(isDark);
-        }
-
         // Time Update
         const updateTime = () => {
             const now = new Date();
@@ -134,22 +128,13 @@ export const Header: React.FC = () => {
         }
     };
 
-    const toggleTheme = () => {
-        const newMode = !isDarkMode;
-        setIsDarkMode(newMode);
-        if (newMode) {
-            document.documentElement.classList.add('dark');
-            document.documentElement.setAttribute('data-theme', 'premium');
-        } else {
-            document.documentElement.classList.remove('dark');
-            document.documentElement.setAttribute('data-theme', 'light');
-        }
-    };
-
     const extendedMenu = React.useMemo(() => [
-        { name: 'Home', link: '/' },
-        ...headerMenu
-    ], []);
+        { name: t('home'), link: '/' },
+        { name: t('projects'), link: '/projects' },
+        { name: t('about'), link: '/about' },
+        { name: t('services'), link: '/services' },
+        { name: t('contact'), link: '/contact' },
+    ], [t]);
 
     return (
         <>
@@ -178,7 +163,7 @@ export const Header: React.FC = () => {
                                     <li key={item.name} className="relative group">
                                         <ScrambleLink
                                             href={item.link}
-                                            text={item.name}
+                                            text={t(item.name.toLowerCase())}
                                             className={`text-[13px] font-medium uppercase tracking-[0.2em] transition-all duration-300 py-1 border-b border-transparent hover:border-premium-blue/30 ${isCurrentPage(item.link)
                                                 ? 'text-premium-blue'
                                                 : 'text-white/80 hover:text-premium-blue'
@@ -193,12 +178,7 @@ export const Header: React.FC = () => {
 
                         {/* Right: Tools & Toggle */}
                         <div className="flex-none flex items-center justify-end gap-6 min-w-[120px] relative z-50">
-                            <button
-                                onClick={toggleTheme}
-                                className="p-2 text-white/60 hover:text-premium-blue transition-colors rounded-full hover:bg-white/5"
-                            >
-                                {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
-                            </button>
+                            <LanguageSwitcher />
 
                             <div className="hidden lg:flex flex-col items-end text-[10px] font-medium tracking-[0.15em] text-white/40">
                                 <span className="text-white/60 mb-0.5">HANOI, VN</span>

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Outfit } from 'next/font/google';
 import "@fontsource/bruno-ace-sc";
-import "../styles/global.css";
+import "../../styles/global.css";
 import Header from "@components/layout/Header";
 import Footer from "@components/layout/Footer";
 import SmoothScroll from "@components/shared/SmoothScroll";
@@ -38,13 +38,33 @@ export const metadata: Metadata = {
     }
 };
 
-export default function RootLayout({
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import { notFound } from 'next/navigation';
+import { routing } from '@/i18n/routing';
+
+// ... (keep imports)
+
+export default async function RootLayout({
     children,
+    params
 }: {
     children: React.ReactNode;
+    params: Promise<{ locale: string }>;
 }) {
+    const { locale } = await params;
+
+    // Ensure that the incoming `locale` is valid
+    if (!routing.locales.includes(locale as any)) {
+        notFound();
+    }
+
+    // Providing all messages to the client
+    // side is the easiest way to get started
+    const messages = await getMessages();
+
     return (
-        <html lang="en" className={`${inter.variable} ${outfit.variable} dark overflow-x-hidden`} data-theme="premium">
+        <html lang={locale} className={`${inter.variable} ${outfit.variable} dark overflow-x-hidden`} data-theme="premium">
             <head>
                 <link rel="sitemap" href="/sitemap-index.xml" />
                 <script
@@ -99,21 +119,23 @@ export default function RootLayout({
                 }} />
             </head>
             <body className="antialiased min-h-screen relative selection:bg-premium-blue selection:text-premium-navy font-sans">
-                {/* Background Mesh Gradient */}
-                <div className="fixed inset-0 z-[-1] pointer-events-none opacity-40 transition-opacity duration-500">
-                    <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-premium-blue/10 blur-[120px]"></div>
-                    <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-purple-500/10 blur-[120px]"></div>
-                </div>
+                <NextIntlClientProvider messages={messages}>
+                    {/* Background Mesh Gradient */}
+                    <div className="fixed inset-0 z-[-1] pointer-events-none opacity-40 transition-opacity duration-500">
+                        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-premium-blue/10 blur-[120px]"></div>
+                        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-purple-500/10 blur-[120px]"></div>
+                    </div>
 
-                <Header />
+                    <Header />
 
-                <SmoothScroll>
-                    <main className="relative z-10">
-                        {children}
-                    </main>
-                </SmoothScroll>
+                    <SmoothScroll>
+                        <main className="relative z-10">
+                            {children}
+                        </main>
+                    </SmoothScroll>
 
-                <Footer />
+                    <Footer />
+                </NextIntlClientProvider>
             </body>
         </html>
     );

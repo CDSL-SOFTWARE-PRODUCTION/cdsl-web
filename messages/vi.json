@@ -1,0 +1,24 @@
+{
+  "Navigation": {
+    "home": "Trang chủ",
+    "projects": "Dự án",
+    "about": "Về chúng tôi",
+    "services": "Dịch vụ",
+    "contact": "Liên hệ",
+    "careers": "Tuyển dụng"
+  },
+  "Common": {
+    "loading": "Đang tải...",
+    "error": "Lỗi",
+    "notFound": "Không tìm thấy trang",
+    "backToHome": "Quay lại trang chủ"
+  },
+  "Footer": {
+    "rights": "Bảo lưu mọi quyền.",
+    "designedBy": "Được thiết kế với mục đích rõ ràng."
+  },
+  "HomePage": {
+    "heroTitle": "Giải pháp số đỉnh cao",
+    "heroSubtitle": "Chúng tôi xây dựng trải nghiệm kỹ thuật số đẳng cấp."
+  }
+}

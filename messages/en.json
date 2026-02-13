@@ -1,0 +1,24 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "careers": "Careers"
+  },
+  "Common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "notFound": "Page not found",
+    "backToHome": "Back to Home"
+  },
+  "Footer": {
+    "rights": "All rights reserved.",
+    "designedBy": "Designed with purpose."
+  },
+  "HomePage": {
+    "heroTitle": "Digital Excellence",
+    "heroSubtitle": "We build premium digital experiences."
+  }
+}

@@ -7,7 +7,7 @@ export const siteConfig = {
     email: 'info@cdslvn.com',
     phone: '+84 333 600 251',
     linkedin: 'https://www.linkedin.com/company/cdslvn',
-    location: ' 	Số 16 Nguyễn Văn Tuyết, Phường Trung Liệt, Quận Đống Đa, Thành phố Hà Nội, Việt Nam',
+    location: 'Số 16 Nguyễn Văn Tuyết, Phường Trung Liệt, Quận Đống Đa, Thành phố Hà Nội, Việt Nam',
   }
 };
 

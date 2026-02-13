@@ -400,9 +400,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ slug: 
                                 <Link href={`/projects/${p.slug}`}>
                                     <div className="aspect-[4/5] bg-white/5 mb-6 rounded-lg overflow-hidden group-hover:bg-white/10 transition-colors relative">
                                         <div className="absolute inset-0 bg-premium-blue/20 mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                        {p.slug === 'dvt-bid-manager' ? (
-                                            <BidManagerFlow />
-                                        ) : p.image ? (
+                                        {p.image ? (
                                             <img
                                                 src={p.image}
                                                 alt={p.name}

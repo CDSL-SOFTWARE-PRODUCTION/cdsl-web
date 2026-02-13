@@ -53,6 +53,7 @@ const revealMask: Variants = {
 };
 
 import { projects } from '@data/projects';
+import { siteConfig } from '@data/config';
 
 export default function ContactPage() {
     const containerRef = useRef(null);
@@ -155,17 +156,24 @@ export default function ContactPage() {
                                 }}
                             >
                                 <motion.h3 variants={fadeInUp} className="text-3xl md:text-4xl font-display font-medium text-white mb-2">
-                                    John Doe
+                                    {siteConfig.companyName}
                                 </motion.h3>
-                                <motion.p variants={fadeInUp} className="text-xl text-premium-gray mb-6">
-                                    Executive Producer
+                                <motion.p variants={fadeInUp} className="text-xl text-premium-gray mb-6 max-w-md">
+                                    {siteConfig.socials.location}
                                 </motion.p>
-                                <motion.div variants={fadeInUp}>
+                                <motion.div variants={fadeInUp} className="flex flex-col gap-4">
                                     <a
-                                        href="mailto:work@cdsl.co"
-                                        className="inline-block text-2xl md:text-3xl font-light text-white hover:text-premium-blue transition-colors duration-300 relative group/link"
+                                        href={`mailto:${siteConfig.socials.email}`}
+                                        className="inline-block text-2xl md:text-3xl font-light text-white hover:text-premium-blue transition-colors duration-300 relative group/link w-fit"
                                     >
-                                        work@cdsl.co
+                                        {siteConfig.socials.email}
+                                        <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-premium-blue transition-all duration-300 group-hover/link:w-full"></span>
+                                    </a>
+                                    <a
+                                        href={`tel:${siteConfig.socials.phone.replace(/\s/g, '')}`}
+                                        className="inline-block text-2xl md:text-3xl font-light text-white hover:text-premium-blue transition-colors duration-300 relative group/link w-fit"
+                                    >
+                                        {siteConfig.socials.phone}
                                         <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-premium-blue transition-all duration-300 group-hover/link:w-full"></span>
                                     </a>
                                 </motion.div>
