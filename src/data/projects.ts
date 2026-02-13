@@ -64,7 +64,7 @@ export const projects: Project[] = [
         name: 'Sun Chinese App',
         client: 'EdTech Startup',
         year: '2025',
-        image: '/testimonial/sun-chinese/2.png',
+        image: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/2.png',
         category: 'Mobile App',
         industry: 'education',
         tagline: 'A comprehensive ecosystem for intermediate Chinese learners.',
@@ -85,17 +85,17 @@ export const projects: Project[] = [
             quote: "The team realized my vision of a learning ecosystem. Not just coding, they consulted on UX flow for the Shadowing feature, skyrocketing lesson completion rates.",
             author: "Thanh Ha",
             role: "Founder",
-            image: "/logo/sun-chinse-logo.png"
+            image: "https://brboqnvtkppko1ca.public.blob.vercel-storage.com/sun-chinse-logo.png"
         },
         galleryLayout: 'grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 md:gap-6',
         gallery: [
-            { src: '/testimonial/sun-chinese/1.png', caption: 'Intro', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
-            { src: '/testimonial/sun-chinese/2.png', caption: 'Intro', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
-            { src: '/testimonial/sun-chinese/3.png', caption: 'Dashboard', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
-            { src: '/testimonial/sun-chinese/4.png', caption: 'Talkings', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
-            { src: '/testimonial/sun-chinese/5.png', caption: 'Books', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
-            { src: '/testimonial/sun-chinese/6.png', caption: 'Practice', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
-            { src: '/testimonial/sun-chinese/7.png', caption: 'Shadowing', className: 'aspect-[9/20]', imageClassName: 'object-contain' }
+            { src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/1.png', caption: 'Intro', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
+            { src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/2.png', caption: 'Intro', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
+            { src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/3.png', caption: 'Dashboard', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
+            { src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/4.png', caption: 'Talkings', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
+            { src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/5.png', caption: 'Books', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
+            { src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/6.png', caption: 'Practice', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
+            { src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/7.png', caption: 'Shadowing', className: 'aspect-[9/20]', imageClassName: 'object-contain' }
         ]
     },
     {
@@ -198,8 +198,8 @@ export const projects: Project[] = [
         slug: 'gemstone-classification-ai',
         name: 'Gemstone Classification AI',
         client: 'Gemology Institute',
-        year: '2022',
-        image: '/testimonial/gems/Fig_1_montage.png',
+        year: '2025',
+        image: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/Fig_1_montage.png',
         category: 'AI Application',
         industry: 'retail',
         tagline: 'Automated gemstone identification with computer vision.',
@@ -224,37 +224,37 @@ export const projects: Project[] = [
         galleryLayout: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12',
         gallery: [
             {
-                src: '/testimonial/gems/Fig_3_framework.png',
+                src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/Fig_3_framework.png',
                 caption: 'Methodology Framework',
                 className: 'lg:col-span-2 aspect-[16/6]',
                 imageClassName: 'object-contain'
             },
             {
-                src: '/testimonial/gems/Fig_5_RGB.png',
+                src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/Fig_5_RGB.png',
                 caption: 'RGB Color Space Analysis',
                 className: 'aspect-square',
                 imageClassName: 'object-contain'
             },
             {
-                src: '/testimonial/gems/Fig_6_HSVplots.png',
+                src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/Fig_6_HSVplots.png',
                 caption: 'HSV Feature Visualisation',
                 className: 'md:col-span-2 lg:col-span-1 aspect-[4/3]',
                 imageClassName: 'object-contain'
             },
             {
-                src: '/testimonial/gems/Fig_8_accuracy.png',
+                src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/Fig_8_accuracy.png',
                 caption: 'Classification Accuracy Boxplot',
                 className: 'lg:col-span-2 aspect-[16/8]',
                 imageClassName: 'object-contain'
             },
             {
-                src: '/testimonial/gems/Fig_9_bestsystem.png',
+                src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/Fig_9_bestsystem.png',
                 caption: 'Best System Confusion Matrix',
                 className: 'aspect-square',
                 imageClassName: 'object-contain'
             },
             {
-                src: '/testimonial/gems/Fig_10_bestexpert.png',
+                src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/Fig_10_bestexpert.png',
                 caption: 'Expert Gemmologist Confusion Matrix',
                 className: 'aspect-square',
                 imageClassName: 'object-contain'

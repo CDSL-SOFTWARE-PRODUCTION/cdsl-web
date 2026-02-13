@@ -21,7 +21,7 @@ const ClientsSection: React.FC = () => {
         { name: 'Spotify', icon: 'S' },
         { name: 'Microsoft', icon: 'Ms' },
         { name: 'Adobe', icon: 'Ad' },
-        { name: 'Sun Chinese', icon: '/logo/sun-chinse-logo.png', isImage: true },
+        { name: 'Sun Chinese', icon: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/sun-chinse-logo.png', isImage: true },
     ];
 
     return (
