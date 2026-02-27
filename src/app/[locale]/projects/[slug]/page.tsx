@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
 import { getProjects, Project } from '@/data/projects';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import ArrowRight from 'lucide-react/dist/esm/icons/arrow-right';
 import BidManagerFlow from '@components/illustrations/BidManagerFlow';
 import Image from 'next/image';
@@ -16,6 +16,7 @@ import { use } from 'react';
 export default function ProjectDetail({ params }: { params: Promise<{ slug: string, locale: string }> }) {
     const { slug } = use(params);
     const locale = useLocale();
+    const t = useTranslations('ProjectsPage');
     const projects: Project[] = getProjects(locale);
     const project = projects.find((p: Project) => p.slug === slug);
 
@@ -348,18 +349,19 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
                         variants={{
                             visible: { transition: { staggerChildren: 0.1 } }
                         }}
+                        className="flex-1"
                     >
-                        {['READY TO', 'TRANSFORM', 'YOUR BRAND?'].map((line, i) => (
+                        {[t('ctaTitle1'), t('ctaTitle2'), t('ctaTitle3')].map((line, i) => (
                             <motion.div
                                 key={i}
-                                className="overflow-hidden"
+                                className="overflow-hidden py-1"
                             >
                                 <motion.h2
                                     variants={{
-                                        hidden: { x: '100%' },
-                                        visible: { x: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+                                        hidden: { y: '100%' },
+                                        visible: { y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
                                     }}
-                                    className="text-5xl md:text-8xl font-display font-bold uppercase leading-[1.3]"
+                                    className="text-[12vw] md:text-[6vw] lg:text-[5.5vw] font-display font-bold uppercase leading-[1.1]"
                                 >
                                     {line}
                                 </motion.h2>
@@ -377,7 +379,7 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
                             href="/contact"
                             className="inline-flex items-center gap-4 text-2xl md:text-3xl border-b border-white pb-2 hover:text-premium-blue hover:border-premium-blue transition-all duration-300 group"
                         >
-                            Let&apos;s work together
+                            {t('ctaButton')}
                             <ArrowRight className="transform group-hover:translate-x-2 transition-transform duration-300" />
                         </Link>
                     </motion.div>
@@ -387,7 +389,7 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
             {/* Other Work Carousel */}
             <section className="pb-32 overflow-hidden">
                 <div className="px-4 md:px-8 mb-12">
-                    <h3 className="text-2xl md:text-3xl font-display">Have a look at some of our other work.</h3>
+                    <h3 className="text-2xl md:text-3xl font-display">{t('otherWorkTitle')}</h3>
                 </div>
 
                 <div className="relative w-full overflow-hidden">

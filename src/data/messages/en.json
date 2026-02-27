@@ -69,7 +69,12 @@
     "all": "All",
     "noProjectsFound": "No projects found for {industry}.",
     "viewAll": "View all projects",
-    "viewCaseStudy": "View Case Study →"
+    "viewCaseStudy": "View Case Study →",
+    "ctaTitle1": "READY TO",
+    "ctaTitle2": "TRANSFORM",
+    "ctaTitle3": "YOUR BRAND?",
+    "ctaButton": "Let's work together",
+    "otherWorkTitle": "Have a look at some of our other work."
   },
   "AboutPage": {
     "heroTitle": "About Us",

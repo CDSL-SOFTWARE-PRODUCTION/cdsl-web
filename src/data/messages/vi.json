@@ -69,7 +69,12 @@
     "all": "Tất cả",
     "noProjectsFound": "Không tìm thấy dự án nào trong lĩnh vực {industry}.",
     "viewAll": "Xem tất cả dự án",
-    "viewCaseStudy": "Xem chi tiết →"
+    "viewCaseStudy": "Xem chi tiết →",
+    "ctaTitle1": "SẴN SÀNG",
+    "ctaTitle2": "CHUYỂN ĐỔI",
+    "ctaTitle3": "THƯƠNG HIỆU?",
+    "ctaButton": "Cùng hợp tác",
+    "otherWorkTitle": "Xem qua một số dự án khác của chúng tôi."
   },
   "AboutPage": {
     "heroTitle": "Về CDSL",
