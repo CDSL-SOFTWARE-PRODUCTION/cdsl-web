@@ -48,7 +48,7 @@ export const Services: React.FC = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <span className="text-premium-blue font-mono text-sm tracking-widest uppercase mb-4 block">Our Expertise</span>
-                    <h2 className="font-display font-bold text-4xl md:text-5xl text-white mb-6 transition-colors duration-300">
+                    <h2 className="text-4xl md:text-5xl text-white mb-6 transition-colors duration-300">
                         Engineering Business Value
                     </h2>
                     <p className="text-xl text-premium-gray font-light leading-relaxed transition-colors duration-300">
@@ -73,7 +73,7 @@ export const Services: React.FC = () => {
                                     </svg>
                                 </div>
                             </div>
-                            <h3 className="text-2xl font-display font-semibold text-white mb-4 group-hover:text-premium-blue transition-colors">
+                            <h3 className="text-2xl text-white mb-4 group-hover:text-premium-blue transition-colors">
                                 {service.title}
                             </h3>
                             <p className="text-premium-gray leading-relaxed font-light transition-colors">

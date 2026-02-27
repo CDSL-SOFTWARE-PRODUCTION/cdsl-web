@@ -23,7 +23,7 @@ const HeroSection: React.FC = () => {
 
             <div className="site-container relative z-10 px-4">
                 <div className="max-w-[1200px]">
-                    <h1 className="text-[12vw] md:text-[8vw] lg:text-[7vw] font-bold leading-[1.3] tracking-tighter uppercase mb-12 text-white font-display pt-8">
+                    <h1 className="text-[12vw] md:text-[8vw] lg:text-[7vw] uppercase mb-12 text-white pt-8">
                         <MotionText
                             text={t('heroTitle1')}
                             className="block"

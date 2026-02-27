@@ -46,7 +46,7 @@ export const BoutiqueSection: React.FC = () => {
                         transition={{ duration: 0.8 }}
                         className="mb-10"
                     >
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-[1.15]">
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl">
                             <span className="bg-premium-blue text-premium-navy px-3 py-1 inline-block mb-1">{t('boutiqueTitle')}</span>
                         </h2>
                     </motion.div>

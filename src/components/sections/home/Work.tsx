@@ -32,7 +32,7 @@ export const Work = () => {
                 >
                     <div>
                         <span className="text-premium-blue font-mono text-sm tracking-widest uppercase mb-4 block">{t('workTitle')}</span>
-                        <h2 className="font-display font-bold text-4xl md:text-5xl text-white transition-colors duration-300">
+                        <h2 className="text-4xl md:text-5xl text-white transition-colors duration-300">
                             {t('workHeadline')}
                         </h2>
                     </div>
@@ -81,7 +81,7 @@ export const Work = () => {
 
                             <div className={`lg:col-span-5 ${index % 2 === 1 ? 'lg:text-right' : ''}`}>
                                 <span className="text-premium-blue font-mono text-sm mb-4 block">{project.category}</span>
-                                <h3 className="text-3xl md:text-4xl font-display font-bold text-white mb-6 group-hover:text-premium-blue transition-colors">
+                                <h3 className="text-3xl md:text-4xl text-white mb-6 group-hover:text-premium-blue transition-colors">
                                     <Link href={`/projects/${project.slug}`}>
                                         {project.name}
                                     </Link>

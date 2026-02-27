@@ -15,7 +15,7 @@ const CoreServices: React.FC = () => {
                     <div className="inline-block px-4 py-2 bg-premium-blue/10 rounded-full text-premium-blue text-xs font-mono uppercase tracking-widest mb-4">
                         Core Capabilities
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 tracking-tight">
+                    <h2 className="text-4xl md:text-5xl text-white mb-6">
                         Building the digital future.
                     </h2>
                 </div>

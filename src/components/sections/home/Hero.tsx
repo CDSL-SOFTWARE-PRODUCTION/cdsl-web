@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
             <div className="site-container relative z-10 px-4 w-full h-full flex flex-col justify-center">
                 <div className="max-w-7xl mx-auto">
                     {/* Kinetic Typography Headline */}
-                    <h1 className="font-display font-bold text-[12vw] md:text-[8vw] lg:text-[7vw] leading-[1.3] tracking-tighter text-white mb-12 transition-colors duration-300 pt-8 uppercase">
+                    <h1 className="text-[12vw] md:text-[8vw] lg:text-[7vw] text-white mb-12 transition-colors duration-300 pt-8 uppercase">
                         <MotionText
                             text={t('heroTitle1')}
                             className="block"

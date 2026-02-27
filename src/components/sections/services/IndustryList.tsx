@@ -69,7 +69,7 @@ const IndustryList: React.FC<IndustryListProps> = ({ industries }) => {
                                 </div>
 
                                 <div className="space-y-4">
-                                    <h3 className="text-3xl md:text-4xl font-display font-medium leading-tight group-hover:text-premium-blue transition-colors duration-300">
+                                    <h3 className="text-3xl md:text-4xl group-hover:text-premium-blue transition-colors duration-300">
                                         {industry.title}
                                     </h3>
                                     <p className="text-premium-gray text-lg leading-relaxed max-w-md">

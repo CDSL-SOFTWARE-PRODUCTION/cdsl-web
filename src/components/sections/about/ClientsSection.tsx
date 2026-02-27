@@ -36,7 +36,7 @@ const ClientsSection: React.FC = () => {
                         <span className="text-sm font-semibold tracking-widest uppercase text-premium-blue opacity-60 block mb-6">
                             {t('clientsTitle')}
                         </span>
-                        <h2 className="text-4xl md:text-5xl font-medium leading-tight max-w-2xl mb-8 font-display">
+                        <h2 className="text-4xl md:text-5xl max-w-2xl mb-8">
                             {t('clientsSubtitle')}
                         </h2>
                         <motion.div
@@ -82,7 +82,7 @@ const ClientsSection: React.FC = () => {
                 <div className="mt-32 border-t border-white/10 pt-24 grid grid-cols-1 md:grid-cols-12 gap-12">
                     <div className="md:col-span-4">
                         <ScrollReveal direction="right">
-                            <h3 className="text-3xl font-medium leading-tight mb-8 font-display text-white">
+                            <h3 className="text-3xl mb-8 text-white">
                                 {t('clientsEcosystemTitle')}
                             </h3>
                             <Link href="/services" className="text-sm font-bold underline underline-offset-4 decoration-1 decoration-premium-blue/20 hover:decoration-premium-blue transition-all text-premium-blue">{t('clientsEcosystemCta')}</Link>

@@ -89,7 +89,7 @@ export const CapabilitiesSection: React.FC = () => {
                                         <div className="text-8xl font-bold text-white/5 absolute -left-12 -top-12 select-none font-display">
                                             {step.id}
                                         </div>
-                                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-2 font-display">
+                                        <h2 className="text-4xl md:text-5xl text-white mb-2">
                                             {step.title}
                                         </h2>
                                         <p className="text-xl text-premium-blue font-mono mb-6">

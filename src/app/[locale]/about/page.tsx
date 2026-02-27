@@ -25,7 +25,7 @@ export default async function AboutPage() {
                     <ScrollReveal direction="up">
                         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
                             <div>
-                                <h2 className="text-8xl md:text-[12vw] font-bold leading-[1.2] tracking-tighter uppercase mb-2 text-white font-logo">
+                                <h2 className="text-8xl md:text-[12vw] uppercase mb-2 text-white font-logo">
                                     CDSL<span className="text-premium-blue">™</span>
                                 </h2>
                                 <p className="text-sm font-medium tracking-widest uppercase text-premium-blue opacity-40">

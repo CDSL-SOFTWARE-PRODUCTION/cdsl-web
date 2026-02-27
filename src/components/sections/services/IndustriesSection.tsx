@@ -43,7 +43,7 @@ const IndustriesSection = () => {
                         <div className="inline-block px-4 py-2 bg-premium-blue/10 rounded-full text-premium-blue text-xs font-mono uppercase tracking-widest mb-4">
                             {t('label')}
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 tracking-tight">
+                        <h2 className="text-4xl md:text-5xl text-white mb-6">
                             {t('title')}
                         </h2>
                     </div>
@@ -88,7 +88,7 @@ const IndustriesSection = () => {
                                             <div className="mb-6 text-premium-blue opacity-50 group-hover/card:opacity-100 transition-opacity duration-300">
                                                 <IconComponent size={32} strokeWidth={1.5} />
                                             </div>
-                                            <h3 className="text-xl font-display font-bold text-white mb-2 group-hover/card:text-premium-blue transition-colors duration-300 whitespace-normal">
+                                            <h3 className="text-xl text-white mb-2 group-hover/card:text-premium-blue transition-colors duration-300 whitespace-normal">
                                                 {industry.title}
                                             </h3>
                                             <p className="text-sm text-premium-gray font-light leading-relaxed group-hover/card:text-white transition-colors duration-300 mb-6 whitespace-normal h-12 line-clamp-2">

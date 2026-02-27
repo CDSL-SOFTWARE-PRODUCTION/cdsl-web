@@ -52,7 +52,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
                         </div>
                     )}
 
-                    <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4 group-hover:text-premium-blue transition-colors duration-300">
+                    <h3 className="text-2xl md:text-3xl text-white mb-4 group-hover:text-premium-blue transition-colors duration-300">
                         {title}
                     </h3>
 
@@ -77,7 +77,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
                 </div>
 
                 <div className={`${isFullWidth ? 'md:w-1/2' : 'w-full'}`}>
-                    <h4 className="text-xs font-mono uppercase tracking-widest text-white/40 mb-6">
+                    <h4 className="text-xs font-mono uppercase text-white/40 mb-6">
                         Capabilities
                     </h4>
                     <ul className="space-y-4">

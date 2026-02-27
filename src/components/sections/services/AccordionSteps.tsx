@@ -48,7 +48,7 @@ export const AccordionSteps: React.FC = () => {
                             <span className="text-xl font-mono text-premium-blue opacity-40 group-hover:opacity-100 transition-opacity">
                                 {step.number}
                             </span>
-                            <h3 className="text-2xl font-display font-medium text-white group-hover:text-premium-blue transition-colors">
+                            <h3 className="text-2xl text-white group-hover:text-premium-blue transition-colors">
                                 {step.title}
                             </h3>
                         </div>

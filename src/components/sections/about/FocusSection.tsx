@@ -35,7 +35,7 @@ const FocusSection: React.FC = () => {
                         <span className="text-sm font-semibold tracking-widest uppercase text-premium-blue opacity-60 mb-4">
                             {t('focusTitle')}
                         </span>
-                        <h2 className="text-[8vw] md:text-[6vw] font-bold leading-[1.3] tracking-tighter uppercase font-display pt-8">
+                        <h2 className="text-[8vw] md:text-[6vw] uppercase pt-8">
                             <div className="overflow-hidden">
                                 <motion.div
                                     initial={{ x: '-100%' }}
@@ -83,7 +83,7 @@ const FocusSection: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
                     <div className="md:col-span-5">
                         <ScrollReveal direction="right">
-                            <h3 className="text-4xl md:text-5xl font-medium mb-8 font-display">
+                            <h3 className="text-4xl md:text-5xl mb-8">
                                 {t('lifeTitle')}
                             </h3>
                             <p className="text-xl text-premium-gray font-light mb-12 max-w-sm">
@@ -131,7 +131,7 @@ const FocusSection: React.FC = () => {
                                         {card.id}
                                     </span>
                                     <div className="flex-1">
-                                        <h4 className="text-2xl font-semibold mb-4 group-hover:text-premium-blue transition-colors font-display">
+                                        <h4 className="text-2xl mb-4 group-hover:text-premium-blue transition-colors">
                                             {card.title}
                                         </h4>
                                         <p className="text-lg text-premium-gray/60 font-light leading-relaxed">

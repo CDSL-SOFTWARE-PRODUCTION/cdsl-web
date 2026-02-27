@@ -27,7 +27,7 @@ function ProjectsContent() {
             <section className="relative pt-32 pb-24 px-4">
                 <div className="site-container relative z-10 px-4">
                     <div className="max-w-[1200px]">
-                        <h1 className="text-[12vw] md:text-[8vw] lg:text-[7vw] font-bold leading-[1.3] tracking-tighter uppercase mb-12 text-white font-display pt-8">
+                        <h1 className="text-[12vw] md:text-[8vw] lg:text-[7vw] uppercase mb-12 text-white pt-8">
                             <MotionText
                                 text={industryFilter ? `${industryFilter}` : t('title1')}
                                 className="block"
@@ -86,7 +86,7 @@ function ProjectsContent() {
                                         <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 md:gap-8">
                                             <div className="flex-1">
 
-                                                <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white transition-all duration-500 group-hover:text-premium-blue group-hover:translate-x-4">
+                                                <h2 className="text-5xl md:text-7xl lg:text-8xl text-white transition-all duration-500 group-hover:text-premium-blue group-hover:translate-x-4">
                                                     {project.name}
                                                 </h2>
                                             </div>

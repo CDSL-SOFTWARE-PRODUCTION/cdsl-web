@@ -68,7 +68,7 @@ export const PricingSection: React.FC = () => {
                     <span className="text-premium-blue font-mono text-xs uppercase tracking-widest mb-4 block">
                         {t('pricingSubtitle')}
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-bold font-display text-white mb-6">
+                    <h2 className="text-4xl md:text-5xl text-white mb-6">
                         {t('pricingTitle1')}
                         <br />
                         <span className="text-premium-gray">{t('pricingTitle2')}</span>
@@ -97,7 +97,7 @@ export const PricingSection: React.FC = () => {
                                 )}
 
                                 <div className="mb-8">
-                                    <h3 className="text-2xl font-display font-medium text-white mb-2">{plan.name}</h3>
+                                    <h3 className="text-2xl text-white mb-2">{plan.name}</h3>
                                     <div className="flex items-baseline gap-2 mb-2">
                                         <span className="text-4xl font-bold text-white">{plan.price}</span>
                                     </div>

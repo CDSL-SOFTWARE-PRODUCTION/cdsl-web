@@ -68,7 +68,7 @@ export default function ContactPage() {
                 <div className="w-full max-w-7xl mx-auto">
                     {/* Headline */}
                     <div className="mb-16 md:mb-24">
-                        <h1 className="text-[12vw] md:text-[8vw] lg:text-[7vw] leading-[1.3] font-display font-bold tracking-tighter uppercase text-white pt-8">
+                        <h1 className="text-[12vw] md:text-[8vw] lg:text-[7vw] uppercase text-white pt-8">
                             <MotionText
                                 text={t('heroTitle1')}
                                 className="block"
@@ -268,7 +268,7 @@ export default function ContactPage() {
                                     <Link href={`/projects/${project.slug}`}>
                                         <div className="flex flex-col md:flex-row justify-between items-start md:items-end w-full">
                                             <div>
-                                                <h4 className="text-3xl md:text-5xl font-display font-medium text-white group-hover:text-premium-blue transition-colors duration-300">
+                                                <h4 className="text-3xl md:text-5xl text-white group-hover:text-premium-blue transition-colors duration-300">
                                                     {project.name}
                                                 </h4>
                                                 <p className="text-sm font-mono text-premium-gray mt-2 group-hover:text-white/70 transition-colors">

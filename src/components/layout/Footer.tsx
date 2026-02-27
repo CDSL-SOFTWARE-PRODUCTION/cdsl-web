@@ -31,7 +31,7 @@ export const Footer: React.FC<FooterProps> = () => {
         <footer className="bg-premium-navy text-white pt-32 pb-12 border-t border-white/5 relative overflow-hidden transition-colors duration-300">
             {/* Footer CTA */}
             <div className="site-container px-4 mb-32 relative z-10">
-                <h2 className="font-display font-bold text-6xl md:text-8xl lg:text-9xl tracking-tighter leading-[1.3] mb-12 text-center md:text-left text-white transition-colors">
+                <h2 className="text-6xl md:text-8xl lg:text-9xl mb-12 text-center md:text-left text-white transition-colors">
                     <span className="block mb-6 md:mb-10">{t('title1')}</span>
                     <span className="text-premium-blue block">{t('title2')}</span>
                 </h2>
@@ -60,7 +60,7 @@ export const Footer: React.FC<FooterProps> = () => {
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-12">
                             {footerMenu.map((category: { title: string; links: { name: string; link: string }[] }) => (
                                 <div key={category.title}>
-                                    <h3 className="text-white font-display font-medium mb-6 uppercase tracking-widest text-sm opacity-50">
+                                    <h3 className="text-white mb-6 uppercase text-sm opacity-50">
                                         {category.title}
                                     </h3>
                                     <ul className="space-y-6">

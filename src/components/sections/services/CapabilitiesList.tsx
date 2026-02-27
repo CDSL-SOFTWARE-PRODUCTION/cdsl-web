@@ -47,7 +47,7 @@ export const CapabilitiesList: React.FC = () => {
                     <span className="text-premium-blue font-mono text-xs uppercase tracking-widest mb-4 block">
                         {t('capabilitiesTitle')}
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-bold font-display text-white max-w-2xl">
+                    <h2 className="text-4xl md:text-5xl text-white max-w-2xl">
                         {t('capabilitiesHeadline1')} <br />
                         <span className="text-premium-gray">{t('capabilitiesHeadline2')}</span>
                     </h2>
@@ -68,7 +68,7 @@ export const CapabilitiesList: React.FC = () => {
                                         <div className="w-10 h-10 rounded bg-white/5 flex items-center justify-center group-hover:bg-premium-blue/10 transition-colors">
                                             <cap.icon className="w-5 h-5 text-premium-gray group-hover:text-premium-blue transition-colors" />
                                         </div>
-                                        <h3 className="text-3xl font-display font-medium text-white group-hover:text-premium-blue transition-colors">
+                                        <h3 className="text-3xl text-white group-hover:text-premium-blue transition-colors">
                                             {cap.title}
                                         </h3>
                                     </div>

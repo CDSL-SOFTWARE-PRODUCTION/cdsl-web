@@ -43,7 +43,7 @@ export default async function ServicesPage() {
                 <div className="site-container px-4 relative z-10">
                     <ScrollReveal direction="up" distance={30}>
                         <div className="text-center max-w-3xl mx-auto mb-20">
-                            <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-6 tracking-tight">
+                            <h2 className="text-4xl md:text-6xl text-white mb-6">
                                 {t('talentTitle1')} <br className="hidden md:block" /> {t('talentTitle2')}
                             </h2>
                             <p className="text-lg text-premium-gray font-light">

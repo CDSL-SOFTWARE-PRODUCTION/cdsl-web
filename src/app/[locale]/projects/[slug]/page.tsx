@@ -128,7 +128,7 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
                     transition={{ duration: 0.8 }}
                     className="border-t border-white/10 pt-8"
                 >
-                    <h3 className="text-sm font-mono text-white/40 uppercase tracking-widest mb-8">Project Information</h3>
+                    <h3 className="text-sm font-mono text-white/40 uppercase mb-8">Project Information</h3>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
                         <div>
                             <h4 className="text-white/40 text-sm mb-2">Client</h4>
@@ -163,7 +163,7 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h2 className="text-2xl md:text-3xl font-display mb-6 text-premium-blue">Overview</h2>
+                        <h2 className="text-2xl md:text-3xl mb-6 text-premium-blue">Overview</h2>
                         <p className="text-xl md:text-2xl leading-relaxed text-white/90 font-light">
                             {project.overview}
                         </p>
@@ -183,7 +183,7 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8 }}
                             >
-                                <h3 className="text-sm font-mono text-white/40 uppercase tracking-widest mb-6">The Challenge</h3>
+                                <h3 className="text-sm font-mono text-white/40 uppercase mb-6">The Challenge</h3>
                                 <div className="prose prose-invert prose-lg">
                                     <p className="text-white/80 leading-relaxed">
                                         {project.problem}
@@ -199,7 +199,7 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8, delay: 0.2 }}
                             >
-                                <h3 className="text-sm font-mono text-white/40 uppercase tracking-widest mb-6">The Solution</h3>
+                                <h3 className="text-sm font-mono text-white/40 uppercase mb-6">The Solution</h3>
                                 <div className="prose prose-invert prose-lg">
                                     <p className="text-white/80 leading-relaxed">
                                         {project.solution}
@@ -233,7 +233,7 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
                                     transition={{ delay: index * 0.1 }}
                                     className="text-center"
                                 >
-                                    <h4 className="text-premium-blue font-mono text-sm uppercase tracking-widest mb-6 border-b border-white/10 pb-4 inline-block">{stack.category}</h4>
+                                    <h4 className="text-premium-blue font-mono text-sm uppercase mb-6 border-b border-white/10 pb-4 inline-block">{stack.category}</h4>
                                     <ul className="space-y-3">
                                         {stack.items.map((item: string, i: number) => (
                                             <li key={i} className="text-lg text-white/80">{item}</li>
@@ -255,7 +255,7 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h3 className="text-sm font-mono text-white/40 uppercase tracking-widest mb-8">Key Impact</h3>
+                        <h3 className="text-sm font-mono text-white/40 uppercase mb-8">Key Impact</h3>
                         <p className="text-2xl md:text-4xl font-display leading-tight text-white">
                             {project.result}
                         </p>
@@ -389,7 +389,7 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
             {/* Other Work Carousel */}
             <section className="pb-32 overflow-hidden">
                 <div className="px-4 md:px-8 mb-12">
-                    <h3 className="text-2xl md:text-3xl font-display">{t('otherWorkTitle')}</h3>
+                    <h3 className="text-2xl md:text-3xl">{t('otherWorkTitle')}</h3>
                 </div>
 
                 <div className="relative w-full overflow-hidden">
@@ -428,7 +428,7 @@ export default function ProjectDetail({ params }: { params: Promise<{ slug: stri
                                             </div>
                                         )}
                                     </div>
-                                    <h4 className="text-2xl font-display mb-1 group-hover:text-premium-blue transition-colors">{p.name}</h4>
+                                    <h4 className="text-2xl mb-1 group-hover:text-premium-blue transition-colors">{p.name}</h4>
                                     <p className="text-white/50 font-mono text-sm">{p.client}</p>
                                 </Link>
                             </div>

@@ -36,7 +36,7 @@ export const InnerHero: React.FC<Props> = ({ content }) => {
             )}
 
             <div className="site-container relative z-10 px-4 text-center">
-                <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-6">
+                <h1 className="text-4xl md:text-6xl text-white mb-6">
                     {content.title}
                 </h1>
                 {content.description && (

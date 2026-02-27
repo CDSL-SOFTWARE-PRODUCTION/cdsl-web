@@ -14,7 +14,7 @@ const CompanySection: React.FC = () => {
                     {/* Left Column: Heading */}
                     <div className="md:col-span-6 lg:col-span-5">
                         <ScrollReveal direction="right" distance={40}>
-                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium leading-[1.1] tracking-tight text-white font-display">
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl text-white">
                                 {t('companyTitle')}
                             </h2>
                         </ScrollReveal>
