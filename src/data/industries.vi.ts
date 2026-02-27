@@ -12,52 +12,52 @@ export const industries: Industry[] = [
     {
         slug: 'logistics',
         title: "Logistics",
-        description: "Real-time tracking and automated workflows.",
+        description: "Theo dõi thời gian thực và tự động hóa quy trình.",
         icon: "truck",
         metadata: {
-            tags: ["Supply Chain", "IoT", "Automation"]
+            tags: ["Chuỗi cung ứng", "IoT", "Tự động hóa"]
         }
     },
     {
         slug: 'healthcare',
-        title: "Healthcare",
-        description: "Digital appointment systems and AI diagnostics.",
+        title: "Y tế",
+        description: "Hệ thống đặt lịch kỹ thuật số và chẩn đoán AI.",
         icon: "heart",
         metadata: {
-            tags: ["Telemedicine", "HIPAA", "AI"]
+            tags: ["Khám từ xa", "HIPAA", "AI"]
         }
     },
     {
         slug: 'retail',
-        title: "Retail",
-        description: "Engaging eCommerce and AI customer solutions.",
+        title: "Bán lẻ",
+        description: "Thương mại điện tử và giải pháp khách hàng bằng AI.",
         icon: "shopping-bag",
         metadata: {
-            tags: ["eCommerce", "Personalization", "Omnichannel"]
+            tags: ["Thương mại điện tử", "Cá nhân hóa", "Đa kênh"]
         }
     },
     {
         slug: 'education',
-        title: "Education",
-        description: "Interactive eLearning and adaptive platforms.",
+        title: "Giáo dục",
+        description: "Học tập trực tuyến tương tác và nền tảng thích ứng.",
         icon: "book",
         metadata: {
-            tags: ["EdTech", "LMS", "Gamification"]
+            tags: ["EdTech", "LMS", "Trò chơi hóa"]
         }
     },
     {
         slug: 'hospitality',
-        title: "Hospitality",
-        description: "Dynamic booking and itinerary planners.",
+        title: "Khách sạn & Du lịch",
+        description: "Hệ thống đặt phòng động và lập kế hoạch hành trình.",
         icon: "map",
         metadata: {
-            tags: ["TravelTech", "Booking Engines", "CX"]
+            tags: ["TravelTech", "Hệ thống đặt phòng", "Trải nghiệm khách hàng"]
         }
     },
     {
         slug: 'technology',
-        title: "Technology",
-        description: "Advanced software architecture and platform engineering.",
+        title: "Công nghệ",
+        description: "Kiến trúc phần mềm tiên tiến và kỹ thuật nền tảng.",
         icon: "cpu",
         metadata: {
             tags: ["SaaS", "Cloud Native", "DevOps"]

@@ -59,7 +59,7 @@ import { useLocale } from 'next-intl';
 export default function ContactPage() {
     const locale = useLocale();
     const containerRef = useRef(null);
-    const { scrollYProgress } = useScroll({
+    useScroll({
         target: containerRef,
         offset: ["start start", "end end"]
     });

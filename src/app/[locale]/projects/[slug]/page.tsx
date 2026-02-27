@@ -7,6 +7,7 @@ import { getProjects, Project } from '@/data/projects';
 import { useLocale } from 'next-intl';
 import ArrowRight from 'lucide-react/dist/esm/icons/arrow-right';
 import BidManagerFlow from '@components/illustrations/BidManagerFlow';
+import Image from 'next/image';
 
 // The page is a Client Component, so generateStaticParams must be removed or placed in a layout/server component.
 // As standard next-intl setup with client-side animation components, we will rely on dynamic rendering or handle static params in a separate layout if needed.
@@ -101,10 +102,12 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                     ) : (
                         <>
                             {project.image && (
-                                <img
+                                <Image
                                     src={project.image}
                                     alt={project.name}
-                                    className={`w-full h-full ${project.slug === 'gemstone-classification-ai' ? 'object-contain' : 'object-cover'}`}
+                                    fill
+                                    unoptimized
+                                    className={`${project.slug === 'gemstone-classification-ai' ? 'object-contain' : 'object-cover'}`}
                                 />
                             )}
                             <div className="absolute inset-0 bg-gradient-to-t from-premium-navy/50 to-transparent"></div>
@@ -277,10 +280,12 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                                     className={`group ${containerClasses}`.trim()}
                                 >
                                     <div className={`relative ${aspectClass} w-full overflow-hidden rounded-2xl md:rounded-[2rem] bg-premium-navy-light/50 border border-white/10 mb-4`}>
-                                        <img
+                                        <Image
                                             src={item.src}
                                             alt={item.caption || 'Project visual'}
-                                            className={`w-full h-full ${item.imageClassName || 'object-cover'} transform group-hover:scale-105 transition-transform duration-700`}
+                                            fill
+                                            unoptimized
+                                            className={`${item.imageClassName || 'object-cover'} transform group-hover:scale-105 transition-transform duration-700`}
                                         />
                                     </div>
                                     {item.caption && (
@@ -304,10 +309,13 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                     >
                         {project.testimonial.image && (
                             <div className="inline-flex p-1 bg-white/5 rounded-full mb-8 relative z-10">
-                                <img
+                                <Image
                                     src={project.testimonial.image}
                                     alt={project.testimonial.author}
-                                    className="w-20 h-20 rounded-full border-2 border-premium-navy object-cover"
+                                    width={80}
+                                    height={80}
+                                    unoptimized
+                                    className="rounded-full border-2 border-premium-navy object-cover"
                                 />
                             </div>
                         )}
@@ -403,11 +411,12 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                                     <div className="aspect-[4/5] bg-white/5 mb-6 rounded-lg overflow-hidden group-hover:bg-white/10 transition-colors relative">
                                         <div className="absolute inset-0 bg-premium-blue/20 mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                         {p.image ? (
-                                            <img
+                                            <Image
                                                 src={p.image}
                                                 alt={p.name}
-                                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                                                loading="lazy"
+                                                fill
+                                                unoptimized
+                                                className="object-cover transform group-hover:scale-105 transition-transform duration-700"
                                             />
                                         ) : (
                                             <div className="absolute inset-0 flex items-center justify-center text-white/20 font-display text-4xl">

@@ -19,33 +19,33 @@ export const featureLists: FeatureLists = {
         features: [
             {
                 icon: Code,
-                title: 'Web Development',
-                description: 'We build scalable, responsive websites and web applications that engage users and drive growth for your business.'
+                title: 'Phát triển Web',
+                description: 'Chúng tôi xây dựng các trang web và ứng dụng web có khả năng mở rộng, phản hồi nhanh để thu hút người dùng và thúc đẩy tăng trưởng cho doanh nghiệp của bạn.'
             },
             {
                 icon: Smartphone,
-                title: 'Mobile Development',
-                description: 'Native and cross-platform mobile apps that deliver outstanding user experiences across all devices.'
+                title: 'Phát triển Di động',
+                description: 'Các ứng dụng di động gốc và đa nền tảng mang lại trải nghiệm người dùng vượt trội trên mọi thiết bị.'
             },
             {
                 icon: Share2,
-                title: 'IoT Integration',
-                description: 'Smart systems enabling real-time monitoring, data collection, and seamless communication between devices.'
+                title: 'Tích hợp IoT',
+                description: 'Hệ thống thông minh cho phép giám sát theo thời gian thực, thu thập dữ liệu và giao tiếp liền mạch giữa các thiết bị.'
             },
             {
                 icon: Workflow,
-                title: 'Automation Solutions',
-                description: 'Custom automation sequences that streamline operations, reduce errors, and increase overall efficiency.'
+                title: 'Giải pháp Tự động hóa',
+                description: 'Các quy trình tự động hóa tùy chỉnh giúp hợp lý hóa hoạt động, giảm lỗi và tăng hiệu quả tổng thể.'
             },
             {
                 icon: Zap,
-                title: 'AI & Machine Learning',
-                description: 'Intelligent systems that transform data into actionable insights for smarter business decisions.'
+                title: 'AI & Học máy',
+                description: 'Các hệ thống thông minh biến dữ liệu thành thông tin chi tiết có thể hành động để đưa ra quyết định kinh doanh thông minh hơn.'
             },
             {
                 icon: Presentation,
-                title: 'Consulting & Strategy',
-                description: 'Expert guidance to align technology with your business goals, ensuring a successful digital transformation.'
+                title: 'Tư vấn & Chiến lược',
+                description: 'Hướng dẫn chuyên môn để điều chỉnh công nghệ phù hợp với mục tiêu kinh doanh của bạn, đảm bảo chuyển đổi số thành công.'
             }
 
         ]

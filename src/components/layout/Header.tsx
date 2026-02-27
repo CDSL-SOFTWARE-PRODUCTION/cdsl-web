@@ -223,7 +223,7 @@ export const Header: React.FC = () => {
                                         onClick={toggleMenu}
                                     >
                                         {item.name}
-                                        {item.name === 'Projects' && (
+                                        {item.link === '/projects' && (
                                             <sup className="absolute top-2 -right-6 text-base md:text-xl font-mono text-premium-blue font-normal opacity-80">20</sup>
                                         )}
                                     </Link>

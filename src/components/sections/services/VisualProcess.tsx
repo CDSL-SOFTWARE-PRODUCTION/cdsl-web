@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { Activity, Layers, Server, ShieldCheck, Cpu } from 'lucide-react';
+import { Activity, Layers, Server, ShieldCheck } from 'lucide-react';
 
 const steps = [
     {

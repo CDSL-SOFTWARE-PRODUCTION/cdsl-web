@@ -9,7 +9,7 @@ interface UseScrambleProps {
     autoStart?: boolean;
 }
 
-export const useScramble = ({ text: initialText, duration = 800, speed, autoStart = false }: UseScrambleProps) => {
+export const useScramble = ({ text: initialText, duration = 800, autoStart = false }: UseScrambleProps) => {
     const [displayText, setDisplayText] = useState(initialText);
     const isAnimating = useRef(false);
     const rafRef = useRef<number | null>(null);

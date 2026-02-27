@@ -76,5 +76,9 @@
     "description": "Ready to transform your operations? We help you scale with purpose-built technology.",
     "button": "Start a Project",
     "descLong": "Advanced technology solutions for the modern enterprise. We bridge the gap between complexity and elegance."
+  },
+  "Industries": {
+    "label": "Industries",
+    "title": "Impact Across Verticals."
   }
 }

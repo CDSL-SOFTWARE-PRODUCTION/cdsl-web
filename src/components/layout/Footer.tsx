@@ -20,7 +20,7 @@ interface FooterProps {
     };
 }
 
-export const Footer: React.FC<FooterProps> = ({ footerCta }) => {
+export const Footer: React.FC<FooterProps> = () => {
     const locale = useLocale();
     const t = useTranslations('FooterCTA');
     const tFooter = useTranslations('Footer');

@@ -76,5 +76,9 @@
     "description": "Bạn đã sẵn sàng chuyển đổi số cho doanh nghiệp? Chúng tôi giúp bạn mở rộng quy mô bằng công nghệ tối ưu.",
     "button": "Bắt đầu dự án",
     "descLong": "Giải pháp công nghệ tiên tiến cho doanh nghiệp hiện đại. Chúng tôi xóa nhòa khoảng cách giữa sự phức tạp và nét tinh tế."
+  },
+  "Industries": {
+    "label": "Ngành nghề",
+    "title": "Tác động đa lĩnh vực."
   }
 }

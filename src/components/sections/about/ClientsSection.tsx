@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Code, Network, Server, Database, Cloud, Smartphone } from 'lucide-react';
 import ScrollReveal from '../../motion/ScrollReveal';
+import { Link } from '@/i18n/routing';
+import Image from 'next/image';
 
 const ClientsSection: React.FC = () => {
     interface Logo {
@@ -35,12 +37,15 @@ const ClientsSection: React.FC = () => {
                         <h2 className="text-4xl md:text-5xl font-medium leading-tight max-w-2xl mb-8 font-display">
                             Trusted by ambitious brands to engineer their digital future.
                         </h2>
-                        <motion.a
-                            href="/work"
-                            className="text-sm font-bold tracking-widest uppercase flex items-center gap-2 group text-premium-blue/80 hover:text-premium-blue transition-colors"
+                        <motion.div
                             whileHover={{ x: 4 }}
                         >
-                        </motion.a>
+                            <Link
+                                href="/work"
+                                className="text-sm font-bold tracking-widest uppercase flex items-center gap-2 group text-premium-blue/80 hover:text-premium-blue transition-colors"
+                            >
+                            </Link>
+                        </motion.div>
                     </ScrollReveal>
                 </div>
 
@@ -55,9 +60,12 @@ const ClientsSection: React.FC = () => {
                         >
                             <div className="text-xl md:text-2xl font-bold transition-all duration-500 flex flex-col items-center group-hover:scale-110">
                                 {logo.isImage ? (
-                                    <img
+                                    <Image
                                         src={logo.icon}
                                         alt={logo.name}
+                                        width={120}
+                                        height={32}
+                                        unoptimized
                                         className="h-8 w-auto mb-2 object-contain brightness-0 invert opacity-60 group-hover:filter-none group-hover:opacity-100 transition-all duration-300"
                                     />
                                 ) : (
@@ -75,7 +83,7 @@ const ClientsSection: React.FC = () => {
                             <h3 className="text-3xl font-medium leading-tight mb-8 font-display text-white">
                                 From MVP prototypes to enterprise-grade software ecosystems.
                             </h3>
-                            <a href="/services" className="text-sm font-bold underline underline-offset-4 decoration-1 decoration-premium-blue/20 hover:decoration-premium-blue transition-all text-premium-blue">Learn more about our services</a>
+                            <Link href="/services" className="text-sm font-bold underline underline-offset-4 decoration-1 decoration-premium-blue/20 hover:decoration-premium-blue transition-all text-premium-blue">Learn more about our services</Link>
                         </ScrollReveal>
                     </div>
 

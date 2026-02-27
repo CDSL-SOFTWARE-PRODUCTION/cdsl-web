@@ -30,71 +30,71 @@ export const projects: Project[] = [
     {
         slug: 'dvt-imaging-bridge',
         name: 'DVT Imaging Bridge',
-        client: 'Healthcare Clinics',
+        client: 'Phòng khám Y tế',
         year: '2025',
         image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2940&auto=format&fit=crop',
-        category: 'Medical Imaging',
+        category: 'Hình ảnh Y tế',
         industry: 'healthcare',
-        tagline: 'Automating clinical image processing for seamless PACS integration.',
-        description: 'A middleware solution that automates the conversion of clinical images to DICOM standards, bridging the gap between standard cameras and medical imaging systems.',
-        role: 'Core Development & Integration',
-        services: ['Python Development', 'DICOM Integration', 'Workflow Automation'],
-        tags: ['Healthcare', 'Automation', 'Python', 'DICOM'],
-        overview: 'Developed a middleware solution to automate the conversion of non-standard clinical images (dermatology, endoscopy) into DICOM 3.0 standard for integration with PACS systems.',
-        problem: 'Modern clinics use standard cameras and smartphones for clinical documentation, but central PACS systems only accept DICOM format. Doctors had to use separate software for different image types, leading to fragmented data and inefficient workflows.',
-        solution: 'Built "DVT Image-to-DICOM Converter", a module that accepts various image formats (JPG, PNG) and automatically processes them using Python (Pydicom, NumPy). It maps patient metadata to DICOM tags and ensures 100% compatibility with PACS systems like Orthanc and dcm4chee.',
-        result: 'Processed over 10,000+ images successfully. Eliminated manual printing and scanning workflows. Doubled the speed of patient record retrieval by centralizing data.',
+        tagline: 'Tự động hóa xử lý hình ảnh lâm sàng để tích hợp PACS liền mạch.',
+        description: 'Giải pháp phần mềm trung gian tự động hóa việc chuyển đổi hình ảnh lâm sàng sang tiêu chuẩn DICOM, thu hẹp khoảng cách giữa các camera tiêu chuẩn và hệ thống hình ảnh y tế.',
+        role: 'Phát triển lõi & Tích hợp',
+        services: ['Phát triển Python', 'Tích hợp DICOM', 'Tự động hóa quy trình'],
+        tags: ['Y tế', 'Tự động hóa', 'Python', 'DICOM'],
+        overview: 'Phát triển giải pháp phần mềm trung gian tự động hóa việc chuyển đổi các hình ảnh lâm sàng phi tiêu chuẩn (da liễu, nội soi) sang tiêu chuẩn DICOM 3.0 để tích hợp với hệ thống PACS.',
+        problem: 'Các phòng khám hiện đại sử dụng camera tiêu chuẩn và điện thoại thông minh cho tài liệu lâm sàng, nhưng hệ thống PACS trung tâm chỉ chấp nhận định dạng DICOM. Bác sĩ phải sử dụng nhiều phần mềm cho các loại hình ảnh khác nhau, dẫn đến phân mảnh dữ liệu và quy trình làm việc kém hiệu quả.',
+        solution: 'Xây dựng "Mô-đun chuyển đổi Ảnh sang DICOM của DVT" chấp nhận nhiều định dạng ảnh (JPG, PNG) và tự động xử lý bằng Python (Pydicom, NumPy). Mô-đun ánh xạ siêu dữ liệu bệnh nhân sang thẻ DICOM và đảm bảo tương thích 100% với các hệ thống PACS như Orthanc và dcm4chee.',
+        result: 'Xử lý thành công hơn 10.000+ hình ảnh. Loại bỏ quy trình in và quét thủ công. Tăng gấp đôi tốc độ truy xuất hồ sơ bệnh nhân nhờ tập trung dữ liệu.',
         techStack: [
-            { category: 'Core', items: ['Python', 'Pydicom', 'NumPy', 'Pillow'] },
-            { category: 'Standard', items: ['DICOM 3.0'] },
-            { category: 'Integration', items: ['RESTful API'] }
+            { category: 'Lõi', items: ['Python', 'Pydicom', 'NumPy', 'Pillow'] },
+            { category: 'Tiêu chuẩn', items: ['DICOM 3.0'] },
+            { category: 'Tích hợp', items: ['RESTful API'] }
         ],
         testimonial: {
-            quote: "Before this, managing dermatology images was a nightmare. DVT's solution allows us to see everything on one diagnostic screen. Extremely professional and time-saving!",
-            author: "Dr. Minh Hoang",
-            role: "Head of Imaging Dept, S. Clinic"
+            quote: "Trước đây, quản lý hình ảnh da liễu là một cơn ác mộng. Giải pháp của DVT cho phép chúng tôi xem mọi thứ trên một màn hình chẩn đoán duy nhất. Vô cùng chuyên nghiệp và tiết kiệm thời gian!",
+            author: "Bác sĩ Minh Hoàng",
+            role: "Trưởng khoa Hình ảnh, Phòng khám S."
         },
         gallery: [
-            { src: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2000&auto=format&fit=crop', caption: 'Input Processing' },
-            { src: 'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?q=80&w=2000&auto=format&fit=crop', caption: 'DICOM Viewer Integration' }
+            { src: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2000&auto=format&fit=crop', caption: 'Xử lý Đầu vào' },
+            { src: 'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?q=80&w=2000&auto=format&fit=crop', caption: 'Tích hợp Trình xem DICOM' }
         ]
     },
     {
         slug: 'Sun-chinese',
         name: 'Sun Chinese App',
-        client: 'EdTech Startup',
+        client: 'Startup EdTech',
         year: '2025',
         image: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/2.png',
-        category: 'Mobile App',
+        category: 'Ứng dụng Di động',
         industry: 'education',
-        tagline: 'A comprehensive ecosystem for intermediate Chinese learners.',
-        description: 'An all-in-one mobile application designed to help intermediate learners break through the plateau with AI-driven shadowing and multimedia content.',
-        role: 'Full Stack Development',
-        services: ['Mobile App Development', 'AI Integration', 'UX Design'],
+        tagline: 'Hệ sinh thái toàn diện cho người học tiếng Trung trung cấp.',
+        description: 'Một ứng dụng di động tất cả trong một được thiết kế để giúp người học trung học vượt qua rào cản nền tảng nhờ tích hợp AI shadowing và nội dung đa phương tiện.',
+        role: 'Phát triển Full Stack',
+        services: ['Phát triển Ứng dụng Di động', 'Tích hợp AI', 'Thiết kế UX'],
         tags: ['EdTech', 'React Native', 'AI', 'Mobile'],
-        overview: 'Created a "Super App" for Chinese language learning, focusing on intermediate learners who need deep practice in listening and speaking.',
-        problem: 'Existing apps focus on beginners or are too fragmented (separate apps for dictionary, flashcards, media). Intermediate learners lacked feedback on their speaking and a unified learning environment.',
-        solution: 'Developed a cross-platform app using React Native and Expo. Integrated a bilingual reading system with one-touch dictionary lookups. Implemented an AI Shadowing feature using Speech-to-Text to analyze and grade user pronunciation against native speakers.',
-        result: 'Achieved complete MVP in 4 months. System stable with 10k+ concurrent users. 45% increase in onsite time due to integrated multimedia features.',
+        overview: 'Tạo ra "Siêu ứng dụng" để học tiếng Trung, tập trung vào đối tượng học viên trung cấp cần thực hành chuyên sâu về nghe và nói.',
+        problem: 'Các ứng dụng hiện tại tập trung vào người mới bắt đầu hoặc quá phân tán (ứng dụng riêng cho từ điển, flashcard, đa phương tiện). Người học trung cấp thiếu phản hồi về khả năng nói và môi trường học tập thống nhất.',
+        solution: 'Phát triển ứng dụng đa nền tảng bằng React Native và Expo. Tích hợp hệ thống đọc song ngữ với tra cứu từ điển một chạm. Triển khai tính năng AI Shadowing sử dụng Speech-to-Text để phân tích và chấm điểm phát âm của người dùng so với người bản ngữ.',
+        result: 'Hoàn thành MVP trong 4 tháng. Hệ thống ổn định với 10k+ người dùng đồng thời. Tăng 45% thời gian sử dụng tại chỗ nhờ các tính năng đa phương tiện tích hợp.',
         techStack: [
             { category: 'Mobile', items: ['React Native', 'Expo'] },
             { category: 'Backend', items: ['Directus', 'PostgreSQL'] },
             { category: 'AI', items: ['NodeJS', 'Google Speech-to-Text API'] }
         ],
         testimonial: {
-            quote: "The team realized my vision of a learning ecosystem. Not just coding, they consulted on UX flow for the Shadowing feature, skyrocketing lesson completion rates.",
-            author: "Thanh Ha",
-            role: "Founder",
+            quote: "Đội ngũ đã hiện thực hóa tầm nhìn của tôi về một hệ sinh thái học tập. Không chỉ lập trình, họ còn tư vấn về luồng UX cho tính năng Shadowing, giúp tỷ lệ hoàn thành bài học tăng vọt.",
+            author: "Thanh Hà",
+            role: "Người sáng lập",
             image: "https://brboqnvtkppko1ca.public.blob.vercel-storage.com/sun-chinse-logo.png"
         },
         galleryLayout: 'grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 md:gap-6',
         gallery: [
-            { src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/1.png', caption: 'Intro', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
-            { src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/2.png', caption: 'Intro', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
-            { src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/3.png', caption: 'Dashboard', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
-            { src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/4.png', caption: 'Talkings', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
-            { src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/5.png', caption: 'Books', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
-            { src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/6.png', caption: 'Practice', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
+            { src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/1.png', caption: 'Giới thiệu', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
+            { src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/2.png', caption: 'Giới thiệu', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
+            { src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/3.png', caption: 'Bảng điều khiển', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
+            { src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/4.png', caption: 'Trò chuyện', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
+            { src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/5.png', caption: 'Sách', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
+            { src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/6.png', caption: 'Thực hành', className: 'aspect-[9/20]', imageClassName: 'object-contain' },
             { src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/7.png', caption: 'Shadowing', className: 'aspect-[9/20]', imageClassName: 'object-contain' }
         ]
     },
@@ -104,158 +104,158 @@ export const projects: Project[] = [
         client: 'VSEN Medical',
         year: '2026',
         image: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=2940&auto=format&fit=crop',
-        category: 'Web Platform',
+        category: 'Nền tảng Web',
         industry: 'healthcare',
-        tagline: 'Intelligent Healthcare. Redefined.',
-        description: 'A corporate website and product catalog for a Medtech startup, focusing on performance, SEO, and a premium "Corporate Tech" aesthetic.',
-        role: 'Design & Development',
-        services: ['Web Development', 'Design System', 'SEO'],
-        tags: ['Healthcare', 'Corporate', 'Laravel', 'React'],
-        overview: 'Built a comprehensive digital presence for VSEN Medical, featuring a modern corporate design and a smart product catalog.',
-        problem: 'The previous system failed to convey the high-tech nature of their products. Information was hard to find, and the mobile experience was poor.',
-        solution: 'Utilized Inertia.js with React and Laravel for a monolithic SPA that offers both SEO benefits and a smooth user experience. Designed a custom "Corporate Tech" look with a smart product catalog and content hub.',
-        result: 'Google Lighthouse scores >90. Reduced product search time by 40%. Established a consistent brand identity across all digital touchpoints.',
+        tagline: 'Y tế Thông minh. Được định nghĩa lại.',
+        description: 'Một trang web doanh nghiệp và danh mục sản phẩm cho một startup Medtech, tập trung vào hiệu suất, SEO và tính thẩm mỹ "Công nghệ Doanh nghiệp" cao cấp.',
+        role: 'Thiết kế & Phát triển',
+        services: ['Phát triển Web', 'Hệ thống Thiết kế', 'SEO'],
+        tags: ['Y tế', 'Doanh nghiệp', 'Laravel', 'React'],
+        overview: 'Xây dựng sự hiện diện kỹ thuật số toàn diện cho VSEN Medical, có thiết kế doanh nghiệp hiện đại và danh mục sản phẩm thông minh.',
+        problem: 'Hệ thống trước đây không thể hiện được bản chất công nghệ cao của các sản phẩm. Thông tin khó tìm và trải nghiệm trên thiết bị di động kém.',
+        solution: 'Sử dụng Inertia.js với React và Laravel cho một SPA tĩnh mang lại cả lợi ích SEO và trải nghiệm người dùng mượt mà. Thiết kế giao diện "Công nghệ Doanh nghiệp" tùy chỉnh với danh mục sản phẩm thông minh và trung tâm nội dung.',
+        result: 'Điểm Google Lighthouse >90. Giảm 40% thời gian tìm kiếm sản phẩm. Thiết lập nhận diện thương hiệu nhất quán trên tất cả các điểm tiếp xúc kỹ thuật số.',
         techStack: [
             { category: 'Backend', items: ['Laravel 11'] },
             { category: 'Frontend', items: ['ReactJS', 'Inertia.js', 'TypeScript'] },
-            { category: 'Infra', items: ['Docker', 'Vite'] }
+            { category: 'Hạ tầng', items: ['Docker', 'Vite'] }
         ],
         testimonial: {
-            quote: "The new system is not only beautiful but intelligent. Our clients, mostly doctors, highly appreciate the speed and convenience of information lookup.",
-            author: "Mr. Hung",
-            role: "Project Manager, VSEN Medical"
+            quote: "Hệ thống mới không chỉ đẹp mà còn thông minh. Khách hàng của chúng tôi, chủ yếu là bác sĩ, đánh giá rất cao tốc độ và sự tiện lợi trong việc tra cứu thông tin.",
+            author: "Mr. Hùng",
+            role: "Quản lý Dự án, VSEN Medical"
         },
         gallery: [
-            { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop', caption: 'Homepage Hero' },
-            { src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop', caption: 'Product Catalog' }
+            { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop', caption: 'Trang chủ Hero' },
+            { src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop', caption: 'Danh mục Sản phẩm' }
         ]
     },
     {
         slug: 'optiflow-industrial',
         name: 'OptiFlow Industrial',
-        client: 'Logistics Firm',
+        client: 'Công ty Logistics',
         year: '2025',
         image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2940&auto=format&fit=crop',
         category: 'AI & IoT',
         industry: 'logistics',
-        tagline: 'Industrial spatial intelligence for smart warehouse safety.',
-        description: 'An AI-powered system utilizing existing CCTV infrastructure to monitor safety and optimize workflow in a logistics warehouse.',
-        role: 'AI Solution Provider',
-        services: ['Computer Vision', 'AI Implementation', 'Data Analytics'],
-        tags: ['AI', 'Logistics', 'Computer Vision', 'Safety'],
-        overview: 'Deployed "OptiFlow Industrial" to monitor safety compliance and optimize movement in a 5,000m2 warehouse using AI and existing CCTV cameras.',
-        problem: 'Blind spots in the warehouse led to safety risks with forklifts. Traffic congestion and lack of data on movement paths caused operational inefficiencies.',
-        solution: 'Implemented AI object recognition (YOLOv8) to track forklifts and workers. Used color clustering for role segmentation and perspective transformation to map video feeds to a 2D floor plan for velocity tracking.',
-        result: 'Reduced accident risks by 40% through real-time speeding detection. Optimized travel paths by 25% using heatmap analysis. Saved thousands in hardware costs by leveraging existing cameras.',
+        tagline: 'Trí tuệ không gian công nghiệp cho an toàn nhà kho thông minh.',
+        description: 'Một hệ thống sử dụng AI tận dụng cơ sở hạ tầng camera quan sát (CCTV) có sẵn để giám sát an toàn và tối ưu hóa luồng công việc tự động tại kho bãi logistic.',
+        role: 'Nhà cung cấp Giải pháp AI',
+        services: ['Thị giác Máy tính', 'Triển khai AI', 'Phân tích Dữ liệu'],
+        tags: ['AI', 'Logistics', 'Thị giác Máy tính', 'An toàn'],
+        overview: 'Triển khai "OptiFlow Industrial" để giám sát tuân thủ an toàn và tối ưu hóa việc di chuyển trong kho rộng 5.000m2 bằng công nghệ AI và hệ thống camera quan sát có sẵn.',
+        problem: 'Điểm mù trong kho hàng gây nguy cơ mất an toàn liên quan đến xe nâng. Tắc nghẽn giao thông và thiếu dữ liệu về đường di chuyển làm giảm hiệu quả hoạt động.',
+        solution: 'Áp dụng nhận dạng đối tượng AI (YOLOv8) để theo dõi xe nâng và công nhân. Sử dụng kỹ thuật gom cụm màu sắc để phân chia vai trò và biến đổi phối cảnh nhằm lập sơ đồ đoạn video phát trực tiếp thành sơ đồ 2D cho theo dõi tốc độ.',
+        result: 'Giảm 40% rủi ro tai nạn thông qua phát hiện vượt tốc độ theo thời gian thực. Tối ưu hóa lộ trình di chuyển thêm 25% qua việc sử dụng phân tích bản đồ nhiệt. Tiết kiệm hàng ngàn đô la thiết bị phần cứng nhờ tận dụng lại các camera có sẵn.',
         techStack: [
-            { category: 'Core AI', items: ['YOLOv8', 'Deep Sort'] },
-            { category: 'Computer Vision', items: ['OpenCV', 'Perspective Transformation'] },
-            { category: 'Analytics', items: ['K-Means Clustering', 'Heatmap Analysis'] }
+            { category: 'Lõi AI', items: ['YOLOv8', 'Deep Sort'] },
+            { category: 'Thị giác Máy tính', items: ['OpenCV', 'Truyền đổi Toạ độ'] },
+            { category: 'Phân tích', items: ['Gom cụm K-Means', 'Phân tích Bản đồ Nhiệt'] }
         ],
         testimonial: {
-            quote: "The solution turned our 'dead' cameras into smart eyes. Measuring forklift speed without sensors is a breakthrough for our safety protocols.",
-            author: "Safety Manager",
-            role: "Client Warehouse"
+            quote: "Giải pháp đã tối ưu giúp camera 'cố định' trở thành trinh sát thông minh. Đo tốc độ xe nâng mà không cần trực tiếp gắn thiết bị là đột phá trong quy định an toàn tại nhà xưởng.",
+            author: "Quản lý An toàn",
+            role: "Kho Hàng Khách Hàng"
         },
         gallery: [
-            { src: 'https://images.unsplash.com/photo-1565514020176-db9310bc931e?q=80&w=2000&auto=format&fit=crop', caption: 'AI Object Detection' },
-            { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop', caption: 'Heatmap Analytics' }
+            { src: 'https://images.unsplash.com/photo-1565514020176-db9310bc931e?q=80&w=2000&auto=format&fit=crop', caption: 'Phát hiện Đối tượng AI' },
+            { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop', caption: 'Phân tích Bản đồ Nhiệt' }
         ]
     },
     {
         slug: 'diamond-pricing-analytics',
         name: 'Diamond Pricing Analytics',
-        client: 'Jewelry Retail Tech',
+        client: 'Công nghệ Bán lẻ Trang sức',
         year: '2024',
         image: 'https://images.unsplash.com/photo-1617038224558-28ad3fb558a7?q=80&w=2940&auto=format&fit=crop',
-        category: 'Data Analytics',
+        category: 'Phân tích Dữ liệu',
         industry: 'retail',
-        tagline: 'AI-driven pricing and market analytics for the diamond industry.',
-        description: 'A dual-pipeline system for automated competitor price tracking and fair value prediction using Machine Learning.',
-        role: 'Data Engineer',
-        services: ['Data Mining', 'Machine Learning', 'Web Scraping'],
-        tags: ['Data Science', 'Retail', 'Python', 'ML'],
-        overview: 'Built an automated system for scraping competitor pricing and predicting fair market value for diamonds based on the 4Cs.',
-        problem: 'Manual pricing surveys were time-consuming and prone to human error. The client lacked real-time data to price their inventory competitively.',
-        solution: 'Created a pipeline with Selenium for web scraping and a Machine Learning pricing engine (Linear/Lasso Regression). The system automates data collection and provides "Buy/Sell" recommendations.',
-        result: 'Saved ~120 hours/month of manual research. Scraped and processed 53k+ records. Provided accurate fair value predictions to guide inventory decisions.',
+        tagline: 'Định giá và phân tích thị trường bằng AI cho ngành công nghiệp kim cương.',
+        description: 'Hệ thống luồng dữ liệu kép giúp theo dõi tự động giá của đối thủ và dự đoán giá trị thực bằng Học máy.',
+        role: 'Kỹ sư Dữ liệu',
+        services: ['Khai phá Dữ liệu', 'Học máy', 'Web Scraping'],
+        tags: ['Khoa học Dữ liệu', 'Bán lẻ', 'Python', 'ML'],
+        overview: 'Xây dựng một hệ thống tự động để thu thập giá của đối thủ cạnh tranh và dự đoán giá trị thị trường hợp lý cho kim cương dựa trên quy tắc 4C.',
+        problem: 'Việc khảo sát giá thủ công tốn nhiều thời gian và dễ xảy ra sai sót. Khách hàng thiếu dữ liệu thời gian thực để định giá kho hàng cạnh tranh.',
+        solution: 'Tạo một quy trình với Selenium để thu thập dữ liệu web và động cơ định giá Học máy (Hồi quy tuyến tính/Lasso). Hệ thống tự động hóa việc thu thập dữ liệu và cung cấp khuyến nghị "Mua/Bán".',
+        result: 'Tiết kiệm ~120 giờ/tháng nghiên cứu thủ công. Thu thập và xử lý hơn 53k+ bản ghi. Cung cấp dự báo giá trị hợp lý chính xác để hướng dẫn quyết định quản lý kho.',
         techStack: [
-            { category: 'Core', items: ['Python', 'Pandas', 'NumPy'] },
-            { category: 'ML', items: ['Scikit-Learn', 'Linear Regression'] },
-            { category: 'Scraping', items: ['Selenium'] }
+            { category: 'Lõi', items: ['Python', 'Pandas', 'NumPy'] },
+            { category: 'Học máy', items: ['Scikit-Learn', 'Hồi quy tuyến tính'] },
+            { category: 'Thu thập', items: ['Selenium'] }
         ],
         testimonial: {
-            quote: "We used to price based on gut feeling. Now we know exactly what a 1.5 Carat VVS1 should cost. It completely changed how we compete.",
+            quote: "Chúng tôi từng định giá dựa trên cảm tính. Bây giờ chúng tôi biết chính xác giá một viên kim cương 1.5 Carat VVS1. Nó đã thay đổi cách chúng tôi cạnh tranh.",
             author: "Alex T.",
-            role: "Founder, JewelTech Solutions"
+            role: "Người sáng lập, JewelTech Solutions"
         },
         gallery: [
-            { src: 'https://images.unsplash.com/photo-1599643478518-17488fbbcd75?q=80&w=2000&auto=format&fit=crop', caption: 'Pricing Trends' },
-            { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop', caption: 'Analytics Dashboard' }
+            { src: 'https://images.unsplash.com/photo-1599643478518-17488fbbcd75?q=80&w=2000&auto=format&fit=crop', caption: 'Xu hướng Giá' },
+            { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop', caption: 'Bảng phân tích' }
         ]
     },
     {
         slug: 'gemstone-classification-ai',
         name: 'Gemstone Classification AI',
-        client: 'Gems & Minerals Mining Corp',
+        client: 'Tập đoàn Khai thác Đá quý & Khoáng sản',
         year: '2025',
         image: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/Fig_1_montage.png',
-        category: 'AI Application',
+        category: 'Ứng dụng AI',
         industry: 'mining',
-        tagline: 'Scaling industrial R&D with spatial intelligence.',
-        description: 'A customized AI research pipeline for high-volume gemstone identification, designed to streamline quality control and preliminary sorting for gemstone mining operations.',
-        role: 'AI R&D Partner',
-        services: ['Computer Vision', 'Deep Learning', 'R&D'],
-        tags: ['AI', 'Computer Vision', 'Mining', 'R&D'],
-        overview: 'Developed a systematic AI framework to automate 68 distinct gemstone classifications, enabling the client to scale their sorting operations and maintain consistent quality standards from the mining site.',
-        problem: 'The client\'s sorting department struggled with the slow, manual classification of raw stones. Dependency on human experts limited their ability to process massive extraction volumes and led to quality control bottlenecks.',
-        solution: 'Implemented a pipeline with smart pre-processing (Otsu thresholding) and feature extraction (color histograms, texture analysis). Trained a Random Forest model that outperformed deep learning alternatives for this specific use case.',
-        result: 'Processing time reduced from 175 minutes (human) to under 1 second (AI). Achieved 69.4% accuracy, surpassing expert benchmarks. Scalable to 68 gemstone types.',
+        tagline: 'Mở rộng quy mô R&D công nghiệp với trí tuệ không gian.',
+        description: 'Quy trình nghiên cứu AI tùy chỉnh để nhận diện đa quý số lượng lớn, thiết kế giúp sắp xếp và kiểm soát chất lượng sơ bộ cho các hoạt động khai thác đá quý.',
+        role: 'Đối tác R&D AI',
+        services: ['Thị giác Máy tính', 'Học sâu', 'R&D'],
+        tags: ['AI', 'Thị giác Máy tính', 'Khai thác mỏ', 'R&D'],
+        overview: 'Phát triển một hệ thống tự động hóa AI có hệ thống để phân loại 68 loại đá quý riêng biệt, cho phép khách hàng mở rộng quy mô hoạt động phân loại và duy trì tiêu chuẩn chất lượng nhất quán từ công trường.',
+        problem: 'Bộ phận phân loại của khách hàng gặp khó khăn do phân loại đá thô thủ công chậm. Phụ thuộc vào con người làm hạn chế khối lượng khai thác có thể xử lý, đồng thời gây ách tắc trong quy trình kiểm soát chất lượng.',
+        solution: 'Áp dụng một chuỗi liên kết bao gồm xử lý trước (lọc ngưỡng Otsu) và trích xuất đặc trưng hình ảnh (biểu đồ màu, phân tích kết cấu). Đào tạo mô hình Random Forest tốt hơn so với các phương pháp Deep Learning thay thế cho ứng dụng đặc thù này.',
+        result: 'Giảm thời gian xử lý từ 175 phút (con người) xuống dưới 1 giây (AI). Đạt độ chính xác 69.4%, cao hơn các chuyên gia trong ngành. Có khả năng mở rộng lên 68 loại đá.',
         techStack: [
-            { category: 'Language', items: ['Python'] },
-            { category: 'Vision', items: ['OpenCV', 'ResNet'] },
-            { category: 'ML', items: ['Random Forest', 'Scikit-learn'] }
+            { category: 'Ngôn ngữ', items: ['Python'] },
+            { category: 'Thị giác', items: ['OpenCV', 'ResNet'] },
+            { category: 'Học máy', items: ['Random Forest', 'Scikit-learn'] }
         ],
         testimonial: {
-            quote: "This system transformed our field operations. It not only saves 99% of screening time for raw stones but also provides the objective classification data we need for industrial scaling.",
-            author: "Director of Operations",
-            role: "Gemstone Mining & Export Group"
+            quote: "Hệ thống này đã chuyển đổi tổ hợp hoạt động tại thực địa của chúng tôi. Nó không chỉ tiết kiệm 99% thời gian sàng lọc đá thô mà còn cung cấp thêm dữ liệu khách quan để mở rộng quy mô công nghiệp.",
+            author: "Giám đốc Điều hành",
+            role: "Tập đoàn Khai thác & Xuất khẩu Đá quý"
         },
         galleryLayout: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12',
         gallery: [
             {
                 src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/Fig_3_framework.png',
-                caption: 'Methodology Framework',
+                caption: 'Khung Phương pháp luận',
                 className: 'lg:col-span-2 aspect-[16/6]',
                 imageClassName: 'object-contain'
             },
             {
                 src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/Fig_5_RGB.png',
-                caption: 'RGB Color Space Analysis',
+                caption: 'Không gian màu RGB',
                 className: 'aspect-square',
                 imageClassName: 'object-contain'
             },
             {
                 src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/Fig_6_HSVplots.png',
-                caption: 'HSV Feature Visualisation',
+                caption: 'Hình ảnh hóa Đặc trưng HSV',
                 className: 'md:col-span-2 lg:col-span-1 aspect-[4/3]',
                 imageClassName: 'object-contain'
             },
             {
                 src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/Fig_8_accuracy.png',
-                caption: 'Classification Accuracy Boxplot',
+                caption: 'Biểu đồ Hộp Độ chính xác Phân loại',
                 className: 'lg:col-span-2 aspect-[16/8]',
                 imageClassName: 'object-contain'
             },
             {
                 src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/Fig_9_bestsystem.png',
-                caption: 'Best System Confusion Matrix',
+                caption: 'Ma trận Nhầm lẫn Hệ thống Tốt nhất',
                 className: 'aspect-square',
                 imageClassName: 'object-contain'
             },
             {
                 src: 'https://brboqnvtkppko1ca.public.blob.vercel-storage.com/Fig_10_bestexpert.png',
-                caption: 'Expert Gemmologist Confusion Matrix',
+                caption: 'Ma trận Nhầm lẫn Chuyên gia Đá quý',
                 className: 'aspect-square',
                 imageClassName: 'object-contain'
             }
@@ -264,193 +264,193 @@ export const projects: Project[] = [
     {
         slug: 'hospital-data-warehouse',
         name: 'Services Hospital Analytics',
-        client: 'Services Hospital Lahore',
+        client: 'Bệnh viện Services Lahore',
         year: '2025',
         image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2940&auto=format&fit=crop',
-        category: 'Business Intelligence',
+        category: 'Kinh doanh thông minh (BI)',
         industry: 'healthcare',
-        tagline: 'Unified data ecosystem for a major public healthcare facility.',
-        description: 'A comprehensive data warehouse and BI solution transforming fragmented hospital records into actionable operational insights.',
-        role: 'Data Architect',
-        services: ['Data Warehousing', 'ETL', 'Business Intelligence'],
-        tags: ['Healthcare', 'Big Data', 'Power BI', 'KNIME'],
-        overview: 'Engineered a Hospital Data Warehouse to integrate records from Admissions, Nursing, and Pharmacy, balancing Bed Capacity and Nurse-to-Patient ratios.',
-        problem: 'Fragmented data systems and manual workflows led to resource imbalances and overcrowding. There was no real-time visibility into bed occupancy.',
-        solution: 'Designed a star-schema data warehouse. Built ETL pipelines with KNIME. Developed Power BI dashboards for Patient Flow, Nurse Workload, and Inventory.',
-        result: 'Reduced decision-making time. Optimized shift scheduling improved nurse availability by 15%. Saved 20+ hours/week of manual data entry.',
+        tagline: 'Hệ sinh thái dữ liệu hợp nhất cho cơ sở y tế công cộng lớn.',
+        description: 'Kho dữ liệu toàn diện và giải pháp BI giúp chuyển đổi hồ sơ bệnh viện phân tán thành thông tin chi tiết có thể hành động trong hoạt động.',
+        role: 'Kiến trúc sư Dữ liệu',
+        services: ['Kho Dữ liệu', 'ETL', 'Kinh doanh thông minh'],
+        tags: ['Y tế', 'Dữ liệu lớn', 'Power BI', 'KNIME'],
+        overview: 'Xây dựng Kho dữ liệu Bệnh viện (Data Warehouse) để tích hợp thông tin từ bộ phận Tiếp nhận, Điều dưỡng và Nhà thuốc nhằm cân đối Công suất giường & tỷ lệ Y tá/Bệnh nhân.',
+        problem: 'Hệ thống dữ liệu phân tán và quy trình thủ công dẫn đến sự mất cân đối tài nguyên và tình trạng quá tải. Bệnh viện thiếu khả năng giám sát tỉ lệ giường trống trong thời gian thực.',
+        solution: 'Thiết kế kho dữ liệu mô hình star-schema. Xây dựng luồng ETL với KNIME. Nghiên cứu & lập bảng điều khiển Power BI cho Luồng Bệnh nhân, Cường độ công việc của Y tá và quản lý kho.',
+        result: 'Giảm thời gian ra quyết định. Tối ưu hóa phân công ca, cải thiện khả năng đáp ứng của y tá lên 15%. Tiết kiệm hơn 20 giờ/tuần thao tác nhập liệu bằng tay.',
         techStack: [
             { category: 'ETL', items: ['KNIME'] },
-            { category: 'Visualization', items: ['Power BI'] },
-            { category: 'Analytics', items: ['Data Modeling', 'Predictive Analytics'] }
+            { category: 'Hiển thị', items: ['Power BI'] },
+            { category: 'Phân tích', items: ['Mô hình Dữ liệu', 'Phân tích Dự báo'] }
         ],
         testimonial: {
-            quote: "The ability to see real-time bed capacity and staff distribution has been a game-changer. We can now allocate resources dynamically.",
-            author: "Administration Lead",
-            role: "Services Hospital Lahore"
+            quote: "Khả năng nắm rõ tổng thể công suất giường & phân bổ nhân sự đã thay đổi cuộc chơi. Bây giờ chúng tôi có thể tự định hướng sắp xếp nguồn nhân lực linh hoạt hơn.",
+            author: "Trưởng ban Quản trị",
+            role: "Bệnh viện Services Lahore"
         },
         gallery: [
-            { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop', caption: 'Bed Capacity Dashboard' },
-            { src: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=2000&auto=format&fit=crop', caption: 'Workflow Optimization' }
+            { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop', caption: 'Bảng Công suất Giường bệnh' },
+            { src: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=2000&auto=format&fit=crop', caption: 'Tối ưu hóa Quy trình' }
         ]
     },
     {
         slug: 'india-tourism-intelligence',
         name: 'India Tourism Intelligence',
-        client: 'Government Advisory',
+        client: 'Cố vấn Chính phủ',
         year: '2022',
         image: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2940&auto=format&fit=crop',
-        category: 'Data Analysis',
+        category: 'Phân tích Dữ liệu',
         industry: 'government',
-        tagline: 'Decades of tourism data synthesized into strategic insights.',
-        description: 'A data analysis project processing 40 years of tourism statistics to reveal seasonality trends and customer segments.',
-        role: 'Data Analyst',
-        services: ['Big Data Analysis', 'Visualization', 'Strategy'],
-        tags: ['Tourism', 'Data Analysis', 'Python', 'Government'],
-        overview: 'Processed 40 years of historical data from 8 sources to optimize marketing strategies and resource allocation for Indian tourism.',
-        problem: 'Data was siloed in CSVs. Stakeholders relied on intuition rather than facts, leading to generic and inefficient marketing campaigns.',
-        solution: 'Built a Python analysis pipeline to clean and merge datasets. Performed EDA to identify seasonality and customer segments. Visualized insights with Seaborn/Matplotlib.',
-        result: 'Optimized marketing direction by estimated 20%. Established a baseline to measure post-COVID recovery. Identified Top 10 monuments for targeted resource allocation.',
+        tagline: 'Hàng thập kỷ dữ liệu du lịch được tổng hợp thành những hiểu biết mang tính chiến lược.',
+        description: 'Dự án phân tích dữ liệu xử lý thống kê du lịch của 40 năm để bóc tách xu hướng mùa vụ và những phân khúc người dùng.',
+        role: 'Nhà Phân tích Dữ liệu',
+        services: ['Phân tích Big Data', 'Trực quan hóa', 'Chiến lược'],
+        tags: ['Du lịch', 'Phân tích Dữ liệu', 'Python', 'Chính phủ'],
+        overview: 'Xử lý dữ liệu của 40 năm từ 8 nguồn riêng biệt để giúp tối ưu hóa định hướng tiếp thị và nguồn tài nguyên dành cho du lịch của Ấn Độ.',
+        problem: 'Người quản lý dựa vào phỏng đoán thủ công thay vì dữ kiện, và dữ liệu vẫn bị hạn chế lưu ở định dạng CSV, dẫn đến truyền thông và quảng bá chậm trễ.',
+        solution: 'Sử dụng khung Python để dọn dẹp và hợp nhất những nội dung đó. Giám sát EDA qua phân loại những định hướng mùa và phân đoạn tệp khách dựa trên Seaborn/Matplotlib.',
+        result: 'Tối ưu lại thông tin quảng bá thêm 20%. Thiết lập định mức đo đếm để chuẩn bị cho sự khôi phục hậu Covid-19. Hiển thị thông số từ 10 phân nhánh mục tiêu chủ chốt.',
         techStack: [
-            { category: 'Core', items: ['Python', 'Pandas'] },
-            { category: 'Visualization', items: ['Matplotlib', 'Seaborn', 'Jupyter'] }
+            { category: 'Lõi', items: ['Python', 'Pandas'] },
+            { category: 'Trực quan hóa', items: ['Matplotlib', 'Seaborn', 'Jupyter'] }
         ],
         testimonial: {
-            quote: "This report moved us from 'guessing' to 'knowing'. Seeing the seasonality heatmap saved us so much time in useless debates.",
-            author: "Director",
-            role: "Tourism Board"
+            quote: "Báo cáo này chuyển chúng tôi từ 'đoán mò' sang 'biết rõ'. Nhìn thấy bản đồ nhiệt theo mùa vụ đã giúp chúng tôi tiết kiệm rất nhiều thời gian trong những cuộc tranh cãi.",
+            author: "Giám đốc",
+            role: "Tổng cục Du lịch"
         },
         gallery: [
-            { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop', caption: 'Growth Trends' },
-            { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop', caption: 'Seasonality Heatmap' }
+            { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop', caption: 'Xu hướng Tăng trưởng' },
+            { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop', caption: 'Bản đồ theo Mùa' }
         ]
     },
     {
         slug: 'kerala-tourism-analytics',
         name: 'Kerala Tourism Analytics',
-        client: 'Dept of Tourism',
+        client: 'Sở Du lịch',
         year: '2023',
         image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=2940&auto=format&fit=crop',
-        category: 'BI Dashboard',
+        category: 'Bảng điều khiển BI',
         industry: 'government',
-        tagline: 'Interactive intelligence for regional tourism planning.',
-        description: 'A Business Intelligence dashboard using Power BI to analyze trends, COVID impact, and visitor demographics for Kerala Tourism.',
-        role: 'BI Developer',
-        services: ['Power BI Development', 'Data Modeling', 'Government Tech'],
-        tags: ['Tourism', 'Power BI', 'Analytics', 'Government'],
-        overview: 'Created an interactive dashboard to analyze data from 13M+ domestic and 522k international visitors, aiding in policy making.',
-        problem: 'Fragmented data and manual reporting made it impossible to track accurate visitor trends or the real impact of the pandemic.',
-        solution: 'Built a Power BI dashboard with Power Query for ETL and DAX for complex metrics. Designed views for high-level overviews and deep-dives into time-series trends.',
-        result: 'Reduced reporting time by 90%. Highlighted domestic tourism recovery in 2023. Identified key source markets (UK, USA) for targeted campaigns.',
+        tagline: 'Trí tuệ tương tác cho quy hoạch du lịch khu vực.',
+        description: 'Một bảng điều khiển Business Intelligence sử dụng Power BI để phân tích xu hướng, tác động của COVID và nhân khẩu học du khách cho Du lịch Kerala.',
+        role: 'Nhà phát triển BI',
+        services: ['Phát triển Power BI', 'Mô hình Dữ liệu', 'Công nghệ Chính phủ'],
+        tags: ['Du lịch', 'Power BI', 'Phân tích', 'Chính phủ'],
+        overview: 'Tạo một bảng điều khiển tương tác để phân tích dữ liệu từ hơn 13 triệu du khách nội địa và 522 nghìn du khách quốc tế, hỗ trợ hoạch định chính sách.',
+        problem: 'Dữ liệu phân mảnh và báo cáo thủ công khiến việc theo dõi xu hướng du khách chính xác hoặc tác động thực sự của đại dịch trở nên bất khả thi.',
+        solution: 'Xây dựng một bảng điều khiển Power BI với Power Query cho quá trình ETL và DAX cho các số liệu phức tạp. Thiết kế các góc nhìn để tổng quan mức cao và đi sâu vào các xu hướng chuỗi thời gian.',
+        result: 'Giảm 90% thời gian lập báo cáo. Nêu bật sự phục hồi du lịch nội địa vào năm 2023. Xác định các thị trường nguồn chính (Anh, Mỹ) để thực hiện các chiến dịch nhắm mục tiêu.',
         techStack: [
-            { category: 'Tool', items: ['Microsoft Power BI'] },
+            { category: 'Công cụ', items: ['Microsoft Power BI'] },
             { category: 'Logic', items: ['DAX', 'Power Query'] },
-            { category: 'Data', items: ['Python'] }
+            { category: 'Dữ liệu', items: ['Python'] }
         ],
         testimonial: {
-            quote: "Seeing the post-pandemic recovery with a few clicks gave us the confidence to allocate our promotional budget effectively.",
-            author: "Head of Analytics",
-            role: "Dept of Tourism"
+            quote: "Việc nhìn thấy sự phục hồi sau đại dịch chỉ với một vài cú nhấp chuột giúp chúng tôi tự tin phân bổ ngân sách quảng bá một cách hiệu quả.",
+            author: "Trưởng phòng Phân tích",
+            role: "Sở Du lịch"
         },
         gallery: [
-            { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop', caption: 'Visitor Overview' },
-            { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop', caption: 'Yearly Analysis' }
+            { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop', caption: 'Tổng quan Du khách' },
+            { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop', caption: 'Phân tích Hàng năm' }
         ]
     },
     {
         slug: 'services-super-app',
         name: 'On-Demand Super App',
-        client: 'Logistics Startup',
+        client: 'Startup Logistics',
         year: '2025',
         image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2940&auto=format&fit=crop',
-        category: 'Mobile Platform',
+        category: 'Nền tảng Di động',
         industry: 'logistics',
-        tagline: 'Unified delivery and home services ecosystem.',
-        description: 'A cross-platform Super App integrating food delivery, grocery, and home services into a single seamless experience.',
-        role: 'Lead Developer',
-        services: ['Mobile Development', 'System Architecture', 'Flutter'],
-        tags: ['Flutter', 'Super App', 'Logistics', 'Mobile'],
-        overview: 'Developed a Flutter-based Super App consolidating 10+ service types (Delivery, Home Services) for the SE Asia market.',
-        problem: 'Users had to download multiple apps for different needs. The client fought for market share and needed a superior, unified user experience.',
-        solution: 'Built a modular app using Clean Architecture and GetX. Integrated Google Maps for real-time tracking and Firebase for live updates. Added OCR for quick payments.',
-        result: 'launched MVP in 5 months. 10k+ downloads in first month. 45% retention rate due to smooth UX and "Premium Feel".',
+        tagline: 'Hệ sinh thái giao hàng và dịch vụ tại nhà thống nhất.',
+        description: 'Một Siêu ứng dụng đa nền tảng tích hợp giao đồ ăn, hàng tạp hóa và các dịch vụ tại nhà vào một trải nghiệm liền mạch duy nhất.',
+        role: 'Nhà phát triển Chính',
+        services: ['Phát triển Di động', 'Kiến trúc Hệ thống', 'Flutter'],
+        tags: ['Flutter', 'Siêu Ứng dụng', 'Logistics', 'Mobile'],
+        overview: 'Phát triển một Siêu ứng dụng dựa trên Flutter hợp nhất hơn 10 loại hình dịch vụ (Giao hàng, Dịch vụ tại nhà) cho thị trường Đông Nam Á.',
+        problem: 'Người dùng phải tải nhiều ứng dụng cho các nhu cầu khác nhau. Khách hàng đang tranh giành thị phần và cần một trải nghiệm người dùng vượt trội, thống nhất.',
+        solution: 'Xây dựng một ứng dụng dạng mô-đun sử dụng Clean Architecture và GetX. Tích hợp Google Maps để theo dõi thời gian thực và Firebase để cập nhật trực tiếp. Thêm OCR để thanh toán nhanh.',
+        result: 'Ra mắt MVP trong vòng 5 tháng. Hơn 10k+ lượt tải xuống trong tháng đầu tiên. Tỷ lệ giữ chân 45% nhờ UX mượt mà và "Cảm giác Cao cấp".',
         techStack: [
             { category: 'Frontend', items: ['Flutter', 'GetX'] },
             { category: 'Backend', items: ['REST API (Dio)', 'Google Maps API'] },
-            { category: 'Infra', items: ['Firebase', 'Google ML Kit'] }
+            { category: 'Hạ tầng', items: ['Firebase', 'Google ML Kit'] }
         ],
         testimonial: {
-            quote: "They are problem solvers. Turning a complex multi-tier system into a simple, easy-to-use app is their biggest strength.",
-            author: "Mr. K",
-            role: "Product Owner"
+            quote: "Họ là những người giải quyết vấn đề. Biến một hệ thống đa tầng phức tạp thành một ứng dụng đơn giản, dễ sử dụng là thế mạnh lớn nhất của họ.",
+            author: "Ông K",
+            role: "Chủ sở hữu Sản phẩm"
         },
         galleryLayout: 'grid-cols-1 md:grid-cols-3 gap-8',
         gallery: [
-            { src: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2000&auto=format&fit=crop', caption: 'Home Dashboard', className: 'md:col-span-1 aspect-[9/19]' },
-            { src: 'https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?q=80&w=2000&auto=format&fit=crop', caption: 'Real-time Tracking', className: 'md:col-span-1 aspect-[9/19]' }
+            { src: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2000&auto=format&fit=crop', caption: 'Bảng điều khiển Chính', className: 'md:col-span-1 aspect-[9/19]' },
+            { src: 'https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?q=80&w=2000&auto=format&fit=crop', caption: 'Theo dõi Thời gian thực', className: 'md:col-span-1 aspect-[9/19]' }
         ]
     },
     {
         slug: 'cdsl-web-rebrand',
         name: 'CDSL Web Rebrand',
-        client: 'CDSL (Internal)',
+        client: 'CDSL (Nội bộ)',
         year: '2026',
         image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2940&auto=format&fit=crop',
-        category: 'Rebrand & Migration',
+        category: 'Tái định vị & Chuyển đổi',
         industry: 'technology',
-        tagline: 'From static site to immersive digital experience.',
-        description: 'Complete platform migration from Astro to Next.js to enable advanced interactivity and premium design patterns.',
-        role: 'Lead Architect',
-        services: ['Re-platforming', 'UI/UX Design', 'Performance Optimization'],
-        tags: ['Next.js', 'React', 'Framer Motion', 'Migration'],
-        overview: 'A strategic technical migration and visual rebranding initiative to transform the corporate website from a static informational site into a dynamic showcase of engineering capabilities.',
-        problem: 'The legacy Astro-based architecture, while performant for static content, struggled to support complex, stateful animations and the seamless page transitions required for the new "Show Don\'t Sell" design philosophy. The previous design also lacked the premium, engineering-focused aesthetic desired.',
-        solution: 'Migrated the entire codebase to Next.js 16 (App Router) to leverage React Server Components for performance while enabling rich client-side interactivity. Implemented a sophisticated design system using TailwindCSS and complex scroll-linked animations with Framer Motion. Introduced a "dark mode" centric aesthetic with glassmorphism and micro-interactions.',
-        result: 'Successfully launched a high-performance, visually stunning platform with fluid page transitions and interactive storytelling elements. The new architecture allows for rapid feature deployment and better showcases the team\'s technical prowess.',
+        tagline: 'Từ trang web tĩnh đến trải nghiệm kỹ thuật số sống động.',
+        description: 'Di chuyển toàn bộ nền tảng từ Astro sang Next.js để cho phép tăng cường tính tương tác và các mẫu thiết kế cao cấp.',
+        role: 'Kiến trúc sư Trưởng',
+        services: ['Đổi mới Nền tảng', 'Thiết kế UI/UX', 'Tối ưu hóa Hiệu suất'],
+        tags: ['Next.js', 'React', 'Framer Motion', 'Chuyển đổi'],
+        overview: 'Một sáng kiến di chuyển kỹ thuật và tái định vị hình ảnh chiến lược nhằm chuyển đổi trang web công ty từ một trang thông tin tĩnh thành một nơi giới thiệu các năng lực kỹ thuật một cách sinh động.',
+        problem: 'Kiến trúc dựa trên Astro cũ, dù hiệu suất cao với nội dung tĩnh, gặp khó khăn trong việc hỗ trợ các hoạt ảnh phức tạp, có trạng thái và sự chuyển đổi trang mượt mà cần thiết cho triết lý thiết kế "Hãy hiển thị, Đừng bán" (Show Don\'t Sell) mới. Thiết kế trước đó cũng thiếu đi cả thẩm mỹ cao cấp, tập trung vào kỹ thuật như mong muốn.',
+        solution: 'Di chuyển toàn bỗ mã nguồn sang Next.js 16 (App Router) để tận dụng React Server Components cho hiệu năng, đồng thời cho phép tương tác mạnh mẽ ở phía client. Triển khai một hệ thống thiết kế tinh vi sử dụng TailwindCSS và các hoạt ảnh liên kết cuộn phức tạp với Framer Motion. Giới thiệu thẩm mỹ trọng tâm "chế độ tối" với glassmorphism (hiệu ứng kính mờ) và vi tương tác.',
+        result: 'Ra mắt thành công một nền tảng hiệu suất cao, trực quan tuyệt đẹp với các chuyển đổi trang mượt mà và các yếu tố kể chuyện tương tác. Kiến trúc mới cho phép triển khai tính năng nhanh chóng và thể hiện tốt hơn năng lực kỹ thuật của đội ngũ.',
         techStack: [
-            { category: 'Framework', items: ['Next.js 16', 'React', 'TypeScript'] },
-            { category: 'Styling', items: ['TailwindCSS', 'Framer Motion'] },
-            { category: 'Legacy', items: ['Astro'] }
+            { category: 'Bộ khung', items: ['Next.js 16', 'React', 'TypeScript'] },
+            { category: 'Giao diện', items: ['TailwindCSS', 'Framer Motion'] },
+            { category: 'Cũ', items: ['Astro'] }
         ],
         testimonial: {
-            quote: "The shift to Next.js wasn't just technical—it unlocked a level of creativity and interactivity that was simply impossible before. The site now feels alive.",
-            author: "Thanh Hung",
-            role: "Founder"
+            quote: "Sự chuyển dịch sang Next.js không chỉ mang tính kỹ thuật—nó đã mở khóa một cấp độ sáng tạo và tương tác mà trước đây đơn giản là bất khả thi. Trang web bây giờ mang cảm giác thực sự sống động.",
+            author: "Thanh Hùng",
+            role: "Người sáng lập"
         },
         gallery: [
-            { src: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=2000&auto=format&fit=crop', caption: 'Code Architecture' },
-            { src: 'https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=2000&auto=format&fit=crop', caption: 'New Design System' }
+            { src: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=2000&auto=format&fit=crop', caption: 'Kiến trúc Mã nguồn' },
+            { src: 'https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=2000&auto=format&fit=crop', caption: 'Hệ thống Thiết kế Mới' }
         ]
     },
     {
         slug: 'dvt-bid-manager',
         name: 'DVT Bid Manager',
-        client: 'DVT (Internal)',
+        client: 'DVT (Nội bộ)',
         year: '2025',
         image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2940&auto=format&fit=crop',
-        category: 'Internal Tool',
+        category: 'Công cụ Nội bộ',
         industry: 'technology',
-        tagline: 'Automated tender document management and internal cloud storage.',
-        description: 'A secure internal platform for managing tender documents, automating approval workflows, and centralized cloud storage.',
-        role: 'Product Owner',
-        services: ['Internal Tooling', 'Cloud Storage', 'Workflow Automation'],
-        tags: ['Internal Tool', 'Automation', 'Cloud', 'Secure'],
-        overview: 'Developed a comprehensive internal tool for DVT to streamline the management of tender documents (hồ sơ thầu). The system serves as a secure internal cloud storage and automates the entire lifecycle of bid preparation and submission.',
-        problem: 'Managing tender documents was a manual, error-prone process involving scattered files across emails and local drives. Version control was non-existent, and approval workflows were slow, risking missed submission deadlines.',
-        solution: 'Built "DVT Bid Manager", a centralized internal cloud platform. Implemented automated version control, role-based access permissions, and a drag-and-drop workflow editor for document approvals. Integrated with internal communication tools for real-time notifications.',
-        result: 'Reduced bid preparation time by 60%. Eliminated version control errors. secured 100% of internal tender documents in a centralized, searchable repository.',
+        tagline: 'Quản lý tài liệu thầu tự động và lưu trữ đám mây nội bộ.',
+        description: 'Một nền tảng nội bộ an toàn để quản lý tài liệu thầu, tự động hóa quy trình phê duyệt và lưu trữ đám mây tập trung.',
+        role: 'Chủ sở hữu Sản phẩm',
+        services: ['Công cụ Nội bộ', 'Lưu trữ Đám mây', 'Tự động hóa Quy trình'],
+        tags: ['Công cụ Nội bộ', 'Tự động hóa', 'Đám mây', 'Bảo mật'],
+        overview: 'Phát triển một công cụ nội bộ toàn diện cho DVT để sắp xếp hợp lý việc quản lý tài liệu thầu (hồ sơ thầu). Hệ thống role như một bộ lưu trữ đám mây nội bộ an toàn và tự động hóa toàn bộ vòng đời của việc chuẩn bị và gửi hồ sơ mời thầu.',
+        problem: 'Quản lý tài liệu thầu là một quá trình thủ công, dễ mắc lỗi liên quan đến các file rải rác trên email và ổ đĩa cục bộ. Việc kiểm soát phiên bản không tồn tại và quy trình phê duyệt chậm chạp, có nguy cơ bỏ lỡ thời hạn nộp hồ sơ.',
+        solution: 'Xây dựng "DVT Bid Manager", một nền tảng đám mây nội bộ tập trung. Đã triển khai kiểm soát phiên bản tự động, quyền truy cập dựa trên vai trò và trình chỉnh sửa quy trình làm việc kéo và thả cho các phê duyệt tài liệu. Tích hợp với các công cụ giao tiếp nội bộ để nhận thông báo theo thời gian thực.',
+        result: 'Giảm 60% thời gian chuẩn bị hồ sơ thầu. Loại bỏ các lỗi kiểm soát phiên bản. Bảo mật 100% hồ sơ thầu nội bộ trong một kho lưu trữ tập trung, có thể tìm kiếm được.',
         techStack: [
             { category: 'Backend', items: ['Ubuntu', 'Python'] },
             { category: 'Frontend', items: ['React', 'TailwindCSS'] },
             { category: 'DevOps', items: ['Docker'] }
         ],
         testimonial: {
-            quote: "This tool transformed our chaos into clarity. We no longer worry about lost files or wrong versions. It's the backbone of our bidding operations.",
-            author: "Thanh Ha",
-            role: "Operations Director"
+            quote: "Công cụ này đã biến sự hỗn loạn của chúng tôi thành sự rõ ràng. Chúng tôi không còn lo lắng về việc mất file hay sai phiên bản. Đây là xương sống cho các hoạt động đấu thầu của chúng tôi.",
+            author: "Thanh Hà",
+            role: "Giám đốc Vận hành"
         },
         gallery: [
-            { src: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2000&auto=format&fit=crop', caption: 'Document Repository' },
-            { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop', caption: 'Approval Workflow' }
+            { src: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2000&auto=format&fit=crop', caption: 'Kho Lưu trữ Tài liệu' },
+            { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop', caption: 'Quy trình Phê duyệt' }
         ]
     }
 ];

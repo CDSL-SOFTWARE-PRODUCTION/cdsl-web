@@ -3,6 +3,7 @@
 import React from 'react';
 import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export const BoutiqueSection: React.FC = () => {
     return (
@@ -16,10 +17,12 @@ export const BoutiqueSection: React.FC = () => {
                     className="absolute inset-0 z-0"
                 >
                     {/* Placeholder for visual stunning content (Image/Video) */}
-                    <img
+                    <Image
                         src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop"
                         alt="Visual Stunning Artwork"
-                        className="w-full h-full object-cover opacity-80"
+                        fill
+                        unoptimized
+                        className="object-cover opacity-80"
                     />
                     {/* Subtle gradient overlay to enhance visual stunning effect - themed colors */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-premium-blue/20 via-transparent to-premium-navy/40 mix-blend-overlay" />

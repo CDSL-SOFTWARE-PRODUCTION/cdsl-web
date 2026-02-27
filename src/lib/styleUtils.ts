@@ -21,27 +21,27 @@ export const getPaddingClass = ({ padding, paddingTop, paddingBottom }: PaddingO
 // All color functions now return dark mode compatible classes only
 // Colors are defined in global.css @theme
 
-export const getBackgroundColor = (_background: ThemeColor = 'base'): string => {
+export const getBackgroundColor = (): string => {
     // Always return dark mode background - ignoring parameter for simplicity
     return 'bg-premium-navy';
 };
 
-export const getTextColor = (_background: ThemeColor = 'base'): string => {
+export const getTextColor = (): string => {
     return 'text-premium-gray';
 };
 
-export const getHeadlineColor = (_background: ThemeColor = 'base'): string => {
+export const getHeadlineColor = (): string => {
     return 'text-white';
 };
 
-export const getEyebrowColor = (_background: ThemeColor = 'base'): string => {
+export const getEyebrowColor = (): string => {
     return 'text-premium-blue';
 };
 
-export const getInputBackgroundColor = (_background: ThemeColor = 'base'): string => {
+export const getInputBackgroundColor = (): string => {
     return 'bg-premium-navy-light';
 };
 
-export const getInputTextColor = (_background: ThemeColor = 'base'): string => {
+export const getInputTextColor = (): string => {
     return 'text-white';
 };

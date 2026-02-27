@@ -113,7 +113,7 @@ const FocusSection: React.FC = () => {
                             }
                         }}
                     >
-                        {cards.map((card, index) => (
+                        {cards.map((card) => (
                             <motion.div
                                 key={card.id}
                                 variants={{

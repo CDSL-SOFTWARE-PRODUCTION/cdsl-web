@@ -7,6 +7,7 @@ import IndustriesSection from '@components/sections/services/IndustriesSection';
 import ScrollReveal from '@components/motion/ScrollReveal';
 
 import { PricingSection } from '@components/sections/services/PricingSection';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
     title: "Services - CDSL",
@@ -70,7 +71,14 @@ export default function ServicesPage() {
                     <div className="site-container bg-premium-navy-light rounded-[5px] p-16 md:p-24 border border-white/5 text-center relative overflow-hidden group hover:border-premium-blue/20 transition-all duration-500">
                         <div className="absolute top-10 left-10 text-9xl text-white/5 font-serif font-black select-none pointer-events-none leading-none">“</div>
                         <div className="inline-flex p-1 bg-white/5 rounded-full mb-8 relative z-10">
-                            <img src="https://brboqnvtkppko1ca.public.blob.vercel-storage.com/sun-chinse-logo.png" alt="Thanh Ha" className="w-16 h-16 rounded-full border-2 border-premium-navy object-cover" />
+                            <Image
+                                src="https://brboqnvtkppko1ca.public.blob.vercel-storage.com/sun-chinse-logo.png"
+                                alt="Thanh Ha"
+                                width={64}
+                                height={64}
+                                unoptimized
+                                className="rounded-full border-2 border-premium-navy object-cover"
+                            />
                         </div>
                         <p className="text-2xl md:text-4xl font-display font-light text-white leading-tight mb-12 italic relative z-10 max-w-4xl mx-auto">
                             "The team realized my vision of a learning ecosystem. Not just coding, they consulted on UX flow for the Shadowing feature, skyrocketing lesson completion rates."

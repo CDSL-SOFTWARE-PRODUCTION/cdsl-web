@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Metadata } from 'next';
 import { Inter, Be_Vietnam_Pro } from 'next/font/google';
 import "@fontsource/bruno-ace-sc";

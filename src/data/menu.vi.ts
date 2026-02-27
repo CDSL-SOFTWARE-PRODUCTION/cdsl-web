@@ -14,30 +14,30 @@ export const headerMenu: MenuItem[] = [
 
 export const footerMenu = [
     {
-        title: 'Company',
+        title: 'Công ty',
         links: [
-            { name: 'Projects', link: '/projects' },
-            { name: 'Services', link: '/services' },
-            { name: 'About', link: '/about' },
-            { name: 'Contact', link: '/contact' },
+            { name: 'Dự án', link: '/projects' },
+            { name: 'Dịch vụ', link: '/services' },
+            { name: 'Về chúng tôi', link: '/about' },
+            { name: 'Liên hệ', link: '/contact' },
         ]
     },
     {
-        title: 'Services',
+        title: 'Dịch vụ',
         links: [
-            { name: 'Platform Architecture', link: '/services' },
-            { name: 'Operational Automation', link: '/services' },
-            { name: 'Growth Engineering', link: '/services' },
-            { name: 'Dedicated Teams', link: '/services' },
+            { name: 'Kiến trúc Nền tảng', link: '/services' },
+            { name: 'Tự động hóa Vận hành', link: '/services' },
+            { name: 'Kỹ thuật Tăng trưởng', link: '/services' },
+            { name: 'Đội ngũ Chuyên trách', link: '/services' },
         ]
     },
     {
-        title: 'Industries',
+        title: 'Ngành nghề',
         links: [
             { name: 'Logistics', link: '/projects?industry=logistics' },
-            { name: 'Healthcare', link: '/projects?industry=healthcare' },
-            { name: 'Fintech', link: '/projects?industry=finance' },
-            { name: 'Retail', link: '/projects?industry=retail' },
+            { name: 'Y tế', link: '/projects?industry=healthcare' },
+            { name: 'Tài chính - Công nghệ', link: '/projects?industry=finance' },
+            { name: 'Bán lẻ', link: '/projects?industry=retail' },
         ]
     }
 ];

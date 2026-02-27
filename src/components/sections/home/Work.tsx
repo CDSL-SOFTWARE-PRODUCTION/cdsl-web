@@ -4,6 +4,7 @@ import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
 import BidManagerFlow from '@components/illustrations/BidManagerFlow';
 import { useLocale } from 'next-intl';
+import Image from 'next/image';
 
 import { getProjects } from '@/data/projects';
 import type { Project } from '@/data/projects';
@@ -64,11 +65,12 @@ export const Work = () => {
                                         ) : (
                                             <>
                                                 <div className="absolute inset-0 bg-premium-blue/20 mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                                <img
+                                                <Image
                                                     src={project.image || "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80"}
                                                     alt={project.name}
-                                                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                                                    loading="lazy"
+                                                    fill
+                                                    unoptimized
+                                                    className="object-cover transform group-hover:scale-105 transition-transform duration-700"
                                                 />
                                             </>
                                         )}
