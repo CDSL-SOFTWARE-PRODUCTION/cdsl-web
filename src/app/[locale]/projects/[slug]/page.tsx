@@ -1,23 +1,26 @@
 'use client';
 
-import React, { use } from 'react';
 import { notFound } from 'next/navigation';
-import { Link, useRouter, usePathname } from '@/i18n/routing';
+import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
-import { projects } from '@data/projects';
+import { getProjects, Project } from '@/data/projects';
+import { useLocale } from 'next-intl';
 import ArrowRight from 'lucide-react/dist/esm/icons/arrow-right';
 import BidManagerFlow from '@components/illustrations/BidManagerFlow';
 
-export default function ProjectDetailPage({ params }: { params: Promise<{ locale: string; slug: string }> }) {
-    const { slug } = use(params);
-
-    const project = projects.find((p) => p.slug === slug);
+// The page is a Client Component, so generateStaticParams must be removed or placed in a layout/server component.
+// As standard next-intl setup with client-side animation components, we will rely on dynamic rendering or handle static params in a separate layout if needed.
+export default function ProjectDetail({ params }: { params: { slug: string } }) {
+    const locale = useLocale();
+    const projects: Project[] = getProjects(locale);
+    const slug = params.slug;
+    const project = projects.find((p: Project) => p.slug === slug);
 
     if (!project) {
         notFound();
     }
 
-    const otherProjects = projects.filter((p) => p.slug !== slug);
+    const otherProjects = projects.filter((p: Project) => p.slug !== slug);
 
     // Animation constants
     const fadeInUp = {
@@ -53,7 +56,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ locale
                     <motion.h1
                         className="text-5xl md:text-7xl lg:text-9xl font-display font-medium uppercase leading-[0.9] text-premium-white mb-8"
                     >
-                        {project.name.split(' ').map((word, i) => (
+                        {project.name.split(' ').map((word: string, i: number) => (
                             <motion.span
                                 key={i}
                                 variants={fadeInUp}
@@ -136,7 +139,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ locale
                         <div>
                             <h4 className="text-white/40 text-sm mb-2">Scope</h4>
                             <ul className="text-lg md:text-xl font-medium">
-                                {project.services?.map((s, i) => (
+                                {project.services?.map((s: string, i: number) => (
                                     <li key={i}>{s}</li>
                                 )) || <li>Full Service</li>}
                             </ul>
@@ -215,7 +218,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ locale
                             Technology Stack
                         </motion.h3>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            {project.techStack.map((stack, index) => (
+                            {project.techStack.map((stack: { category: string; items: string[] }, index: number) => (
                                 <motion.div
                                     key={index}
                                     initial={{ opacity: 0, y: 20 }}
@@ -226,7 +229,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ locale
                                 >
                                     <h4 className="text-premium-blue font-mono text-sm uppercase tracking-widest mb-6 border-b border-white/10 pb-4 inline-block">{stack.category}</h4>
                                     <ul className="space-y-3">
-                                        {stack.items.map((item, i) => (
+                                        {stack.items.map((item: string, i: number) => (
                                             <li key={i} className="text-lg text-white/80">{item}</li>
                                         ))}
                                     </ul>
@@ -258,7 +261,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ locale
             {project.gallery && (
                 <section className="px-4 md:px-8 max-w-7xl mx-auto mb-32">
                     <div className={`${project.galleryLayout?.includes('flex') ? project.galleryLayout : `grid ${project.galleryLayout || 'md:grid-cols-2 gap-8'}`}`}>
-                        {project.gallery.map((item, index) => {
+                        {project.gallery.map((item: { src: string; caption?: string; className?: string; imageClassName?: string }, index: number) => {
                             // Split classes into container (layout/width) and inner (aspect ratio)
                             // Support both aspect-[...] and standard aspect-auto/video/etc
                             const containerClasses = item.className ? item.className.replace(/aspect-\S+/g, '').trim() : '';
@@ -391,7 +394,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ locale
                         }}
                     >
                         {/* Duplicate projects multiple times to create seamless loop even on large screens */}
-                        {[...otherProjects, ...otherProjects, ...otherProjects, ...otherProjects].map((p, i) => (
+                        {[...otherProjects, ...otherProjects, ...otherProjects, ...otherProjects].map((p: Project, i: number) => (
                             <div
                                 key={`${p.slug}-${i}`}
                                 className="w-[300px] md:w-[400px] flex-none group"

@@ -5,10 +5,10 @@ import { Link, usePathname } from '@/i18n/routing';
 import MenuIcon from 'lucide-react/dist/esm/icons/menu';
 import ChevronDown from 'lucide-react/dist/esm/icons/chevron-down';
 import { motion, AnimatePresence } from 'framer-motion';
-import { headerMenu } from '@data/menu';
+import { getHeaderMenu } from '@/data/menu';
 import Logo from '@components/ui/Logo';
 import ScrambleLink from '@components/ui/ScrambleLink';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import LanguageSwitcher from '@components/ui/LanguageSwitcher';
 
 // Mobile Menu Animation Variants
@@ -62,6 +62,8 @@ export const Header: React.FC = () => {
     const lastScrollY = useRef(0);
     const isScrolling = useRef(false);
     const t = useTranslations('Navigation');
+    const locale = useLocale();
+    const headerMenu = getHeaderMenu(locale);
 
     const isCurrentPage = (link: string) => {
         if (link === '/') {
@@ -158,7 +160,7 @@ export const Header: React.FC = () => {
                         {/* Center: Navigation (Desktop) */}
                         <nav className="hidden lg:flex flex-grow justify-center px-10" aria-label="Site Navigation">
                             <ul className="flex items-center justify-between w-full max-w-3xl">
-                                {headerMenu.map((item) => (
+                                {headerMenu.map((item: { name: string; link: string; children?: any[] }) => (
                                     <li key={item.name} className="relative group">
                                         <ScrambleLink
                                             href={item.link}

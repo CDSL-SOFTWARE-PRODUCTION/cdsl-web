@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, Variants } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useScroll, Variants } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 
@@ -52,15 +52,19 @@ const revealMask: Variants = {
     },
 };
 
-import { projects } from '@data/projects';
-import { siteConfig } from '@data/config';
+import { getProjects } from '@/data/projects';
+import { siteConfig } from '@/data/config';
+import { useLocale } from 'next-intl';
 
 export default function ContactPage() {
+    const locale = useLocale();
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start start", "end end"]
     });
+
+    const projects = getProjects(locale);
 
     // Take top 4 projects for teaser
     const teaserProjects = projects.slice(0, 4);
@@ -252,7 +256,7 @@ export default function ContactPage() {
                     <div className="grid grid-cols-1 gap-8">
                         {/* Project List */}
                         <div className="space-y-6">
-                            {teaserProjects.map((project, index) => (
+                            {teaserProjects.map((project: any, index: number) => (
                                 <motion.div
                                     key={index}
                                     initial={{ opacity: 0, y: 20 }}

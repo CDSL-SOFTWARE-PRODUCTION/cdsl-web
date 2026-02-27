@@ -6,6 +6,8 @@ import { VisualProcess } from '@components/sections/services/VisualProcess';
 import IndustriesSection from '@components/sections/services/IndustriesSection';
 import ScrollReveal from '@components/motion/ScrollReveal';
 
+import { PricingSection } from '@components/sections/services/PricingSection';
+
 export const metadata: Metadata = {
     title: "Services - CDSL",
     description: "Engineering revenue engines. From MVP prototypes to enterprise-grade software ecosystems.",
@@ -26,7 +28,10 @@ export default function ServicesPage() {
             {/* 3. Capabilities: Editorial List + Code (Tech Stack) */}
             <CapabilitiesList />
 
-            {/* 4. Industries Section */}
+            {/* 4. Pricing Section */}
+            <PricingSection />
+
+            {/* 5. Industries Section */}
             <IndustriesSection />
 
             {/* 5. Recruitment Section (Inline) */}

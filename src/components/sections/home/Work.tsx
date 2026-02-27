@@ -1,19 +1,22 @@
 'use client';
 
-import React from 'react';
 import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
-import ScrollReveal from '@components/motion/ScrollReveal';
 import BidManagerFlow from '@components/illustrations/BidManagerFlow';
+import { useLocale } from 'next-intl';
 
-import { projects } from '@data/projects';
+import { getProjects } from '@/data/projects';
+import type { Project } from '@/data/projects';
 
-export const Work: React.FC = () => {
+export const Work = () => {
+    const locale = useLocale();
+    const projects = getProjects(locale);
+
     // Selected projects for Home Page
     const featuredSlugs = ['dvt-bid-manager', 'Sun-chinese', 'gemstone-classification-ai'];
     const featuredProjects = featuredSlugs
-        .map(slug => projects.find(p => p.slug === slug))
-        .filter((p): p is typeof projects[0] => p !== undefined);
+        .map(slug => projects.find((p: any) => p.slug === slug))
+        .filter((p: any): p is Project => p !== undefined);
 
     return (
         <section className="py-32 bg-premium-navy relative transition-colors duration-300">
@@ -84,7 +87,7 @@ export const Work: React.FC = () => {
                                     {project.description}
                                 </p>
                                 <div className={`flex flex-wrap gap-3 ${index % 2 === 1 ? 'justify-end' : ''}`}>
-                                    {project.tags?.map(tag => (
+                                    {project.tags?.map((tag: string) => (
                                         <span key={tag} className="px-3 py-1 border border-white/10 rounded-full text-sm text-premium-gray font-mono">
                                             {tag}
                                         </span>

@@ -1,17 +1,20 @@
 'use client';
 
-import React, { Suspense } from 'react';
+import { Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import { motion, useScroll, useTransform } from 'framer-motion';
-
-import { projects } from '@data/projects';
+import { motion } from 'framer-motion';
+import { getProjects } from '@/data/projects';
 import MotionText from '@components/motion/MotionText';
 import ScrollReveal from '@components/motion/ScrollReveal';
+import { useLocale } from 'next-intl';
+import type { Project } from '@/data/projects';
 
 function ProjectsContent() {
     const searchParams = useSearchParams();
     const industryFilter = searchParams.get('industry');
+    const locale = useLocale();
+    const projects: Project[] = getProjects(locale);
 
     const filteredProjects = industryFilter
         ? projects.filter(p => p.industry === industryFilter)
@@ -57,7 +60,7 @@ function ProjectsContent() {
                     >
                         All
                     </Link>
-                    {Array.from(new Set(projects.map(p => p.industry).filter(Boolean))).map((industry) => (
+                    {Array.from(new Set(projects.map((p: Project) => p.industry).filter(Boolean) as string[])).map((industry: string) => (
                         <Link
                             key={industry}
                             href={`/projects?industry=${industry}`}
@@ -73,7 +76,7 @@ function ProjectsContent() {
             <section className="pb-32 px-4 site-container relative z-10">
                 <div className="space-y-12 md:space-y-24">
                     {filteredProjects.length > 0 ? (
-                        filteredProjects.map((project, index) => (
+                        filteredProjects.map((project: Project, index: number) => (
                             <ScrollReveal key={project.slug} delay={index * 0.1} className="w-full">
                                 <motion.div
                                     className="group relative border-b border-white/10 pb-12 hover:border-white/30 transition-colors duration-500"

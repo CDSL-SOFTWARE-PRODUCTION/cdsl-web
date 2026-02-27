@@ -1,10 +1,10 @@
 'use client';
 
-import React from 'react';
 import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
 import ScrollReveal from '@components/motion/ScrollReveal';
-import { industries } from '@data/industries';
+import { getIndustries } from '@/data/industries';
+import { useLocale, useTranslations } from 'next-intl';
 import Truck from 'lucide-react/dist/esm/icons/truck';
 import Heart from 'lucide-react/dist/esm/icons/heart';
 import Building2 from 'lucide-react/dist/esm/icons/building-2';
@@ -15,7 +15,11 @@ import BarChart from 'lucide-react/dist/esm/icons/bar-chart-2';
 import Map from 'lucide-react/dist/esm/icons/map';
 import Cpu from 'lucide-react/dist/esm/icons/cpu';
 
-const IndustriesSection: React.FC = () => {
+const IndustriesSection = () => {
+    const locale = useLocale();
+    const t = useTranslations('Industries');
+    const industries = getIndustries(locale);
+
     const ICON_MAP = {
         "truck": Truck,
         "heart": Heart,
@@ -37,10 +41,10 @@ const IndustriesSection: React.FC = () => {
                 <ScrollReveal direction="up" distance={30}>
                     <div className="mb-20">
                         <div className="inline-block px-4 py-2 bg-premium-blue/10 rounded-full text-premium-blue text-xs font-mono uppercase tracking-widest mb-4">
-                            Industries We Serve
+                            {t('label')}
                         </div>
                         <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 tracking-tight">
-                            Specialized solutions across<br />diverse industries.
+                            {t('title')}
                         </h2>
                     </div>
                 </ScrollReveal>

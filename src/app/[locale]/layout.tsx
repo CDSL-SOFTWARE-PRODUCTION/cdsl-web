@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Outfit } from 'next/font/google';
+import { Inter, Be_Vietnam_Pro } from 'next/font/google';
 import "@fontsource/bruno-ace-sc";
 import "../../styles/global.css";
 import Header from "@components/layout/Header";
@@ -8,13 +8,14 @@ import SmoothScroll from "@components/shared/SmoothScroll";
 import { SEO } from "@data/config";
 
 const inter = Inter({
-    subsets: ['latin'],
+    subsets: ['latin', 'vietnamese'],
     variable: '--font-sans',
     display: 'swap',
 });
 
-const outfit = Outfit({
-    subsets: ['latin'],
+const beVietnamPro = Be_Vietnam_Pro({
+    subsets: ['latin', 'vietnamese'],
+    weight: ['400', '500', '700'],
     variable: '--font-display',
     display: 'swap',
 });
@@ -64,7 +65,7 @@ export default async function RootLayout({
     const messages = await getMessages();
 
     return (
-        <html lang={locale} className={`${inter.variable} ${outfit.variable} dark overflow-x-hidden`} data-theme="premium" suppressHydrationWarning>
+        <html lang={locale} className={`${inter.variable} ${beVietnamPro.variable} dark overflow-x-hidden`} data-theme="premium" suppressHydrationWarning>
             <head>
                 <link rel="sitemap" href="/sitemap-index.xml" />
                 <script

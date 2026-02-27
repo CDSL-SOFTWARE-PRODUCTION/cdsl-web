@@ -2,9 +2,10 @@
 
 import React from 'react';
 import { Link } from '@/i18n/routing';
-import { footerMenu } from '@data/menu';
+import { getFooterMenu } from '@/data/menu';
 import Logo from '@components/ui/Logo';
-import { siteConfig } from '@data/config';
+import { siteConfig } from '@/data/config';
+import { useTranslations, useLocale } from 'next-intl';
 
 interface FooterProps {
     footerCta?: {
@@ -20,23 +21,27 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ footerCta }) => {
+    const locale = useLocale();
+    const t = useTranslations('FooterCTA');
+    const tFooter = useTranslations('Footer');
     const currentYear = new Date().getFullYear();
+    const footerMenu = getFooterMenu(locale);
 
     return (
         <footer className="bg-premium-navy text-white pt-32 pb-12 border-t border-white/5 relative overflow-hidden transition-colors duration-300">
             {/* Footer CTA */}
             <div className="site-container px-4 mb-32 relative z-10">
                 <h2 className="font-display font-bold text-6xl md:text-8xl lg:text-9xl tracking-tighter mb-12 text-center md:text-left text-white transition-colors">
-                    Let's build <br />
-                    <span className="text-premium-blue">Something Great.</span>
+                    {t('title1')} <br />
+                    <span className="text-premium-blue">{t('title2')}</span>
                 </h2>
 
                 <div className="flex flex-col md:flex-row items-center justify-between gap-8 border-t border-white/10 pt-12 transition-colors">
                     <p className="text-xl text-premium-gray max-w-xl font-light transition-colors">
-                        Ready to transform your operations? We help you scale with purpose-built technology.
+                        {t('description')}
                     </p>
                     <Link href="/contact" className="inline-flex items-center justify-center rounded-full px-12 py-4 text-xl font-bold bg-premium-blue text-premium-navy hover:bg-premium-blue/80 transition-colors">
-                        Start a Project
+                        {t('button')}
                     </Link>
                 </div>
             </div>
@@ -47,19 +52,19 @@ export const Footer: React.FC<FooterProps> = ({ footerCta }) => {
                     <div className="lg:col-span-4">
                         <Logo variant="footer" />
                         <p className="mt-6 text-premium-gray/70 font-mono text-sm max-w-xs leading-relaxed">
-                            Advanced technology solutions for the modern enterprise. We bridge the gap between complexity and elegance.
+                            {t('descLong')}
                         </p>
                     </div>
 
                     <div className="lg:col-span-8">
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-12">
-                            {footerMenu.map(category => (
+                            {footerMenu.map((category: { title: string; links: { name: string; link: string }[] }) => (
                                 <div key={category.title}>
                                     <h3 className="text-white font-display font-medium mb-6 uppercase tracking-widest text-sm opacity-50">
                                         {category.title}
                                     </h3>
                                     <ul className="space-y-4">
-                                        {category.links.map(link => (
+                                        {category.links.map((link: { name: string; link: string }) => (
                                             <li key={link.name}>
                                                 <Link
                                                     href={link.link}
@@ -77,8 +82,8 @@ export const Footer: React.FC<FooterProps> = ({ footerCta }) => {
                 </div>
 
                 <div className="mt-20 flex flex-col md:flex-row justify-between items-center text-xs text-premium-gray/60 font-mono">
-                    <p>© <span suppressHydrationWarning>{currentYear}</span> {siteConfig.companyName}. All rights reserved.</p>
-                    <p>Designed with purpose.</p>
+                    <p>© <span suppressHydrationWarning>{currentYear}</span> {siteConfig.companyName}. {tFooter('rights')}</p>
+                    <p>{tFooter('designedBy')}</p>
                 </div>
             </div>
         </footer>
