@@ -5,30 +5,6 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Lightbulb, Code2, TrendingUp, Search, Target, Smartphone, Globe, LayoutDashboard } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
-const steps = [
-    {
-        id: '01',
-        title: 'Strategy',
-        subtitle: 'Uncovering Opportunity',
-        description: 'We don\'t just write code. We analyze your business model to identify technological leverage points that drive revenue and efficiency.',
-        icon: Lightbulb,
-    },
-    {
-        id: '02',
-        title: 'Execution',
-        subtitle: 'Building Your Asset',
-        description: 'We deploy a dedicated team to build your proprietary software. No templates, just powerful, scalable platforms owned 100% by you.',
-        icon: Code2,
-    },
-    {
-        id: '03',
-        title: 'Growth',
-        subtitle: 'Market Dominance',
-        description: 'We ensure your infrastructure scales effortlessly with your success. Supporting millions of users without compromising performance.',
-        icon: TrendingUp,
-    }
-];
-
 // Pre-calculate bar variations for the growth graph to avoid Math.random() in render
 const BAR_COUNT = 20;
 const BAR_HEIGHTS = Array.from({ length: BAR_COUNT }, (_, i) => ({
@@ -38,6 +14,31 @@ const BAR_HEIGHTS = Array.from({ length: BAR_COUNT }, (_, i) => ({
 
 export const CapabilitiesSection: React.FC = () => {
     const t = useTranslations('HomePage');
+
+    const steps = [
+        {
+            id: '01',
+            title: t('capStep1Title'),
+            subtitle: t('capStep1Subtitle'),
+            description: t('capStep1Desc'),
+            icon: Lightbulb,
+        },
+        {
+            id: '02',
+            title: t('capStep2Title'),
+            subtitle: t('capStep2Subtitle'),
+            description: t('capStep2Desc'),
+            icon: Code2,
+        },
+        {
+            id: '03',
+            title: t('capStep3Title'),
+            subtitle: t('capStep3Subtitle'),
+            description: t('capStep3Desc'),
+            icon: TrendingUp,
+        }
+    ];
+
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -116,13 +117,13 @@ export const CapabilitiesSection: React.FC = () => {
                             <div className="flex gap-4">
                                 <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity }} className="p-4 bg-premium-blue/10 border border-premium-blue/30 rounded backdrop-blur max-w-[200px]">
                                     <Search className="w-10 h-10 text-premium-blue mb-2" />
-                                    <div className="text-sm text-white font-medium">Market Analysis</div>
-                                    <div className="text-xs text-premium-gray mt-1">Identifying gaps & opportunities</div>
+                                    <div className="text-sm text-white font-medium">{t('vizMarketAnalysis')}</div>
+                                    <div className="text-xs text-premium-gray mt-1">{t('vizMarketAnalysisDesc')}</div>
                                 </motion.div>
                                 <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 3, repeat: Infinity }} className="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded backdrop-blur max-w-[200px] mt-8">
                                     <Target className="w-10 h-10 text-emerald-400 mb-2" />
-                                    <div className="text-sm text-white font-medium">Strategic Roadmap</div>
-                                    <div className="text-xs text-premium-gray mt-1">Clear path to ROI</div>
+                                    <div className="text-sm text-white font-medium">{t('vizStrategicRoadmap')}</div>
+                                    <div className="text-xs text-premium-gray mt-1">{t('vizStrategicRoadmapDesc')}</div>
                                 </motion.div>
                             </div>
                         </motion.div>
@@ -135,18 +136,18 @@ export const CapabilitiesSection: React.FC = () => {
                             <motion.div className="space-y-3">
                                 <div className="p-3 bg-white/5 border border-white/10 rounded flex items-center gap-3">
                                     <Globe className="w-5 h-5 text-blue-400" />
-                                    <span className="text-white text-sm font-medium">Web Platform</span>
+                                    <span className="text-white text-sm font-medium">{t('vizWebPlatform')}</span>
                                 </div>
                                 <div className="p-3 bg-white/5 border border-white/10 rounded flex items-center gap-3 ml-4">
                                     <Smartphone className="w-5 h-5 text-purple-400" />
-                                    <span className="text-white text-sm font-medium">Mobile App</span>
+                                    <span className="text-white text-sm font-medium">{t('vizMobileApp')}</span>
                                 </div>
                                 <div className="p-3 bg-white/5 border border-white/10 rounded flex items-center gap-3">
                                     <LayoutDashboard className="w-5 h-5 text-orange-400" />
-                                    <span className="text-white text-sm font-medium">Admin Dashboard</span>
+                                    <span className="text-white text-sm font-medium">{t('vizAdminDashboard')}</span>
                                 </div>
                                 <div className="mt-4 pt-4 border-t border-white/10 text-center">
-                                    <span className="text-xs text-premium-blue uppercase tracking-widest font-bold">Your Digital Asset</span>
+                                    <span className="text-xs text-premium-blue uppercase tracking-widest font-bold">{t('vizDigitalAsset')}</span>
                                 </div>
                             </motion.div>
                         </motion.div>
@@ -168,8 +169,8 @@ export const CapabilitiesSection: React.FC = () => {
                                 ))}
                             </div>
                             <div className="flex justify-between text-xs font-mono text-premium-blue mt-4">
-                                <span>User Base</span>
-                                <span>Time</span>
+                                <span>{t('vizUserBase')}</span>
+                                <span>{t('vizTime')}</span>
                             </div>
                         </motion.div>
 

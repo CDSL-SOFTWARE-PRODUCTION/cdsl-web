@@ -55,7 +55,7 @@ const MotionText: React.FC<MotionTextProps> = ({
     return (
         <motion.div
             key={text}
-            className={`inline-block ${className}`}
+            className={`${className.includes('inline-block') || className.includes('block') ? '' : 'inline-block '}${className}`}
             variants={containerVariants}
             initial="hidden"
             whileInView="show"
@@ -64,7 +64,7 @@ const MotionText: React.FC<MotionTextProps> = ({
             {items.map((char, index) => (
                 <motion.span
                     key={`${char}-${index}`}
-                    className="inline-block whitespace-pre py-2"
+                    className="inline-block whitespace-pre py-1.5"
                     variants={itemVariants}
                 >
                     {char}{variant === 'words' && index !== items.length - 1 ? '\u00A0' : ''}

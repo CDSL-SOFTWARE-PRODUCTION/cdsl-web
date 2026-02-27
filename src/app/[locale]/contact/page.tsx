@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { motion, useScroll, Variants } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
+import MotionText from '@components/motion/MotionText';
 
 // Animation variants
 const staggerContainerValues: Variants = {
@@ -77,25 +78,34 @@ export default function ContactPage() {
             <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 pt-32 pb-12">
                 <div className="w-full max-w-7xl mx-auto">
                     {/* Headline */}
-                    <motion.div
-                        initial="hidden"
-                        animate="visible"
-                        variants={{
-                            visible: { transition: { staggerChildren: 0.15 } }
-                        }}
-                        className="mb-16 md:mb-24"
-                    >
-                        {[t('heroTitle1'), t('heroTitle2'), t('heroTitle3')].map((line, index) => (
-                            <div key={index} className="overflow-hidden py-12">
-                                <motion.h1
-                                    variants={revealMask}
-                                    className="text-[12vw] md:text-[8vw] leading-[1.5] font-display font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-white/70"
-                                >
-                                    {line}
-                                </motion.h1>
+                    <div className="mb-16 md:mb-24">
+                        <h1 className="text-[12vw] md:text-[8vw] lg:text-[7vw] leading-[1.3] font-display font-bold tracking-tighter uppercase text-white pt-8">
+                            <MotionText
+                                text={t('heroTitle1')}
+                                className="block"
+                                delayOrder={0.1}
+                            />
+                            <div className="flex items-center gap-4 md:gap-8">
+                                <motion.div
+                                    initial={{ width: 0 }}
+                                    whileInView={{ width: '1.5em' }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1], delay: 0.4 }}
+                                    className="h-[0.1em] bg-premium-blue hidden md:block"
+                                />
+                                <MotionText
+                                    text={t('heroTitle2')}
+                                    className="block"
+                                    delayOrder={0.3}
+                                />
                             </div>
-                        ))}
-                    </motion.div>
+                            <MotionText
+                                text={t('heroTitle3')}
+                                className="block"
+                                delayOrder={0.5}
+                            />
+                        </h1>
+                    </div>
 
                     {/* Description */}
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">

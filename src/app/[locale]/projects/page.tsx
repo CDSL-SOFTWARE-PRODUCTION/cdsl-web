@@ -27,7 +27,7 @@ function ProjectsContent() {
             <section className="relative pt-32 pb-24 px-4">
                 <div className="site-container relative z-10 px-4">
                     <div className="max-w-[1200px]">
-                        <h1 className="text-[10vw] md:text-[8vw] lg:text-[7vw] font-bold leading-[1.5] tracking-tighter uppercase mb-12 text-white font-display">
+                        <h1 className="text-[12vw] md:text-[8vw] lg:text-[7vw] font-bold leading-[1.3] tracking-tighter uppercase mb-12 text-white font-display pt-8">
                             <MotionText
                                 text={industryFilter ? `${industryFilter}` : t('title1')}
                                 className="block"

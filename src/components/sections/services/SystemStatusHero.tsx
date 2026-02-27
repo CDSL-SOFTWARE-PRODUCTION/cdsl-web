@@ -43,7 +43,7 @@ export const SystemStatusHero: React.FC = () => {
                             <span className="text-xs font-mono text-premium-blue tracking-widest uppercase">{t('heroStatus')}</span>
                         </div>
 
-                        <h1 className="text-[10vw] md:text-[7vw] lg:text-[6vw] font-bold leading-[1.5] tracking-tighter uppercase mb-8 text-white font-display">
+                        <h1 className="text-[12vw] md:text-[8vw] lg:text-[7vw] font-bold leading-[1.3] tracking-tighter uppercase mb-8 text-white font-display pt-8">
                             <MotionText text={t('heroTitle1')} className="block" delayOrder={0.1} />
                             <div className="flex items-center gap-4">
                                 <span className="h-[0.1em] w-12 bg-premium-blue block" />

@@ -35,7 +35,7 @@ const FocusSection: React.FC = () => {
                         <span className="text-sm font-semibold tracking-widest uppercase text-premium-blue opacity-60 mb-4">
                             {t('focusTitle')}
                         </span>
-                        <h2 className="text-[8vw] md:text-[6vw] font-bold leading-[1.5] tracking-tighter uppercase font-display">
+                        <h2 className="text-[8vw] md:text-[6vw] font-bold leading-[1.3] tracking-tighter uppercase font-display pt-8">
                             <div className="overflow-hidden">
                                 <motion.div
                                     initial={{ x: '-100%' }}

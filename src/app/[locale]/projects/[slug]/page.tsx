@@ -9,12 +9,14 @@ import ArrowRight from 'lucide-react/dist/esm/icons/arrow-right';
 import BidManagerFlow from '@components/illustrations/BidManagerFlow';
 import Image from 'next/image';
 
+import { use } from 'react';
+
 // The page is a Client Component, so generateStaticParams must be removed or placed in a layout/server component.
 // As standard next-intl setup with client-side animation components, we will rely on dynamic rendering or handle static params in a separate layout if needed.
-export default function ProjectDetail({ params }: { params: { slug: string } }) {
+export default function ProjectDetail({ params }: { params: Promise<{ slug: string, locale: string }> }) {
+    const { slug } = use(params);
     const locale = useLocale();
     const projects: Project[] = getProjects(locale);
-    const slug = params.slug;
     const project = projects.find((p: Project) => p.slug === slug);
 
     if (!project) {
@@ -55,7 +57,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                     className="mb-12"
                 >
                     <motion.h1
-                        className="text-5xl md:text-7xl lg:text-9xl font-display font-medium uppercase leading-[1.5] text-premium-white mb-8"
+                        className="text-[12vw] md:text-[8vw] lg:text-[7vw] font-display font-bold uppercase leading-[1.3] tracking-tighter text-premium-white mb-8 pt-8"
                     >
                         {project.name.split(' ').map((word: string, i: number) => (
                             <motion.span
@@ -357,7 +359,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                                         hidden: { x: '100%' },
                                         visible: { x: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
                                     }}
-                                    className="text-5xl md:text-8xl font-display font-bold uppercase leading-none"
+                                    className="text-5xl md:text-8xl font-display font-bold uppercase leading-[1.3]"
                                 >
                                     {line}
                                 </motion.h2>

@@ -55,10 +55,13 @@ export const BoutiqueSection: React.FC = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="space-y-8 text-premium-gray text-base md:text-lg leading-relaxed font-light"
+                        className="space-y-6 text-premium-gray text-base md:text-lg leading-relaxed font-light"
                     >
                         <p>
                             {t('boutiqueDesc')}
+                        </p>
+                        <p>
+                            {t('boutiqueDesc2')}
                         </p>
                     </motion.div>
 
@@ -68,9 +71,9 @@ export const BoutiqueSection: React.FC = () => {
                         transition={{ duration: 0.6, delay: 0.4 }}
                         className="mt-12"
                     >
-                        <Link href="/contact" className="group inline-flex flex-col">
-                            <span className="text-white text-sm md:text-base font-medium tracking-wide uppercase hover:text-premium-blue transition-colors">
-                                Let's Talk!
+                        <Link href="/services" className="group inline-flex flex-col">
+                            <span className="text-white text-sm md:text-base font-medium tracking-wide uppercase group-hover:text-premium-blue transition-colors">
+                                {t('boutiqueCta')}
                             </span>
                             <span className="h-[1.5px] w-12 bg-white/30 mt-1 group-hover:w-full group-hover:bg-premium-blue transition-all duration-300"></span>
                         </Link>

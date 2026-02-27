@@ -5,6 +5,7 @@ import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
 import Logo from '@components/ui/Logo';
 import { useTranslations } from 'next-intl';
+import MotionText from '@components/motion/MotionText';
 
 export const Hero: React.FC = () => {
     const t = useTranslations('HomePage');
@@ -39,52 +40,54 @@ export const Hero: React.FC = () => {
             <div className="site-container relative z-10 px-4 w-full h-full flex flex-col justify-center">
                 <div className="max-w-7xl mx-auto">
                     {/* Kinetic Typography Headline */}
-                    <motion.h1
-                        variants={{
-                            visible: { transition: { staggerChildren: 0.1 } }
-                        }}
-                        initial="hidden"
-                        animate="visible"
-                        className="font-display font-bold text-5xl sm:text-6xl md:text-8xl lg:text-9xl leading-[1.5] tracking-tighter text-white mb-12 transition-colors duration-300"
-                    >
-                        <div className="overflow-hidden py-8">
-                            <motion.span
+                    <h1 className="font-display font-bold text-[12vw] md:text-[8vw] lg:text-[7vw] leading-[1.3] tracking-tighter text-white mb-12 transition-colors duration-300 pt-8 uppercase">
+                        <MotionText
+                            text={t('heroTitle1')}
+                            className="block"
+                            delayOrder={0.1}
+                        />
+                        <MotionText
+                            text={t('heroTitle2')}
+                            className="block text-premium-gray"
+                            delayOrder={0.3}
+                        />
+                        <div className="flex items-center gap-4 md:gap-8">
+                            <motion.div
+                                initial={{ width: 0 }}
+                                whileInView={{ width: '1.5em' }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1], delay: 0.6 }}
+                                className="h-[0.1em] bg-premium-blue hidden md:block"
+                            />
+                            <motion.div
+                                initial="hidden"
+                                whileInView="show"
+                                viewport={{ once: true }}
                                 variants={{
-                                    hidden: { y: "100%" },
-                                    visible: { y: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } }
-                                }}
-                                className="inline-block"
-                            >
-                                {t('heroTitle1')}
-                            </motion.span>
-                        </div>
-                        <div className="overflow-hidden py-8">
-                            <motion.span
-                                variants={{
-                                    hidden: { y: "100%" },
-                                    visible: { y: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } }
-                                }}
-                                className="inline-block text-premium-gray"
-                            >
-                                {t('heroTitle2')}
-                            </motion.span>
-                        </div>
-                        <div className="overflow-hidden py-8">
-                            <motion.span
-                                variants={{
-                                    hidden: { y: "100%" },
-                                    visible: { y: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } }
+                                    show: {
+                                        transition: {
+                                            staggerChildren: 0.08,
+                                            delayChildren: 0.5,
+                                        },
+                                    },
                                 }}
                                 className="inline-block"
                             >
                                 {t('heroTitle3').split(' ').map((word, i) => (
-                                    <span key={i} className={word.toLowerCase() === 'growth' || word.toLowerCase() === 'trưởng' ? 'text-premium-blue' : ''}>
-                                        {word}{' '}
-                                    </span>
+                                    <motion.span
+                                        key={i}
+                                        variants={{
+                                            hidden: { opacity: 0, y: 20, filter: 'blur(4px)' },
+                                            show: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.6, ease: [0.22, 0.61, 0.36, 1] } }
+                                        }}
+                                        className={`inline-block py-1.5 whitespace-pre ${word.toLowerCase() === 'growth' || word.toLowerCase() === 'trưởng' || word.toLowerCase() === 'tăng' ? 'text-premium-blue' : ''}`}
+                                    >
+                                        {word}{i !== t('heroTitle3').split(' ').length - 1 ? '\u00A0' : ''}
+                                    </motion.span>
                                 ))}
-                            </motion.span>
+                            </motion.div>
                         </div>
-                    </motion.h1>
+                    </h1>
 
                     <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
                         {/* Subheadline */}

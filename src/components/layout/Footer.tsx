@@ -31,13 +31,13 @@ export const Footer: React.FC<FooterProps> = () => {
         <footer className="bg-premium-navy text-white pt-32 pb-12 border-t border-white/5 relative overflow-hidden transition-colors duration-300">
             {/* Footer CTA */}
             <div className="site-container px-4 mb-32 relative z-10">
-                <h2 className="font-display font-bold text-6xl md:text-8xl lg:text-9xl tracking-tighter mb-12 text-center md:text-left text-white transition-colors">
-                    {t('title1')} <br />
-                    <span className="text-premium-blue">{t('title2')}</span>
+                <h2 className="font-display font-bold text-6xl md:text-8xl lg:text-9xl tracking-tighter leading-[1.3] mb-12 text-center md:text-left text-white transition-colors">
+                    <span className="block mb-6 md:mb-10">{t('title1')}</span>
+                    <span className="text-premium-blue block">{t('title2')}</span>
                 </h2>
 
                 <div className="flex flex-col md:flex-row items-center justify-between gap-8 border-t border-white/10 pt-12 transition-colors">
-                    <p className="text-xl text-premium-gray max-w-xl font-light transition-colors">
+                    <p className="text-xl text-premium-gray max-w-xl font-light transition-colors leading-relaxed">
                         {t('description')}
                     </p>
                     <Link href="/contact" className="inline-flex items-center justify-center rounded-full px-12 py-4 text-xl font-bold bg-premium-blue text-premium-navy hover:bg-premium-blue/80 transition-colors">
@@ -63,7 +63,7 @@ export const Footer: React.FC<FooterProps> = () => {
                                     <h3 className="text-white font-display font-medium mb-6 uppercase tracking-widest text-sm opacity-50">
                                         {category.title}
                                     </h3>
-                                    <ul className="space-y-4">
+                                    <ul className="space-y-6">
                                         {category.links.map((link: { name: string; link: string }) => (
                                             <li key={link.name}>
                                                 <Link
