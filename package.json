@@ -7,7 +7,7 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint src"
+        "lint": "eslint src"
     },
     "dependencies": {
         "@fontsource/bruno-ace-sc": "^5.2.8",

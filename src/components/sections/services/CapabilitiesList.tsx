@@ -4,72 +4,52 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, Check, Code, Terminal, Cpu } from 'lucide-react';
 import ScrollReveal from '@components/motion/ScrollReveal';
-
-const capabilities = [
-    {
-        id: '01',
-        title: 'Platform Architecture',
-        icon: Cpu,
-        category: 'Tier 1: The Build',
-        description: 'We engineer scalable, cloud-native platforms from day one. No low-code shortcuts. Just robust, production-grade software.',
-        features: ['React / Next.js Infrastructure', 'Microservices Design', 'Scalable Database Schema', 'High-Performance API'],
-        codeSnippet: `// Platform Architecture
-const infrastructure = await System.build({
-  frontend: "Next.js 14",
-  backend: "Serverless Edge",
-  database: "PostgreSQL",
-  scale: "Global"
-});`
-    },
-    {
-        id: '02',
-        title: 'Operational Automation',
-        icon: Code,
-        category: 'Tier 2: The Optimization',
-        description: 'We decompile your manual workflows and reassemble them as automated systems. We kill operational friction with code.',
-        features: ['CRM Integration (HubSpot/Salesforce)', 'Data Pipeline Engineering', 'Automated Reporting', 'Internal Tooling'],
-        codeSnippet: `// Operational Automation
-/* Automating revenue workflow */
-pipeline.on('deal_closed', async (deal) => {
-  await CRM.sync(deal);
-  await Slack.notify(team);
-  await Billing.invoice(deal.client);
-  return System.optimize();
-});`
-    },
-    {
-        id: '03',
-        title: 'Growth Engineering',
-        icon: ArrowUpRight,
-        category: 'Tier 3: The Scale',
-        description: 'Marketing is soft. Growth engineering is hard science. We implement A/B testing infrastructure and data loops to scientifically scale revenue.',
-        features: ['A/B Testing Frameworks', 'Conversion Rate Optimization', 'User Telemetry & Analytics', 'Performance Monitoring'],
-        codeSnippet: `// Growth Engineering
-const metrics = await Analytics.analyze({
-  conversion: "+45%",
-  retention: "90%",
-  latency: "12ms"
-});
-
-if (metrics.growth > targets) {
-  System.scale(2.5);
-}`
-    }
-];
+import { useTranslations } from 'next-intl';
 
 export const CapabilitiesList: React.FC = () => {
+    const t = useTranslations('ServicesPage');
     const [activeId, setActiveId] = useState<string | null>(null);
+
+    const capabilities = [
+        {
+            id: '01',
+            title: t('cap1Title'),
+            icon: Cpu,
+            category: t('cap1Category'),
+            description: t('cap1Desc'),
+            features: [t('cap1Feature1'), t('cap1Feature2'), t('cap1Feature3'), t('cap1Feature4')],
+            codeSnippet: `// Platform Architecture\nconst infrastructure = await System.build({\n  frontend: "Next.js 14",\n  backend: "Serverless Edge",\n  database: "PostgreSQL",\n  scale: "Global"\n});`
+        },
+        {
+            id: '02',
+            title: t('cap2Title'),
+            icon: Code,
+            category: t('cap2Category'),
+            description: t('cap2Desc'),
+            features: [t('cap2Feature1'), t('cap2Feature2'), t('cap2Feature3'), t('cap2Feature4')],
+            codeSnippet: `// Operational Automation\n/* Automating revenue workflow */\npipeline.on('deal_closed', async (deal) => {\n  await CRM.sync(deal);\n  await Slack.notify(team);\n  await Billing.invoice(deal.client);\n  return System.optimize();\n});`
+        },
+        {
+            id: '03',
+            title: t('cap3Title'),
+            icon: ArrowUpRight,
+            category: t('cap3Category'),
+            description: t('cap3Desc'),
+            features: [t('cap3Feature1'), t('cap3Feature2'), t('cap3Feature3'), t('cap3Feature4')],
+            codeSnippet: `// Growth Engineering\nconst metrics = await Analytics.analyze({\n  conversion: "+45%",\n  retention: "90%",\n  latency: "12ms"\n});\n\nif (metrics.growth > targets) {\n  System.scale(2.5);\n}`
+        }
+    ];
 
     return (
         <section className="py-32 bg-premium-navy relative overflow-hidden border-t border-white/5">
             <div className="site-container px-4">
                 <ScrollReveal direction="up" className="mb-24">
                     <span className="text-premium-blue font-mono text-xs uppercase tracking-widest mb-4 block">
-                        Our Capabilities
+                        {t('capabilitiesTitle')}
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold font-display text-white max-w-2xl">
-                        Full-cycle engineering. <br />
-                        <span className="text-premium-gray">From MVP to IPO.</span>
+                        {t('capabilitiesHeadline1')} <br />
+                        <span className="text-premium-gray">{t('capabilitiesHeadline2')}</span>
                     </h2>
                 </ScrollReveal>
 
@@ -145,7 +125,7 @@ export const CapabilitiesList: React.FC = () => {
                                 >
                                     <div className="text-center text-premium-gray/30">
                                         <Terminal className="w-12 h-12 mx-auto mb-4 opacity-50" />
-                                        <p className="font-mono text-sm">Hover to inspect code architecture</p>
+                                        <p className="font-mono text-sm">{t('hoverInspectCode')}</p>
                                     </div>
                                 </motion.div>
                             )}

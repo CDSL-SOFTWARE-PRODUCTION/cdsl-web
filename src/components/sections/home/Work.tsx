@@ -3,7 +3,7 @@
 import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
 import BidManagerFlow from '@components/illustrations/BidManagerFlow';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 import { getProjects } from '@/data/projects';
@@ -11,6 +11,7 @@ import type { Project } from '@/data/projects';
 
 export const Work = () => {
     const locale = useLocale();
+    const t = useTranslations('HomePage');
     const projects = getProjects(locale);
 
     // Selected projects for Home Page
@@ -30,13 +31,13 @@ export const Work = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <div>
-                        <span className="text-premium-blue font-mono text-sm tracking-widest uppercase mb-4 block">Selected Work</span>
+                        <span className="text-premium-blue font-mono text-sm tracking-widest uppercase mb-4 block">{t('workTitle')}</span>
                         <h2 className="font-display font-bold text-4xl md:text-5xl text-white transition-colors duration-300">
-                            Impact Delivered
+                            {t('workHeadline')}
                         </h2>
                     </div>
-                    <Link href="/work" className="hidden md:flex items-center gap-2 text-white hover:text-premium-blue transition-colors group">
-                        View all case studies
+                    <Link href="/projects" className="hidden md:flex items-center gap-2 text-white hover:text-premium-blue transition-colors group">
+                        {t('workDesc')}
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transform group-hover:translate-x-1 transition-transform">
                             <path d="M5 12h14" />
                             <path d="m12 5 7 7-7 7" />
@@ -97,7 +98,7 @@ export const Work = () => {
                                 </div>
                                 <div className={`mt-8 ${index % 2 === 1 ? 'flex justify-end' : ''}`}>
                                     <Link href={`/projects/${project.slug}`} className="inline-flex items-center gap-2 text-white border-b border-white/30 pb-1 hover:border-premium-blue hover:text-premium-blue transition-all">
-                                        Read Case Study
+                                        {t('readCaseStudy')}
                                     </Link>
                                 </div>
                             </div>
@@ -106,8 +107,8 @@ export const Work = () => {
                 </div>
 
                 <div className="mt-20 text-center md:hidden">
-                    <Link href="/work" className="inline-flex items-center justify-center px-6 py-3 border border-white/20 text-white rounded-md hover:bg-premium-blue hover:text-premium-navy hover:border-premium-blue transition-colors">
-                        View all case studies
+                    <Link href="/projects" className="inline-flex items-center justify-center px-6 py-3 border border-white/20 text-white rounded-md hover:bg-premium-blue hover:text-premium-navy hover:border-premium-blue transition-colors">
+                        {t('workDesc')}
                     </Link>
                 </div>
             </div>

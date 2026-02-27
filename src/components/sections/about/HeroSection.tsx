@@ -4,10 +4,12 @@ import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import MotionText from '../../motion/MotionText';
 import ScrollReveal from '../../motion/ScrollReveal';
+import { useTranslations } from 'next-intl';
 
 const HeroSection: React.FC = () => {
     const { scrollY } = useScroll();
     const yParallax = useTransform(scrollY, [0, 500], [0, 150]);
+    const t = useTranslations('AboutPage');
 
     return (
         <section className="relative min-h-[90vh] flex flex-col justify-center bg-premium-navy overflow-hidden pt-32 pb-16">
@@ -21,9 +23,9 @@ const HeroSection: React.FC = () => {
 
             <div className="site-container relative z-10 px-4">
                 <div className="max-w-[1200px]">
-                    <h1 className="text-[12vw] md:text-[8vw] lg:text-[7vw] font-bold leading-[0.9] tracking-tighter uppercase mb-12 text-white font-display">
+                    <h1 className="text-[12vw] md:text-[8vw] lg:text-[7vw] font-bold leading-[1.5] tracking-tighter uppercase mb-12 text-white font-display">
                         <MotionText
-                            text="OPERATIONAL"
+                            text={t('heroTitle1')}
                             className="block"
                             delayOrder={0.1}
                         />
@@ -36,13 +38,13 @@ const HeroSection: React.FC = () => {
                                 className="h-[0.1em] bg-premium-blue hidden md:block"
                             />
                             <MotionText
-                                text="ARCHITECTS"
+                                text={t('heroTitle2')}
                                 className="block"
                                 delayOrder={0.3}
                             />
                         </div>
                         <MotionText
-                            text="FOR GROWITH."
+                            text={t('heroTitle3')}
                             className="block"
                             delayOrder={0.5}
                         />
@@ -52,7 +54,7 @@ const HeroSection: React.FC = () => {
                         <div className="md:col-span-6 lg:col-span-5">
                             <ScrollReveal delay={0.8} direction="up" distance={10}>
                                 <p className="text-xl md:text-2xl text-premium-gray font-light leading-relaxed">
-                                    A boutique engineering partner, architecting systems for scale.
+                                    {t('heroSubtitle')}
                                 </p>
                             </ScrollReveal>
                         </div>

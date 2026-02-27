@@ -64,7 +64,7 @@ const MotionText: React.FC<MotionTextProps> = ({
             {items.map((char, index) => (
                 <motion.span
                     key={`${char}-${index}`}
-                    className="inline-block whitespace-pre"
+                    className="inline-block whitespace-pre py-2"
                     variants={itemVariants}
                 >
                     {char}{variant === 'words' && index !== items.length - 1 ? '\u00A0' : ''}

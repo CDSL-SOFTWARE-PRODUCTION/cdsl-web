@@ -7,51 +7,51 @@ import ScrollReveal from '@components/motion/ScrollReveal';
 import { useTranslations } from 'next-intl';
 
 export const PricingSection: React.FC = () => {
-    const t = useTranslations('Pricing');
+    const t = useTranslations('ServicesPage');
 
     const plans = [
         {
             id: 'mvp',
-            name: t('plans.mvp.name'),
-            price: t('plans.mvp.price'),
-            duration: t('plans.mvp.duration'),
-            description: t('plans.mvp.description'),
+            name: t('plan1Name'),
+            price: t('plan1Price'),
+            duration: t('plan1Duration'),
+            description: t('plan1Desc'),
             features: [
-                t('plans.mvp.features.f1'),
-                t('plans.mvp.features.f2'),
-                t('plans.mvp.features.f3'),
-                t('plans.mvp.features.f4'),
-                t('plans.mvp.features.f5'),
+                t('plan1Feature1'),
+                t('plan1Feature2'),
+                t('plan1Feature3'),
+                t('plan1Feature4'),
+                t('plan1Feature5'),
             ],
             highlighted: false,
         },
         {
             id: 'dedicated',
-            name: t('plans.dedicated.name'),
-            price: t('plans.dedicated.price'),
-            duration: t('plans.dedicated.duration'),
-            description: t('plans.dedicated.description'),
+            name: t('plan2Name'),
+            price: t('plan2Price'),
+            duration: t('plan2Duration'),
+            description: t('plan2Desc'),
             features: [
-                t('plans.dedicated.features.f1'),
-                t('plans.dedicated.features.f2'),
-                t('plans.dedicated.features.f3'),
-                t('plans.dedicated.features.f4'),
-                t('plans.dedicated.features.f5'),
+                t('plan2Feature1'),
+                t('plan2Feature2'),
+                t('plan2Feature3'),
+                t('plan2Feature4'),
+                t('plan2Feature5'),
             ],
             highlighted: true,
         },
         {
             id: 'enterprise',
-            name: t('plans.enterprise.name'),
-            price: t('plans.enterprise.price'),
-            duration: t('plans.enterprise.duration'),
-            description: t('plans.enterprise.description'),
+            name: t('plan3Name'),
+            price: t('plan3Price'),
+            duration: t('plan3Duration'),
+            description: t('plan3Desc'),
             features: [
-                t('plans.enterprise.features.f1'),
-                t('plans.enterprise.features.f2'),
-                t('plans.enterprise.features.f3'),
-                t('plans.enterprise.features.f4'),
-                t('plans.enterprise.features.f5'),
+                t('plan3Feature1'),
+                t('plan3Feature2'),
+                t('plan3Feature3'),
+                t('plan3Feature4'),
+                t('plan3Feature5'),
             ],
             highlighted: false,
         }
@@ -66,15 +66,15 @@ export const PricingSection: React.FC = () => {
             <div className="site-container px-4 relative z-10">
                 <ScrollReveal direction="up" className="mb-20 text-center max-w-3xl mx-auto">
                     <span className="text-premium-blue font-mono text-xs uppercase tracking-widest mb-4 block">
-                        {t('subtitle')}
+                        {t('pricingSubtitle')}
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold font-display text-white mb-6">
-                        {t('title1')}
+                        {t('pricingTitle1')}
                         <br />
-                        <span className="text-premium-gray">{t('title2')}</span>
+                        <span className="text-premium-gray">{t('pricingTitle2')}</span>
                     </h2>
                     <p className="text-premium-gray text-lg font-light">
-                        {t('description')}
+                        {t('pricingDesc')}
                     </p>
                 </ScrollReveal>
 

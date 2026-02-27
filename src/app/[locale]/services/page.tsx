@@ -8,13 +8,15 @@ import ScrollReveal from '@components/motion/ScrollReveal';
 
 import { PricingSection } from '@components/sections/services/PricingSection';
 import Image from 'next/image';
+import { getTranslations } from 'next-intl/server';
 
 export const metadata: Metadata = {
     title: "Services - CDSL",
     description: "Engineering revenue engines. From MVP prototypes to enterprise-grade software ecosystems.",
 };
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+    const t = await getTranslations('ServicesPage');
     return (
         <main className="bg-premium-navy relative min-h-screen selection:bg-premium-blue selection:text-premium-navy">
             {/* Background Grid */}
@@ -42,18 +44,18 @@ export default function ServicesPage() {
                     <ScrollReveal direction="up" distance={30}>
                         <div className="text-center max-w-3xl mx-auto mb-20">
                             <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-6 tracking-tight">
-                                Skilled Tech Talent, <br className="hidden md:block" /> Hired for You.
+                                {t('talentTitle1')} <br className="hidden md:block" /> {t('talentTitle2')}
                             </h2>
                             <p className="text-lg text-premium-gray font-light">
-                                Skip the hiring headache. We provide the specialized engineering talent you need to move fast and scale securely.
+                                {t('talentDesc')}
                             </p>
                         </div>
                     </ScrollReveal>
 
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                         {[
-                            "Frontend Experts", "Backend Engineers", "DevOps Architects",
-                            "UI/UX Designers", "QA Automation", "Product Managers"
+                            t('talentRole1'), t('talentRole2'), t('talentRole3'),
+                            t('talentRole4'), t('talentRole5'), t('talentRole6')
                         ].map((item, idx) => (
                             <ScrollReveal key={item} direction="up" distance={20} delay={idx * 0.05}>
                                 <div className="p-4 bg-premium-navy rounded-sm border border-white/10 text-premium-gray text-center text-sm font-medium hover:text-white hover:border-premium-blue/30 transition-all duration-300">
@@ -81,10 +83,10 @@ export default function ServicesPage() {
                             />
                         </div>
                         <p className="text-2xl md:text-4xl font-display font-light text-white leading-tight mb-12 italic relative z-10 max-w-4xl mx-auto">
-                            "The team realized my vision of a learning ecosystem. Not just coding, they consulted on UX flow for the Shadowing feature, skyrocketing lesson completion rates."
+                            "{t('testimonialQuote')}"
                         </p>
-                        <div className="text-xl font-display font-bold text-premium-blue relative z-10">Thanh Ha</div>
-                        <div className="text-sm font-mono uppercase tracking-[0.2em] text-white/40 relative z-10">Founder @ Sun Chinese</div>
+                        <div className="text-xl font-display font-bold text-premium-blue relative z-10">{t('testimonialAuthor')}</div>
+                        <div className="text-sm font-mono uppercase tracking-[0.2em] text-white/40 relative z-10">{t('testimonialRole')}</div>
                     </div>
                 </ScrollReveal>
             </section>

@@ -3,44 +3,10 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Activity, Layers, Server, ShieldCheck } from 'lucide-react';
-
-const steps = [
-    {
-        id: '01',
-        title: 'Diagnostic',
-        subtitle: 'Decompiling the mess',
-        description: 'We audit your entire tech stack and clear operational friction. We identify legacy debt, security gaps, and performance bottlenecks.',
-        icon: Activity,
-        metrics: [
-            { label: 'Code Health', value: '45%' },
-            { label: 'Security', value: 'Critical' }
-        ]
-    },
-    {
-        id: '02',
-        title: 'Build',
-        subtitle: 'Compiling the engine',
-        description: 'We execute rapid sprints to deploy the core infrastructure. Clean code, scalable architecture, and automated CI/CD pipelines.',
-        icon: Layers,
-        metrics: [
-            { label: 'Velocity', value: 'High' },
-            { label: 'Architecture', value: 'Microservices' }
-        ]
-    },
-    {
-        id: '03',
-        title: 'Scale',
-        subtitle: 'System optimal',
-        description: 'Ongoing growth engineering. We monitor, optimize, and ship features monthly to ensure your revenue engine never stalls.',
-        icon: Server,
-        metrics: [
-            { label: 'Uptime', value: '99.99%' },
-            { label: 'Growth', value: '+140%' }
-        ]
-    }
-];
+import { useTranslations } from 'next-intl';
 
 export const VisualProcess: React.FC = () => {
+    const t = useTranslations('ServicesPage');
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -48,6 +14,42 @@ export const VisualProcess: React.FC = () => {
     });
 
     const smoothProgress = useSpring(scrollYProgress, { damping: 15, stiffness: 100 });
+
+    const steps = [
+        {
+            id: '01',
+            title: t('processStep1Title'),
+            subtitle: t('processStep1Subtitle'),
+            description: t('processStep1Desc'),
+            icon: Activity,
+            metrics: [
+                { label: t('metricCodeHealth'), value: '45%' },
+                { label: t('metricSecurity'), value: t('metricCritical') }
+            ]
+        },
+        {
+            id: '02',
+            title: t('processStep2Title'),
+            subtitle: t('processStep2Subtitle'),
+            description: t('processStep2Desc'),
+            icon: Layers,
+            metrics: [
+                { label: t('metricVelocity'), value: t('metricHigh') },
+                { label: t('metricArchitecture'), value: t('metricMicroservices') }
+            ]
+        },
+        {
+            id: '03',
+            title: t('processStep3Title'),
+            subtitle: t('processStep3Subtitle'),
+            description: t('processStep3Desc'),
+            icon: Server,
+            metrics: [
+                { label: t('metricUptime'), value: '99.99%' },
+                { label: t('metricGrowth'), value: '+140%' }
+            ]
+        }
+    ];
 
     return (
         <section ref={containerRef} className="relative h-[300vh] bg-premium-navy border-t border-white/5">
@@ -57,7 +59,7 @@ export const VisualProcess: React.FC = () => {
                     {/* Left: Content */}
                     <div className="relative z-10">
                         <span className="text-premium-blue font-mono text-xs uppercase tracking-widest mb-4 block">
-                            The Engineering Cycle
+                            {t('processTitle')}
                         </span>
 
                         <div className="relative h-[400px]">
@@ -109,11 +111,11 @@ export const VisualProcess: React.FC = () => {
                             <div className="flex gap-4">
                                 <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity }} className="p-4 bg-red-500/10 border border-red-500/30 rounded backdrop-blur">
                                     <ShieldCheck className="w-12 h-12 text-red-400" />
-                                    <div className="text-xs text-red-400 font-mono mt-2">Vulnerability Detected</div>
+                                    <div className="text-xs text-red-400 font-mono mt-2">{t('processDiagnosticVuln')}</div>
                                 </motion.div>
                                 <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 3, repeat: Infinity }} className="p-4 bg-orange-500/10 border border-orange-500/30 rounded backdrop-blur">
                                     <Activity className="w-12 h-12 text-orange-400" />
-                                    <div className="text-xs text-orange-400 font-mono mt-2">High Latency</div>
+                                    <div className="text-xs text-orange-400 font-mono mt-2">{t('processDiagnosticLatency')}</div>
                                 </motion.div>
                             </div>
                         </motion.div>
@@ -131,9 +133,9 @@ export const VisualProcess: React.FC = () => {
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
                             >
-                                <div className="h-12 bg-blue-500/20 border border-blue-500/50 rounded flex items-center justify-center text-blue-300 font-mono text-sm">Frontend (Next.js)</div>
-                                <div className="h-12 bg-green-500/20 border border-green-500/50 rounded flex items-center justify-center text-green-300 font-mono text-sm">API Gateway</div>
-                                <div className="h-12 bg-purple-500/20 border border-purple-500/50 rounded flex items-center justify-center text-purple-300 font-mono text-sm">Database (Postgres)</div>
+                                <div className="h-12 bg-blue-500/20 border border-blue-500/50 rounded flex items-center justify-center text-blue-300 font-mono text-sm">{t('processBuildFrontend')}</div>
+                                <div className="h-12 bg-green-500/20 border border-green-500/50 rounded flex items-center justify-center text-green-300 font-mono text-sm">{t('processBuildGateway')}</div>
+                                <div className="h-12 bg-purple-500/20 border border-purple-500/50 rounded flex items-center justify-center text-purple-300 font-mono text-sm">{t('processBuildDB')}</div>
                             </motion.div>
                         </motion.div>
 
@@ -157,8 +159,8 @@ export const VisualProcess: React.FC = () => {
                                 ))}
                             </div>
                             <div className="flex justify-between text-xs font-mono text-premium-blue mt-4">
-                                <span>Requests/sec</span>
-                                <span>24h Window</span>
+                                <span>{t('processScaleMetric1')}</span>
+                                <span>{t('processScaleMetric2')}</span>
                             </div>
                         </motion.div>
 

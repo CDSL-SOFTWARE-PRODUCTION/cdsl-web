@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import MotionText from '@components/motion/MotionText';
+import { useTranslations } from 'next-intl';
 
 const SystemStatusItem = ({ label, value, status }: { label: string, value: string, status: 'normal' | 'warning' | 'optimal' }) => (
     <div className="flex items-center justify-between text-xs font-mono border-b border-white/5 py-2">
@@ -18,6 +19,7 @@ const SystemStatusItem = ({ label, value, status }: { label: string, value: stri
 
 export const SystemStatusHero: React.FC = () => {
     // Simulated live metrics
+    const t = useTranslations('ServicesPage');
     const [requests, setRequests] = useState(2430);
     const [latency, setLatency] = useState(45);
 
@@ -38,20 +40,20 @@ export const SystemStatusHero: React.FC = () => {
                     <div className="lg:col-span-7">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-premium-blue/10 border border-premium-blue/20 mb-8">
                             <div className="w-1.5 h-1.5 rounded-full bg-premium-blue animate-pulse" />
-                            <span className="text-xs font-mono text-premium-blue tracking-widest uppercase">System Online</span>
+                            <span className="text-xs font-mono text-premium-blue tracking-widest uppercase">{t('heroStatus')}</span>
                         </div>
 
-                        <h1 className="text-[10vw] md:text-[7vw] lg:text-[6vw] font-bold leading-[0.9] tracking-tighter uppercase mb-8 text-white font-display">
-                            <MotionText text="ENGINEERING" className="block" delayOrder={0.1} />
+                        <h1 className="text-[10vw] md:text-[7vw] lg:text-[6vw] font-bold leading-[1.5] tracking-tighter uppercase mb-8 text-white font-display">
+                            <MotionText text={t('heroTitle1')} className="block" delayOrder={0.1} />
                             <div className="flex items-center gap-4">
                                 <span className="h-[0.1em] w-12 bg-premium-blue block" />
-                                <MotionText text="REVENUE" className="block text-premium-gray" delayOrder={0.2} />
+                                <MotionText text={t('heroTitle2')} className="block text-premium-gray" delayOrder={0.2} />
                             </div>
-                            <MotionText text="ENGINES." className="block text-premium-blue" delayOrder={0.3} />
+                            <MotionText text={t('heroTitle3')} className="block text-premium-blue" delayOrder={0.3} />
                         </h1>
 
                         <p className="text-xl md:text-2xl text-premium-gray font-light max-w-2xl leading-relaxed">
-                            We don't just build software. We architect the operational systems that power high-velocity growth.
+                            {t('heroDesc')}
                         </p>
                     </div>
 
@@ -66,21 +68,21 @@ export const SystemStatusHero: React.FC = () => {
                             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-premium-blue to-transparent opacity-50" />
 
                             <div className="flex justify-between items-center mb-6">
-                                <span className="text-white font-bold uppercase tracking-widest">Live Metrics</span>
+                                <span className="text-white font-bold uppercase tracking-widest">{t('liveMetrics')}</span>
                                 <span className="text-xs text-premium-gray">US-EAST-1</span>
                             </div>
 
                             <div className="space-y-1">
-                                <SystemStatusItem label="Req / Sec" value={requests.toLocaleString()} status="optimal" />
-                                <SystemStatusItem label="Avg Latency" value={`${latency}ms`} status="optimal" />
-                                <SystemStatusItem label="Error Rate" value="0.001%" status="optimal" />
-                                <SystemStatusItem label="Uptime" value="99.99%" status="optimal" />
-                                <SystemStatusItem label="Deploy Status" value="Succeeded" status="optimal" />
+                                <SystemStatusItem label={t('metricReq')} value={requests.toLocaleString()} status="optimal" />
+                                <SystemStatusItem label={t('metricLatency')} value={`${latency}ms`} status="optimal" />
+                                <SystemStatusItem label={t('metricError')} value="0.001%" status="optimal" />
+                                <SystemStatusItem label={t('metricUptime')} value="99.99%" status="optimal" />
+                                <SystemStatusItem label={t('metricDeploy')} value="Succeeded" status="optimal" />
                             </div>
 
                             <div className="mt-6 pt-4 border-t border-white/5">
                                 <div className="flex items-center gap-3 text-xs text-premium-blue/70">
-                                    <span className="animate-pulse">Monitoring active processes...</span>
+                                    <span className="animate-pulse">{t('monitoringActive')}</span>
                                 </div>
                             </div>
                         </motion.div>

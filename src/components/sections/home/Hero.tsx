@@ -4,8 +4,10 @@ import React from 'react';
 import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
 import Logo from '@components/ui/Logo';
+import { useTranslations } from 'next-intl';
 
 export const Hero: React.FC = () => {
+    const t = useTranslations('HomePage');
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-premium-navy transition-colors duration-300">
             {/* Background Textures */}
@@ -43,9 +45,9 @@ export const Hero: React.FC = () => {
                         }}
                         initial="hidden"
                         animate="visible"
-                        className="font-display font-bold text-5xl sm:text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tighter text-white mb-12 transition-colors duration-300"
+                        className="font-display font-bold text-5xl sm:text-6xl md:text-8xl lg:text-9xl leading-[1.5] tracking-tighter text-white mb-12 transition-colors duration-300"
                     >
-                        <div className="overflow-hidden py-1">
+                        <div className="overflow-hidden py-8">
                             <motion.span
                                 variants={{
                                     hidden: { y: "100%" },
@@ -53,10 +55,10 @@ export const Hero: React.FC = () => {
                                 }}
                                 className="inline-block"
                             >
-                                Architecting
+                                {t('heroTitle1')}
                             </motion.span>
                         </div>
-                        <div className="overflow-hidden py-1">
+                        <div className="overflow-hidden py-8">
                             <motion.span
                                 variants={{
                                     hidden: { y: "100%" },
@@ -64,10 +66,10 @@ export const Hero: React.FC = () => {
                                 }}
                                 className="inline-block text-premium-gray"
                             >
-                                The Systems
+                                {t('heroTitle2')}
                             </motion.span>
                         </div>
-                        <div className="overflow-hidden py-1">
+                        <div className="overflow-hidden py-8">
                             <motion.span
                                 variants={{
                                     hidden: { y: "100%" },
@@ -75,7 +77,11 @@ export const Hero: React.FC = () => {
                                 }}
                                 className="inline-block"
                             >
-                                Of <span className="text-premium-blue">Growth</span>
+                                {t('heroTitle3').split(' ').map((word, i) => (
+                                    <span key={i} className={word.toLowerCase() === 'growth' || word.toLowerCase() === 'trưởng' ? 'text-premium-blue' : ''}>
+                                        {word}{' '}
+                                    </span>
+                                ))}
                             </motion.span>
                         </div>
                     </motion.h1>
@@ -83,20 +89,20 @@ export const Hero: React.FC = () => {
                     <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
                         {/* Subheadline */}
                         <p className="text-lg md:text-xl text-premium-gray max-w-xl font-light leading-relaxed transition-colors duration-300">
-                            We engineer autonomous operational infrastructures for ambitious brands. Turning fragmented processes into a unified engine for scale.
+                            {t('heroDesc')}
                         </p>
 
                         {/* Minimal CTA */}
                         <div className="flex items-center gap-6">
-                            <Link href="/work" className="group flex items-center gap-2 text-white font-medium hover:text-premium-blue transition-colors">
-                                <span>Selected Works</span>
+                            <Link href="/projects" className="group flex items-center gap-2 text-white font-medium hover:text-premium-blue transition-colors">
+                                <span>{t('heroCta1')}</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transform group-hover:translate-x-1 transition-transform">
                                     <path d="M5 12h14" />
                                     <path d="m12 5 7 7-7 7" />
                                 </svg>
                             </Link>
                             <Link href="/contact" className="px-8 py-4 bg-premium-blue text-premium-navy font-bold rounded-none hover:bg-premium-blue/80 transition-colors">
-                                Inquire
+                                {t('heroCta2')}
                             </Link>
                         </div>
                     </div>

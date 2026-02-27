@@ -1,13 +1,13 @@
 'use client';
 
 import { Suspense } from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { getProjects } from '@/data/projects';
 import MotionText from '@components/motion/MotionText';
 import ScrollReveal from '@components/motion/ScrollReveal';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import type { Project } from '@/data/projects';
 
 function ProjectsContent() {
@@ -15,6 +15,7 @@ function ProjectsContent() {
     const industryFilter = searchParams.get('industry');
     const locale = useLocale();
     const projects: Project[] = getProjects(locale);
+    const t = useTranslations('ProjectsPage');
 
     const filteredProjects = industryFilter
         ? projects.filter(p => p.industry === industryFilter)
@@ -26,9 +27,9 @@ function ProjectsContent() {
             <section className="relative pt-32 pb-24 px-4">
                 <div className="site-container relative z-10 px-4">
                     <div className="max-w-[1200px]">
-                        <h1 className="text-[10vw] md:text-[8vw] lg:text-[7vw] font-bold leading-[0.9] tracking-tighter uppercase mb-12 text-white font-display">
+                        <h1 className="text-[10vw] md:text-[8vw] lg:text-[7vw] font-bold leading-[1.5] tracking-tighter uppercase mb-12 text-white font-display">
                             <MotionText
-                                text={industryFilter ? `${industryFilter}` : "SELECTED"}
+                                text={industryFilter ? `${industryFilter}` : t('title1')}
                                 className="block"
                                 delayOrder={0.1}
                             />
@@ -41,7 +42,7 @@ function ProjectsContent() {
                                     className="h-[0.1em] bg-premium-blue hidden md:block"
                                 />
                                 <MotionText
-                                    text="WORK"
+                                    text={t('title2')}
                                     className="block"
                                     delayOrder={0.3}
                                 />
@@ -58,7 +59,7 @@ function ProjectsContent() {
                         href="/projects"
                         className={`text-sm md:text-base uppercase tracking-widest transition-colors duration-300 ${!industryFilter ? 'text-premium-blue font-medium' : 'text-white/50 hover:text-white'}`}
                     >
-                        All
+                        {t('all')}
                     </Link>
                     {Array.from(new Set(projects.map((p: Project) => p.industry).filter(Boolean) as string[])).map((industry: string) => (
                         <Link
@@ -96,7 +97,7 @@ function ProjectsContent() {
                                                     <span>{project.year}</span>
                                                 </div>
                                                 <span className="text-xs font-mono text-premium-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
-                                                    View Case Study →
+                                                    {t('viewCaseStudy')}
                                                 </span>
                                             </div>
                                         </div>
@@ -106,9 +107,9 @@ function ProjectsContent() {
                         ))
                     ) : (
                         <div className="py-20 text-center">
-                            <p className="text-xl text-premium-gray">No projects found for {industryFilter}.</p>
+                            <p className="text-xl text-premium-gray">{t('noProjectsFound', { industry: industryFilter || '' })}</p>
                             <Link href="/projects" className="mt-4 inline-block text-premium-blue hover:underline">
-                                View all projects
+                                {t('viewAll')}
                             </Link>
                         </div>
                     )}

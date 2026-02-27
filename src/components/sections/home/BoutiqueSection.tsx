@@ -4,8 +4,10 @@ import React from 'react';
 import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 export const BoutiqueSection: React.FC = () => {
+    const t = useTranslations('HomePage');
     return (
         <section className="min-h-screen flex flex-col md:flex-row bg-premium-navy overflow-hidden">
             {/* Left side: Stunning Media Area (Fullscreen-ish) */}
@@ -45,9 +47,7 @@ export const BoutiqueSection: React.FC = () => {
                         className="mb-10"
                     >
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-[1.15]">
-                            <span className="bg-premium-blue text-premium-navy px-3 py-1 inline-block mb-1">Boutique studio.</span>
-                            <br />
-                            <span className="bg-premium-blue text-premium-navy px-3 py-1 inline-block">Enterprise Infrastructure.</span>
+                            <span className="bg-premium-blue text-premium-navy px-3 py-1 inline-block mb-1">{t('boutiqueTitle')}</span>
                         </h2>
                     </motion.div>
 
@@ -58,10 +58,7 @@ export const BoutiqueSection: React.FC = () => {
                         className="space-y-8 text-premium-gray text-base md:text-lg leading-relaxed font-light"
                     >
                         <p>
-                            We bring the rigour of enterprise systems to agile teams. Systems are only as strong as the partnership behind them.
-                        </p>
-                        <p className="text-white font-normal">
-                            No bloat, just pure efficiency. We integrate seamlessly with in-house teams, functioning as the architectural extension of your business.
+                            {t('boutiqueDesc')}
                         </p>
                     </motion.div>
 
@@ -73,7 +70,7 @@ export const BoutiqueSection: React.FC = () => {
                     >
                         <Link href="/contact" className="group inline-flex flex-col">
                             <span className="text-white text-sm md:text-base font-medium tracking-wide uppercase hover:text-premium-blue transition-colors">
-                                See our engagement model
+                                Let's Talk!
                             </span>
                             <span className="h-[1.5px] w-12 bg-white/30 mt-1 group-hover:w-full group-hover:bg-premium-blue transition-all duration-300"></span>
                         </Link>

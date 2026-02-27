@@ -4,13 +4,15 @@ import CompanySection from '@components/sections/about/CompanySection';
 import FocusSection from '@components/sections/about/FocusSection';
 import ClientsSection from '@components/sections/about/ClientsSection';
 import ScrollReveal from '@components/motion/ScrollReveal';
+import { getTranslations } from 'next-intl/server';
 
 export const metadata: Metadata = {
     title: "About CDSL",
     description: "Your boutique engineering partner for operational architecture and software.",
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+    const t = await getTranslations('AboutPage');
     return (
         <main className="bg-premium-navy">
             <HeroSection />
@@ -27,19 +29,19 @@ export default function AboutPage() {
                                     CDSL<span className="text-premium-blue">™</span>
                                 </h2>
                                 <p className="text-sm font-medium tracking-widest uppercase text-premium-blue opacity-40">
-                                    Engineering / Future / Brands.
+                                    {t('footerTitle1')}
                                 </p>
                             </div>
 
                             <div className="grid grid-cols-2 gap-16 md:gap-24">
                                 <div>
-                                    <span className="block text-xs font-bold tracking-widest uppercase mb-6 text-premium-blue opacity-60">Contact</span>
+                                    <span className="block text-xs font-bold tracking-widest uppercase mb-6 text-premium-blue opacity-60">{t('footerContact')}</span>
                                     <ul className="space-y-4">
-                                        <li><a href="mailto:contact@cdsl.tech" className="text-lg font-light text-premium-gray hover:text-premium-blue transition-colors">contact@cdsl.tech</a></li>
+                                        <li><a href="mailto:info@cdslvn.com" className="text-lg font-light text-premium-gray hover:text-premium-blue transition-colors">info@cdslvn.com</a></li>
                                     </ul>
                                 </div>
                                 <div>
-                                    <span className="block text-xs font-bold tracking-widest uppercase mb-6 text-premium-blue opacity-60">Social</span>
+                                    <span className="block text-xs font-bold tracking-widest uppercase mb-6 text-premium-blue opacity-60">{t('footerSocial')}</span>
                                     <ul className="space-y-4">
                                         <li><a href="https://linkedin.com/company/cdsl" target="_blank" className="text-lg font-light text-premium-gray hover:text-premium-blue transition-colors">LinkedIn</a></li>
                                         <li><a href="#" className="text-lg font-light text-premium-gray hover:text-premium-blue transition-colors">X / Twitter</a></li>

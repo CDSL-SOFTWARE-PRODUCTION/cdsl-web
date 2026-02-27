@@ -6,8 +6,10 @@ import { Code, Network, Server, Database, Cloud, Smartphone } from 'lucide-react
 import ScrollReveal from '../../motion/ScrollReveal';
 import { Link } from '@/i18n/routing';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 const ClientsSection: React.FC = () => {
+    const t = useTranslations('AboutPage');
     interface Logo {
         name: string;
         icon: string;
@@ -32,16 +34,16 @@ const ClientsSection: React.FC = () => {
                 <div className="mb-16">
                     <ScrollReveal direction="right">
                         <span className="text-sm font-semibold tracking-widest uppercase text-premium-blue opacity-60 block mb-6">
-                            Clients / Our Partners
+                            {t('clientsTitle')}
                         </span>
                         <h2 className="text-4xl md:text-5xl font-medium leading-tight max-w-2xl mb-8 font-display">
-                            Trusted by ambitious brands to engineer their digital future.
+                            {t('clientsSubtitle')}
                         </h2>
                         <motion.div
                             whileHover={{ x: 4 }}
                         >
                             <Link
-                                href="/work"
+                                href="/projects"
                                 className="text-sm font-bold tracking-widest uppercase flex items-center gap-2 group text-premium-blue/80 hover:text-premium-blue transition-colors"
                             >
                             </Link>
@@ -81,9 +83,9 @@ const ClientsSection: React.FC = () => {
                     <div className="md:col-span-4">
                         <ScrollReveal direction="right">
                             <h3 className="text-3xl font-medium leading-tight mb-8 font-display text-white">
-                                From MVP prototypes to enterprise-grade software ecosystems.
+                                {t('clientsEcosystemTitle')}
                             </h3>
-                            <Link href="/services" className="text-sm font-bold underline underline-offset-4 decoration-1 decoration-premium-blue/20 hover:decoration-premium-blue transition-all text-premium-blue">Learn more about our services</Link>
+                            <Link href="/services" className="text-sm font-bold underline underline-offset-4 decoration-1 decoration-premium-blue/20 hover:decoration-premium-blue transition-all text-premium-blue">{t('clientsEcosystemCta')}</Link>
                         </ScrollReveal>
                     </div>
 

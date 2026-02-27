@@ -54,10 +54,11 @@ const revealMask: Variants = {
 
 import { getProjects } from '@/data/projects';
 import { siteConfig } from '@/data/config';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 export default function ContactPage() {
     const locale = useLocale();
+    const t = useTranslations('ContactPage');
     const containerRef = useRef(null);
     useScroll({
         target: containerRef,
@@ -84,11 +85,11 @@ export default function ContactPage() {
                         }}
                         className="mb-16 md:mb-24"
                     >
-                        {["PARTNERING", "FOR", "SCALE."].map((line, index) => (
-                            <div key={index} className="overflow-hidden">
+                        {[t('heroTitle1'), t('heroTitle2'), t('heroTitle3')].map((line, index) => (
+                            <div key={index} className="overflow-hidden py-12">
                                 <motion.h1
                                     variants={revealMask}
-                                    className="text-[12vw] md:text-[8vw] leading-[0.9] font-display font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-white/70"
+                                    className="text-[12vw] md:text-[8vw] leading-[1.5] font-display font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-white/70"
                                 >
                                     {line}
                                 </motion.h1>
@@ -104,7 +105,7 @@ export default function ContactPage() {
                             transition={{ delay: 1, duration: 0.8 }}
                             className="md:col-span-4 lg:col-span-3 text-lg md:text-xl font-bold text-premium-blue"
                         >
-                            We partner with ambitious leaders to engineer their operational future.
+                            {t('heroSubtitle')}
                         </motion.div>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -113,7 +114,7 @@ export default function ContactPage() {
                             className="md:col-span-8 lg:col-span-6 text-premium-gray text-base md:text-lg leading-relaxed"
                         >
                             <p>
-                                We define how businesses operate. From the first line of code to the final deployment, we build the infrastructure that powers revenue. Our approach combines strategic engineering with high-end craftsmanship to create systems that are scalable, distinct, and enduring.
+                                {t('heroDesc')}
                             </p>
                         </motion.div>
                     </div>
@@ -128,7 +129,7 @@ export default function ContactPage() {
                         }}
                         className="absolute bottom-8 left-6 md:left-12 lg:left-24 text-sm font-mono tracking-widest text-white/50"
                     >
-                        (Scroll)
+                        {t('scrollLabel')}
                     </motion.div>
                 </div>
             </section>
@@ -147,7 +148,7 @@ export default function ContactPage() {
                                 variants={fadeInUp}
                                 className="inline-block text-sm font-mono text-premium-blue mb-4"
                             >
-                                (New business)
+                                {t('newBusinessLabel')}
                             </motion.span>
                         </div>
                         <div className="md:col-span-8 lg:col-span-6">
@@ -195,7 +196,7 @@ export default function ContactPage() {
                                 variants={fadeInUp}
                                 className="inline-block text-sm font-mono text-premium-blue mb-4"
                             >
-                                (Careers)
+                                {t('careersLabel')}
                             </motion.span>
                         </div>
                         <div className="md:col-span-8 lg:col-span-6">
@@ -206,14 +207,14 @@ export default function ContactPage() {
                                 variants={staggerContainerValues}
                             >
                                 <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-premium-gray mb-8 leading-relaxed">
-                                    We are always looking for exceptional talent in motion design, systems thinking, and strategy. If you believe your work can push boundaries, we want to hear from you.
+                                    {t('careersDesc')}
                                 </motion.p>
                                 <motion.div variants={fadeInUp}>
                                     <Link
                                         href="/careers"
                                         className="inline-flex items-center text-xl text-white font-medium hover:text-premium-blue transition-colors relative group/link"
                                     >
-                                        Apply here
+                                        {t('applyHere')}
                                         <ArrowUpRight className="ml-2 w-5 h-5 transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
                                         <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-premium-blue transition-all duration-300 group-hover/link:w-full"></span>
                                     </Link>
@@ -240,14 +241,14 @@ export default function ContactPage() {
                             variants={fadeInRight}
                             className="text-2xl md:text-4xl font-light text-white max-w-3xl leading-tight"
                         >
-                            From validated MVPs to <span className="text-premium-blue">enterprise-grade software ecosystems.</span>
+                            {t('capabilityHeadline1')} <span className="text-premium-blue">{t('capabilityHeadline2')}</span>
                         </motion.h2>
                         <motion.div variants={fadeInUp} className="mt-8">
                             <Link
                                 href="/projects"
                                 className="inline-block text-sm font-mono text-premium-gray hover:text-white transition-colors border-b border-transparent hover:border-white pb-1"
                             >
-                                View case studies
+                                {t('viewCaseStudies')}
                             </Link>
                         </motion.div>
                     </motion.div>

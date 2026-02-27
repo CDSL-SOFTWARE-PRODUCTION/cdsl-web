@@ -55,7 +55,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                     className="mb-12"
                 >
                     <motion.h1
-                        className="text-5xl md:text-7xl lg:text-9xl font-display font-medium uppercase leading-[0.9] text-premium-white mb-8"
+                        className="text-5xl md:text-7xl lg:text-9xl font-display font-medium uppercase leading-[1.5] text-premium-white mb-8"
                     >
                         {project.name.split(' ').map((word: string, i: number) => (
                             <motion.span

@@ -3,6 +3,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Lightbulb, Code2, TrendingUp, Search, Target, Smartphone, Globe, LayoutDashboard } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const steps = [
     {
@@ -36,6 +37,7 @@ const BAR_HEIGHTS = Array.from({ length: BAR_COUNT }, (_, i) => ({
 }));
 
 export const CapabilitiesSection: React.FC = () => {
+    const t = useTranslations('HomePage');
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -63,7 +65,7 @@ export const CapabilitiesSection: React.FC = () => {
                     {/* Left: Content */}
                     <div className="relative z-10">
                         <span className="text-premium-blue font-mono text-xs uppercase tracking-widest mb-4 block">
-                            Our Process
+                            {t('capabilitiesTitle')}
                         </span>
 
                         <div className="relative h-[400px]">

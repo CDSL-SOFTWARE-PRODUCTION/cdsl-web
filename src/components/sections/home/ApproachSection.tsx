@@ -3,8 +3,10 @@
 import React from 'react';
 import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 export const ApproachSection: React.FC = () => {
+    const t = useTranslations('HomePage');
     return (
         <section className="py-24 md:py-32 bg-premium-navy relative overflow-hidden">
             <div className="site-container px-4 relative z-10">
@@ -17,7 +19,7 @@ export const ApproachSection: React.FC = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        Beautiful brands fail without robust operations. We build the invisible engine that makes the front-end possible.
+                        {t('approachIntro')}
                     </motion.p>
 
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
@@ -30,7 +32,7 @@ export const ApproachSection: React.FC = () => {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8, delay: 0.2 }}
                             >
-                                (Philosophy)
+                                ({t('approachTitle')})
                             </motion.span>
                         </div>
 
@@ -43,7 +45,7 @@ export const ApproachSection: React.FC = () => {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8, delay: 0.1 }}
                             >
-                                The invisible engine behind the brand.
+                                {t('approachHeadline')}
                             </motion.h2>
 
                             <motion.div
@@ -54,10 +56,10 @@ export const ApproachSection: React.FC = () => {
                                 transition={{ duration: 0.8, delay: 0.3 }}
                             >
                                 <p>
-                                    Systems are more than just software—they are the physics of your business. We define the logic, architecture, and workflows that govern how value flows through your company.
+                                    {t('approachP1')}
                                 </p>
                                 <p>
-                                    By building a comprehensive operational language, we ensure consistency across every deal, from lead capture to delivery. It's about creating a system that scales with you, empowering your teams to execute with precision.
+                                    {t('approachP2')}
                                 </p>
                             </motion.div>
 
@@ -69,7 +71,7 @@ export const ApproachSection: React.FC = () => {
                             >
                                 <Link href="/services" className="group inline-flex flex-col">
                                     <span className="text-white text-lg hover:text-premium-blue transition-colors">
-                                        Learn more about our approach
+                                        {t('approachCta')}
                                     </span>
                                     <span className="h-[1px] w-full bg-white/30 mt-1 relative overflow-hidden">
                                         <span className="absolute inset-0 bg-premium-blue transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>

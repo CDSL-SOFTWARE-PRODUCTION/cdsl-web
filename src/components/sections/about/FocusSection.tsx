@@ -3,23 +3,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ScrollReveal from '../../motion/ScrollReveal';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 const FocusSection: React.FC = () => {
+    const t = useTranslations('AboutPage');
     const cards = [
         {
             id: '01',
-            title: 'High Fidelity',
-            description: 'We prioritize technical excellence and visual precision in every line of code we write, ensuring a premium experience for every user.'
+            title: t('focusCard1Title'),
+            description: t('focusCard1Desc')
         },
         {
             id: '02',
-            title: 'Systems Focus',
-            description: 'We build with scalability in mind. Our solutions are not just one-offs; they are robust systems designed to grow with your brand.'
+            title: t('focusCard2Title'),
+            description: t('focusCard2Desc')
         },
         {
             id: '03',
-            title: 'Collaborative',
-            description: 'We work as an extension of your team, fostering transparent communication and iterative development to achieve shared goals.'
+            title: t('focusCard3Title'),
+            description: t('focusCard3Desc')
         }
     ];
 
@@ -30,9 +33,9 @@ const FocusSection: React.FC = () => {
                 <div className="mb-32">
                     <div className="flex flex-col gap-2">
                         <span className="text-sm font-semibold tracking-widest uppercase text-premium-blue opacity-60 mb-4">
-                            Our Focus
+                            {t('focusTitle')}
                         </span>
-                        <h2 className="text-[8vw] md:text-[6vw] font-bold leading-[0.9] tracking-tighter uppercase font-display">
+                        <h2 className="text-[8vw] md:text-[6vw] font-bold leading-[1.5] tracking-tighter uppercase font-display">
                             <div className="overflow-hidden">
                                 <motion.div
                                     initial={{ x: '-100%' }}
@@ -40,7 +43,7 @@ const FocusSection: React.FC = () => {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }}
                                 >
-                                    WE ARCHITECT
+                                    {t('focusHeadline1')}
                                 </motion.div>
                             </div>
                             <div className="flex items-center gap-4">
@@ -58,7 +61,7 @@ const FocusSection: React.FC = () => {
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 0.61, 0.36, 1] }}
                                     >
-                                        SYSTEMS.
+                                        {t('focusHeadline2')}
                                     </motion.div>
                                 </div>
                             </div>
@@ -69,7 +72,7 @@ const FocusSection: React.FC = () => {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 0.61, 0.36, 1] }}
                                 >
-                                    WE ENGINEER SCALE.
+                                    {t('focusHeadline3')}
                                 </motion.div>
                             </div>
                         </h2>
@@ -81,21 +84,22 @@ const FocusSection: React.FC = () => {
                     <div className="md:col-span-5">
                         <ScrollReveal direction="right">
                             <h3 className="text-4xl md:text-5xl font-medium mb-8 font-display">
-                                Life @ CDSL
+                                {t('lifeTitle')}
                             </h3>
                             <p className="text-xl text-premium-gray font-light mb-12 max-w-sm">
-                                How we operate and what defines our partnership with global brands.
+                                {t('lifeSubtitle')}
                             </p>
 
-                            <motion.a
-                                href="/contact"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                                className="inline-flex items-center gap-4 py-4 px-8 border border-white/10 rounded-full hover:bg-white hover:text-premium-navy transition-colors"
-                            >
-                                <span className="text-sm font-semibold tracking-widest uppercase">Let's work together</span>
-                            </motion.a>
+                            <Link href="/contact">
+                                <motion.div
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                                    className="inline-flex items-center gap-4 py-4 px-8 border border-white/10 rounded-full hover:bg-white hover:text-premium-navy transition-colors cursor-pointer"
+                                >
+                                    <span className="text-sm font-semibold tracking-widest uppercase">{t('lifeCta')}</span>
+                                </motion.div>
+                            </Link>
                         </ScrollReveal>
                     </div>
 
