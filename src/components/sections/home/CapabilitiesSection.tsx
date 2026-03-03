@@ -59,7 +59,7 @@ export const CapabilitiesSection: React.FC = () => {
     const progressWidth = useTransform(smoothProgress, [0, 1], ['0%', '100%']);
 
     return (
-        <section ref={containerRef} className="relative h-[300vh] bg-premium-navy border-t border-white/5">
+        <section ref={containerRef} style={{ position: 'relative' }} className="relative h-[300vh] bg-premium-navy border-t border-white/5">
             <div className="sticky top-0 h-screen flex items-center overflow-hidden">
                 <div className="site-container w-full px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 

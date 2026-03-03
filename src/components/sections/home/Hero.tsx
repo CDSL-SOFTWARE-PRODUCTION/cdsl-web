@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
             <div className="site-container relative z-10 px-4 w-full h-full flex flex-col justify-center">
                 <div className="max-w-7xl mx-auto">
                     {/* Kinetic Typography Headline */}
-                    <h1 className="text-[12vw] md:text-[8vw] lg:text-[7vw] text-white mb-12 transition-colors duration-300 pt-8 uppercase">
+                    <h1 className="text-[11vw] md:text-[8vw] lg:text-[7vw] text-white mb-12 transition-colors duration-300 pt-8 uppercase leading-[1.1]">
                         <MotionText
                             text={t('heroTitle1')}
                             className="block"
@@ -51,13 +51,13 @@ export const Hero: React.FC = () => {
                             className="block text-premium-gray"
                             delayOrder={0.3}
                         />
-                        <div className="flex items-center gap-4 md:gap-8">
+                        <div className="flex items-center gap-4 md:gap-8 flex-nowrap">
                             <motion.div
                                 initial={{ width: 0 }}
                                 whileInView={{ width: '1.5em' }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1], delay: 0.6 }}
-                                className="h-[0.1em] bg-premium-blue hidden md:block"
+                                className="h-[0.1em] bg-premium-blue hidden md:block shrink-0"
                             />
                             <motion.div
                                 initial="hidden"
@@ -71,7 +71,7 @@ export const Hero: React.FC = () => {
                                         },
                                     },
                                 }}
-                                className="inline-block"
+                                className="inline-block md:whitespace-nowrap"
                             >
                                 {t('heroTitle3').split(' ').map((word, i) => (
                                     <motion.span
