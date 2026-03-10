@@ -119,6 +119,7 @@ export default async function RootLayout({
                         }
                     `
                 }} />
+                <script async src="https://tally.so/widgets/embed.js"></script>
             </head>
             <body className="antialiased min-h-screen relative selection:bg-premium-blue selection:text-premium-navy font-sans" suppressHydrationWarning>
                 <NextIntlClientProvider messages={messages}>

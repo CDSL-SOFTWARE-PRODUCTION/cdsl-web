@@ -1,22 +1,36 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Check, ArrowRight, X } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Check, ArrowRight } from 'lucide-react';
 import ScrollReveal from '@components/motion/ScrollReveal';
 import { useTranslations, useLocale } from 'next-intl';
 
 export const PricingSection: React.FC = () => {
     const t = useTranslations('ServicesPage');
     const locale = useLocale();
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [selectedPlanId, setSelectedPlanId] = useState<string | null>(null);
     const [activeTab, setActiveTab] = useState<'smb' | 'enterprise'>('smb');
 
-    // Placeholder Tally URLs (replace YOUR_FORM_ID_VI/EN with actual IDs)
-    const tallyUrl = locale === 'vi'
-        ? 'https://tally.so/r/YOUR_FORM_ID_VI'
-        : 'https://tally.so/r/YOUR_FORM_ID_EN';
+    // Native Tally Form IDs
+    const formId = locale === 'vi' ? 'kdYxXj' : 'PdEG0x';
+
+    const openTally = (planId: string) => {
+        // @ts-ignore
+        if (typeof Tally !== 'undefined') {
+            // @ts-ignore
+            Tally.openPopup(formId, {
+                layout: 'modal',
+                width: 1000,
+                hiddenFields: {
+                    plan: planId
+                }
+            });
+        } else {
+            // Fallback to direct link if script hasn't loaded
+            const tallyUrl = `https://tally.so/r/${formId}?plan=${planId}`;
+            window.open(tallyUrl, '_blank');
+        }
+    };
 
     const priceAnchor = locale === 'vi' ? 'Từ ' : 'From ';
 
@@ -258,10 +272,7 @@ export const PricingSection: React.FC = () => {
                                 </div>
 
                                 <button
-                                    onClick={() => {
-                                        setSelectedPlanId(plan.id);
-                                        setIsModalOpen(true);
-                                    }}
+                                    onClick={() => openTally(plan.id)}
                                     className={`w-full py-4 rounded font-mono text-sm uppercase tracking-widest flex items-center justify-center gap-2 group transition-all duration-300 ${plan.highlighted
                                         ? 'bg-premium-blue text-premium-navy hover:bg-white'
                                         : 'bg-white/5 text-white hover:bg-white/10'
@@ -276,41 +287,6 @@ export const PricingSection: React.FC = () => {
                 </div>
             </div>
 
-            {/* Tally.so Modal */}
-            <AnimatePresence>
-                {isModalOpen && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
-                    >
-                        <motion.div
-                            initial={{ scale: 0.95, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0.95, opacity: 0 }}
-                            className="bg-premium-navy w-full max-w-3xl h-[80vh] rounded-2xl overflow-hidden relative border border-white/10 shadow-2xl"
-                        >
-                            <button
-                                onClick={() => setIsModalOpen(false)}
-                                className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-black/50 hover:bg-white/10 text-white transition-colors"
-                            >
-                                <X className="w-6 h-6" />
-                            </button>
-                            <iframe
-                                src={`${tallyUrl}?plan=${selectedPlanId}&alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1`}
-                                width="100%"
-                                height="100%"
-                                frameBorder="0"
-                                marginHeight={0}
-                                marginWidth={0}
-                                title="Tally Form"
-                                className="w-full h-full bg-transparent"
-                            ></iframe>
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
         </section>
     );
 };
