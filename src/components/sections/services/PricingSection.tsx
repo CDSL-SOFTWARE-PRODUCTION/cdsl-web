@@ -129,21 +129,6 @@ export const PricingSection: React.FC = () => {
 
     const enterprisePlans = [
         {
-            id: 'ent-mvp',
-            name: t('plan1Name'),
-            price: t('plan1Price'),
-            duration: t('plan1Duration'),
-            description: t('plan1Desc'),
-            features: [
-                t('plan1Feature1'),
-                t('plan1Feature2'),
-                t('plan1Feature3'),
-                t('plan1Feature4'),
-                t('plan1Feature5'),
-            ],
-            highlighted: false,
-        },
-        {
             id: 'ent-dedicated',
             name: t('plan2Name'),
             price: t('plan2Price'),
@@ -155,6 +140,21 @@ export const PricingSection: React.FC = () => {
                 t('plan2Feature3'),
                 t('plan2Feature4'),
                 t('plan2Feature5'),
+            ],
+            highlighted: false,
+        },
+        {
+            id: 'ent-mvp',
+            name: t('plan1Name'),
+            price: t('plan1Price'),
+            duration: t('plan1Duration'),
+            description: t('plan1Desc'),
+            features: [
+                t('plan1Feature1'),
+                t('plan1Feature2'),
+                t('plan1Feature3'),
+                t('plan1Feature4'),
+                t('plan1Feature5'),
             ],
             highlighted: true,
         },
