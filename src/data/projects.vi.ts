@@ -452,5 +452,39 @@ export const projects: Project[] = [
             { src: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2000&auto=format&fit=crop', caption: 'Kho Lưu trữ Tài liệu' },
             { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop', caption: 'Quy trình Phê duyệt' }
         ]
+    },
+    {
+        slug: 'crm-custom',
+        name: 'Nền tảng CRM Custom',
+        client: 'Nội bộ công ty',
+        year: '2026',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2940&auto=format&fit=crop',
+        category: 'Nền tảng Web',
+        industry: 'technology',
+        tagline: 'Tùy biến white-label và nâng cấp trải nghiệm UI/UX cho nền tảng quản lý hội viên.',
+        description: 'Xây dựng nền tảng CRM tùy biến theo quy trình vận hành của doanh nghiệp, đồng thời tối ưu giao diện theo bộ nhận diện thương hiệu công ty.',
+        role: 'Kiến trúc & Phát triển',
+        services: ['White-label', 'Thiết kế UI/UX', 'Tích hợp hệ thống'],
+        tags: ['CRM', 'Next.js', 'Custom Platform', 'UX'],
+        overview: 'Dự án tập trung vào việc giữ nguyên năng lực nghiệp vụ cốt lõi (membership, event, CMS) và thay thế lớp giao diện để phù hợp chuẩn thương hiệu và trải nghiệm hiện đại.',
+        problem: 'Nền tảng gốc có UI chưa phù hợp định vị thương hiệu công ty và chưa tối ưu hành trình người dùng theo mục tiêu kinh doanh.',
+        solution: 'Thiết kế lại giao diện theo design system mới, tổ chức lại luồng nội dung, chuẩn hóa component tái sử dụng, và giữ tách biệt rõ giữa core logic với lớp hiển thị white-label.',
+        result: 'Rút ngắn thời gian triển khai dự án mới, tăng tính nhất quán thương hiệu và cải thiện trải nghiệm người dùng trên các trang dự án/case study.',
+        techStack: [
+            { category: 'Backend (Tendenci Core)', items: ['Python', 'Django'] },
+            { category: 'CMS & Association', items: ['Membership Management', 'Event Registration', 'Forums', 'Donations', 'Newsletters', 'CRM'] },
+            { category: 'UI Layer', items: ['React', 'shadcn/ui', 'Tailwind CSS'] },
+            { category: 'Vận hành', items: ['Docker', 'CI/CD'] }
+        ],
+        testimonial: {
+            quote: 'Giải pháp giúp đội ngũ ra mắt nhanh hơn mà vẫn giữ được tiêu chuẩn thương hiệu và chất lượng trải nghiệm.',
+            author: 'Product Owner',
+            role: 'Digital Platform Team'
+        },
+        galleryLayout: 'md:grid-cols-2 gap-8',
+        gallery: [
+            { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop', caption: 'Danh sách dự án đã tùy biến' },
+            { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop', caption: 'Trang chi tiết case study' }
+        ]
     }
 ];

@@ -452,5 +452,39 @@ export const projects: Project[] = [
             { src: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2000&auto=format&fit=crop', caption: 'Document Repository' },
             { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop', caption: 'Approval Workflow' }
         ]
+    },
+    {
+        slug: 'crm-custom',
+        name: 'Custom CRM Platform',
+        client: 'Internal Product Team',
+        year: '2026',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2940&auto=format&fit=crop',
+        category: 'Web Platform',
+        industry: 'technology',
+        tagline: 'White-label customization and modern UI/UX upgrades for an association management platform.',
+        description: 'We built a custom CRM platform tailored to the company’s operational workflow and redesigned the interface to align with the brand system.',
+        role: 'Architecture & Development',
+        services: ['White-label', 'UI/UX Design', 'System Integration'],
+        tags: ['CRM', 'Next.js', 'Custom Platform', 'UX'],
+        overview: 'The project keeps core business capabilities (membership, events, CMS) while replacing the UI layer with a modern, brand-aligned experience.',
+        problem: 'The original platform UI did not match our brand positioning and was not optimized for the user journey required by the business.',
+        solution: 'We redesigned the interface with a dedicated design system, restructured content flow, standardized reusable components, and kept a clear separation between core logic and white-label presentation.',
+        result: 'Reduced onboarding time for new client projects, improved brand consistency, and delivered a better user experience across project/case-study pages.',
+        techStack: [
+            { category: 'Backend (Tendenci Core)', items: ['Python', 'Django'] },
+            { category: 'CMS & Association', items: ['Membership Management', 'Event Registration', 'Forums', 'Donations', 'Newsletters', 'CRM'] },
+            { category: 'UI Layer', items: ['React', 'shadcn/ui', 'Tailwind CSS'] },
+            { category: 'Operations', items: ['Docker', 'CI/CD'] }
+        ],
+        testimonial: {
+            quote: 'This approach helped us launch faster while keeping strong brand consistency and UX quality.',
+            author: 'Product Owner',
+            role: 'Digital Platform Team'
+        },
+        galleryLayout: 'md:grid-cols-2 gap-8',
+        gallery: [
+            { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop', caption: 'Customized project listing' },
+            { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop', caption: 'Case study detail page' }
+        ]
     }
 ];
